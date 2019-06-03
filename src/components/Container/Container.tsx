@@ -1,12 +1,16 @@
 import * as React from 'react'
-import { View } from 'react-native'
+import { View, Text } from 'react-native'
 
 interface ContainerProps {
   param: string
 }
 
 const Container: React.FC<ContainerProps> = props => {
-  return <View />
+  return (
+    <View>
+      <Text>It's Alive</Text>
+    </View>
+  )
 }
 
 export default Container
