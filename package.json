@@ -1,6 +1,22 @@
 {
   "name": "kancha",
   "version": "1.0.0",
-  "main": "index.js",
-  "license": "MIT"
+  "main": "./dist/index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "start": "tsc --watch"
+  },
+  "types": "./dist/index.d.ts",
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*"
+  },
+  "devDependencies": {
+    "@types/react": "^16.8.19",
+    "@types/react-native": "^0.57.60",
+    "react": "^16.8.6",
+    "react-native": "^0.59.8",
+    "typescript": "^3.5.1"
+  }
 }
