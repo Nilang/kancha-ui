@@ -5,6 +5,8 @@ interface ContainerProps {
   param: string
 }
 
+const hello = 'HELLO'
+
 const Container: React.FC<ContainerProps> = props => {
   return (
     <View>
