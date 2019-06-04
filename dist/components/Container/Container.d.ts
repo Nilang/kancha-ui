@@ -1,6 +1,6 @@
-import * as React from 'react'
+import * as React from 'react';
 interface ContainerProps {
-  param: string
+    param: string;
 }
-declare const Container: React.FC<ContainerProps>
-export default Container
+declare const Container: React.FC<ContainerProps>;
+export default Container;
