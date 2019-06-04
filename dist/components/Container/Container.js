@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { View, Text } from 'react-native'
+const hello = 'HELLO'
 const Container = props => {
   return React.createElement(
     View,
