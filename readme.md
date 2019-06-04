@@ -1,12 +1,11 @@
 # Kancha
 
-Kancha is a React Native UI library for building decentralised identity wallets apps for iOS & Android.
+Kancha is a React Native UI library for building decentralised identity wallet apps for iOS & Android.
 
 ---
 
 ### Components
 
-- [Components](#components)
 - [Container](#container)
 - [Card](#card)
 
@@ -14,7 +13,7 @@ Kancha is a React Native UI library for building decentralised identity wallets 
 
 ## Container
 
-A `Container` is an abstraction of `View`. In most cases the `View` component is used in conjunction with some some simple layout styles like flexbox. With a Container these can just be added as props for declarative layouts. This is the most fundamental component in Kancha and can be used anywhere you would use a `View`.
+`Container` is the most fundamental building block in Kancha and should be used anywhere you would use a `View`. In most cases the built-in React Native `View` component is used in conjunction with some some simple layout styles like flexbox casuing a mess of styles. Using a `Container` these can just be added as props for declarative layouts that are easy to read.
 
 ## Card
 
