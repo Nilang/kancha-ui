@@ -10,7 +10,11 @@
     "moduleResolution": "node",
     "strict": true,
     "target": "esnext",
-    "outDir": "./dist"
+    "outDir": "./dist",
+    "baseUrl": ".",
+    "paths": {
+      "kancha": ["./src"]
+    }
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules", "demo", "dist", "src/**/*.test.*"]
