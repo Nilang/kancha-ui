@@ -7,9 +7,9 @@ declare const _default: {
     MEDIUM_GREY: string;
     DARK_GREY: string;
     BRAND: string;
-    CRIMSON_RED: string;
-    WASHED_GREEN: string;
-    SUNNY_ORANGE: string;
+    WARN: string;
+    CONFIRM: string;
+    ACCENT: string;
     TRANSPARENT: string;
 };
 export default _default;

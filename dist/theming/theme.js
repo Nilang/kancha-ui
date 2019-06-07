@@ -1,8 +1,4 @@
-import Colorator from './colorator';
-/**
- * Get colors that have been set
- */
-const COLORS = Colorator.getColors();
+import COLORS from './colors';
 export default {
     text: {
         lineHeights: {
@@ -70,45 +66,45 @@ export default {
             },
         },
         accent: {
-            brand: COLORS.SUNNY_ORANGE,
-            text: COLORS.SUNNY_ORANGE,
-            background: COLORS.SUNNY_ORANGE,
-            divider: COLORS.SUNNY_ORANGE,
-            accessories: COLORS.SUNNY_ORANGE,
-            underlay: COLORS.SUNNY_ORANGE,
-            button: COLORS.SUNNY_ORANGE,
+            brand: COLORS.ACCENT,
+            text: COLORS.ACCENT,
+            background: COLORS.ACCENT,
+            divider: COLORS.ACCENT,
+            accessories: COLORS.ACCENT,
+            underlay: COLORS.ACCENT,
+            button: COLORS.ACCENT,
             buttonText: {
                 filled: COLORS.WHITE,
-                outlined: COLORS.SUNNY_ORANGE,
-                clear: COLORS.SUNNY_ORANGE,
+                outlined: COLORS.ACCENT,
+                clear: COLORS.ACCENT,
             },
         },
         warning: {
-            brand: COLORS.CRIMSON_RED,
-            text: COLORS.CRIMSON_RED,
-            background: COLORS.CRIMSON_RED,
-            divider: COLORS.CRIMSON_RED,
-            accessories: COLORS.CRIMSON_RED,
-            underlay: COLORS.CRIMSON_RED,
-            button: COLORS.CRIMSON_RED,
+            brand: COLORS.WARN,
+            text: COLORS.WARN,
+            background: COLORS.WARN,
+            divider: COLORS.WARN,
+            accessories: COLORS.WARN,
+            underlay: COLORS.WARN,
+            button: COLORS.WARN,
             buttonText: {
                 filled: COLORS.WHITE,
-                outlined: COLORS.CRIMSON_RED,
-                clear: COLORS.CRIMSON_RED,
+                outlined: COLORS.WARN,
+                clear: COLORS.WARN,
             },
         },
         confirm: {
-            brand: COLORS.WASHED_GREEN,
-            text: COLORS.WASHED_GREEN,
-            background: COLORS.WASHED_GREEN,
-            divider: COLORS.WASHED_GREEN,
-            accessories: COLORS.WASHED_GREEN,
-            underlay: COLORS.WASHED_GREEN,
-            button: COLORS.WASHED_GREEN,
+            brand: COLORS.CONFIRM,
+            text: COLORS.CONFIRM,
+            background: COLORS.CONFIRM,
+            divider: COLORS.CONFIRM,
+            accessories: COLORS.CONFIRM,
+            underlay: COLORS.CONFIRM,
+            button: COLORS.CONFIRM,
             buttonText: {
                 filled: COLORS.WHITE,
-                outlined: COLORS.WASHED_GREEN,
-                clear: COLORS.WASHED_GREEN,
+                outlined: COLORS.CONFIRM,
+                clear: COLORS.CONFIRM,
             },
         },
         inverted: {

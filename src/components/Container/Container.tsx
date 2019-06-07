@@ -1,13 +1,6 @@
 import * as React from 'react'
 import { View, ViewStyle, StyleSheet } from 'react-native'
-// import { Themer } from 'kancha'
-
-import Theme from '../../theming/theme'
-
-/**
- * Pull current theme from theme class
- */
-// const Theme = Themer.getTheme()
+import { withTheme } from '../../theming'
 
 /**
  * Container is the most basic building block of Kancha. It is an abstraction of View with a basic implementaion
@@ -117,17 +110,19 @@ interface ContainerProps {
 
   /** An opacity level. Use 1, 2, 3 etc  */
   opacity?: number
+
+  theme: any
 }
 
 const Container: React.FunctionComponent<ContainerProps> = props => {
   const DividerBottomStyles: ViewStyle = {
     borderBottomWidth: StyleSheet.hairlineWidth,
-    borderBottomColor: Theme.colors.primary.divider,
+    borderBottomColor: props.theme.colors.primary.divider,
   }
 
   const DividerTopStyles: ViewStyle = {
     borderTopWidth: StyleSheet.hairlineWidth,
-    borderTopColor: Theme.colors.primary.divider,
+    borderTopColor: props.theme.colors.primary.divider,
   }
 
   const BaseStyles: ViewStyle = {
@@ -138,7 +133,7 @@ const Container: React.FunctionComponent<ContainerProps> = props => {
     flexDirection: props.flexDirection,
     alignItems: props.alignItems,
     justifyContent: props.justifyContent,
-    backgroundColor: props.background && Theme.colors[props.background].background,
+    backgroundColor: props.background && props.theme.colors[props.background].background,
     borderRadius: props.br,
   }
 
@@ -160,26 +155,27 @@ const Container: React.FunctionComponent<ContainerProps> = props => {
           shadowOpacity: 0.2,
           shadowRadius: props.shadow * 5,
           backgroundColor: props.backgroundColor
-            ? props.background && Theme.colors[props.background].background
+            ? props.background && props.theme.colors[props.background].background
             : '#ffffff',
         }
       : {}),
 
     /** Margins */
-    marginBottom: typeof props.marginBottom === 'boolean' ? Theme.spacing.default : props.marginBottom,
-    marginTop: typeof props.marginTop === 'boolean' ? Theme.spacing.default : props.marginTop,
-    marginLeft: typeof props.marginLeft === 'boolean' ? Theme.spacing.default : props.marginLeft,
-    marginRight: typeof props.marginRight === 'boolean' ? Theme.spacing.default : props.marginRight,
+    marginBottom: typeof props.marginBottom === 'boolean' ? props.theme.spacing.default : props.marginBottom,
+    marginTop: typeof props.marginTop === 'boolean' ? props.theme.spacing.default : props.marginTop,
+    marginLeft: typeof props.marginLeft === 'boolean' ? props.theme.spacing.default : props.marginLeft,
+    marginRight: typeof props.marginRight === 'boolean' ? props.theme.spacing.default : props.marginRight,
 
     /** Paddings */
-    padding: typeof props.padding === 'boolean' ? Theme.spacing.default : props.padding,
+    padding: typeof props.padding === 'boolean' ? props.theme.spacing.default : props.padding,
     paddingHorizontal:
-      typeof props.paddingHorizontal === 'boolean' ? Theme.spacing.default : props.paddingHorizontal,
+      typeof props.paddingHorizontal === 'boolean' ? props.theme.spacing.default : props.paddingHorizontal,
 
-    paddingBottom: typeof props.paddingBottom === 'boolean' ? Theme.spacing.default : props.paddingBottom,
-    paddingTop: typeof props.paddingTop === 'boolean' ? Theme.spacing.default : props.paddingTop,
-    paddingLeft: typeof props.paddingLeft === 'boolean' ? Theme.spacing.default : props.paddingLeft,
-    paddingRight: typeof props.paddingRight === 'boolean' ? Theme.spacing.default : props.paddingRight,
+    paddingBottom:
+      typeof props.paddingBottom === 'boolean' ? props.theme.spacing.default : props.paddingBottom,
+    paddingTop: typeof props.paddingTop === 'boolean' ? props.theme.spacing.default : props.paddingTop,
+    paddingLeft: typeof props.paddingLeft === 'boolean' ? props.theme.spacing.default : props.paddingLeft,
+    paddingRight: typeof props.paddingRight === 'boolean' ? props.theme.spacing.default : props.paddingRight,
 
     /** Viewstyle props will overide all options */
     ...(props.viewStyle ? { ...props.viewStyle } : {}),
@@ -192,4 +188,4 @@ const Container: React.FunctionComponent<ContainerProps> = props => {
   )
 }
 
-export default Container
+export default withTheme(Container)

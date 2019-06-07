@@ -1,4 +1,10 @@
+/**
+ * Components
+ */
 export { default as Container } from './components/Container/Container'
+export { default as Button } from './components/Button/Button'
 
-export { default as Themer } from './theming/themer'
-export { default as Colors } from './theming/colorator'
+/**
+ * Theming
+ */
+export { ThemeProvider, withTheme, useTheme } from './theming'

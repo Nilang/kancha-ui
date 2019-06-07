@@ -1,15 +1,14 @@
 import * as React from 'react';
 import { View, StyleSheet } from 'react-native';
-// import { Themer } from 'kancha'
-import Theme from '../../theming/theme';
+import { withTheme } from '../../theming';
 const Container = props => {
     const DividerBottomStyles = {
         borderBottomWidth: StyleSheet.hairlineWidth,
-        borderBottomColor: Theme.colors.primary.divider,
+        borderBottomColor: props.theme.colors.primary.divider,
     };
     const DividerTopStyles = {
         borderTopWidth: StyleSheet.hairlineWidth,
-        borderTopColor: Theme.colors.primary.divider,
+        borderTopColor: props.theme.colors.primary.divider,
     };
     const BaseStyles = {
         /** Basic view styles */
@@ -19,7 +18,7 @@ const Container = props => {
         flexDirection: props.flexDirection,
         alignItems: props.alignItems,
         justifyContent: props.justifyContent,
-        backgroundColor: props.background && Theme.colors[props.background].background,
+        backgroundColor: props.background && props.theme.colors[props.background].background,
         borderRadius: props.br,
     };
     /** Conditionally spread props down to the View as styles */
@@ -40,25 +39,25 @@ const Container = props => {
                 shadowOpacity: 0.2,
                 shadowRadius: props.shadow * 5,
                 backgroundColor: props.backgroundColor
-                    ? props.background && Theme.colors[props.background].background
+                    ? props.background && props.theme.colors[props.background].background
                     : '#ffffff',
             }
             : {}),
         /** Margins */
-        marginBottom: typeof props.marginBottom === 'boolean' ? Theme.spacing.default : props.marginBottom,
-        marginTop: typeof props.marginTop === 'boolean' ? Theme.spacing.default : props.marginTop,
-        marginLeft: typeof props.marginLeft === 'boolean' ? Theme.spacing.default : props.marginLeft,
-        marginRight: typeof props.marginRight === 'boolean' ? Theme.spacing.default : props.marginRight,
+        marginBottom: typeof props.marginBottom === 'boolean' ? props.theme.spacing.default : props.marginBottom,
+        marginTop: typeof props.marginTop === 'boolean' ? props.theme.spacing.default : props.marginTop,
+        marginLeft: typeof props.marginLeft === 'boolean' ? props.theme.spacing.default : props.marginLeft,
+        marginRight: typeof props.marginRight === 'boolean' ? props.theme.spacing.default : props.marginRight,
         /** Paddings */
-        padding: typeof props.padding === 'boolean' ? Theme.spacing.default : props.padding,
-        paddingHorizontal: typeof props.paddingHorizontal === 'boolean' ? Theme.spacing.default : props.paddingHorizontal,
-        paddingBottom: typeof props.paddingBottom === 'boolean' ? Theme.spacing.default : props.paddingBottom,
-        paddingTop: typeof props.paddingTop === 'boolean' ? Theme.spacing.default : props.paddingTop,
-        paddingLeft: typeof props.paddingLeft === 'boolean' ? Theme.spacing.default : props.paddingLeft,
-        paddingRight: typeof props.paddingRight === 'boolean' ? Theme.spacing.default : props.paddingRight,
+        padding: typeof props.padding === 'boolean' ? props.theme.spacing.default : props.padding,
+        paddingHorizontal: typeof props.paddingHorizontal === 'boolean' ? props.theme.spacing.default : props.paddingHorizontal,
+        paddingBottom: typeof props.paddingBottom === 'boolean' ? props.theme.spacing.default : props.paddingBottom,
+        paddingTop: typeof props.paddingTop === 'boolean' ? props.theme.spacing.default : props.paddingTop,
+        paddingLeft: typeof props.paddingLeft === 'boolean' ? props.theme.spacing.default : props.paddingLeft,
+        paddingRight: typeof props.paddingRight === 'boolean' ? props.theme.spacing.default : props.paddingRight,
         /** Viewstyle props will overide all options */
         ...(props.viewStyle ? { ...props.viewStyle } : {}),
     };
     return (React.createElement(View, { testID: props.testID, style: styles, pointerEvents: props.disabled ? 'none' : 'auto' }, props.children));
 };
-export default Container;
+export default withTheme(Container);

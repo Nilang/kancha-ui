@@ -10,5 +10,4 @@ class Themer {
         return this.theme;
     }
 }
-const themer = new Themer(defaultTheme);
-export default themer;
+export default new Themer(defaultTheme);

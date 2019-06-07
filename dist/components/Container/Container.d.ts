@@ -1,9 +1,6 @@
 import * as React from 'react';
 import { ViewStyle } from 'react-native';
 /**
- * Pull current theme from theme class
- */
-/**
  * Container is the most basic building block of Kancha. It is an abstraction of View with a basic implementaion
  * of flexbox and box modelling via props. The intention is for Container to be a declarative easy to use primitive to construct
  * complex views without worrying about the mess of styles. A custom style prop may need to be added to override styles for ege cases and or temporary implementaions.
@@ -73,6 +70,156 @@ interface ContainerProps {
     shadow?: number;
     /** An opacity level. Use 1, 2, 3 etc  */
     opacity?: number;
+    theme: any;
 }
-declare const Container: React.FunctionComponent<ContainerProps>;
-export default Container;
+declare const _default: React.ComponentType<Pick<ContainerProps, "testID" | "w" | "h" | "b" | "r" | "br" | "flex" | "background" | "backgroundColor" | "flexDirection" | "alignItems" | "justifyContent" | "dividerBottom" | "dividerTop" | "marginBottom" | "marginTop" | "marginLeft" | "marginRight" | "padding" | "paddingHorizontal" | "paddingBottom" | "paddingTop" | "paddingLeft" | "paddingRight" | "debugBorder" | "borderColor" | "borderWidth" | "debugBorderColor" | "viewStyle" | "disabled" | "shadow" | "opacity"> & {
+    theme?: import("@callstack/react-theme-provider").$DeepPartial<{
+        text: {
+            lineHeights: {
+                body: number;
+            };
+            sizes: {
+                h1: number;
+                h2: number;
+                h3: number;
+                h4: number;
+                h5: number;
+                h6: number;
+                subTitle: number;
+                listItem: number;
+                listItemRight: number;
+                listItemNote: number;
+                sectionHeader: number;
+                summary: number;
+                body: number;
+                button: number;
+                navButton: number;
+            };
+        };
+        colors: {
+            primary: {
+                brand: string;
+                text: string;
+                background: string;
+                divider: string;
+                accessories: string;
+                underlay: string;
+                button: string;
+                buttonText: {
+                    filled: string;
+                    outlined: string;
+                    clear: string;
+                };
+            };
+            secondary: {
+                brand: string;
+                text: string;
+                background: string;
+                divider: string; /** Pre-defined backgrounds accordign to the theme. use these where possible. */
+                accessories: string;
+                underlay: string;
+                button: string;
+                buttonText: {
+                    filled: string;
+                    outlined: string;
+                    clear: string;
+                };
+            };
+            tertiary: {
+                /** Flex direction */
+                brand: string;
+                text: string;
+                background: string;
+                divider: string;
+                accessories: string;
+                underlay: string;
+                button: string;
+                buttonText: {
+                    filled: string;
+                    outlined: string;
+                    clear: string;
+                };
+            };
+            accent: {
+                brand: string;
+                text: string;
+                background: string;
+                divider: string;
+                accessories: string;
+                underlay: string;
+                button: string;
+                buttonText: {
+                    filled: string; /** Set the bottom margin */
+                    outlined: string;
+                    clear: string;
+                };
+            };
+            warning: {
+                brand: string;
+                text: string;
+                background: string;
+                divider: string;
+                accessories: string;
+                underlay: string;
+                button: string;
+                buttonText: {
+                    filled: string;
+                    outlined: string;
+                    clear: string; /** Set the top padding */
+                };
+            };
+            confirm: {
+                brand: string;
+                text: string;
+                background: string;
+                divider: string;
+                accessories: string;
+                underlay: string;
+                button: string;
+                buttonText: {
+                    filled: string;
+                    outlined: string;
+                    clear: string; /** Enable border for debugging layouts */
+                };
+            };
+            inverted: {
+                brand: string;
+                text: string;
+                background: string;
+                divider: string;
+                accessories: string;
+                underlay: string;
+                button: string;
+                buttonText: {
+                    filled: string;
+                    outlined: string;
+                    clear: string;
+                };
+            };
+            custom: {
+                brand: string;
+                text: string;
+                background: string;
+                divider: string;
+                accessories: string;
+                underlay: string;
+                button: string;
+                buttonText: {
+                    filled: string;
+                    outlined: string;
+                    clear: string;
+                };
+            };
+        };
+        spacing: {
+            default: number;
+            section: number;
+        };
+        roundedCorners: {
+            buttons: number;
+            cards: number;
+            textInputs: number;
+        };
+    }> | undefined;
+}>;
+export default _default;

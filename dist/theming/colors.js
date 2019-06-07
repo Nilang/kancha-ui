@@ -7,8 +7,8 @@ export default {
     MEDIUM_GREY: '#CCCCCC',
     DARK_GREY: '#111111',
     BRAND: '#6A54D1',
-    CRIMSON_RED: '#D63A59',
-    WASHED_GREEN: '#3DCF8A',
-    SUNNY_ORANGE: '#E89835',
+    WARN: '#3DCF8A',
+    CONFIRM: '#3DCF8A',
+    ACCENT: '#E89835',
     TRANSPARENT: 'transparent',
 };

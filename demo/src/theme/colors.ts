@@ -7,7 +7,7 @@ export default {
   MEDIUM_GREY: '#CCCCCC',
   DARK_GREY: '#111111',
   BRAND: '#6A54D1',
-  WARN: '#3DCF8A',
+  WARN: '#D63A59',
   CONFIRM: '#3DCF8A',
   ACCENT: '#E89835',
   TRANSPARENT: 'transparent',
