@@ -4,8 +4,8 @@
   "main": "./dist/index.js",
   "license": "MIT",
   "scripts": {
-    "build": "tsc",
-    "start": "tsc --watch",
+    "build": "tsc -p ./tsconfig.build.json",
+    "start": "tsc tsc -p ./tsconfig.build.json --watch",
     "test": "jest",
     "format": "prettier"
   },
@@ -15,6 +15,8 @@
     "react-native": "*"
   },
   "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/runtime": "^7.4.5",
     "@types/jest": "^24.0.13",
     "@types/react": "^16.8.19",
     "@types/react-native": "^0.57.60",
@@ -22,14 +24,16 @@
     "babel-jest": "^24.8.0",
     "husky": "^2.3.0",
     "jest": "^24.8.0",
+    "metro-react-native-babel-preset": "^0.54.1",
+    "react": "16.8.3",
+    "react-native": "0.59.8",
+    "react-native-typescript-transformer": "1.2.12",
     "prettier": "^1.17.1",
     "pretty-quick": "^1.11.0",
-    "react": "^16.8.6",
-    "react-native": "^0.59.8",
     "react-native-testing-library": "^1.8.0",
-    "react-test-renderer": "^16.8.6",
+    "react-test-renderer": "16.8.3",
     "ts-jest": "^24.0.2",
-    "ts-lint": "^4.5.1",
+    "tslint": "^5.17.0",
     "tslint-config-prettier": "^1.18.0",
     "tslint-eslint-rules": "^5.4.0",
     "tslint-react": "^4.0.0",
@@ -59,9 +63,12 @@
     "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
     "testPathIgnorePatterns": [
       "<rootDir>/node_modules/",
-      "<rootDir>/demo",
-      "<rootDir>/dist/"
+      "<rootDir>/dist/",
+      "<rootDir>/demo"
     ],
+    "moduleNameMapper": {
+      "kancha": "<rootDir>/src/index"
+    },
     "modulePathIgnorePatterns": [
       "<rootDir>/demo"
     ]
