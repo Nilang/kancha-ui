@@ -13,8 +13,6 @@ export default class App extends Component<Props> {
   }
 
   render() {
-    // tslint:disable-next-line:no-console
-
     return (
       <Container flex={1} justifyContent={'center'}>
         <Text>Welcome to Kancha Sink!</Text>

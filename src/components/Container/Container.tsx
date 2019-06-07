@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { View, ViewStyle, StyleSheet } from 'react-native'
 import { withTheme } from '../../theming'
+import { Kancha } from '@types'
 
 /**
  * Container is the most basic building block of Kancha. It is an abstraction of View with a basic implementaion

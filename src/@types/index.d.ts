@@ -1,7 +1,15 @@
+import * as ReactNative from 'react-native'
+
 declare namespace Kancha {
   export interface NavigationScreen {
     componentId: string
   }
+
+  export interface IndexSignature {
+    [index: string]: any
+  }
+
+  export interface TextDefaultThemeMapTypes extends IndexSignature {}
 
   export interface TextTypesStatic {
     H1: 'h1'

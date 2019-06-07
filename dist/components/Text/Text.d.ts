@@ -1,79 +1,68 @@
 import * as React from 'react';
-import { ViewStyle } from 'react-native';
+import { TextStyle } from 'react-native';
 import { Kancha } from '@types';
 /**
- * Container is the most basic building block of Kancha. It is an abstraction of View with a basic implementaion
- * of flexbox and box modelling via props. The intention is for Container to be a declarative easy to use primitive to construct
- * complex views without worrying about the mess of styles. A custom style prop may need to be added to override styles for ege cases and or temporary implementaions.
+ * Kancha Text Props
  */
-interface ContainerProps {
-    /** Test ID used for e2e tests */
-    testID?: string;
-    /** Width */
-    w?: string | number | undefined;
-    /** Height */
-    h?: string | number | undefined;
-    /** Bottom */
-    b?: string | number | undefined;
-    /** Bottom */
-    r?: string | number | undefined;
-    /** Border radius */
-    br?: number | undefined;
-    /** Flex */
-    flex?: number | undefined;
-    /** Pre-defined backgrounds accordign to the theme. use these where possible. */
-    background?: Kancha.BrandPropOptions;
-    /** Temporary option to create custom color. Avoid is possible and deprecate if you can by modifying the theme */
-    backgroundColor?: string;
-    /** Flex direction */
-    flexDirection?: 'row' | 'column' | 'row-reverse' | 'column-reverse' | undefined;
-    /** Align items */
-    alignItems?: 'flex-start' | 'flex-end' | 'center' | 'stretch' | 'baseline' | undefined;
-    /** Justify Content */
-    justifyContent?: 'flex-start' | 'flex-end' | 'center' | 'space-between' | 'space-around' | 'space-evenly' | undefined;
-    /** Set the bottom divider */
-    dividerBottom?: boolean;
-    /** et the top divider */
-    dividerTop?: boolean;
-    /** Set the bottom margin */
-    marginBottom?: number | boolean | undefined;
-    /** Set the top margin */
-    marginTop?: number | boolean | undefined;
-    /** Set the bottom margin */
-    marginLeft?: number | boolean | undefined;
-    /** Set the top margin */
-    marginRight?: number | boolean | undefined;
-    /** Set the default padding */
-    padding?: number | boolean | undefined;
-    /** Set the default paddingHorizontal */
-    paddingHorizontal?: number | boolean | undefined;
-    /** Set the bottom padding */
+export interface TextProps {
+    /**
+     * The type of text to display. This will be styled accordinly to the theme
+     */
+    type?: string;
+    /**
+     * Overide the color with a warning color
+     */
+    warn?: boolean;
+    /**
+     * Color prop is used to configure button text colors
+     */
+    buttonTextColor?: Kancha.BrandPropOptions;
+    /**
+     * Overide the brand color
+     */
+    textColor?: string;
+    /**
+     * Overide the color with a warning color
+     */
+    block?: Kancha.BlockPropsOptions;
+    /**
+     * Make the text bold
+     */
+    bold?: boolean;
+    /**
+     * The padding around the text
+     */
+    padding?: number;
+    /**
+     * A bottom padding for the text. Useful for headings
+     */
     paddingBottom?: number | boolean | undefined;
-    /** Set the top padding */
-    paddingTop?: number | boolean | undefined;
-    /** Set the left padding */
-    paddingLeft?: number | boolean | undefined;
-    /** Set the right padding */
-    paddingRight?: number | boolean | undefined;
-    /** Enable border for debugging layouts */
-    debugBorder?: boolean;
-    /** Enable border for debugging layouts */
-    borderColor?: string;
-    /** Enable border for debugging layouts */
-    borderWidth?: number;
-    /** Change debug border color */
-    debugBorderColor?: string | undefined;
-    /** Add addionaly custom styles for a container. Use sparingly!! */
-    viewStyle?: ViewStyle;
-    /** Disable the view from being able to detect interactions */
-    disabled?: boolean;
-    /** A shadow level to apply */
-    shadow?: number;
-    /** An opacity level. Use 1, 2, 3 etc  */
-    opacity?: number;
+    /**
+     * The margin around the text
+     */
+    margin?: number;
+    /**
+     * The margin around the text
+     */
+    textAlign?: string;
+    /**
+     * Decoration for button text
+     */
+    textDecorationLine?: 'none' | 'underline' | 'line-through' | 'underline line-through' | undefined;
+    /**
+     * Transform the text
+     */
+    transform?: 'uppercase' | 'lowercase' | undefined;
+    /**
+     * Transform the text
+     */
+    textStyle?: TextStyle;
+    /**
+     * Transform the text
+     */
     theme: any;
 }
-declare const _default: React.ComponentType<Pick<ContainerProps, "b" | "br" | "testID" | "disabled" | "w" | "h" | "r" | "flex" | "background" | "backgroundColor" | "flexDirection" | "alignItems" | "justifyContent" | "dividerBottom" | "dividerTop" | "marginBottom" | "marginTop" | "marginLeft" | "marginRight" | "padding" | "paddingHorizontal" | "paddingBottom" | "paddingTop" | "paddingLeft" | "paddingRight" | "debugBorder" | "borderColor" | "borderWidth" | "debugBorderColor" | "viewStyle" | "shadow" | "opacity"> & {
+declare const _default: React.ComponentType<Pick<TextProps, "type" | "warn" | "buttonTextColor" | "textColor" | "block" | "bold" | "padding" | "paddingBottom" | "margin" | "textAlign" | "textDecorationLine" | "transform" | "textStyle"> & {
     theme?: import("@callstack/react-theme-provider").$DeepPartial<{
         text: {
             lineHeights: {
@@ -110,7 +99,7 @@ declare const _default: React.ComponentType<Pick<ContainerProps, "b" | "br" | "t
                     filled: string;
                     outlined: string;
                     clear: string;
-                }; /** Bottom */
+                };
             };
             secondary: {
                 brand: string;
@@ -128,9 +117,11 @@ declare const _default: React.ComponentType<Pick<ContainerProps, "b" | "br" | "t
             };
             tertiary: {
                 brand: string;
-                /** Flex direction */
                 text: string;
                 background: string;
+                /**
+                 * The margin around the text
+                 */
                 divider: string;
                 accessories: string;
                 underlay: string;
@@ -145,14 +136,13 @@ declare const _default: React.ComponentType<Pick<ContainerProps, "b" | "br" | "t
                 brand: string;
                 text: string;
                 background: string;
-                /** et the top divider */
                 divider: string;
                 accessories: string;
                 underlay: string;
                 button: string;
                 buttonText: {
                     filled: string;
-                    outlined: string; /** Set the bottom margin */
+                    outlined: string;
                     clear: string;
                 };
             };

@@ -12,6 +12,9 @@
     "format": "prettier"
   },
   "types": "./dist/index.d.ts",
+  "dependencies": {
+    "@callstack/react-theme-provider": "^3.0.0"
+  },
   "peerDependencies": {
     "react": "*",
     "react-native": "*"
@@ -74,8 +77,5 @@
     "modulePathIgnorePatterns": [
       "<rootDir>/demo"
     ]
-  },
-  "dependencies": {
-    "@callstack/react-theme-provider": "^3.0.0"
   }
 }

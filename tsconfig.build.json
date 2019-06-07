@@ -13,7 +13,14 @@
     "target": "esnext",
     "outDir": "./dist",
     "baseUrl": ".",
-    "paths": { "kancha": ["./src"] }
+    "paths": {
+      "kancha": ["./src"],
+      "@types": ["./src/@types"],
+      "@components/*": ["./src/components/*"],
+      "@theme/*": ["./src/theming/*"],
+      "@constants/*": ["./src/constants/*"],
+      "@utils/*": ["./src/utils/*"]
+    }
   },
   "include": ["src/**/*"],
   "exclude": [
