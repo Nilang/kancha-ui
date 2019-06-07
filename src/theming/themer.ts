@@ -16,4 +16,6 @@ class Themer {
   }
 }
 
-export default new Themer(defaultTheme)
+const themer = new Themer(defaultTheme)
+
+export default themer

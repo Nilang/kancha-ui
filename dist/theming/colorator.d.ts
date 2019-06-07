@@ -1,8 +1,8 @@
 declare class Colorator {
-    _colors: any;
-    constructor(colors: any);
+    private colors;
+    constructor(customColors: any);
     getColors(): any;
-    setColors(colors: any): void;
+    setColors(customColors: any): void;
 }
 declare const _default: Colorator;
 export default _default;

@@ -1,18 +1,18 @@
 import defaultColors from './colors'
 
 class Colorator {
-  _colors: any
+  private colors: any
 
-  constructor(colors: any) {
-    this._colors = colors
+  constructor(customColors: any) {
+    this.colors = customColors
   }
 
   getColors() {
-    return this._colors
+    return this.colors
   }
 
-  setColors(colors: any) {
-    this._colors = colors
+  setColors(customColors: any) {
+    this.colors = customColors
   }
 }
 

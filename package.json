@@ -5,7 +5,9 @@
   "license": "MIT",
   "scripts": {
     "build": "tsc -p ./tsconfig.build.json",
-    "start": "tsc tsc -p ./tsconfig.build.json --watch",
+    "develop": "tsc -p ./tsconfig.build.json --watch",
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "xcode": "open demo/ios/KanchaSink.xcodeproj",
     "test": "jest",
     "format": "prettier"
   },

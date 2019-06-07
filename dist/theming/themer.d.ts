@@ -4,5 +4,5 @@ declare class Themer {
     setTheme(theme: Kancha.ThemeStatic): void;
     getTheme(): Kancha.ThemeStatic;
 }
-declare const _default: Themer;
-export default _default;
+declare const themer: Themer;
+export default themer;

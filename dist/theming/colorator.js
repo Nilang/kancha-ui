@@ -1,13 +1,13 @@
 import defaultColors from './colors';
 class Colorator {
-    constructor(colors) {
-        this._colors = colors;
+    constructor(customColors) {
+        this.colors = customColors;
     }
     getColors() {
-        return this._colors;
+        return this.colors;
     }
-    setColors(colors) {
-        this._colors = colors;
+    setColors(customColors) {
+        this.colors = customColors;
     }
 }
 export default new Colorator(defaultColors);
