@@ -9,7 +9,8 @@
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "xcode": "open demo/ios/KanchaSink.xcodeproj",
     "test": "jest",
-    "format": "prettier"
+    "format": "prettier",
+    "docs": "typedoc --out ./docs/documentation ./src --mode file --tsconfig ./tsconfig.json --name 'Kancha Documentation' --theme minimal"
   },
   "types": "./dist/index.d.ts",
   "dependencies": {
@@ -42,6 +43,7 @@
     "tslint-config-prettier": "^1.18.0",
     "tslint-eslint-rules": "^5.4.0",
     "tslint-react": "^4.0.0",
+    "typedoc": "^0.14.2",
     "typescript": "^3.5.1"
   },
   "husky": {

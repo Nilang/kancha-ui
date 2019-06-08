@@ -73,7 +73,7 @@ interface ContainerProps {
     opacity?: number;
     theme: any;
 }
-declare const _default: React.ComponentType<Pick<ContainerProps, "b" | "br" | "testID" | "disabled" | "w" | "h" | "r" | "flex" | "background" | "backgroundColor" | "flexDirection" | "alignItems" | "justifyContent" | "dividerBottom" | "dividerTop" | "marginBottom" | "marginTop" | "marginLeft" | "marginRight" | "padding" | "paddingHorizontal" | "paddingBottom" | "paddingTop" | "paddingLeft" | "paddingRight" | "debugBorder" | "borderColor" | "borderWidth" | "debugBorderColor" | "viewStyle" | "shadow" | "opacity"> & {
+declare const _default: React.ComponentType<Pick<ContainerProps, "b" | "br" | "disabled" | "testID" | "flex" | "padding" | "paddingBottom" | "w" | "h" | "r" | "background" | "backgroundColor" | "flexDirection" | "alignItems" | "justifyContent" | "dividerBottom" | "dividerTop" | "marginBottom" | "marginTop" | "marginLeft" | "marginRight" | "paddingHorizontal" | "paddingTop" | "paddingLeft" | "paddingRight" | "debugBorder" | "borderColor" | "borderWidth" | "debugBorderColor" | "viewStyle" | "shadow" | "opacity"> & {
     theme?: import("@callstack/react-theme-provider").$DeepPartial<{
         text: {
             lineHeights: {

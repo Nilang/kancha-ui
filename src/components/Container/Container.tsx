@@ -3,11 +3,6 @@ import { View, ViewStyle, StyleSheet } from 'react-native'
 import { withTheme } from '../../theming'
 import { Kancha } from '@types'
 
-/**
- * Container is the most basic building block of Kancha. It is an abstraction of View with a basic implementaion
- * of flexbox and box modelling via props. The intention is for Container to be a declarative easy to use primitive to construct
- * complex views without worrying about the mess of styles. A custom style prop may need to be added to override styles for ege cases and or temporary implementaions.
- */
 interface ContainerProps {
   /** Test ID used for e2e tests */
   testID?: string
@@ -115,6 +110,17 @@ interface ContainerProps {
   theme: any
 }
 
+/**
+ * `Container` is the most fundamental building block in Kancha and should be used anywhere you would use a `View`.
+ * In most cases the built-in React Native `View` component is used in conjunction with some some simple layout styles like flexbox casuing a mess of styles.
+ * Using a `Container` these can just be added as props for declarative layouts that are easy to read.
+ *
+ * ```tsx
+ * <Container br={4} flex={1} alignItems={'center'}>
+ *   <Text>Hey, This is a container</Text>
+ * </Container>
+ * ```
+ */
 const Container: React.FunctionComponent<ContainerProps> = props => {
   const DividerBottomStyles: ViewStyle = {
     borderBottomWidth: StyleSheet.hairlineWidth,
