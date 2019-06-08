@@ -13,7 +13,7 @@
     "target": "esnext",
     "baseUrl": ".",
     "paths": {
-      "kancha": ["./src"],
+      "@kancha/kancha": ["./src"],
       "@types": ["./src/@types"],
       "@components/*": ["./src/components/*"],
       "@theme/*": ["./src/theming/*"],
