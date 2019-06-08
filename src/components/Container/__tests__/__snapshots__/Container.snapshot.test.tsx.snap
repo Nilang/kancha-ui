@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Container renders correctly 1`] = `
+<View
+  pointerEvents="auto"
+  style={
+    Object {
+      "alignItems": undefined,
+      "backgroundColor": undefined,
+      "borderRadius": undefined,
+      "flex": undefined,
+      "flexDirection": undefined,
+      "height": undefined,
+      "justifyContent": undefined,
+      "marginBottom": undefined,
+      "marginLeft": undefined,
+      "marginRight": undefined,
+      "marginTop": undefined,
+      "padding": undefined,
+      "paddingBottom": undefined,
+      "paddingHorizontal": undefined,
+      "paddingLeft": undefined,
+      "paddingRight": undefined,
+      "paddingTop": undefined,
+      "width": undefined,
+    }
+  }
+/>
+`;

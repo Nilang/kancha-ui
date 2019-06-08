@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { Text, TextStyle } from 'react-native'
-import { withTheme } from '@theme/index'
+import { withTheme } from '../../theming'
 import { Kancha } from '@types'
 
 const TextTypes: Kancha.TextTypesStatic = {
