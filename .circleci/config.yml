@@ -64,7 +64,7 @@ jobs:
   test-ios-e2e:
     <<: *defaults
     macos:
-      xcode: '9.0'
+      xcode: '10.2.1'
     dependencies:
       pre:
 
