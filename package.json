@@ -9,6 +9,8 @@
     "start": "yarn build && node node_modules/react-native/local-cli/cli.js start",
     "xcode": "open demo/ios/KanchaSink.xcodeproj",
     "test": "jest --verbose --coverage",
+    "test:ios:release": "detox build -c ios.sim.release && detox test -c ios.sim.release --cleanup",
+    "test:ios:debug": "detox build -c ios.sim.debug && detox test -c ios.sim.debug",
     "format": "prettier",
     "docs": "typedoc --out ./docs/documentation ./src --mode file --tsconfig ./tsconfig.json --name 'Kancha Documentation' --theme minimal"
   },
@@ -108,7 +110,13 @@
         "binaryPath": "ios/build/Build/Products/Debug-iphonesimulator/KanchaSink.app",
         "build": "xcodebuild -project demo/ios/KanchaSink.xcodeproj -scheme KanchaSink -configuration Debug -sdk iphonesimulator -derivedDataPath ios/build -UseModernBuildSystem=NO",
         "type": "ios.simulator",
-        "name": "iPhone Xs"
+        "name": "iPhone 8"
+      },
+      "ios.sim.release": {
+        "binaryPath": "ios/build/Build/Products/Release-iphonesimulator/KanchaSink.app",
+        "build": "xcodebuild -project demo/ios/KanchaSink.xcodeproj -scheme KanchaSink -configuration Release -sdk iphonesimulator -derivedDataPath ios/build -UseModernBuildSystem=NO",
+        "type": "ios.simulator",
+        "name": "iPhone X"
       }
     }
   }
