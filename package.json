@@ -1,6 +1,6 @@
 {
   "name": "@kancha/kancha",
-  "version": "1.0.0",
+  "version": "0.0.0-semantic-released",
   "main": "./dist/index.js",
   "license": "MIT",
   "scripts": {
@@ -12,7 +12,8 @@
     "test:ios:release": "detox build -c ios.sim.release && detox test -c ios.sim.release --cleanup",
     "test:ios:debug": "detox build -c ios.sim.debug && detox test -c ios.sim.debug",
     "format": "prettier",
-    "docs": "typedoc --out ./docs/documentation ./src --mode file --tsconfig ./tsconfig.json --name 'Kancha Documentation' --theme minimal"
+    "docs": "typedoc --out ./docs/documentation ./src --mode file --tsconfig ./tsconfig.json --name 'Kancha Documentation' --theme minimal",
+    "semantic-release": "semantic-release"
   },
   "types": "./dist/index.d.ts",
   "dependencies": {
@@ -45,6 +46,7 @@
     "react-native-testing-library": "^1.8.0",
     "react-native-typescript-transformer": "1.2.12",
     "react-test-renderer": "16.8.3",
+    "semantic-release": "^16.0.0-beta.22",
     "ts-jest": "^24.0.2",
     "tslint": "^5.17.0",
     "tslint-config-prettier": "^1.18.0",
@@ -119,5 +121,21 @@
         "name": "iPhone X"
       }
     }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/uport-project/kancha-ui.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "release": {
+    "branches": [
+      "master",
+      {
+        "name": "beta",
+        "prerelease": true
+      }
+    ]
   }
 }
