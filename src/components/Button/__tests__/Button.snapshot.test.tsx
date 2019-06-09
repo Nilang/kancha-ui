@@ -3,7 +3,7 @@ import { render } from 'react-native-testing-library'
 
 import Button from '../Button'
 
-describe('Component: Button', () => {
+describe('Component(snapshots): Button', () => {
   it('renders a filled button correctly with all props', () => {
     const onPress = jest.fn()
     const tree = render(

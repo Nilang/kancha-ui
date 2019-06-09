@@ -3,7 +3,7 @@ import { render, fireEvent } from 'react-native-testing-library'
 
 import Button, { ButtonBlocks } from '../Button'
 
-describe('Button', () => {
+describe('Component(assert): Button', () => {
   it('should render text in a button', () => {
     const pressedButton = jest.fn()
     const { getByText } = render(
