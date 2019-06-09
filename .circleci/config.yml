@@ -99,6 +99,6 @@ workflows:
   unit-ios-e2e:
     jobs:
       - test-js
-      - test-ios:
+      - test-ios-e2e:
           requires:
             - test-js
