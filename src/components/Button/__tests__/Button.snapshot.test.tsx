@@ -10,4 +10,18 @@ describe('Container', () => {
 
     expect(tree).toMatchSnapshot()
   })
+
+  it('renders a nav button correctly', () => {
+    const onPress = jest.fn()
+    const tree = render(<Button onPress={onPress} navButton={true} />).toJSON()
+
+    expect(tree).toMatchSnapshot()
+  })
+
+  it('renders a disabled button correctly', () => {
+    const onPress = jest.fn()
+    const tree = render(<Button onPress={onPress} disabled={true} />).toJSON()
+
+    expect(tree).toMatchSnapshot()
+  })
 })

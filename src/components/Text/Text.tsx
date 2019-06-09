@@ -3,7 +3,7 @@ import { Text, TextStyle } from 'react-native'
 import { withTheme } from '../../theming'
 import { Kancha } from '@types'
 
-const TextTypes: Kancha.TextTypesStatic = {
+export const TextTypes: Kancha.TextTypesStatic = {
   H1: 'h1',
   H2: 'h2',
   H3: 'h3',

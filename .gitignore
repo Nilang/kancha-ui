@@ -1,5 +1,9 @@
-# OSX
+# App
 docs
+coverage
+dist
+
+# OSX
 #
 .DS_Store
 
