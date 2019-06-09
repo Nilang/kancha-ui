@@ -16,7 +16,7 @@ interface ContainerProps {
   /** Bottom */
   b?: string | number | undefined
 
-  /** Bottom */
+  /** Right */
   r?: string | number | undefined
 
   /** Border radius */

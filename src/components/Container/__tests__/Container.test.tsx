@@ -4,7 +4,7 @@ import { Text } from 'react-native'
 
 import Container from '../Container'
 
-describe('Container', () => {
+describe('Component(assert): Container', () => {
   const { getByText } = render(
     <Container>
       <Text>Hello World</Text>

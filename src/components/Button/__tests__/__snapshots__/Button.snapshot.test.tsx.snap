@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Component: Button renders a disabled button correctly 1`] = `
+exports[`Component(snapshots): Button renders a disabled button correctly 1`] = `
 <View
   accessible={true}
   isTVSelectable={true}
@@ -57,7 +57,7 @@ exports[`Component: Button renders a disabled button correctly 1`] = `
 </View>
 `;
 
-exports[`Component: Button renders a disabled nav button correctly 1`] = `
+exports[`Component(snapshots): Button renders a disabled nav button correctly 1`] = `
 <View
   accessible={true}
   isTVSelectable={true}
@@ -88,7 +88,7 @@ exports[`Component: Button renders a disabled nav button correctly 1`] = `
 </View>
 `;
 
-exports[`Component: Button renders a filled button correctly with all props 1`] = `
+exports[`Component(snapshots): Button renders a filled button correctly with all props 1`] = `
 <View
   accessibilityLabel="TEST_ID"
   accessible={true}
@@ -147,7 +147,7 @@ exports[`Component: Button renders a filled button correctly with all props 1`] 
 </View>
 `;
 
-exports[`Component: Button renders a nav button correctly 1`] = `
+exports[`Component(snapshots): Button renders a nav button correctly 1`] = `
 <View
   accessible={true}
   isTVSelectable={true}
@@ -177,7 +177,7 @@ exports[`Component: Button renders a nav button correctly 1`] = `
 </View>
 `;
 
-exports[`Component: Button renders an icon button correctly 1`] = `
+exports[`Component(snapshots): Button renders an icon button correctly 1`] = `
 <View
   accessible={true}
   isTVSelectable={true}
@@ -231,7 +231,7 @@ exports[`Component: Button renders an icon button correctly 1`] = `
 </View>
 `;
 
-exports[`Component: Button renders an outlined button correctly 1`] = `
+exports[`Component(snapshots): Button renders an outlined button correctly 1`] = `
 <View
   accessible={true}
   isTVSelectable={true}
@@ -289,7 +289,7 @@ exports[`Component: Button renders an outlined button correctly 1`] = `
 </View>
 `;
 
-exports[`Component: Button renders an outlined button correctly with a type 1`] = `
+exports[`Component(snapshots): Button renders an outlined button correctly with a type 1`] = `
 <View
   accessible={true}
   isTVSelectable={true}
