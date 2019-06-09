@@ -6,7 +6,7 @@
   "scripts": {
     "build": "tsc -p ./tsconfig.build.json",
     "develop": "tsc -p ./tsconfig.build.json --watch",
-    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "start": "yarn build && node node_modules/react-native/local-cli/cli.js start",
     "xcode": "open demo/ios/KanchaSink.xcodeproj",
     "test": "jest --verbose --coverage",
     "format": "prettier",
@@ -31,6 +31,7 @@
     "@types/react-native": "^0.57.60",
     "@types/react-test-renderer": "^16.8.1",
     "babel-jest": "^24.8.0",
+    "detox": "^12.11.0",
     "hoist-non-react-statics": "^3.3.0",
     "husky": "^2.3.0",
     "jest": "^24.8.0",
@@ -79,7 +80,7 @@
       "<rootDir>/demo"
     ],
     "moduleNameMapper": {
-      "kancha": "<rootDir>/src/index",
+      "@kancha/kancha": "<rootDir>/src/index",
       "@types": [
         "<rootDir>/src/@types"
       ],
@@ -99,5 +100,16 @@
     "modulePathIgnorePatterns": [
       "<rootDir>/demo"
     ]
+  },
+  "detox": {
+    "test-runner": "jest",
+    "configurations": {
+      "ios.sim.debug": {
+        "binaryPath": "ios/build/Build/Products/Debug-iphonesimulator/KanchaSink.app",
+        "build": "xcodebuild -project demo/ios/KanchaSink.xcodeproj -scheme KanchaSink -configuration Debug -sdk iphonesimulator -derivedDataPath ios/build -UseModernBuildSystem=NO",
+        "type": "ios.simulator",
+        "name": "iPhone Xs"
+      }
+    }
   }
 }
