@@ -21,8 +21,9 @@ aliases:
       - node_modules
       - ios/build
 
-  - &install-node-dependencies /
-    yarn install
+  - &install-node-dependencies
+    name: Install node dependencies
+    command: yarn install
 
 defaults: &defaults
   working_directory: ~/kancha-ui
