@@ -86,7 +86,7 @@ jobs:
       - restore_cache: *restore-cache
       - run: *install-node-dependencies
       - run:
-          name: release
+          name: Release version to npm
           command: yarn semantic-release
 
 workflows:
