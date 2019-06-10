@@ -2,9 +2,8 @@
 # #
 # # Check https://circleci.com/docs/2.0/language-javascript/ for more details
 # #
-# version: 2
 
-version: 2.1
+version: 2
 aliases:
   - &restore-cache
     keys:
@@ -22,10 +21,8 @@ aliases:
       - node_modules
       - ios/build
 
-  - &install-node-dependencies
-    name: Install npm dependencies
-    command: /
-      yarn install
+  - &install-node-dependencies /
+    yarn install
 
 defaults: &defaults
   working_directory: ~/kancha-ui
@@ -36,7 +33,6 @@ jobs:
     <<: *defaults
     macos:
       xcode: '10.2.1'
-    dependencies:
       pre:
     steps:
       - checkout
