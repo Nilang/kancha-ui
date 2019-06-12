@@ -66,7 +66,7 @@ defaults: &defaults
 
 jobs:
   test-android-e2e:
-    <<: *defaults
+    <<: *android_config
     steps:
       - checkout
       - run: *install-node-dependencies
