@@ -22,10 +22,18 @@ aliases:
       - node_modules
       - ios/build
 
+  compile_typescript: &compile_typescript
+    name: Compile TypeScript
+    command: yarn build
+
   ## Node Dependency Downloads
   install-node-dependencies: &install-node-dependencies
     name: Install node dependencies
     command: yarn install
+
+  install_detox_cli: &install_detox_cli
+    name: Install Detox CLI
+    command: npm install -g detox-cli
 
   ## Android Configurations
   android_config: &android_config
@@ -61,6 +69,9 @@ jobs:
     <<: *android_config
     steps:
       - checkout
+      - run: *install_detox_cli
+      - run: *install-node-dependencies
+      - run: *compile_typescript
       - run:
           name: Setup environment variables
           command: |
@@ -75,21 +86,19 @@ jobs:
           command: |
             HOMEBREW_NO_AUTO_UPDATE=1 brew tap homebrew/cask
             HOMEBREW_NO_AUTO_UPDATE=1 brew cask install android-sdk
-      - run: *install-node-dependencies
-      - run:
-          name: Compile TypeScript
-          command: yarn build
       - run:
           name: Install emulator dependencies
-          command: (yes | sdkmanager "platform-tools" "platforms;android-26" "extras;intel;Hardware_Accelerated_Execution_Manager" "build-tools;26.0.0" "system-images;android-26;google_apis;x86" "emulator" --verbose) || true
+          command: (yes | sdkmanager "platform-tools" "platforms;android-28" "extras;intel;Hardware_Accelerated_Execution_Manager" "build-tools;28.0.3" "system-images;android-28;google_apis;x86" "emulator" --verbose) || true
       - *restore_gradle_cache
       - *download_android_dependencies
       - *save_gradle_cache
-      - run: avdmanager create avd -n Pixel_2_API_26 -k "system-images;android-26;google_apis;x86" -g google_apis -d "Nexus 5"
+      - run: avdmanager create avd -n Pixel_2_API_28 -k "system-images;android-28;google_apis;x86" -g google_apis -d "Pixel 2"
       - run:
-          name: Run emulator in background
-          command: /usr/local/share/android-sdk/tools/emulator @Pixel_2_API_26 -skin 1080x2066 -memory 2048 -noaudio
-          background: true
+          name: Detox e2e build
+          command: detox build -c android.emu.release
+      - run:
+          name: Detox e2e test
+          command: detox test -c android.emu.release --cleanup
 
   # e2e tests with detox
   test-ios-e2e:
@@ -104,13 +113,9 @@ jobs:
             brew update
             brew tap wix/brew
             brew install --HEAD applesimutils
-      - run:
-          name: Install Detox CLI
-          command: npm install -g detox-cli
+      - run: *install_detox_cli
       - run: *install-node-dependencies
-      - run:
-          name: Compile TypeScript
-          command: yarn build
+      - run: *compile_typescript
       - run:
           name: Detox e2e build
           command: detox build -c ios.sim.release
