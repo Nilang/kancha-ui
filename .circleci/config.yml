@@ -72,12 +72,12 @@ jobs:
     steps:
       - run:
           name: Setup emulator
-          command: avdmanager create avd -n Pixel_XL_API_28 -k "system-images;android-28;google_apis;x86" -g google_apis -d "pixel_xl"
+          command: sdkmanager "system-images;android-28;default;armeabi-v7a" && echo "no" | avdmanager create avd -n TEST_API_28 -k "system-images;android-28;default;armeabi-v7a"
       - run:
           name: Launch emulator
-          command: export LD_LIBRARY_PATH=${ANDROID_HOME}/emulator/lib64:${ANDROID_HOME}/emulator/lib64/qt/lib && emulator64-arm -avd Pixel_XL_API_28 -noaudio -no-boot-anim -no-window -accel on
+          command: export LD_LIBRARY_PATH=${ANDROID_HOME}/emulator/lib64:${ANDROID_HOME}/emulator/lib64/qt/lib && emulator64-arm -avd TEST_API_28 -noaudio -no-boot-anim -no-window -accel on
           background: true
-
+      - run: avdmanager list
   # <<: *android_config
   # steps:
   #   - checkout
