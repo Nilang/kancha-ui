@@ -66,51 +66,38 @@ defaults: &defaults
 
 jobs:
   test-android-e2e:
-  # <<: *defaults
-  # docker:
-  #   - image: circleci/android:api-28-node
-  # steps:
-  #   - run:
-  #       name: Setup emulator
-  #       command: sdkmanager "system-images;android-28;default;armeabi-v7a" && echo "no" | avdmanager create avd -n TEST_API_28 -k "system-images;android-28;default;armeabi-v7a"
-  #   - run:
-  #       name: Launch emulator
-  #       command: export LD_LIBRARY_PATH=${ANDROID_HOME}/emulator/lib64:${ANDROID_HOME}/emulator/lib64/qt/lib && emulator64-arm -avd TEST_API_28 -noaudio -no-boot-anim -no-window -accel on
-  #       background: true
-  #   - run: avdmanager list
-  <<: *android_config
-  steps:
-    - checkout
-    # - run: *install_detox_cli
-    - run: *install-node-dependencies
-    - run: *compile_typescript
-    - run:
-        name: Setup environment variables
-        command: |
-          echo 'export PATH="$PATH:/usr/local/opt/node@8/bin:${HOME}/.yarn/bin:${HOME}/${CIRCLE_PROJECT_REPONAME}/node_modules/.bin:/usr/local/share/android-sdk/tools/bin"' >> $BASH_ENV
-          echo 'export ANDROID_HOME="/usr/local/share/android-sdk"' >> $BASH_ENV
-          echo 'export ANDROID_SDK_HOME="/usr/local/share/android-sdk"' >> $BASH_ENV
-          echo 'export ANDROID_SDK_ROOT="/usr/local/share/android-sdk"' >> $BASH_ENV
-          echo 'export QEMU_AUDIO_DRV=none' >> $BASH_ENV
-          echo 'export JAVA_HOME=/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jre/Contents/Home' >> $BASH_ENV
-    - run:
-        name: Install Android sdk
-        command: |
-          HOMEBREW_NO_AUTO_UPDATE=1 brew tap homebrew/cask
-          HOMEBREW_NO_AUTO_UPDATE=1 brew cask install android-sdk
-    - run:
-        name: Install emulator dependencies
-        command: (yes | sdkmanager "platform-tools" "platforms;android-28" "extras;intel;Hardware_Accelerated_Execution_Manager" "build-tools;28.0.3" "system-images;android-28;google_apis;x86" "emulator" --verbose) || true
-    # - *restore_gradle_cache
-    # - *download_android_dependencies
-    # - *save_gradle_cache
-    - run: avdmanager create avd -n Pixel_XL_API_28 -k "system-images;android-28;google_apis;x86" -g google_apis -d "pixel_xl"
-    - run:
-        name: Detox e2e build
-        command: yarn build:android:release
-    - run:
-        name: Detox e2e test
-        command: yarn test:android:release
+    <<: *defaults
+    steps:
+      - checkout
+      - run: *install-node-dependencies
+      - run: *compile_typescript
+      - run:
+          name: Setup environment variables
+          command: |
+            echo 'export PATH="$PATH:/usr/local/opt/node@8/bin:${HOME}/.yarn/bin:${HOME}/${CIRCLE_PROJECT_REPONAME}/node_modules/.bin:/usr/local/share/android-sdk/tools/bin"' >> $BASH_ENV
+            echo 'export ANDROID_HOME="/usr/local/share/android-sdk"' >> $BASH_ENV
+            echo 'export ANDROID_SDK_HOME="/usr/local/share/android-sdk"' >> $BASH_ENV
+            echo 'export ANDROID_SDK_ROOT="/usr/local/share/android-sdk"' >> $BASH_ENV
+            echo 'export QEMU_AUDIO_DRV=none' >> $BASH_ENV
+            echo 'export JAVA_HOME=/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jre/Contents/Home' >> $BASH_ENV
+      - run:
+          name: Install Android sdk
+          command: |
+            HOMEBREW_NO_AUTO_UPDATE=1 brew tap homebrew/cask
+            HOMEBREW_NO_AUTO_UPDATE=1 brew cask install android-sdk
+      - run:
+          name: Install emulator dependencies
+          command: (yes | sdkmanager "platform-tools" "platforms;android-28" "extras;intel;Hardware_Accelerated_Execution_Manager" "build-tools;28.0.3" "system-images;android-28;google_apis;x86" "emulator" --verbose) || true
+      # - *restore_gradle_cache
+      # - *download_android_dependencies
+      # - *save_gradle_cache
+      - run: avdmanager create avd -n Pixel_XL_API_28 -k "system-images;android-28;google_apis;x86" -g google_apis -d "pixel_xl"
+      - run:
+          name: Detox e2e build
+          command: yarn build:android:release
+      - run:
+          name: Detox e2e test
+          command: yarn test:android:release
 
   # e2e tests with detox
   test-ios-e2e:
