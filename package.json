@@ -11,6 +11,7 @@
     "test": "jest --verbose --coverage",
     "test:ios:release": "detox build -c ios.sim.release && detox test -c ios.sim.release --cleanup",
     "test:ios:debug": "detox build -c ios.sim.debug && detox test -c ios.sim.debug",
+    "build:android:release": "detox build -c android.emu.release",
     "test:android:release": "detox test -c android.emu.release --cleanup",
     "test:android:debug": "detox build -c android.emu.debug && detox test -c android.emu.debug --cleanup",
     "format": "prettier",
