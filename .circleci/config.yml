@@ -92,7 +92,7 @@ jobs:
       - *restore_gradle_cache
       - *download_android_dependencies
       - *save_gradle_cache
-      - run: avdmanager create avd -n Pixel_2_API_28 -k "system-images;android-28;google_apis;x86" -g google_apis -d "Pixel 2"
+      - run: avdmanager create avd -n Pixel_XL_API_28 -k "system-images;android-28;google_apis;x86" -g google_apis -d "Pixel XL"
       - run:
           name: Detox e2e build
           command: detox build -c android.emu.release
