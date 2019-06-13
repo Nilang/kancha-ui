@@ -158,7 +158,7 @@ const KanchaText: React.FC<TextProps> & { Types: Kancha.TextTypesStatic } = prop
     },
   }
   const styles: TextStyle = {
-    ...(props.type ? { ...TextThemeMap[props.type] } : {}),
+    ...(props.type ? { ...TextThemeMap[props.type] } : { ...TextThemeMap[TextThemeMap.body] }),
     ...(props.textColor ? { color: props.textColor } : {}),
     ...(props.bold ? { fontWeight: 'bold' } : {}),
     ...(props.warn ? { color: props.theme.colors.warning.text } : {}),
@@ -184,9 +184,7 @@ const KanchaText: React.FC<TextProps> & { Types: Kancha.TextTypesStatic } = prop
     </Text>
   )
 }
-KanchaText.defaultProps = {
-  type: TextTypes.Body,
-}
+
 KanchaText.Types = TextTypes
 
 export default withTheme(KanchaText)
