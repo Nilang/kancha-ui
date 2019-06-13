@@ -25,6 +25,10 @@ export const TextTypes: Kancha.TextTypesStatic = {
 
 export interface TextProps {
   /**
+   * A testID for the text element
+   */
+  testID?: string
+  /**
    * The type of text to display. This will be styled accordinly to the theme
    */
   type?: string
@@ -174,7 +178,11 @@ const KanchaText: React.FC<TextProps> & { Types: Kancha.TextTypesStatic } = prop
     ...(props.textStyle ? { ...props.textStyle } : {}),
   }
 
-  return <Text style={styles}>{props.children}</Text>
+  return (
+    <Text style={styles} testID={props.testID} accessibilityLabel={props.testID}>
+      {props.children}
+    </Text>
+  )
 }
 KanchaText.defaultProps = {
   type: TextTypes.Body,
