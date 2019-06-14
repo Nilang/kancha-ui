@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { Text, TextStyle } from 'react-native'
 import { withTheme } from '../../theming'
-import { Kancha } from '@types'
+import * as Kancha from '../../types'
 
 export const TextTypes: Kancha.TextTypesStatic = {
   H1: 'h1',

@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { View, ViewStyle, StyleSheet } from 'react-native'
 import { withTheme } from '../../theming'
-import { Kancha } from '@types'
+import * as Kancha from '../../types'
 
 interface ContainerProps {
   /** Test ID used for e2e tests */

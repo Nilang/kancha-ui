@@ -1,8 +1,7 @@
 import * as React from 'react'
 import { TouchableHighlight, TouchableOpacity, ViewStyle } from 'react-native'
 import { withTheme } from '../../theming'
-
-import { Kancha } from '@types'
+import * as Kancha from '../../types'
 import Text, { TextTypes } from '../Text/Text'
 import Container from '../Container/Container'
 
