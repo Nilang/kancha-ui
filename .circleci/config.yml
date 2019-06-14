@@ -74,10 +74,6 @@ jobs:
   # publish to npm
   publish-npm:
     <<: *defaults
-    branches:
-      only:
-        - master
-        - beta
     docker:
       - image: 'circleci/node:latest'
     steps:
@@ -99,6 +95,11 @@ workflows:
           requires:
             - test-js
       - publish-npm:
+          filters:
+            branches:
+              only:
+                - master
+                - beta
           requires:
             - test-js
             - test-ios-e2e
