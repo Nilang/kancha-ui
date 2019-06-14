@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Container, Text } from '@kancha/kancha'
+import { Container, Text } from '@kancha/kancha-ui'
 
 interface Props {}
 export default class App extends Component<Props> {

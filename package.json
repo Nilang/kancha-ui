@@ -86,22 +86,7 @@
       "<rootDir>/demo"
     ],
     "moduleNameMapper": {
-      "@kancha/kancha": "<rootDir>/src/index",
-      "@types": [
-        "<rootDir>/src/@types"
-      ],
-      "@components/*": [
-        "<rootDir>/src/components/*"
-      ],
-      "@theme/*": [
-        "<rootDir>/src/theming/*"
-      ],
-      "@constants/*": [
-        "<rootDir>/src/constants/*"
-      ],
-      "@utils/*": [
-        "<rootDir>/src/utils/*"
-      ]
+      "@kancha/kancha-ui": "<rootDir>/src/index"
     },
     "modulePathIgnorePatterns": [
       "<rootDir>/demo"

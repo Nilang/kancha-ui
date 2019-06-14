@@ -14,12 +14,7 @@
     "outDir": "./dist",
     "baseUrl": ".",
     "paths": {
-      "@kancha/kancha": ["./src"],
-      "@types": ["./src/@types"],
-      "@components/*": ["./src/components/*"],
-      "@theme/*": ["./src/theming/*"],
-      "@constants/*": ["./src/constants/*"],
-      "@utils/*": ["./src/utils/*"]
+      "@kancha/kancha-ui": ["./src"]
     }
   },
   "include": ["src/**/*"],
