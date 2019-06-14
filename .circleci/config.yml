@@ -25,6 +25,10 @@ aliases:
     name: Install node dependencies
     command: yarn install
 
+  - &compile-typescript
+    name: Compile TypeScript
+    command: yarn build
+
 defaults: &defaults
   working_directory: ~/kancha-ui
 
@@ -47,9 +51,7 @@ jobs:
           name: Install Detox CLI
           command: npm install -g detox-cli
       - run: *install-node-dependencies
-      - run:
-          name: Compile TypeScript
-          command: yarn build
+      - run: *compile-typescript
       - run:
           name: Detox e2e build
           command: detox build -c ios.sim.release
@@ -72,16 +74,13 @@ jobs:
   # publish to npm
   publish-npm:
     <<: *defaults
-    branches:
-      only:
-        - master
-        - beta
     docker:
       - image: 'circleci/node:latest'
     steps:
       - checkout
       - restore_cache: *restore-cache
       - run: *install-node-dependencies
+      - run: *compile-typescript
       - run:
           name: Release version to npm
           command: yarn semantic-release
@@ -95,8 +94,12 @@ workflows:
       - test-ios-e2e:
           requires:
             - test-js
-      # To be enabled when a beta branch is created
-      # - publish-npm:
-      #     requires:
-      #       - test-js
-      #       - test-ios-e2e
+      - publish-npm:
+          filters:
+            branches:
+              only:
+                - master
+                - beta
+          requires:
+            - test-js
+            - test-ios-e2e
