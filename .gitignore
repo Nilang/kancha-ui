@@ -1,3 +1,9 @@
+# App
+docs
+coverage
+dist
+ios
+
 # OSX
 #
 .DS_Store

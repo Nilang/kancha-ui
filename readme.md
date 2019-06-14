@@ -1,20 +1,46 @@
 # Kancha
+[![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release) [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
 Kancha is a React Native UI library for building decentralised identity wallet apps for iOS & Android.
 
----
+## Getting started
 
-### Components
+Install dependencies
+```bash
+yarn install
+```
 
-- [Container](#container)
-- [Card](#card)
+Build the library locally and run the demo app from xcode
+```bash
+yarn build && yarn xcode
+```
 
----
+In a separate terminal run metro bundler
+```bash
+yarn start
+```
 
-## Container
+Start a development watcher. This will compile typescript when you make changes and the app will reload.
 
-`Container` is the most fundamental building block in Kancha and should be used anywhere you would use a `View`. In most cases the built-in React Native `View` component is used in conjunction with some some simple layout styles like flexbox casuing a mess of styles. Using a `Container` these can just be added as props for declarative layouts that are easy to read.
+```bash
+yarn develop
+```
 
-## Card
+## Contributing
+Commitlint makes sure that all commit messages follow a pattern. Check it out here :point_right: [Commitlint](https://commitlint.js.org)
 
-A `Card` is build n top of `Container`. It inherits all of it's properties and has a border radius, border and shadow set by default.
+## Releases
+Releases are automatically handled by [Semantic Release](https://github.com/semantic-release/semantic-release) All version numbers and release notes are decided on based on the commit messages provided.
+
+There are currently 2 channels. Master is for the main library release and `beta` is for beta releases.
+
+## Testing
+Unit tests will run on every commit. Full e2e test will run on merging to `beta` or `master`
+
+## Documentation
+TypeDoc auto generates the documentation from the typescript interfaces and comments. To generate the docs run:
+
+```bash
+yarn docs
+```
+This will get published to github pages as part of the CI build

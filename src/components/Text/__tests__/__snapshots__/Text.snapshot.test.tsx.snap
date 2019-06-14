@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Container renders correctly with all props 1`] = `
+<Text
+  style={
+    Object {
+      "color": "#FFFFFF",
+      "fontSize": 32,
+      "fontWeight": "bold",
+      "opacity": 0.9,
+      "paddingBottom": 10,
+      "textAlign": "center",
+      "textTransform": "uppercase",
+    }
+  }
+>
+  Hello World
+</Text>
+`;
+
+exports[`Container renders correctly with default padding bottom 1`] = `
+<Text
+  style={
+    Object {
+      "paddingBottom": 15,
+    }
+  }
+>
+  Hello World
+</Text>
+`;
+
+exports[`Container renders correctly with no props 1`] = `
+<Text
+  style={Object {}}
+>
+  Hello World
+</Text>
+`;
