@@ -11,16 +11,6 @@ export const ButtonBlocks: Kancha.BlocksStatic = {
   Clear: 'clear',
 }
 
-export const ButtonBrandOptions: Kancha.BrandTypeStatic = {
-  Primary: 'primary',
-  Secondary: 'secondary',
-  Tertiary: 'tertiary',
-  Accent: 'accent',
-  Warning: 'warning',
-  Confirm: 'confirm',
-  Custom: 'custom',
-}
-
 interface ButtonProps {
   /**
    * The button type. This sets the theme color
@@ -101,7 +91,6 @@ interface ButtonProps {
 }
 
 const Button: React.FC<ButtonProps> & {
-  Types: Kancha.BrandTypeStatic
   Block: Kancha.BlocksStatic
 } = ({
   type,
@@ -183,7 +172,6 @@ const Button: React.FC<ButtonProps> & {
   )
 }
 
-Button.Types = ButtonBrandOptions
 Button.Block = ButtonBlocks
 
 export default withTheme(Button)

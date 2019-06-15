@@ -2,15 +2,21 @@
  * Components
  */
 
-export { default as Container } from './components/Container/Container'
-export { default as Text, TextTypes } from './components/Text/Text'
-export {
-  default as Button,
+import Container from './components/Container/Container'
+import Text, { TextTypes } from './components/Text/Text'
+import Button, { ButtonBlocks } from './components/Button/Button'
+
+import { BrandOptions } from './constants'
+
+const Constants = {
   ButtonBlocks,
-  ButtonBrandOptions as ButtonBrand,
-} from './components/Button/Button'
+  BrandOptions,
+  TextTypes,
+}
+
+export { Container, Button, Text, Constants }
 
 /**
- * Theming
+ * Theming provider by @callstack/react-theme-provider
  */
 export { ThemeProvider, withTheme, useTheme } from './theming/index'
