@@ -103,7 +103,7 @@ exports[`Component(snapshots): Button renders a filled button correctly with all
     Object {
       "alignItems": "center",
       "alignSelf": "center",
-      "backgroundColor": "#6A54D1",
+      "backgroundColor": "#0078ff",
       "borderRadius": 8,
     }
   }
@@ -245,7 +245,7 @@ exports[`Component(snapshots): Button renders an outlined button correctly 1`] =
     Object {
       "alignItems": "center",
       "backgroundColor": "#FFFFFF",
-      "borderColor": "#6A54D1",
+      "borderColor": "#0078ff",
       "borderRadius": 8,
       "borderWidth": 2,
       "maxWidth": 300,
@@ -303,7 +303,7 @@ exports[`Component(snapshots): Button renders an outlined button correctly with 
     Object {
       "alignItems": "center",
       "backgroundColor": "#FFFFFF",
-      "borderColor": "#6A54D1",
+      "borderColor": "#0078ff",
       "borderRadius": 8,
       "borderWidth": 2,
       "maxWidth": 300,
@@ -339,7 +339,7 @@ exports[`Component(snapshots): Button renders an outlined button correctly with 
     <Text
       style={
         Object {
-          "color": "#6A54D1",
+          "color": "#0078ff",
           "fontSize": 18,
         }
       }
