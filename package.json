@@ -19,7 +19,8 @@
     "semantic-release": "semantic-release"
   },
   "dependencies": {
-    "@callstack/react-theme-provider": "^3.0.0"
+    "@callstack/react-theme-provider": "^3.0.0",
+    "deepmerge": "^3.2.1"
   },
   "peerDependencies": {
     "react": "*",
