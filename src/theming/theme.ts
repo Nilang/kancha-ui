@@ -1,5 +1,5 @@
-// import { ThemeStatic } from '../types'
 import DEFAULT_COLORS from './colors'
+import merge from 'deepmerge'
 
 export const createTheme = (customColors?: { [index: string]: string }) => {
   const colors = customColors ? customColors : DEFAULT_COLORS
@@ -152,6 +152,29 @@ export const createTheme = (customColors?: { [index: string]: string }) => {
   }
 }
 
-// export const mergeTheme = (newTheme: ThemeStatic) => {
-//   console.log(newTheme)
-// }
+/**
+ *  A theme section can be merged with the default theme to create variations.
+ *  If you use colors in your section you can pass in your custom color object
+ *  ```jsx
+ *  const themeSection = (colors) => {
+ *    return {
+ *      roundedCorners: {
+ *        buttons: 5,
+ *      },
+ *      someCustomElement: {
+ *        borderColor: colors.MY_CUSTOM_COLOR
+ *      }
+ *    }
+ *  }
+ *  export default mergeTheme(themeSection, CUSTOM_COLORS)
+ * ```
+ */
+export const mergeTheme = (
+  themeSection: (colors?: any) => any,
+  customColors?: { [index: string]: string },
+) => {
+  const defaultTheme = createTheme(customColors && customColors)
+  const section = themeSection(customColors && customColors)
+
+  return merge(defaultTheme, section)
+}

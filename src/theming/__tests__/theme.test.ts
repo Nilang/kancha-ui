@@ -1,5 +1,7 @@
 import defaultColors from '../colors'
 import { createTheme } from '../theme'
+import { mergeTheme } from '..'
+import merge from 'deepmerge'
 
 describe('Theme', () => {
   const defaultTheme = {
@@ -158,5 +160,19 @@ describe('Theme', () => {
   it('should return return a default theme when passed default colors', () => {
     const theme = createTheme(defaultColors)
     expect(JSON.stringify(theme)).toEqual(JSON.stringify(defaultTheme))
+  })
+
+  it('should return return a merged theme', () => {
+    const section = () => {
+      return {
+        spacing: {
+          default: 20,
+          section: 10,
+        },
+      }
+    }
+    const theme = mergeTheme(section, defaultColors)
+
+    expect(JSON.stringify(theme)).toEqual(JSON.stringify(merge(defaultTheme, section())))
   })
 })
