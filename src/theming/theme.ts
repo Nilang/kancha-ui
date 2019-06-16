@@ -1,6 +1,17 @@
 import DEFAULT_COLORS from './colors'
 import merge from 'deepmerge'
 
+/**
+ *  Create theme allows you to pass custom colors to the theme file.
+ *  The existing color keys need to be used with with `createTheme`.
+ *
+ *  If you are using a color object with custom key names you should use mergeTheme and overwrite all
+ *  color references
+ *
+ *  ```jsx
+ *  export default createTheme(CUSTOM_COLORS)
+ * ```
+ */
 export const createTheme = (customColors?: { [index: string]: string }) => {
   const colors = customColors ? customColors : DEFAULT_COLORS
   return {
