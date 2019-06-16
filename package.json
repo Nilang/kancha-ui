@@ -10,6 +10,7 @@
     "start": "yarn build && node node_modules/react-native/local-cli/cli.js start",
     "xcode": "open demo/ios/KanchaSink.xcodeproj",
     "test": "jest --verbose --coverage",
+    "codecov": "codecov",
     "test:ios:release": "detox build -c ios.sim.release && detox test -c ios.sim.release --cleanup",
     "test:ios:debug": "detox build -c ios.sim.debug && detox test -c ios.sim.debug",
     "test:android:release": "detox test -c android.emu.release --cleanup",
@@ -19,7 +20,8 @@
     "semantic-release": "semantic-release"
   },
   "dependencies": {
-    "@callstack/react-theme-provider": "^3.0.0"
+    "@callstack/react-theme-provider": "^3.0.0",
+    "deepmerge": "^3.2.1"
   },
   "peerDependencies": {
     "react": "*",
@@ -36,6 +38,7 @@
     "@types/react-native": "^0.57.60",
     "@types/react-test-renderer": "^16.8.1",
     "babel-jest": "^24.8.0",
+    "codecov": "^3.5.0",
     "detox": "^12.11.0",
     "hoist-non-react-statics": "^3.3.0",
     "husky": "^2.3.0",

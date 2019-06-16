@@ -11,4 +11,5 @@ export default {
   CONFIRM: '#3DCF8A',
   ACCENT: '#E89835',
   TRANSPARENT: 'transparent',
+  MY_CUSTOM_COLOR: '#7f418c',
 }

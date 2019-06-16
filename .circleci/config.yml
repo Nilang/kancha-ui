@@ -70,6 +70,7 @@ jobs:
       - run: *install-node-dependencies
       - save_cache: *save-ios-cache
       - run: yarn test
+      - run: yarn codecov
 
   # publish to npm
   publish-npm:
