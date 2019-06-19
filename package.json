@@ -21,7 +21,8 @@
   },
   "dependencies": {
     "@callstack/react-theme-provider": "^3.0.0",
-    "deepmerge": "^3.2.1"
+    "deepmerge": "^3.2.1",
+    "react-native-keyboard-aware-scrollview": "^2.0.0"
   },
   "peerDependencies": {
     "react": "*",
