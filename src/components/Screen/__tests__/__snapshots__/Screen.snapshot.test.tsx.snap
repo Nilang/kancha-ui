@@ -121,6 +121,7 @@ Array [
         "bottom": 0,
       }
     }
+    contentInsetAdjustmentBehavior="never"
     getTextInputRefs={[Function]}
     onContentSizeChange={[Function]}
     onLayout={[Function]}
@@ -129,6 +130,11 @@ Array [
     scrollToBottomOnKBShow={false}
     scrollToInputAdditionalOffset={75}
     startScrolledToBottom={false}
+    style={
+      Object {
+        "backgroundColor": "#FFFFFF",
+      }
+    }
   >
     <View>
       <View
@@ -136,7 +142,7 @@ Array [
         style={
           Object {
             "alignItems": undefined,
-            "backgroundColor": undefined,
+            "backgroundColor": "#FFFFFF",
             "borderRadius": undefined,
             "flex": 1,
             "flexDirection": undefined,

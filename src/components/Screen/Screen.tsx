@@ -3,12 +3,18 @@ import { ImageSourcePropType, SafeAreaView, StatusBar, ImageBackground } from 'r
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scrollview'
 import Container from '../Container/Container'
 import { withTheme } from '../../theming'
+import * as Kancha from '../../types'
 
 interface ScreenProps {
   /**
    * Safe area for entire View. This will over-ride other safearea options
    */
   safeArea?: boolean
+
+  /**
+   * Background type
+   */
+  background?: Kancha.BrandPropOptions
 
   /**
    * Safe background color. This will over-ride other safearea background color options
@@ -85,10 +91,23 @@ const Screen: React.FC<ScreenProps> = props => {
       {!props.statusBarHidden && (
         <StatusBar barStyle={props.statusBarStyle ? props.statusBarStyle : props.theme.statusBarStyle} />
       )}
-      <Container flex={1}>{props.children}</Container>
+      <Container flex={1} background={props.background}>
+        {props.children}
+      </Container>
     </React.Fragment>
   )
-  const scrollViewContent = <KeyboardAwareScrollView>{mainContent}</KeyboardAwareScrollView>
+  const scrollViewContent = (
+    <KeyboardAwareScrollView
+      style={{
+        backgroundColor: props.background
+          ? props.theme.colors[props.background].background
+          : props.theme.colors.secondary.background,
+      }}
+      contentInsetAdjustmentBehavior={'never'}
+    >
+      {mainContent}
+    </KeyboardAwareScrollView>
+  )
   const scrollSafeViews = (
     <React.Fragment>
       {(props.safeArea || props.safeAreaTop) && (

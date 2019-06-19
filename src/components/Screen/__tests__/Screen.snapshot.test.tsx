@@ -13,6 +13,7 @@ describe('Component(snapshots): Screen', () => {
   it('should render with props', () => {
     const tree = render(
       <Screen
+        background={'primary'}
         safeArea={true}
         safeAreaBackground="white"
         scrollEnabled={true}
