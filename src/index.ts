@@ -2,6 +2,7 @@
  * Components
  */
 
+import Screen from './components/Screen/Screen'
 import Container from './components/Container/Container'
 import Text, { TextTypes } from './components/Text/Text'
 import Button, { ButtonBlocks } from './components/Button/Button'
@@ -14,7 +15,7 @@ const Constants = {
   TextTypes,
 }
 
-export { Container, Button, Text, Constants }
+export { Screen, Container, Button, Text, Constants }
 
 /**
  * Theming provider by @callstack/react-theme-provider

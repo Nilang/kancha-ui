@@ -150,6 +150,7 @@ describe('Theme', () => {
       cards: 5,
       textInputs: 8,
     },
+    statusBarStyle: 'dark-content',
   }
 
   it('should return return a default theme with no args', () => {

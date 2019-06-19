@@ -160,6 +160,7 @@ export const createTheme = (customColors?: { [index: string]: string }) => {
       cards: 5,
       textInputs: 8,
     },
+    statusBarStyle: 'dark-content',
   }
 }
 
