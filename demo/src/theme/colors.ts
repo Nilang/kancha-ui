@@ -1,3 +1,6 @@
+/**
+ * Define a color palette for your app
+ */
 export default {
   BLACK: '#000000',
   WHITE: '#FFFFFF',

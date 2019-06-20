@@ -16,5 +16,4 @@ import CUSTOM_COLORS from './colors'
  *  }
  *  export default mergeTheme(themeSection, CUSTOM_COLORS)
  */
-
 export default createTheme(CUSTOM_COLORS)
