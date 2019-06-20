@@ -15,7 +15,7 @@ const App: React.FC<Props> = () => {
       footerDivider={true}
       safeArea={true}
       footerComponent={
-        <Container paddingHorizontal={true}>
+        <Container paddingHorizontal={true} paddingBottom={true}>
           <Container flexDirection={'row'}>
             <Container flex={1}>
               <Button
