@@ -19,6 +19,7 @@ const App: React.FC<Props> = () => {
           <Container flexDirection={'row'}>
             <Container flex={1}>
               <Button
+                icon={<Icon icon={Icons.SETTINGS} color={Colors.WHITE} />}
                 block={Constants.ButtonBlocks.Clear}
                 type={Constants.BrandOptions.Warning}
                 buttonText={'Decline'}
@@ -27,6 +28,7 @@ const App: React.FC<Props> = () => {
             </Container>
             <Container flex={1}>
               <Button
+                icon={<Icon icon={Icons.SETTINGS} color={Colors.WHITE} />}
                 block={Constants.ButtonBlocks.Filled}
                 type={Constants.BrandOptions.Primary}
                 buttonText={'Decline'}
@@ -44,6 +46,7 @@ const App: React.FC<Props> = () => {
         <Container paddingTop={50} paddingHorizontal={30}>
           <Button
             testID={TEST_ID.WELCOME_BUTTON}
+            icon={<Icon icon={Icons.SETTINGS} color={Colors.WHITE} />}
             fullWidth={true}
             onPress={() => toggleVisible(!isVisible)}
             buttonText={'Tap me'}

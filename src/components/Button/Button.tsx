@@ -156,17 +156,19 @@ const Button: React.FC<ButtonProps> & {
         block === ButtonBlocks.Clear || iconButton ? 'transparent' : type && theme.colors[type].underlay
       }
     >
-      <Container flexDirection={'row'}>
-        {icon && icon}
-        <Text
-          textDecorationLine={textDecorationLine}
-          type={TextTypes.Button}
-          buttonTextColor={disabled ? 'secondary' : type}
-          block={block}
-          bold={bold}
-        >
-          {buttonText}
-        </Text>
+      <Container flexDirection={'row'} justifyContent={'center'}>
+        {icon && <Container marginRight={10}>{icon}</Container>}
+        <Container alignItems={'center'} justifyContent={'center'}>
+          <Text
+            textDecorationLine={textDecorationLine}
+            type={TextTypes.Button}
+            buttonTextColor={disabled ? 'secondary' : type}
+            block={block}
+            bold={bold}
+          >
+            {buttonText}
+          </Text>
+        </Container>
       </Container>
     </TouchableHighlight>
   )
