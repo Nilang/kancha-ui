@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-import { Container, Text, Constants, Button, Screen } from '@kancha/kancha-ui'
+import { Container, Text, Constants, Button, Screen, Icon } from '@kancha/kancha-ui'
+import { Icons, Colors } from '../theme'
 
 import TEST_ID from '../../../e2e/testIDs'
 
@@ -40,7 +41,6 @@ const App: React.FC<Props> = () => {
         <Text bold={true} textAlign={'center'} type={Constants.TextTypes.H3}>
           🚀Hey, It's Kancha Demo! 🎉
         </Text>
-
         <Container paddingTop={50} paddingHorizontal={30}>
           <Button
             testID={TEST_ID.WELCOME_BUTTON}
@@ -51,7 +51,10 @@ const App: React.FC<Props> = () => {
             block={Constants.ButtonBlocks.Filled}
           />
         </Container>
-
+        <Container justifyContent={'center'} padding={true} flexDirection={'row'}>
+          <Icon icon={Icons.SETTINGS} color={Colors.ACCENT} />
+          <Icon icon={Icons.ALARM} />
+        </Container>
         {isVisible && (
           <Container paddingHorizontal={30}>
             <Text testID={TEST_ID.VISIBLE_TEXT}>Hello, I'm visible now!</Text>
