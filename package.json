@@ -103,14 +103,14 @@
     "test-runner": "jest",
     "configurations": {
       "ios.sim.debug": {
-        "binaryPath": "ios/build/Build/Products/Debug-iphonesimulator/KanchaSink.app",
-        "build": "xcodebuild -project demo/ios/KanchaSink.xcodeproj -scheme KanchaSink -configuration Debug -sdk iphonesimulator -derivedDataPath ios/build -UseModernBuildSystem=NO",
+        "binaryPath": "demo/ios/DerivedData/KanchaSink/Build/Products/Debug-iphonesimulator/KanchaSink.app",
+        "build": "xcodebuild -project demo/ios/KanchaSink.xcodeproj -scheme KanchaSink -configuration Debug -sdk iphonesimulator -derivedDataPath demo/ios/DerivedData/KanchaSink -UseModernBuildSystem=NO",
         "type": "ios.simulator",
         "name": "iPhone 8"
       },
       "ios.sim.release": {
-        "binaryPath": "ios/build/Build/Products/Release-iphonesimulator/KanchaSink.app",
-        "build": "xcodebuild -project demo/ios/KanchaSink.xcodeproj -scheme KanchaSink -configuration Release -sdk iphonesimulator -derivedDataPath ios/build -UseModernBuildSystem=NO",
+        "binaryPath": "demo/ios/DerivedData/KanchaSink/Build/Products/Release-iphonesimulator/KanchaSink.app",
+        "build": "xcodebuild -project demo/ios/KanchaSink.xcodeproj -scheme KanchaSink -configuration Release -sdk iphonesimulator -derivedDataPath demo/ios/DerivedData/KanchaSink -UseModernBuildSystem=NO",
         "type": "ios.simulator",
         "name": "iPhone X"
       },
