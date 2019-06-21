@@ -28,6 +28,11 @@ describe('Theme', () => {
       },
     },
     colors: {
+      status: {
+        alert: '#E89835',
+        info: '#0078ff',
+        error: '#3DCF8A',
+      },
       primary: {
         brand: '#0078ff',
         text: '#333333',
