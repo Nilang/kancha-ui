@@ -38,6 +38,11 @@ export const createTheme = (customColors?: { [index: string]: string }) => {
       },
     },
     colors: {
+      status: {
+        alert: colors.ACCENT,
+        info: colors.BRAND,
+        error: colors.WARN,
+      },
       primary: {
         brand: colors.BRAND,
         text: colors.CHARCOAL,

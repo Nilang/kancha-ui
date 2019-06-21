@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Container, Text, Constants, Button, Screen, Icon } from '@kancha/kancha-ui'
+import { Container, Text, Constants, Button, Screen, Icon, LogItem } from '@kancha/kancha-ui'
 import { Icons, Colors } from '../theme'
 
 import TEST_ID from '../../../e2e/testIDs'
@@ -19,7 +19,6 @@ const App: React.FC<Props> = () => {
           <Container flexDirection={'row'}>
             <Container flex={1}>
               <Button
-                icon={<Icon icon={Icons.SETTINGS} color={Colors.WHITE} />}
                 block={Constants.ButtonBlocks.Clear}
                 type={Constants.BrandOptions.Warning}
                 buttonText={'Decline'}
@@ -63,6 +62,12 @@ const App: React.FC<Props> = () => {
             <Text testID={TEST_ID.VISIBLE_TEXT}>Hello, I'm visible now!</Text>
           </Container>
         )}
+
+        <LogItem message={'This could be an error'} category={'Demo app'} type={0} time={'Just now'} />
+        <LogItem message={'This could be an error'} category={'Demo app'} type={1} time={'Just now'} />
+        <LogItem message={'This could be an error'} category={'Demo app'} type={2} time={'Just now'} />
+        <LogItem message={'This could be an error'} category={'Demo app'} type={1} time={'Just now'} />
+        <LogItem message={'This could be an error'} category={'Demo app'} type={2} time={'Just now'} />
       </Container>
     </Screen>
   )
