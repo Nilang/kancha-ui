@@ -106,4 +106,5 @@ export interface ThemeStatic {
     cards: number
     textInputs: number
   }
+  statusBarStyle: string
 }

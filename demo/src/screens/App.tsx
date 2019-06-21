@@ -63,6 +63,8 @@ const App: React.FC<Props> = () => {
             <Text testID={TEST_ID.VISIBLE_TEXT}>Hello, I'm visible now!</Text>
           </Container>
         )}
+
+        <LogItem message={'This could be an error'} category={'Demo app'} type={0} time={'Just now'} />
       </Container>
     </Screen>
   )
