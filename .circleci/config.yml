@@ -50,9 +50,7 @@ jobs:
       - run:
           name: Install Detox CLI
           command: npm install -g detox-cli
-      - restore_cache: *restore-cache
       - run: *install-node-dependencies
-      - save_cache: *save-node-cache
       - run: *compile-typescript
       - run:
           name: Detox e2e build
