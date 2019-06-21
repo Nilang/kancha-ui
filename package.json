@@ -9,6 +9,7 @@
     "develop": "tsc -p ./tsconfig.build.json --watch",
     "start": "yarn build && node node_modules/react-native/local-cli/cli.js start",
     "xcode": "open demo/ios/KanchaSink.xcodeproj",
+    "install-android": "cd demo/android && ./gradlew installDebug",
     "test": "jest --verbose --coverage",
     "codecov": "codecov",
     "test:ios:release": "detox build -c ios.sim.release && detox test -c ios.sim.release --cleanup",
@@ -22,7 +23,8 @@
   "dependencies": {
     "@callstack/react-theme-provider": "^3.0.0",
     "deepmerge": "^3.2.1",
-    "react-native-keyboard-aware-scrollview": "^2.0.0"
+    "react-native-keyboard-aware-scrollview": "^2.0.0",
+    "react-native-vector-icons": "^6.5.0"
   },
   "peerDependencies": {
     "react": "*",
@@ -37,6 +39,7 @@
     "@types/jest": "^24.0.13",
     "@types/react": "^16.8.19",
     "@types/react-native": "^0.57.60",
+    "@types/react-native-vector-icons": "^6.4.1",
     "@types/react-test-renderer": "^16.8.1",
     "babel-jest": "^24.8.0",
     "codecov": "^3.5.0",
@@ -100,14 +103,14 @@
     "test-runner": "jest",
     "configurations": {
       "ios.sim.debug": {
-        "binaryPath": "ios/build/Build/Products/Debug-iphonesimulator/KanchaSink.app",
-        "build": "xcodebuild -project demo/ios/KanchaSink.xcodeproj -scheme KanchaSink -configuration Debug -sdk iphonesimulator -derivedDataPath ios/build -UseModernBuildSystem=NO",
+        "binaryPath": "demo/ios/DerivedData/KanchaSink/Build/Products/Debug-iphonesimulator/KanchaSink.app",
+        "build": "xcodebuild -project demo/ios/KanchaSink.xcodeproj -scheme KanchaSink -configuration Debug -sdk iphonesimulator -derivedDataPath demo/ios/DerivedData/KanchaSink -UseModernBuildSystem=NO",
         "type": "ios.simulator",
         "name": "iPhone 8"
       },
       "ios.sim.release": {
-        "binaryPath": "ios/build/Build/Products/Release-iphonesimulator/KanchaSink.app",
-        "build": "xcodebuild -project demo/ios/KanchaSink.xcodeproj -scheme KanchaSink -configuration Release -sdk iphonesimulator -derivedDataPath ios/build -UseModernBuildSystem=NO",
+        "binaryPath": "demo/ios/DerivedData/KanchaSink/Build/Products/Release-iphonesimulator/KanchaSink.app",
+        "build": "xcodebuild -project demo/ios/KanchaSink.xcodeproj -scheme KanchaSink -configuration Release -sdk iphonesimulator -derivedDataPath demo/ios/DerivedData/KanchaSink -UseModernBuildSystem=NO",
         "type": "ios.simulator",
         "name": "iPhone X"
       },

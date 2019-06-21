@@ -14,7 +14,8 @@
     "outDir": "./dist",
     "baseUrl": ".",
     "paths": {
-      "@kancha/kancha-ui": ["./src"]
+      "@kancha/kancha-ui": ["./src"],
+      "*": ["node_modules/@types/*", "*"]
     }
   },
   "include": ["src/**/*"],

@@ -30,7 +30,7 @@ exports[`Component(snapshots): Button renders a disabled button correctly 1`] = 
         "flex": undefined,
         "flexDirection": "row",
         "height": undefined,
-        "justifyContent": undefined,
+        "justifyContent": "center",
         "marginBottom": undefined,
         "marginLeft": undefined,
         "marginRight": undefined,
@@ -45,14 +45,40 @@ exports[`Component(snapshots): Button renders a disabled button correctly 1`] = 
       }
     }
   >
-    <Text
+    <View
+      pointerEvents="auto"
       style={
         Object {
-          "color": "#FFFFFF",
-          "fontSize": 18,
+          "alignItems": "center",
+          "backgroundColor": undefined,
+          "borderRadius": undefined,
+          "flex": undefined,
+          "flexDirection": undefined,
+          "height": undefined,
+          "justifyContent": "center",
+          "marginBottom": undefined,
+          "marginLeft": undefined,
+          "marginRight": undefined,
+          "marginTop": undefined,
+          "padding": undefined,
+          "paddingBottom": undefined,
+          "paddingHorizontal": undefined,
+          "paddingLeft": undefined,
+          "paddingRight": undefined,
+          "paddingTop": undefined,
+          "width": undefined,
         }
       }
-    />
+    >
+      <Text
+        style={
+          Object {
+            "color": "#FFFFFF",
+            "fontSize": 18,
+          }
+        }
+      />
+    </View>
   </View>
 </View>
 `;
@@ -119,7 +145,7 @@ exports[`Component(snapshots): Button renders a filled button correctly with all
         "flex": undefined,
         "flexDirection": "row",
         "height": undefined,
-        "justifyContent": undefined,
+        "justifyContent": "center",
         "marginBottom": undefined,
         "marginLeft": undefined,
         "marginRight": undefined,
@@ -134,15 +160,66 @@ exports[`Component(snapshots): Button renders a filled button correctly with all
       }
     }
   >
-    <Text
+    <View
+      pointerEvents="auto"
       style={
         Object {
-          "color": "#FFFFFF",
-          "fontSize": 18,
-          "fontWeight": "bold",
+          "alignItems": undefined,
+          "backgroundColor": undefined,
+          "borderRadius": undefined,
+          "flex": undefined,
+          "flexDirection": undefined,
+          "height": undefined,
+          "justifyContent": undefined,
+          "marginBottom": undefined,
+          "marginLeft": undefined,
+          "marginRight": 10,
+          "marginTop": undefined,
+          "padding": undefined,
+          "paddingBottom": undefined,
+          "paddingHorizontal": undefined,
+          "paddingLeft": undefined,
+          "paddingRight": undefined,
+          "paddingTop": undefined,
+          "width": undefined,
         }
       }
     />
+    <View
+      pointerEvents="auto"
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": undefined,
+          "borderRadius": undefined,
+          "flex": undefined,
+          "flexDirection": undefined,
+          "height": undefined,
+          "justifyContent": "center",
+          "marginBottom": undefined,
+          "marginLeft": undefined,
+          "marginRight": undefined,
+          "marginTop": undefined,
+          "padding": undefined,
+          "paddingBottom": undefined,
+          "paddingHorizontal": undefined,
+          "paddingLeft": undefined,
+          "paddingRight": undefined,
+          "paddingTop": undefined,
+          "width": undefined,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "#FFFFFF",
+            "fontSize": 18,
+            "fontWeight": "bold",
+          }
+        }
+      />
+    </View>
   </View>
 </View>
 `;
@@ -205,7 +282,7 @@ exports[`Component(snapshots): Button renders an icon button correctly 1`] = `
         "flex": undefined,
         "flexDirection": "row",
         "height": undefined,
-        "justifyContent": undefined,
+        "justifyContent": "center",
         "marginBottom": undefined,
         "marginLeft": undefined,
         "marginRight": undefined,
@@ -220,13 +297,64 @@ exports[`Component(snapshots): Button renders an icon button correctly 1`] = `
       }
     }
   >
-    <Text
+    <View
+      pointerEvents="auto"
       style={
         Object {
-          "fontSize": 18,
+          "alignItems": undefined,
+          "backgroundColor": undefined,
+          "borderRadius": undefined,
+          "flex": undefined,
+          "flexDirection": undefined,
+          "height": undefined,
+          "justifyContent": undefined,
+          "marginBottom": undefined,
+          "marginLeft": undefined,
+          "marginRight": 10,
+          "marginTop": undefined,
+          "padding": undefined,
+          "paddingBottom": undefined,
+          "paddingHorizontal": undefined,
+          "paddingLeft": undefined,
+          "paddingRight": undefined,
+          "paddingTop": undefined,
+          "width": undefined,
         }
       }
     />
+    <View
+      pointerEvents="auto"
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": undefined,
+          "borderRadius": undefined,
+          "flex": undefined,
+          "flexDirection": undefined,
+          "height": undefined,
+          "justifyContent": "center",
+          "marginBottom": undefined,
+          "marginLeft": undefined,
+          "marginRight": undefined,
+          "marginTop": undefined,
+          "padding": undefined,
+          "paddingBottom": undefined,
+          "paddingHorizontal": undefined,
+          "paddingLeft": undefined,
+          "paddingRight": undefined,
+          "paddingTop": undefined,
+          "width": undefined,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "fontSize": 18,
+          }
+        }
+      />
+    </View>
   </View>
 </View>
 `;
@@ -263,7 +391,7 @@ exports[`Component(snapshots): Button renders an outlined button correctly 1`] =
         "flex": undefined,
         "flexDirection": "row",
         "height": undefined,
-        "justifyContent": undefined,
+        "justifyContent": "center",
         "marginBottom": undefined,
         "marginLeft": undefined,
         "marginRight": undefined,
@@ -278,13 +406,64 @@ exports[`Component(snapshots): Button renders an outlined button correctly 1`] =
       }
     }
   >
-    <Text
+    <View
+      pointerEvents="auto"
       style={
         Object {
-          "fontSize": 18,
+          "alignItems": undefined,
+          "backgroundColor": undefined,
+          "borderRadius": undefined,
+          "flex": undefined,
+          "flexDirection": undefined,
+          "height": undefined,
+          "justifyContent": undefined,
+          "marginBottom": undefined,
+          "marginLeft": undefined,
+          "marginRight": 10,
+          "marginTop": undefined,
+          "padding": undefined,
+          "paddingBottom": undefined,
+          "paddingHorizontal": undefined,
+          "paddingLeft": undefined,
+          "paddingRight": undefined,
+          "paddingTop": undefined,
+          "width": undefined,
         }
       }
     />
+    <View
+      pointerEvents="auto"
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": undefined,
+          "borderRadius": undefined,
+          "flex": undefined,
+          "flexDirection": undefined,
+          "height": undefined,
+          "justifyContent": "center",
+          "marginBottom": undefined,
+          "marginLeft": undefined,
+          "marginRight": undefined,
+          "marginTop": undefined,
+          "padding": undefined,
+          "paddingBottom": undefined,
+          "paddingHorizontal": undefined,
+          "paddingLeft": undefined,
+          "paddingRight": undefined,
+          "paddingTop": undefined,
+          "width": undefined,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "fontSize": 18,
+          }
+        }
+      />
+    </View>
   </View>
 </View>
 `;
@@ -321,7 +500,7 @@ exports[`Component(snapshots): Button renders an outlined button correctly with 
         "flex": undefined,
         "flexDirection": "row",
         "height": undefined,
-        "justifyContent": undefined,
+        "justifyContent": "center",
         "marginBottom": undefined,
         "marginLeft": undefined,
         "marginRight": undefined,
@@ -336,14 +515,65 @@ exports[`Component(snapshots): Button renders an outlined button correctly with 
       }
     }
   >
-    <Text
+    <View
+      pointerEvents="auto"
       style={
         Object {
-          "color": "#0078ff",
-          "fontSize": 18,
+          "alignItems": undefined,
+          "backgroundColor": undefined,
+          "borderRadius": undefined,
+          "flex": undefined,
+          "flexDirection": undefined,
+          "height": undefined,
+          "justifyContent": undefined,
+          "marginBottom": undefined,
+          "marginLeft": undefined,
+          "marginRight": 10,
+          "marginTop": undefined,
+          "padding": undefined,
+          "paddingBottom": undefined,
+          "paddingHorizontal": undefined,
+          "paddingLeft": undefined,
+          "paddingRight": undefined,
+          "paddingTop": undefined,
+          "width": undefined,
         }
       }
     />
+    <View
+      pointerEvents="auto"
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": undefined,
+          "borderRadius": undefined,
+          "flex": undefined,
+          "flexDirection": undefined,
+          "height": undefined,
+          "justifyContent": "center",
+          "marginBottom": undefined,
+          "marginLeft": undefined,
+          "marginRight": undefined,
+          "marginTop": undefined,
+          "padding": undefined,
+          "paddingBottom": undefined,
+          "paddingHorizontal": undefined,
+          "paddingLeft": undefined,
+          "paddingRight": undefined,
+          "paddingTop": undefined,
+          "width": undefined,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "#0078ff",
+            "fontSize": 18,
+          }
+        }
+      />
+    </View>
   </View>
 </View>
 `;
