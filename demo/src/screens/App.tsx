@@ -1,5 +1,15 @@
 import React, { useState } from 'react'
-import { Container, Text, Constants, Button, Screen, Icon, LogItem, ListItem } from '@kancha/kancha-ui'
+import {
+  Container,
+  Text,
+  Constants,
+  Button,
+  Screen,
+  Icon,
+  LogItem,
+  ListItem,
+  Section,
+} from '@kancha/kancha-ui'
 import { Icons, Colors } from '../theme'
 
 import TEST_ID from '../../../e2e/testIDs'
@@ -63,9 +73,20 @@ const App: React.FC<Props> = () => {
           </Container>
         )}
 
-        <ListItem selected={true}>Some basic list item</ListItem>
-        <ListItem editMode={true}>Some basic list item</ListItem>
-        <ListItem editMode={true}>Some basic list item</ListItem>
+        <Section title={'List items'}>
+          <ListItem selected={true}>Some basic list item</ListItem>
+          <ListItem editMode={true}>Some basic list item</ListItem>
+          <ListItem editMode={true} last={true}>
+            Some basic list item
+          </ListItem>
+        </Section>
+        <Section title={'List items'}>
+          <ListItem selected={true}>Some basic list item</ListItem>
+          <ListItem editMode={true}>Some basic list item</ListItem>
+          <ListItem editMode={true} last={true}>
+            Some basic list item
+          </ListItem>
+        </Section>
 
         <LogItem message={'This could be an error'} category={'Demo app'} type={0} time={'Just now'} />
         <LogItem message={'This could be an error'} category={'Demo app'} type={1} time={'Just now'} />
