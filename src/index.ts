@@ -8,6 +8,7 @@ import Text, { TextTypes } from './components/Text/Text'
 import Button, { ButtonBlocks } from './components/Button/Button'
 import Icon from './components/Icon/Icon'
 import LogItem from './components/LogItem/LogItem'
+import ListItem from './components/ListItem/ListItem'
 
 import { BrandOptions } from './constants'
 
@@ -17,7 +18,7 @@ const Constants = {
   TextTypes,
 }
 
-export { Screen, Container, Button, Text, Icon, LogItem, Constants }
+export { Screen, Container, Button, Text, Icon, LogItem, ListItem, Constants }
 
 /**
  * Theming provider by @callstack/react-theme-provider
