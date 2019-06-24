@@ -12,14 +12,15 @@ const Components: React.FC<NavigationScreen> = props => {
         </Text>
       </Container>
       <Section title={'Components'}>
-        <ListItem onPress={() => props.navigation.push(Screens.Dummy)}>Screen</ListItem>
-        <ListItem>Container</ListItem>
-        <ListItem>List Item</ListItem>
-        <ListItem>Log Item</ListItem>
-        <ListItem>Button</ListItem>
-        <ListItem>Icon</ListItem>
-        <ListItem>Text</ListItem>
-        <ListItem last={true}>Buttons</ListItem>
+        <ListItem onPress={() => props.navigation.push(Screens.Screen)}>Screen</ListItem>
+        <ListItem onPress={() => props.navigation.push(Screens.Container)}>Container</ListItem>
+        <ListItem onPress={() => props.navigation.push(Screens.Text)}>Text</ListItem>
+        <ListItem onPress={() => props.navigation.push(Screens.Dummy)}>Button</ListItem>
+        <ListItem onPress={() => props.navigation.push(Screens.Dummy)}>Icon</ListItem>
+        <ListItem onPress={() => props.navigation.push(Screens.Dummy)}>List Item</ListItem>
+        <ListItem onPress={() => props.navigation.push(Screens.Dummy)} last={true}>
+          Log Item
+        </ListItem>
       </Section>
     </Screen>
   )

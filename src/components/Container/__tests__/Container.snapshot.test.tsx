@@ -19,6 +19,7 @@ describe('Container', () => {
         justifyContent={'center'}
         dividerBottom={true}
         dividerTop={true}
+        margin={true}
         marginBottom={true}
         marginLeft={true}
         marginRight={true}
@@ -60,6 +61,7 @@ describe('Container', () => {
   it('renders correctly with value props', () => {
     const tree = render(
       <Container
+        margin={10}
         marginBottom={10}
         marginRight={10}
         marginTop={10}
