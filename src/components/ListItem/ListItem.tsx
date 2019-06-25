@@ -93,11 +93,14 @@ const ListItem: React.FunctionComponent<ListItemProps> = props => {
     backgroundColor: props.theme.colors.primary.background,
   }
 
-  const onPressAction = props.onPress
-    ? props.onPress
-    : props.externalLink
-    ? () => props.externalLink && Linking.openURL(props.externalLink)
-    : undefined
+  const onPressHandler = () => {
+    const { onPress, externalLink } = props
+    if (externalLink) {
+      Linking.openURL(externalLink)
+    } else if (onPress) {
+      onPress()
+    }
+  }
 
   const actionIcon =
     props.onPress && !props.hideForwardArrow
@@ -109,7 +112,7 @@ const ListItem: React.FunctionComponent<ListItemProps> = props => {
   return (
     <TouchableHighlight
       style={styles}
-      onPress={onPressAction}
+      onPress={onPressHandler}
       underlayColor={props.theme.colors.primary.underlay}
       disabled={props.disabled}
       testID={props.testID}
