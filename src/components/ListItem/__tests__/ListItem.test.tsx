@@ -23,4 +23,12 @@ describe('Component(assert): ListItem', () => {
     fireEvent.press(getByText(/Open URL Link/i))
     expect(mockOpenURL).toHaveBeenCalledWith('https://uport.me')
   })
+
+  it('should not fire event if onPress or link not provided', () => {
+    const { getByText } = render(<ListItem>Standard List Item</ListItem>)
+
+    mockOpenURL.mockReset()
+    fireEvent.press(getByText(/Standard List Item/i))
+    expect(mockOpenURL).not.toHaveBeenCalled()
+  })
 })
