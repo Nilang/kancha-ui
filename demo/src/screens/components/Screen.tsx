@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Container, Screen, Button, Constants } from '@kancha/kancha-ui'
+import { Container, Screen, Button, Constants, Text } from '@kancha/kancha-ui'
 import { NavigationScreen } from '../../navigators'
 
 import TEST_ID from '../../../../e2e/testIDs'
@@ -25,7 +25,7 @@ const Component: React.FC<NavigationScreen> = () => {
               <Button
                 block={Constants.ButtonBlocks.Filled}
                 type={Constants.BrandOptions.Primary}
-                buttonText={'Decline'}
+                buttonText={'Accept'}
                 onPress={() => ''}
               />
             </Container>
@@ -33,8 +33,10 @@ const Component: React.FC<NavigationScreen> = () => {
         </Container>
       }
     >
-      <Container testID={TEST_ID.VISIBLE_TEXT}>
-        <Container h={150} background={Constants.BrandOptions.Primary} marginBottom={true} />
+      <Container testID={TEST_ID.WELCOME}>
+        <Container h={150} background={Constants.BrandOptions.Primary} marginBottom={true}>
+          <Text>Welcome to Screen</Text>
+        </Container>
         <Container h={150} background={Constants.BrandOptions.Primary} marginBottom={true} />
         <Container h={150} background={Constants.BrandOptions.Primary} marginBottom={true} />
         <Container h={150} background={Constants.BrandOptions.Primary} marginBottom={true} />
