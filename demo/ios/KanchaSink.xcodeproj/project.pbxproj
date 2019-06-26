@@ -47,6 +47,7 @@
 		96B770A622BC56F9006A3188 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 96B7709722BC56F9006A3188 /* SimpleLineIcons.ttf */; };
 		96B770A722BC56F9006A3188 /* Feather.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 96B7709822BC56F9006A3188 /* Feather.ttf */; };
 		96B770A822BC56F9006A3188 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 96B7709922BC56F9006A3188 /* Zocial.ttf */; };
+		96C800FE22C0D8A300333084 /* libRNGestureHandler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 96C800F922C0D89400333084 /* libRNGestureHandler.a */; };
 		ED297163215061F000B7C4FE /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED297162215061F000B7C4FE /* JavaScriptCore.framework */; };
 		ED2971652150620600B7C4FE /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED2971642150620600B7C4FE /* JavaScriptCore.framework */; };
 /* End PBXBuildFile section */
@@ -339,6 +340,20 @@
 			remoteGlobalIDString = A39873CE1EA65EE60051E01A;
 			remoteInfo = "RNVectorIcons-tvOS";
 		};
+		96C800F822C0D89400333084 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 96C800CE22C0D89400333084 /* RNGestureHandler.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 134814201AA4EA6300B7C361;
+			remoteInfo = RNGestureHandler;
+		};
+		96C800FA22C0D89400333084 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 96C800CE22C0D89400333084 /* RNGestureHandler.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B5C32A36220C603B000FFB8D;
+			remoteInfo = "RNGestureHandler-tvOS";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -384,6 +399,7 @@
 		96B7709722BC56F9006A3188 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = SimpleLineIcons.ttf; path = "../../../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; };
 		96B7709822BC56F9006A3188 /* Feather.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Feather.ttf; path = "../../../node_modules/react-native-vector-icons/Fonts/Feather.ttf"; sourceTree = "<group>"; };
 		96B7709922BC56F9006A3188 /* Zocial.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Zocial.ttf; path = "../../../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
+		96C800CE22C0D89400333084 /* RNGestureHandler.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNGestureHandler.xcodeproj; path = "../../node_modules/react-native-gesture-handler/ios/RNGestureHandler.xcodeproj"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
@@ -400,6 +416,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96C800FE22C0D8A300333084 /* libRNGestureHandler.a in Frameworks */,
 				ED297163215061F000B7C4FE /* JavaScriptCore.framework in Frameworks */,
 				96B7708A22BC3EE1006A3188 /* libRNVectorIcons.a in Frameworks */,
 				969FC62B22AAC09E00A99C63 /* libcxxreact.a in Frameworks */,
@@ -482,6 +499,7 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				96C800CE22C0D89400333084 /* RNGestureHandler.xcodeproj */,
 				96B7708122BC3EC9006A3188 /* RNVectorIcons.xcodeproj */,
 				969FC61B22AAC05800A99C63 /* RCTWebSocket.xcodeproj */,
 				969FC61522AAC04800A99C63 /* RCTVibration.xcodeproj */,
@@ -677,6 +695,15 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		96C800CF22C0D89400333084 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				96C800F922C0D89400333084 /* libRNGestureHandler.a */,
+				96C800FB22C0D89400333084 /* libRNGestureHandler-tvOS.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -836,6 +863,10 @@
 				{
 					ProductGroup = 969FC5A122AABF8000A99C63 /* Products */;
 					ProjectRef = 969FC5A022AABF8000A99C63 /* React.xcodeproj */;
+				},
+				{
+					ProductGroup = 96C800CF22C0D89400333084 /* Products */;
+					ProjectRef = 96C800CE22C0D89400333084 /* RNGestureHandler.xcodeproj */;
 				},
 				{
 					ProductGroup = 96B7708222BC3EC9006A3188 /* Products */;
@@ -1124,6 +1155,20 @@
 			fileType = archive.ar;
 			path = "libRNVectorIcons-tvOS.a";
 			remoteRef = 96B7708822BC3EC9006A3188 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		96C800F922C0D89400333084 /* libRNGestureHandler.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRNGestureHandler.a;
+			remoteRef = 96C800F822C0D89400333084 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		96C800FB22C0D89400333084 /* libRNGestureHandler-tvOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libRNGestureHandler-tvOS.a";
+			remoteRef = 96C800FA22C0D89400333084 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */

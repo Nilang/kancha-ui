@@ -106,5 +106,11 @@ export interface ThemeStatic {
     cards: number
     textInputs: number
   }
+  icons: {
+    [index: string]: {
+      name: string
+      iconFamily: string
+    }
+  }
   statusBarStyle: string
 }

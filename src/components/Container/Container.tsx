@@ -54,6 +54,9 @@ interface ContainerProps {
   dividerTop?: boolean
 
   /** Set the bottom margin */
+  margin?: number | boolean | undefined
+
+  /** Set the bottom margin */
   marginBottom?: number | boolean | undefined
 
   /** Set the top margin */
@@ -168,6 +171,7 @@ const Container: React.FunctionComponent<ContainerProps> = props => {
       : {}),
 
     /** Margins */
+    margin: typeof props.margin === 'boolean' ? props.theme.spacing.default : props.margin,
     marginBottom: typeof props.marginBottom === 'boolean' ? props.theme.spacing.default : props.marginBottom,
     marginTop: typeof props.marginTop === 'boolean' ? props.theme.spacing.default : props.marginTop,
     marginLeft: typeof props.marginLeft === 'boolean' ? props.theme.spacing.default : props.marginLeft,

@@ -165,6 +165,24 @@ export const createTheme = (customColors?: { [index: string]: string }) => {
       cards: 5,
       textInputs: 8,
     },
+    icons: {
+      EDIT: {
+        name: 'ios-create',
+        iconFamily: 'Ionicons',
+      },
+      CHECKED: {
+        name: 'ios-checkmark-circle',
+        iconFamily: 'Ionicons',
+      },
+      FORWARD: {
+        name: 'ios-arrow-forward',
+        iconFamily: 'Ionicons',
+      },
+      LINK: {
+        name: 'ios-open',
+        iconFamily: 'Ionicons',
+      },
+    },
     statusBarStyle: 'dark-content',
   }
 }
