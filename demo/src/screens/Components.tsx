@@ -17,7 +17,7 @@ const Components: React.FC<NavigationScreen> = props => {
         <ListItem onPress={() => props.navigation.push(Screens.Text)}>Text</ListItem>
         <ListItem onPress={() => props.navigation.push(Screens.Dummy)}>Button</ListItem>
         <ListItem onPress={() => props.navigation.push(Screens.Dummy)}>Icon</ListItem>
-        <ListItem onPress={() => props.navigation.push(Screens.Dummy)}>List Item</ListItem>
+        <ListItem onPress={() => props.navigation.push(Screens.ListItem)}>List Item</ListItem>
         <ListItem onPress={() => props.navigation.push(Screens.Dummy)} last={true}>
           Log Item
         </ListItem>
