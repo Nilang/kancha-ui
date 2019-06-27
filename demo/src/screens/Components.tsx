@@ -13,6 +13,7 @@ const Components: React.FC<NavigationScreen> = props => {
       </Container>
       <Section title={'Components'}>
         <ListItem onPress={() => props.navigation.push(Screens.Screen)}>Screen</ListItem>
+        <ListItem onPress={() => props.navigation.push(Screens.Scanner)}>Scanner</ListItem>
         <ListItem onPress={() => props.navigation.push(Screens.Container)}>Container</ListItem>
         <ListItem onPress={() => props.navigation.push(Screens.Text)}>Text</ListItem>
         <ListItem onPress={() => props.navigation.push(Screens.Dummy)}>Button</ListItem>

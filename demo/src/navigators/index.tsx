@@ -16,6 +16,7 @@ import Container from '../screens/components/Container'
 import Icon from '../screens/components/Icon'
 import LogItem from '../screens/components/LogItem'
 import ListItem from '../screens/components/ListItem'
+import Scanner from '../screens/components/Scanner'
 
 export interface NavigationScreen {
   navigation: NavigationScreenProp<NavigationState, NavigationParams>
@@ -30,6 +31,7 @@ export const Screens = {
   Icon: 'Icon',
   LogItem: 'LogItem',
   ListItem: 'ListItem',
+  Scanner: 'Scanner',
   Dummy: 'Dummy',
 }
 
@@ -48,7 +50,7 @@ const AppNavigator = createStackNavigator(
     [Screens.LogItem]: LogItem,
     [Screens.Icon]: Icon,
     [Screens.Container]: Container,
-    [Screens.Dummy]: App,
+    [Screens.Scanner]: Scanner,
   },
   {
     initialRouteName: Screens.Home,

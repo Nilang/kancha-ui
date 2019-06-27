@@ -48,6 +48,7 @@
 		96B770A722BC56F9006A3188 /* Feather.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 96B7709822BC56F9006A3188 /* Feather.ttf */; };
 		96B770A822BC56F9006A3188 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 96B7709922BC56F9006A3188 /* Zocial.ttf */; };
 		96C800FE22C0D8A300333084 /* libRNGestureHandler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 96C800F922C0D89400333084 /* libRNGestureHandler.a */; };
+		96E5154522C4F343001C7709 /* libRNCamera.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 96E5154022C4F33B001C7709 /* libRNCamera.a */; };
 		ED297163215061F000B7C4FE /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED297162215061F000B7C4FE /* JavaScriptCore.framework */; };
 		ED2971652150620600B7C4FE /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED2971642150620600B7C4FE /* JavaScriptCore.framework */; };
 /* End PBXBuildFile section */
@@ -354,6 +355,13 @@
 			remoteGlobalIDString = B5C32A36220C603B000FFB8D;
 			remoteInfo = "RNGestureHandler-tvOS";
 		};
+		96E5153F22C4F33B001C7709 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 96E5151622C4F33B001C7709 /* RNCamera.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4107012F1ACB723B00C6AA39;
+			remoteInfo = RNCamera;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -400,6 +408,7 @@
 		96B7709822BC56F9006A3188 /* Feather.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Feather.ttf; path = "../../../node_modules/react-native-vector-icons/Fonts/Feather.ttf"; sourceTree = "<group>"; };
 		96B7709922BC56F9006A3188 /* Zocial.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Zocial.ttf; path = "../../../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
 		96C800CE22C0D89400333084 /* RNGestureHandler.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNGestureHandler.xcodeproj; path = "../../node_modules/react-native-gesture-handler/ios/RNGestureHandler.xcodeproj"; sourceTree = "<group>"; };
+		96E5151622C4F33B001C7709 /* RNCamera.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNCamera.xcodeproj; path = "../../node_modules/react-native-camera/ios/RNCamera.xcodeproj"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
@@ -416,6 +425,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96E5154522C4F343001C7709 /* libRNCamera.a in Frameworks */,
 				96C800FE22C0D8A300333084 /* libRNGestureHandler.a in Frameworks */,
 				ED297163215061F000B7C4FE /* JavaScriptCore.framework in Frameworks */,
 				96B7708A22BC3EE1006A3188 /* libRNVectorIcons.a in Frameworks */,
@@ -499,6 +509,7 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				96E5151622C4F33B001C7709 /* RNCamera.xcodeproj */,
 				96C800CE22C0D89400333084 /* RNGestureHandler.xcodeproj */,
 				96B7708122BC3EC9006A3188 /* RNVectorIcons.xcodeproj */,
 				969FC61B22AAC05800A99C63 /* RCTWebSocket.xcodeproj */,
@@ -704,6 +715,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		96E5151722C4F33B001C7709 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				96E5154022C4F33B001C7709 /* libRNCamera.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -863,6 +882,10 @@
 				{
 					ProductGroup = 969FC5A122AABF8000A99C63 /* Products */;
 					ProjectRef = 969FC5A022AABF8000A99C63 /* React.xcodeproj */;
+				},
+				{
+					ProductGroup = 96E5151722C4F33B001C7709 /* Products */;
+					ProjectRef = 96E5151622C4F33B001C7709 /* RNCamera.xcodeproj */;
 				},
 				{
 					ProductGroup = 96C800CF22C0D89400333084 /* Products */;
@@ -1169,6 +1192,13 @@
 			fileType = archive.ar;
 			path = "libRNGestureHandler-tvOS.a";
 			remoteRef = 96C800FA22C0D89400333084 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		96E5154022C4F33B001C7709 /* libRNCamera.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRNCamera.a;
+			remoteRef = 96E5153F22C4F33B001C7709 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
