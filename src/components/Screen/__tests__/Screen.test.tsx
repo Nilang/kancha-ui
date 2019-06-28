@@ -39,4 +39,15 @@ describe('Component(assert): Screen', () => {
     fireEvent.press(getByText('Decline'))
     expect(decline).toHaveBeenCalled()
   })
+
+  it('should render a button(fab) and fire a function when tapped', () => {
+    const onPressFab = jest.fn()
+    const { getByTestId } = render(
+      <Screen fabButton={<Button testID={'fab_button_test'} onPress={onPressFab} />} />,
+    )
+
+    fireEvent.press(getByTestId('fab_button_test'))
+    expect(onPressFab).toHaveBeenCalled()
+    expect(onPressFab).toHaveBeenCalledTimes(1)
+  })
 })
