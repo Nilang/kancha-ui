@@ -10,6 +10,7 @@ import Icon from './components/Icon/Icon'
 import LogItem from './components/LogItem/LogItem'
 import ListItem from './components/ListItem/ListItem'
 import Section from './components/Section/Section'
+import FabButton from './components/FabButton/FabButton'
 
 import { BrandOptions } from './constants'
 
@@ -19,7 +20,7 @@ const Constants = {
   TextTypes,
 }
 
-export { Screen, Container, Button, Text, Icon, LogItem, ListItem, Section, Constants }
+export { Screen, Container, Button, Text, Icon, LogItem, ListItem, Section, FabButton, Constants }
 
 /**
  * Theming provider by @callstack/react-theme-provider

@@ -6,8 +6,6 @@ import {
   NavigationState,
 } from 'react-navigation'
 
-import App from '../screens/App'
-
 import Components from '../screens/Components'
 import Screen from '../screens/components/Screen'
 import Button from '../screens/components/Button'
@@ -35,26 +33,39 @@ export const Screens = {
   Dummy: 'Dummy',
 }
 
-const AppNavigator = createStackNavigator(
-  {
-    [Screens.Home]: {
-      screen: Components,
-      navigationOptions: {
-        title: 'Components',
-      },
+const MainNavigator = createStackNavigator({
+  [Screens.Home]: {
+    screen: Components,
+    navigationOptions: {
+      title: 'Components',
     },
-    [Screens.Screen]: Screen,
-    [Screens.Button]: Button,
-    [Screens.ListItem]: ListItem,
-    [Screens.Text]: Text,
-    [Screens.LogItem]: LogItem,
-    [Screens.Icon]: Icon,
-    [Screens.Container]: Container,
-    [Screens.Scanner]: Scanner,
+  },
+  [Screens.Screen]: Screen,
+  [Screens.Button]: Button,
+  [Screens.ListItem]: ListItem,
+  [Screens.Text]: Text,
+  [Screens.LogItem]: LogItem,
+  [Screens.Icon]: Icon,
+  [Screens.Container]: Container,
+})
+
+const RootNavigator = createStackNavigator(
+  {
+    Main: MainNavigator,
+    [Screens.Scanner]: {
+      screen: Scanner,
+    },
   },
   {
-    initialRouteName: Screens.Home,
+    initialRouteName: 'Main',
+    mode: 'modal',
+    headerMode: 'none',
+    transitionConfig: () => ({
+      transitionSpec: {
+        duration: 0,
+      },
+    }),
   },
 )
 
-export default createAppContainer(AppNavigator)
+export default createAppContainer(RootNavigator)

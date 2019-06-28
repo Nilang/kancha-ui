@@ -80,6 +80,11 @@ interface ScreenProps {
    * Passed in by the HOC. Safe to ignore.
    */
   theme: any
+
+  /**
+   * An action button that floats over the content
+   */
+  fabButton?: React.ReactNode
 }
 
 /**
@@ -117,6 +122,11 @@ const Screen: React.FC<ScreenProps> = props => {
       {props.footerComponent && (
         <Container paddingTop={true} dividerTop={props.footerDivider}>
           {props.footerComponent}
+        </Container>
+      )}
+      {props.fabButton && (
+        <Container viewStyle={{ position: 'absolute', width: '100%', bottom: 40, alignItems: 'center' }}>
+          {props.fabButton}
         </Container>
       )}
       {(props.safeArea || props.safeAreaBottom) && (

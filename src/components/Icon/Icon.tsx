@@ -27,7 +27,7 @@ const IconsFontFamilies: { [index: string]: any } = {
   MaterialIcons,
 }
 
-interface IconConfig {
+export interface IconConfig {
   name: string
 
   /**
