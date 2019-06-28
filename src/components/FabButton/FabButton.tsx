@@ -1,9 +1,10 @@
 import * as React from 'react'
-import { TouchableOpacity } from 'react-native-gesture-handler'
+import { TouchableOpacity } from 'react-native'
 import Icon, { IconConfig } from '../Icon/Icon'
 import { withTheme } from '../../theming'
 
 interface FabButtonProps {
+  testID?: string
   color?: string
   icon?: IconConfig
   iconColor?: string
@@ -15,6 +16,8 @@ interface FabButtonProps {
 const FabButton: React.FC<FabButtonProps> = props => {
   return (
     <TouchableOpacity
+      accessibilityLabel={props.testID}
+      testID={props.testID}
       onPress={props.onPress}
       style={{
         height: props.size || 70,

@@ -1,0 +1,85 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component(snapshots): FabButton should render with all props 1`] = `
+<View
+  accessible={true}
+  isTVSelectable={true}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#0078ff",
+      "borderRadius": 50,
+      "height": 70,
+      "justifyContent": "center",
+      "opacity": 1,
+      "width": 70,
+    }
+  }
+>
+  <Icon
+    color="#000000"
+    name="ios-add"
+    size={35}
+  />
+</View>
+`;
+
+exports[`Component(snapshots): FabButton should render with default color 1`] = `
+<View
+  accessible={true}
+  isTVSelectable={true}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#0078ff",
+      "borderRadius": 50,
+      "height": 70,
+      "justifyContent": "center",
+      "opacity": 1,
+      "width": 70,
+    }
+  }
+>
+  <Icon
+    color="#FFFFFF"
+    name="ios-add"
+    size={35}
+  />
+</View>
+`;
+
+exports[`Component(snapshots): FabButton should render with required props 1`] = `
+<View
+  accessible={true}
+  isTVSelectable={true}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#0078ff",
+      "borderRadius": 50,
+      "height": 70,
+      "justifyContent": "center",
+      "opacity": 1,
+      "width": 70,
+    }
+  }
+/>
+`;
