@@ -4,4 +4,6 @@
 export default {
   SETTINGS: { name: 'settings', iconFamily: 'Feather' },
   ALARM: { name: 'bell', iconFamily: 'Feather' },
+  MENU: { name: 'ios-menu', iconFamily: 'Ionicons' },
+  SCAN: { name: 'ios-qr-scanner', iconFamily: 'Ionicons' },
 }

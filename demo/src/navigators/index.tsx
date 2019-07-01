@@ -1,20 +1,25 @@
+import * as React from 'react'
+import { Container, Constants, Button, Icon } from '@kancha/kancha-ui'
+import { Icons, Colors } from '../theme'
+
 import {
   createStackNavigator,
   createAppContainer,
+  createDrawerNavigator,
   NavigationParams,
   NavigationScreenProp,
   NavigationState,
 } from 'react-navigation'
 
-import Components from '../screens/Components'
-import Screen from '../screens/components/Screen'
-import Button from '../screens/components/Button'
-import Text from '../screens/components/Text'
-import Container from '../screens/components/Container'
-import Icon from '../screens/components/Icon'
-import LogItem from '../screens/components/LogItem'
-import ListItem from '../screens/components/ListItem'
-import Scanner from '../screens/components/Scanner'
+import ComponentsScreen from '../screens/Components'
+import ScreenScreen from '../screens/components/Screen'
+import ButtonScreen from '../screens/components/Button'
+import TextScreen from '../screens/components/Text'
+import ContainerScreen from '../screens/components/Container'
+import IconScreen from '../screens/components/Icon'
+import LogItemScreen from '../screens/components/LogItem'
+import ListItemScreen from '../screens/components/ListItem'
+import ScannerScreen from '../screens/components/Scanner'
 
 export interface NavigationScreen {
   navigation: NavigationScreenProp<NavigationState, NavigationParams>
@@ -33,27 +38,45 @@ export const Screens = {
   Dummy: 'Dummy',
 }
 
+const DrawerMenuButton = (navigation: any) => (
+  <Container paddingLeft={true}>
+    <Button
+      onPress={() => navigation.openDrawer()}
+      block={Constants.ButtonBlocks.Clear}
+      iconButton={true}
+      icon={<Icon icon={Icons.MENU} size={32} color={Colors.CHARCOAL} />}
+    />
+  </Container>
+)
+
 const MainNavigator = createStackNavigator({
   [Screens.Home]: {
-    screen: Components,
-    navigationOptions: {
-      title: 'Components',
+    screen: ComponentsScreen,
+    navigationOptions: ({ navigation }: any) => {
+      return {
+        title: 'Components',
+        headerLeft: DrawerMenuButton(navigation),
+      }
     },
   },
-  [Screens.Screen]: Screen,
-  [Screens.Button]: Button,
-  [Screens.ListItem]: ListItem,
-  [Screens.Text]: Text,
-  [Screens.LogItem]: LogItem,
-  [Screens.Icon]: Icon,
-  [Screens.Container]: Container,
+  [Screens.Screen]: ScreenScreen,
+  [Screens.Button]: ButtonScreen,
+  [Screens.ListItem]: ListItemScreen,
+  [Screens.Text]: TextScreen,
+  [Screens.LogItem]: LogItemScreen,
+  [Screens.Icon]: IconScreen,
+  [Screens.Container]: ContainerScreen,
+})
+
+const DrawerNavigator = createDrawerNavigator({
+  Main: MainNavigator,
 })
 
 const RootNavigator = createStackNavigator(
   {
-    Main: MainNavigator,
+    Main: DrawerNavigator,
     [Screens.Scanner]: {
-      screen: Scanner,
+      screen: ScannerScreen,
     },
   },
   {
