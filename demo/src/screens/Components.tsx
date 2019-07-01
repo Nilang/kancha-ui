@@ -29,6 +29,24 @@ const Components: React.FC<NavigationScreen> = props => {
           🚀Welcome to Kancha Demo! 🎉
         </Text>
       </Container>
+      <Section title={'Identicon Avatars'}>
+        <Container alignItems={'center'} padding={true} flexDirection={'row'} justifyContent={'space-evenly'}>
+          <Avatar address={'0x0f10E18715EA6F26Cf90Fd4684FdFC8c0658F9eb'} size={16} />
+          <Avatar address={'0x62Da59a6524C005960Dca819e57460934472055f'} size={24} />
+          <Avatar
+            address={'0x3136847057b8987EEDa1E459A4667fE66685f81e'}
+            size={32}
+            gravatarType={'monsterid'}
+          />
+          <Avatar
+            address={'0xB824D642Cf094AdB93606F589c125B5f5ffB8717'}
+            size={40}
+            gravatarType={'robohash'}
+          />
+          <Avatar address={'0xe56CFDAb1110c7e2D4d9372A9fB908b4CEF28ae3'} size={48} gravatarType={'retro'} />
+          <Avatar address={'0x98767e3d329f276d5376Edb77a84a572957e809A'} size={56} gravatarType={'wavatar'} />
+        </Container>
+      </Section>
       <Section title={'Rounded Image Avatars'}>
         <Container alignItems={'center'} padding={true} flexDirection={'row'} justifyContent={'space-evenly'}>
           <Avatar source={avatar1} size={16} />
@@ -41,12 +59,12 @@ const Components: React.FC<NavigationScreen> = props => {
       </Section>
       <Section title={'Square Image Avatars'}>
         <Container alignItems={'center'} padding={true} flexDirection={'row'} justifyContent={'space-evenly'}>
-          <Avatar source={avatar2} size={16} type={'square'} />
-          <Avatar source={avatar2} size={24} type={'square'} />
-          <Avatar source={avatar2} size={32} type={'square'} />
-          <Avatar source={avatar2} size={40} type={'square'} />
-          <Avatar source={avatar2} size={48} type={'square'} />
-          <Avatar source={avatar2} size={56} type={'square'} />
+          <Avatar source={avatar2} size={16} type={'rounded'} />
+          <Avatar source={avatar2} size={24} type={'rounded'} />
+          <Avatar source={avatar2} size={32} type={'rounded'} />
+          <Avatar source={avatar2} size={40} type={'rounded'} />
+          <Avatar source={avatar2} size={48} type={'rounded'} />
+          <Avatar source={avatar2} size={56} type={'rounded'} />
         </Container>
       </Section>
       <Section title={'Text Avatars'}>

@@ -26,4 +26,23 @@ describe('Component(snapshots): Avatar', () => {
 
     expect(tree).toMatchSnapshot()
   })
+
+  it('should render a default gravatar icon', () => {
+    const tree = render(<Avatar size={32} address={'0x0f10E18715EA6F26Cf90Fd4684FdFC8c0658F9eb'} />)
+
+    expect(tree).toMatchSnapshot()
+  })
+
+  it('should render a custom rounded gravatar', () => {
+    const tree = render(
+      <Avatar
+        size={32}
+        address={'0x0f10E18715EA6F26Cf90Fd4684FdFC8c0658F9eb'}
+        gravatarType={'monsterid'}
+        type={'rounded'}
+      />,
+    )
+
+    expect(tree).toMatchSnapshot()
+  })
 })
