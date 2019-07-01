@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Image, ImageSourcePropType } from 'react-native'
+import { Image, ImageSourcePropType, PixelRatio } from 'react-native'
 
 import Text from '../Text/Text'
 import Container from '../Container/Container'
@@ -58,7 +58,14 @@ const Avatar: React.FC<AvatarProps> = props => {
   const type = props.type ? props.type : 'circle'
   const title = props.title ? generateTitle(props.title) : '?'
   const gravatarType = props.gravatarType ? props.gravatarType : 'identicon'
-  const uri = props.address && GRAVATAR_URI + md5(props.address) + '?s=' + size + '&d=' + gravatarType
+  const uri =
+    props.address &&
+    GRAVATAR_URI +
+      md5(props.address) +
+      '?s=' +
+      PixelRatio.getPixelSizeForLayoutSize(size) +
+      '&d=' +
+      gravatarType
   const avatarTypeStyle = {
     height: size,
     width: size,
