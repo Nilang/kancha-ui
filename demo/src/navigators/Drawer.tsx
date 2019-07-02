@@ -1,6 +1,7 @@
 import * as React from 'react'
-import { ScrollView, TouchableHighlight, SafeAreaView } from 'react-native'
-import { Text, Container, Icon, Avatar, withTheme } from '@kancha/kancha-ui'
+import { ScrollView, TouchableHighlight } from 'react-native'
+import { Text, Container, Icon, Avatar, withTheme, ListItem, Section, Constants } from '@kancha/kancha-ui'
+import { Colors } from '../theme'
 
 const MAIN_SCREENS = [
   {
@@ -110,40 +111,55 @@ const MenuItem = (props: any) => {
  */
 const Drawer: React.FC<DrawerProps> = props => {
   return (
-    <Container flex={1}>
-      <SafeAreaView style={{ backgroundColor: props.theme.colors.secondary.background }} />
-      <ScrollView style={{ backgroundColor: props.theme.colors.primary.background }}>
-        <Container background={'secondary'} padding={true} flexDirection={'row'} alignItems={'center'}>
-          <Avatar address={'0x2dgu'} border={true} size={48} />
+    <Container flex={1} background={'secondary'}>
+      <ScrollView>
+        <Container
+          background={'secondary'}
+          padding={true}
+          flexDirection={'row'}
+          alignItems={'center'}
+          marginTop={50}
+        >
+          <Avatar address={'0x2dgu'} border={true} size={48} type={'rounded'} />
           <Container paddingLeft={10}>
-            <Text textStyle={{ fontSize: 18, paddingBottom: 3 }}>Jason Healy</Text>
-            <Text textStyle={{ fontSize: 12 }}>0xfdh44hdud88dshs333jh90s...</Text>
+            <Text bold={true} type={Constants.TextTypes.H3}>
+              Jason Healy
+            </Text>
+            <Container marginTop={3}>
+              <Text type={Constants.TextTypes.SubTitle}>0xfdh44hdud88dshs333...</Text>
+            </Container>
           </Container>
         </Container>
-        <Container dividerBottom={true} dividerTop={true}>
-          {MAIN_SCREENS.map(route => {
-            return (
-              <MenuItem
-                key={route.route.key}
-                icon={route.icon}
-                active={props.activeItemkey === route.route.key}
-              >
-                {route.title}
-              </MenuItem>
-            )
-          })}
-        </Container>
         <Container>
-          {SETTINGS_SCREENS.map(route => {
-            return (
-              <MenuItem key={route.route.key} icon={route.icon}>
-                {route.title}
-              </MenuItem>
-            )
-          })}
+          <Section noTopMargin={true}>
+            <ListItem
+              iconLeft={
+                <Icon color={Colors.CHARCOAL} icon={{ name: 'ios-settings', iconFamily: 'Ionicons' }} />
+              }
+            >
+              Settings
+            </ListItem>
+            <ListItem
+              last={true}
+              iconLeft={
+                <Icon color={Colors.CHARCOAL} icon={{ name: 'ios-settings', iconFamily: 'Ionicons' }} />
+              }
+            >
+              Settings
+            </ListItem>
+          </Section>
+          <Section>
+            <ListItem>Menu Item</ListItem>
+            <ListItem>Menu Item</ListItem>
+            <ListItem>Menu Item</ListItem>
+            <ListItem last={true}>Menu Item</ListItem>
+          </Section>
+          <Section>
+            <ListItem>Menu Item</ListItem>
+            <ListItem last={true}>Menu Item</ListItem>
+          </Section>
         </Container>
       </ScrollView>
-      <SafeAreaView style={{ flex: 1, backgroundColor: props.theme.colors.primary.background }} />
     </Container>
   )
 }
