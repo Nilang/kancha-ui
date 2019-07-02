@@ -9,3 +9,5 @@ export const BrandOptions: Kancha.BrandTypeStatic = {
   Confirm: 'confirm',
   Custom: 'custom',
 }
+
+export const GRAVATAR_URI = 'https://www.gravatar.com/avatar/'
