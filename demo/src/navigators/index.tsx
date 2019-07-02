@@ -40,12 +40,12 @@ export const Screens = {
 }
 
 const DrawerMenuButton = (navigation: any) => (
-  <Container paddingLeft={true}>
+  <Container paddingLeft={true} paddingRight={true}>
     <Button
       onPress={() => navigation.openDrawer()}
       block={Constants.ButtonBlocks.Clear}
       iconButton={true}
-      icon={<Icon icon={Icons.MENU} size={32} color={Colors.CHARCOAL} />}
+      icon={<Icon icon={Icons.MORE} size={32} color={Colors.CHARCOAL} />}
     />
   </Container>
 )
@@ -56,7 +56,7 @@ const MainNavigator = createStackNavigator({
     navigationOptions: ({ navigation }: any) => {
       return {
         title: 'Components',
-        headerLeft: DrawerMenuButton(navigation),
+        headerRight: DrawerMenuButton(navigation),
       }
     },
   },
@@ -74,9 +74,10 @@ const DrawerNavigator = createDrawerNavigator(
     Main: MainNavigator,
   },
   {
+    drawerPosition: 'right',
     contentComponent: props => {
       // tslint:disable-next-line:no-console
-      console.log(props)
+      // console.log(props)
       return <Drawer onItemPress={props.onItemPress} activeItemkey={props.activeItemKey} />
     },
   },
