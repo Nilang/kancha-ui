@@ -29,6 +29,17 @@ const Components: React.FC<NavigationScreen> = props => {
           🚀Welcome to Kancha Demo! 🎉
         </Text>
       </Container>
+      <Section title={'Components'}>
+        <ListItem onPress={() => props.navigation.push(Screens.Screen)}>Screen</ListItem>
+        <ListItem onPress={() => props.navigation.push(Screens.Container)}>Container</ListItem>
+        <ListItem onPress={() => props.navigation.push(Screens.Text)}>Text</ListItem>
+        <ListItem onPress={() => props.navigation.push(Screens.Dummy)}>Button</ListItem>
+        <ListItem onPress={() => props.navigation.push(Screens.Dummy)}>Icon</ListItem>
+        <ListItem onPress={() => props.navigation.push(Screens.ListItem)}>List Item</ListItem>
+        <ListItem onPress={() => props.navigation.push(Screens.Dummy)} last={true}>
+          Log Item
+        </ListItem>
+      </Section>
       <Section title={'Identicon Avatars'}>
         <Container alignItems={'center'} padding={true} flexDirection={'row'} justifyContent={'space-evenly'}>
           <Avatar address={'0x0f10E18715EA6F26Cf90Fd4684FdFC8c0658F9eb'} size={16} />
@@ -76,17 +87,6 @@ const Components: React.FC<NavigationScreen> = props => {
           <Avatar size={48} title={'Satoshi'} backgroundColor={Colors.MY_CUSTOM_COLOR} />
           <Avatar size={56} title={'Bob'} backgroundColor={Colors.DARK_GREY} />
         </Container>
-      </Section>
-      <Section title={'Components'}>
-        <ListItem onPress={() => props.navigation.push(Screens.Screen)}>Screen</ListItem>
-        <ListItem onPress={() => props.navigation.push(Screens.Container)}>Container</ListItem>
-        <ListItem onPress={() => props.navigation.push(Screens.Text)}>Text</ListItem>
-        <ListItem onPress={() => props.navigation.push(Screens.Dummy)}>Button</ListItem>
-        <ListItem onPress={() => props.navigation.push(Screens.Dummy)}>Icon</ListItem>
-        <ListItem onPress={() => props.navigation.push(Screens.ListItem)}>List Item</ListItem>
-        <ListItem onPress={() => props.navigation.push(Screens.Dummy)} last={true}>
-          Log Item
-        </ListItem>
       </Section>
     </Screen>
   )
