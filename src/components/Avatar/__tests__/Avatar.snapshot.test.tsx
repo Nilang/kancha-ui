@@ -16,7 +16,9 @@ describe('Component(snapshots): Avatar', () => {
   })
 
   it('should render with props', () => {
-    const tree = render(<Avatar source={{ uri: 'somehttp-image-uri' }} size={32} type={'square'} />)
+    const tree = render(
+      <Avatar source={{ uri: 'somehttp-image-uri' }} size={32} type={'square'} border={true} />,
+    )
 
     expect(tree).toMatchSnapshot()
   })

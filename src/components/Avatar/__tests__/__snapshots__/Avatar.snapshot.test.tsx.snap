@@ -67,7 +67,9 @@ exports[`Component(snapshots): Avatar should render with props 1`] = `
   style={
     Object {
       "backgroundColor": "#0078ff",
+      "borderColor": "#FFFFFF",
       "borderRadius": 0,
+      "borderWidth": 2,
       "height": 32,
       "width": 32,
     }

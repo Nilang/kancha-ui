@@ -39,6 +39,11 @@ interface AvatarProps {
   backgroundColor?: string
 
   /**
+   * Show a border around the avatar
+   */
+  border?: boolean
+
+  /**
    * Specify the type of gravatar to be displayed
    */
   gravatarType?: 'identicon' | 'monsterid' | 'wavatar' | 'retro' | 'robohash' | 'blank'
@@ -73,6 +78,7 @@ const Avatar: React.FC<AvatarProps> = props => {
     ...(type === 'square' ? { borderRadius: 0 } : {}),
     ...(type === 'rounded' ? { borderRadius: 5 } : {}),
     ...(type === 'circle' ? { borderRadius: size / 2 } : {}),
+    ...(props.border ? { borderWidth: 2, borderColor: props.theme.colors.primary.background } : {}),
   }
 
   const identicon = <Image source={{ uri }} style={avatarTypeStyle} resizeMode={'contain'} />
