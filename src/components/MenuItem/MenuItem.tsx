@@ -1,6 +1,9 @@
 import * as React from 'react'
 import { TouchableHighlight } from 'react-native'
-import { Text, Container, Icon, withTheme } from '@kancha/kancha-ui'
+import Text from '../Text/Text'
+import Container from '../Container/Container'
+import Icon from '../Icon/Icon'
+import { withTheme } from '../../theming'
 import hexToRgba from 'hex-to-rgba'
 
 interface MenuItem {
