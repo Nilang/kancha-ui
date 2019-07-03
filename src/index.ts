@@ -12,7 +12,7 @@ import ListItem from './components/ListItem/ListItem'
 import Section from './components/Section/Section'
 import FabButton from './components/FabButton/FabButton'
 import Avatar from './components/Avatar/Avatar'
-import Drawer from './components/Drawer/Drawer'
+import MenuItem from './components/MenuItem/MenuItem'
 
 import { BrandOptions } from './constants'
 
@@ -30,10 +30,10 @@ export {
   Icon,
   LogItem,
   ListItem,
+  MenuItem,
   Section,
   FabButton,
   Avatar,
-  Drawer,
   Constants,
 }
 

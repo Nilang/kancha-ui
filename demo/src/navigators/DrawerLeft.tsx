@@ -1,8 +1,6 @@
 import * as React from 'react'
-import { ScrollView, TouchableHighlight } from 'react-native'
-import { Text, Container, Icon, Avatar, withTheme, Section, Constants } from '@kancha/kancha-ui'
-import { Colors } from '../theme'
-import hexToRgba from 'hex-to-rgba'
+import { ScrollView } from 'react-native'
+import { Text, Container, Avatar, withTheme, Section, MenuItem, Constants } from '@kancha/kancha-ui'
 
 interface DrawerProps {
   onItemPress: (scene: any) => void
@@ -10,40 +8,10 @@ interface DrawerProps {
   theme: any
 }
 
-const MenuItem = withTheme((props: any) => {
-  return (
-    <TouchableHighlight onPress={props.onPress}>
-      <Container
-        viewStyle={{ borderTopRightRadius: 20, borderBottomRightRadius: 20 }}
-        backgroundColor={props.active && hexToRgba(props.theme.colors.primary.brand, 0.1)}
-        flexDirection={'row'}
-        paddingLeft={true}
-        paddingTop={10}
-        paddingBottom={10}
-        justifyContent={'center'}
-        alignItems={'center'}
-      >
-        {props.icon && (
-          <Container>
-            <Icon
-              icon={props.icon}
-              size={18}
-              color={props.active ? props.theme.colors.primary.brand : Colors.CHARCOAL}
-            />
-          </Container>
-        )}
-        <Container flex={1} paddingLeft={true}>
-          <Text textColor={props.active && props.theme.colors.primary.brand}>{props.children}</Text>
-        </Container>
-      </Container>
-    </TouchableHighlight>
-  )
-})
-
 /**
  * Custom drawer implemenation using Kancha components
  */
-const Drawer: React.FC<DrawerProps> = props => {
+const Drawer: React.FC<DrawerProps> = () => {
   return (
     <Container flex={1} background={'primary'}>
       <Container
