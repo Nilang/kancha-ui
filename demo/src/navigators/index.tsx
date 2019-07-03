@@ -1,7 +1,8 @@
 import * as React from 'react'
 import { Container, Constants, Button, Icon } from '@kancha/kancha-ui'
 import { Icons, Colors } from '../theme'
-import Drawer from './Drawer'
+import DrawerRight from './DrawerRight'
+import DrawerLeft from './DrawerLeft'
 
 import {
   createStackNavigator,
@@ -78,14 +79,27 @@ const DrawerNavigator = createDrawerNavigator(
     contentComponent: props => {
       // tslint:disable-next-line:no-console
       // console.log(props)
-      return <Drawer onItemPress={props.onItemPress} activeItemkey={props.activeItemKey} />
+      return <DrawerRight onItemPress={props.onItemPress} activeItemkey={props.activeItemKey} />
+    },
+  },
+)
+
+const DrawerNavigatorLeft = createDrawerNavigator(
+  {
+    Main: MainNavigator,
+  },
+  {
+    contentComponent: props => {
+      // tslint:disable-next-line:no-console
+      // console.log(props)
+      return <DrawerLeft onItemPress={props.onItemPress} activeItemkey={props.activeItemKey} />
     },
   },
 )
 
 const RootNavigator = createStackNavigator(
   {
-    Main: DrawerNavigator,
+    Main: DrawerNavigatorLeft,
     [Screens.Scanner]: {
       screen: ScannerScreen,
     },
