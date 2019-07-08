@@ -16,6 +16,8 @@ import MenuItem from './components/MenuItem/MenuItem'
 
 import { BrandOptions } from './constants'
 
+import Device from './services/device'
+
 const Constants = {
   ButtonBlocks,
   BrandOptions,
@@ -35,6 +37,7 @@ export {
   FabButton,
   Avatar,
   Constants,
+  Device,
 }
 
 /**
