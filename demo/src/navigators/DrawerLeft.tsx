@@ -34,13 +34,21 @@ const Drawer: React.FC<DrawerProps> = () => {
       <ScrollView>
         <Container>
           <Section noTopMargin={true}>
-            <MenuItem icon={{ name: 'codesquareo', iconFamily: 'AntDesign' }}>Menu Item</MenuItem>
-            <MenuItem active={true} icon={{ name: 'staro', iconFamily: 'AntDesign' }}>
+            <MenuItem icon={{ name: 'codesquareo', iconFamily: 'AntDesign' }} onPress={() => ''}>
               Menu Item
             </MenuItem>
-            <MenuItem icon={{ name: 'smileo', iconFamily: 'AntDesign' }}>Menu Item</MenuItem>
-            <MenuItem icon={{ name: 'hearto', iconFamily: 'AntDesign' }}>Menu Item</MenuItem>
-            <MenuItem icon={{ name: 'bells', iconFamily: 'AntDesign' }}>Menu Item</MenuItem>
+            <MenuItem active={true} icon={{ name: 'staro', iconFamily: 'AntDesign' }} onPress={() => ''}>
+              Menu Item
+            </MenuItem>
+            <MenuItem icon={{ name: 'smileo', iconFamily: 'AntDesign' }} onPress={() => ''}>
+              Menu Item
+            </MenuItem>
+            <MenuItem icon={{ name: 'hearto', iconFamily: 'AntDesign' }} onPress={() => ''}>
+              Menu Item
+            </MenuItem>
+            <MenuItem icon={{ name: 'bells', iconFamily: 'AntDesign' }} onPress={() => ''}>
+              Menu Item
+            </MenuItem>
           </Section>
         </Container>
       </ScrollView>
