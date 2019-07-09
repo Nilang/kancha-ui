@@ -172,6 +172,10 @@ describe('Theme', () => {
         name: 'ios-open',
         iconFamily: 'Ionicons',
       },
+      CLOSE: {
+        name: 'ios-close',
+        iconFamily: 'Ionicons',
+      },
     },
     statusBarStyle: 'dark-content',
   }
