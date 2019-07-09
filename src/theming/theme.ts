@@ -182,6 +182,10 @@ export const createTheme = (customColors?: { [index: string]: string }) => {
         name: 'ios-open',
         iconFamily: 'Ionicons',
       },
+      CLOSE: {
+        name: 'ios-close',
+        iconFamily: 'Ionicons',
+      },
     },
     statusBarStyle: 'dark-content',
   }

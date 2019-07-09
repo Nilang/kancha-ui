@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { Container, Constants, Button, Icon } from '@kancha/kancha-ui'
+import { Animated, Easing } from 'react-native'
 import { Icons, Colors } from '../theme'
 import DrawerRight from './DrawerRight'
 import DrawerLeft from './DrawerLeft'
@@ -22,6 +23,7 @@ import IconScreen from '../screens/components/Icon'
 import LogItemScreen from '../screens/components/LogItem'
 import ListItemScreen from '../screens/components/ListItem'
 import ScannerScreen from '../screens/components/Scanner'
+import ModalScreen from '../screens/components/ModalScreen'
 
 export interface NavigationScreen {
   navigation: NavigationScreenProp<NavigationState, NavigationParams>
@@ -100,6 +102,7 @@ const DrawerNavigatorLeft = createDrawerNavigator(
 const RootNavigator = createStackNavigator(
   {
     Main: DrawerNavigatorLeft,
+    Modal: ModalScreen,
     [Screens.Scanner]: {
       screen: ScannerScreen,
     },
@@ -108,11 +111,17 @@ const RootNavigator = createStackNavigator(
     initialRouteName: 'Main',
     mode: 'modal',
     headerMode: 'none',
-    transitionConfig: () => ({
-      transitionSpec: {
-        duration: 0,
-      },
-    }),
+    transparentCard: true,
+    transitionConfig: (nextScene: any) => {
+      return {
+        transitionSpec: {
+          duration: nextScene.scene.route.routeName !== 'Modal' ? 0 : 500,
+          timing: Animated.timing,
+          easing: Easing.out(Easing.poly(7)),
+          useNativeDriver: true,
+        },
+      }
+    },
   },
 )
 

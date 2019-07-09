@@ -13,6 +13,7 @@ import Section from './components/Section/Section'
 import FabButton from './components/FabButton/FabButton'
 import Avatar from './components/Avatar/Avatar'
 import MenuItem from './components/MenuItem/MenuItem'
+import Modal from './components/Modal/Modal'
 
 import { BrandOptions } from './constants'
 
@@ -36,6 +37,7 @@ export {
   Section,
   FabButton,
   Avatar,
+  Modal,
   Constants,
   Device,
 }
