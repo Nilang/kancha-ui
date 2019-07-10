@@ -133,6 +133,10 @@ exports[`Component(snapshots): Button renders a filled button correctly with all
       "alignSelf": "center",
       "backgroundColor": "#0078ff",
       "borderRadius": 8,
+      "elevation": 5,
+      "shadowColor": "#000000",
+      "shadowOpacity": 0.5,
+      "shadowRadius": 15,
     }
   }
   testID="TEST_ID"
