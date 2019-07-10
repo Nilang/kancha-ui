@@ -16,6 +16,7 @@ describe('Component(snapshots): FabButton', () => {
     const onPress = jest.fn()
     const tree = render(
       <FabButton
+        shadowOpacity={0.2}
         onPress={onPress}
         icon={{ name: 'ios-add', iconFamily: 'Ionicons' }}
         iconColor={'#000000'}
