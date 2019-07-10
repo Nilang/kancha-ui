@@ -18,7 +18,7 @@ describe('Component(snapshots): Button', () => {
         noPadding={true}
         textDecorationLine={'none'}
         testID={'TEST_ID'}
-        depth={1}
+        shadowOpacity={0.5}
       />,
     ).toJSON()
 

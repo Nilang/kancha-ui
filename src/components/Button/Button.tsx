@@ -75,12 +75,12 @@ interface ButtonProps {
   testID?: string
 
   /**
-   * Shadow depth
+   * Shadow
    */
-  depth?: number
+  shadowOpacity?: number
 
   /**
-   * Shadow depth
+   * Icon button flag
    */
   iconButton?: boolean
 
@@ -107,6 +107,7 @@ const Button: React.FC<ButtonProps> & {
   textDecorationLine,
   testID,
   iconButton,
+  shadowOpacity,
   theme,
 }) => {
   const style: ViewStyle = {
@@ -126,6 +127,9 @@ const Button: React.FC<ButtonProps> & {
     borderRadius: theme.roundedCorners.buttons,
     ...(centered ? { alignSelf: 'center' } : {}),
     ...(disabled ? { opacity: 0.2 } : {}),
+    ...(shadowOpacity
+      ? { shadowColor: '#000000', shadowRadius: 15, shadowOpacity, elevation: shadowOpacity * 10 }
+      : {}),
   }
 
   return navButton ? (
