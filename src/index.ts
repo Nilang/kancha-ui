@@ -1,7 +1,6 @@
 /**
  * Components
  */
-
 import Screen from './components/Screen/Screen'
 import Container from './components/Container/Container'
 import Text, { TextTypes } from './components/Text/Text'
@@ -14,9 +13,16 @@ import FabButton from './components/FabButton/FabButton'
 import Avatar from './components/Avatar/Avatar'
 import MenuItem from './components/MenuItem/MenuItem'
 import Modal from './components/Modal/Modal'
+import ClaimDebug from './components/ClaimExplore/ClaimDebug'
 
+/**
+ * Constants
+ */
 import { BrandOptions } from './constants'
 
+/**
+ * Services
+ */
 import Device from './services/device'
 
 const Constants = {
@@ -38,6 +44,7 @@ export {
   FabButton,
   Avatar,
   Modal,
+  ClaimDebug,
   Constants,
   Device,
 }

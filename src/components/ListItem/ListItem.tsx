@@ -114,7 +114,7 @@ const ListItem: React.FunctionComponent<ListItemProps> = props => {
       style={styles}
       onPress={onPressHandler}
       underlayColor={props.theme.colors.primary.underlay}
-      disabled={props.disabled}
+      disabled={props.disabled || (!props.onPress && !props.externalLink)}
       testID={props.testID}
       accessible={props.accessible}
       accessibilityLabel={props.testID}

@@ -24,6 +24,7 @@ import LogItemScreen from '../screens/components/LogItem'
 import ListItemScreen from '../screens/components/ListItem'
 import ScannerScreen from '../screens/components/Scanner'
 import ModalScreen from '../screens/components/ModalScreen'
+import ClaimDebug from '../screens/components/ClaimDebug'
 
 export interface NavigationScreen {
   navigation: NavigationScreenProp<NavigationState, NavigationParams>
@@ -40,6 +41,7 @@ export const Screens = {
   ListItem: 'ListItem',
   Scanner: 'Scanner',
   Dummy: 'Dummy',
+  ClaimDebug: 'ClaimDebug',
 }
 
 const DrawerMenuButton = (navigation: any) => (
@@ -70,6 +72,7 @@ const MainNavigator = createStackNavigator({
   [Screens.LogItem]: LogItemScreen,
   [Screens.Icon]: IconScreen,
   [Screens.Container]: ContainerScreen,
+  [Screens.ClaimDebug]: ClaimDebug,
 })
 
 const DrawerNavigator = createDrawerNavigator(

@@ -37,6 +37,7 @@ const Components: React.FC<NavigationScreen> = props => {
         <ListItem onPress={() => props.navigation.push(Screens.Dummy)}>Icon</ListItem>
         <ListItem onPress={() => props.navigation.push(Screens.ListItem)}>List Item</ListItem>
         <ListItem onPress={() => props.navigation.push(Screens.Dummy)}>Log Item</ListItem>
+        <ListItem onPress={() => props.navigation.push(Screens.ClaimDebug)}>Claim Debug</ListItem>
         <ListItem onPress={() => props.navigation.push('Modal')} last={true}>
           Modal
         </ListItem>
