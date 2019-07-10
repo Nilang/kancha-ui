@@ -15,9 +15,13 @@ exports[`Component(snapshots): FabButton should render with all props 1`] = `
       "alignItems": "center",
       "backgroundColor": "#0078ff",
       "borderRadius": 50,
+      "elevation": 2,
       "height": 70,
       "justifyContent": "center",
       "opacity": 1,
+      "shadowColor": "#000000",
+      "shadowOpacity": 0.2,
+      "shadowRadius": 20,
       "width": 70,
     }
   }
@@ -45,9 +49,13 @@ exports[`Component(snapshots): FabButton should render with default color 1`] = 
       "alignItems": "center",
       "backgroundColor": "#0078ff",
       "borderRadius": 50,
+      "elevation": 3,
       "height": 70,
       "justifyContent": "center",
       "opacity": 1,
+      "shadowColor": "#000000",
+      "shadowOpacity": 0.3,
+      "shadowRadius": 20,
       "width": 70,
     }
   }
@@ -75,9 +83,13 @@ exports[`Component(snapshots): FabButton should render with required props 1`] =
       "alignItems": "center",
       "backgroundColor": "#0078ff",
       "borderRadius": 50,
+      "elevation": 3,
       "height": 70,
       "justifyContent": "center",
       "opacity": 1,
+      "shadowColor": "#000000",
+      "shadowOpacity": 0.3,
+      "shadowRadius": 20,
       "width": 70,
     }
   }

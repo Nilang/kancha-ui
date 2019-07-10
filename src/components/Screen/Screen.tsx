@@ -94,7 +94,11 @@ const Screen: React.FC<ScreenProps> = props => {
   const mainContent = (
     <React.Fragment>
       {!props.statusBarHidden && (
-        <StatusBar barStyle={props.statusBarStyle ? props.statusBarStyle : props.theme.statusBarStyle} />
+        <StatusBar
+          barStyle={props.statusBarStyle ? props.statusBarStyle : props.theme.statusBarStyle}
+          animated={true}
+          showHideTransition={'slide'}
+        />
       )}
       <Container flex={1} background={props.background}>
         {props.children}

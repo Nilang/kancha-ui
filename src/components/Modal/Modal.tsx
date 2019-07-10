@@ -39,7 +39,7 @@ const Modal: React.FC<ModalProps> = props => {
     >
       <StatusBar hidden={true} animated={true} showHideTransition={'slide'} />
       {props.dismiss && (
-        <Container viewStyle={{ position: 'absolute', right: 10, top: 10 }}>
+        <Container viewStyle={{ position: 'absolute', right: 10, top: 10, zIndex: 10 }}>
           <Button
             iconButton={true}
             icon={

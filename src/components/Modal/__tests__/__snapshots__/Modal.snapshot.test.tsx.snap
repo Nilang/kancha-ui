@@ -92,6 +92,7 @@ exports[`Component(snapshots): Modal should render with props 1`] = `
         "right": 10,
         "top": 10,
         "width": undefined,
+        "zIndex": 10,
       }
     }
   >
@@ -271,6 +272,7 @@ exports[`Component(snapshots): Modal should render with props and children 1`] =
         "right": 10,
         "top": 10,
         "width": undefined,
+        "zIndex": 10,
       }
     }
   >
