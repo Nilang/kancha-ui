@@ -38,19 +38,28 @@ interface MenuItem {
 
 const MenuItem: React.FC<MenuItem> = props => {
   return (
-    <TouchableHighlight onPress={props.onPress} testID={props.testID} accessibilityLabel={props.testID}>
+    <TouchableHighlight
+      style={{
+        borderTopRightRadius: 20,
+        borderBottomRightRadius: 20,
+        backgroundColor: props.theme.colors.primary.background,
+      }}
+      onPress={props.onPress}
+      testID={props.testID}
+      accessibilityLabel={props.testID}
+      underlayColor={hexToRgba(props.theme.colors.primary.accessories, 0.2)}
+    >
       <Container
         viewStyle={{ borderTopRightRadius: 20, borderBottomRightRadius: 20 }}
         backgroundColor={
           props.active
             ? hexToRgba(props.theme.colors.primary.brand, 0.1)
-            : props.theme.colors.primary.background
+            : hexToRgba(props.theme.colors.primary.background, 0.1)
         }
         flexDirection={'row'}
         paddingLeft={true}
         paddingTop={10}
         paddingBottom={10}
-        marginRight={10}
         justifyContent={'center'}
         alignItems={'center'}
       >
