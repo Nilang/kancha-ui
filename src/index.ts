@@ -25,6 +25,11 @@ import { BrandOptions } from './constants'
  */
 import Device from './services/device'
 
+/**
+ * Hooks
+ */
+import useLayout from './hooks/useLayout'
+
 const Constants = {
   ButtonBlocks,
   BrandOptions,
@@ -47,6 +52,7 @@ export {
   ClaimDebug,
   Constants,
   Device,
+  useLayout,
 }
 
 /**
