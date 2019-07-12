@@ -64,7 +64,7 @@ const Banner: React.FC<BannerProps> = props => {
       >
         <Avatar source={props.avatar} size={56} type={'rounded'} />
         <Container paddingTop={true} alignItems={'center'}>
-          <Text type={TextTypes.H3} textColor={'#FFFFFF'}>
+          <Text type={TextTypes.H2} bold={true} textColor={'#FFFFFF'}>
             {props.title}
           </Text>
           <Container paddingTop={5} alignItems={'center'}>
