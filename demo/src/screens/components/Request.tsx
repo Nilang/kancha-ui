@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Container, Screen, Button, Constants, Banner } from '@kancha/kancha-ui'
+import { Container, Screen, Button, Constants, Banner, RequestItem } from '@kancha/kancha-ui'
 import { NavigationScreen } from '../../navigators'
 import { Colors } from '../../theme'
 
@@ -11,7 +11,7 @@ const bannerImage = require('../../assets/images/abstract-blurred-gradient.jpg')
 
 import TEST_ID from '../../../../e2e/testIDs'
 
-const Component: React.FC<NavigationScreen> = () => {
+const Component: React.FC<NavigationScreen> = ({ navigation }) => {
   return (
     <Screen
       statusBarHidden={true}
@@ -27,7 +27,7 @@ const Component: React.FC<NavigationScreen> = () => {
                 block={Constants.ButtonBlocks.Clear}
                 type={Constants.BrandOptions.Warning}
                 buttonText={'Decline'}
-                onPress={() => ''}
+                onPress={() => navigation.goBack()}
               />
             </Container>
             <Container flex={1}>
@@ -35,7 +35,7 @@ const Component: React.FC<NavigationScreen> = () => {
                 block={Constants.ButtonBlocks.Filled}
                 type={Constants.BrandOptions.Primary}
                 buttonText={'Accept'}
-                onPress={() => ''}
+                onPress={() => navigation.goBack()}
                 shadowOpacity={0.2}
               />
             </Container>
@@ -50,6 +50,14 @@ const Component: React.FC<NavigationScreen> = () => {
           avatar={avatar1}
           backgroundImage={bannerImage}
         />
+        <Container>
+          <RequestItem subTitle={'Name'}>Jack</RequestItem>
+          <RequestItem subTitle={'Date of Birth'}>24-01-1991</RequestItem>
+          <RequestItem subTitle={'Location'}>Ireland</RequestItem>
+          <RequestItem subTitle={'Phone'} itemNote={'Mobile'}>
+            555-876-882771
+          </RequestItem>
+        </Container>
       </Container>
     </Screen>
   )

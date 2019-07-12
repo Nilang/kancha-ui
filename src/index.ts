@@ -15,6 +15,7 @@ import MenuItem from './components/MenuItem/MenuItem'
 import Modal from './components/Modal/Modal'
 import ClaimDebug from './components/ClaimExplore/ClaimDebug'
 import Banner from './components/Banner/Banner'
+import RequestItem from './components/RequestItem/RequestItem'
 
 /**
  * Constants
@@ -52,6 +53,7 @@ export {
   Modal,
   ClaimDebug,
   Banner,
+  RequestItem,
   Constants,
   Device,
   useLayout,
