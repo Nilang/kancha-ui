@@ -101,7 +101,8 @@ exports[`Component(snapshot): Banner should render with default props 1`] = `
         style={
           Object {
             "color": "#FFFFFF",
-            "fontSize": 20,
+            "fontSize": 24,
+            "fontWeight": "bold",
           }
         }
       >
@@ -254,7 +255,8 @@ exports[`Component(snapshot): Banner should render with default props 2`] = `
         style={
           Object {
             "color": "#FFFFFF",
-            "fontSize": 20,
+            "fontSize": 24,
+            "fontWeight": "bold",
           }
         }
       >
