@@ -9,7 +9,7 @@ interface BannerProps {
   /**
    * Background image for banner
    */
-  backgroundImage: any
+  backgroundImage?: any
 
   /**
    * Banner size
@@ -65,7 +65,7 @@ const Banner: React.FC<BannerProps> = props => {
         <Avatar source={props.avatar} size={56} type={'rounded'} />
         <Container paddingTop={true} alignItems={'center'}>
           <Text type={TextTypes.H3} textColor={'#FFFFFF'}>
-            {props.title || 'No name provided'}
+            {props.title}
           </Text>
           <Container paddingTop={5} alignItems={'center'}>
             <Text type={TextTypes.SubTitle} textColor={'#FFFFFF'}>
