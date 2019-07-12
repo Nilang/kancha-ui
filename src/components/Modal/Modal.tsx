@@ -19,6 +19,9 @@ interface ModalProps {
    */
   dismiss?: () => void
 
+  /**
+   * Theme HOC
+   */
   theme: any
 }
 
@@ -33,6 +36,9 @@ const Modal: React.FC<ModalProps> = props => {
     width: 600,
     height: layout && layout.height / 1.5,
     marginTop: 100,
+    paddingBottom: 10,
+    borderBottomLeftRadius: 10,
+    borderBottomRightRadius: 10,
   }
 
   return (
