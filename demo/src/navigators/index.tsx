@@ -25,6 +25,7 @@ import ListItemScreen from '../screens/components/ListItem'
 import ScannerScreen from '../screens/components/Scanner'
 import ModalScreen from '../screens/components/ModalScreen'
 import ClaimDebug from '../screens/components/ClaimDebug'
+import Request from '../screens/components/Request'
 
 export interface NavigationScreen {
   navigation: NavigationScreenProp<NavigationState, NavigationParams>
@@ -42,6 +43,7 @@ export const Screens = {
   Scanner: 'Scanner',
   Dummy: 'Dummy',
   ClaimDebug: 'ClaimDebug',
+  Request: 'Request',
 }
 
 const DrawerMenuButton = (navigation: any) => (
@@ -109,6 +111,7 @@ const RootNavigator = createStackNavigator(
     [Screens.Scanner]: {
       screen: ScannerScreen,
     },
+    [Screens.Request]: Request,
   },
   {
     initialRouteName: 'Main',
@@ -118,7 +121,7 @@ const RootNavigator = createStackNavigator(
     transitionConfig: (nextScene: any) => {
       return {
         transitionSpec: {
-          duration: nextScene.scene.route.routeName !== 'Modal' ? 0 : 500,
+          duration: nextScene.scene.route.routeName === 'Scanner' ? 0 : 500,
           timing: Animated.timing,
           easing: Easing.out(Easing.poly(7)),
           useNativeDriver: true,

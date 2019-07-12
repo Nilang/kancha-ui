@@ -172,7 +172,7 @@ Array [
     style={
       Object {
         "alignItems": undefined,
-        "backgroundColor": undefined,
+        "backgroundColor": "#FFFFFF",
         "borderRadius": undefined,
         "flex": undefined,
         "flexDirection": undefined,
