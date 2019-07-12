@@ -38,8 +38,9 @@ const Components: React.FC<NavigationScreen> = props => {
         <ListItem onPress={() => props.navigation.push(Screens.ListItem)}>List Item</ListItem>
         <ListItem onPress={() => props.navigation.push(Screens.Dummy)}>Log Item</ListItem>
         <ListItem onPress={() => props.navigation.push(Screens.ClaimDebug)}>Claim Debug</ListItem>
-        <ListItem onPress={() => props.navigation.push('Modal')} last={true}>
-          Modal
+        <ListItem onPress={() => props.navigation.push('Modal')}>Modal</ListItem>
+        <ListItem onPress={() => props.navigation.push(Screens.Request)} last={true}>
+          Request
         </ListItem>
       </Section>
       <Section title={'Identicon Avatars'}>

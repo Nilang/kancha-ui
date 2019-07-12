@@ -93,13 +93,12 @@ interface ScreenProps {
 const Screen: React.FC<ScreenProps> = props => {
   const mainContent = (
     <React.Fragment>
-      {!props.statusBarHidden && (
-        <StatusBar
-          barStyle={props.statusBarStyle ? props.statusBarStyle : props.theme.statusBarStyle}
-          animated={true}
-          showHideTransition={'slide'}
-        />
-      )}
+      <StatusBar
+        hidden={props.statusBarHidden}
+        barStyle={props.statusBarStyle ? props.statusBarStyle : props.theme.statusBarStyle}
+        animated={true}
+        showHideTransition={'slide'}
+      />
       <Container flex={1} background={props.background}>
         {props.children}
       </Container>
@@ -124,7 +123,11 @@ const Screen: React.FC<ScreenProps> = props => {
       )}
       {props.scrollEnabled ? scrollViewContent : mainContent}
       {props.footerComponent && (
-        <Container paddingTop={true} dividerTop={props.footerDivider}>
+        <Container
+          paddingTop={true}
+          dividerTop={props.footerDivider}
+          backgroundColor={props.theme.colors.primary.background}
+        >
           {props.footerComponent}
         </Container>
       )}
