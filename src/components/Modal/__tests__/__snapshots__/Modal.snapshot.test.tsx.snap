@@ -43,6 +43,59 @@ exports[`Component(snapshots): Modal should render layout  1`] = `
       }
     }
   >
+    <View
+      pointerEvents="auto"
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": undefined,
+          "borderRadius": undefined,
+          "flex": undefined,
+          "flexDirection": undefined,
+          "height": undefined,
+          "justifyContent": "center",
+          "margin": undefined,
+          "marginBottom": undefined,
+          "marginLeft": undefined,
+          "marginRight": undefined,
+          "marginTop": undefined,
+          "padding": 8,
+          "paddingBottom": undefined,
+          "paddingHorizontal": undefined,
+          "paddingLeft": undefined,
+          "paddingRight": undefined,
+          "paddingTop": undefined,
+          "width": undefined,
+        }
+      }
+    >
+      <View
+        pointerEvents="auto"
+        style={
+          Object {
+            "alignItems": undefined,
+            "backgroundColor": "#BBBBBB",
+            "borderRadius": 5,
+            "flex": undefined,
+            "flexDirection": undefined,
+            "height": 5,
+            "justifyContent": undefined,
+            "margin": undefined,
+            "marginBottom": undefined,
+            "marginLeft": undefined,
+            "marginRight": undefined,
+            "marginTop": undefined,
+            "padding": undefined,
+            "paddingBottom": undefined,
+            "paddingHorizontal": undefined,
+            "paddingLeft": undefined,
+            "paddingRight": undefined,
+            "paddingTop": undefined,
+            "width": 50,
+          }
+        }
+      />
+    </View>
     <RCTScrollView>
       <View />
     </RCTScrollView>
@@ -90,7 +143,61 @@ exports[`Component(snapshots): Modal should render with no props 1`] = `
         "width": undefined,
       }
     }
-  />
+  >
+    <View
+      pointerEvents="auto"
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": undefined,
+          "borderRadius": undefined,
+          "flex": undefined,
+          "flexDirection": undefined,
+          "height": undefined,
+          "justifyContent": "center",
+          "margin": undefined,
+          "marginBottom": undefined,
+          "marginLeft": undefined,
+          "marginRight": undefined,
+          "marginTop": undefined,
+          "padding": 8,
+          "paddingBottom": undefined,
+          "paddingHorizontal": undefined,
+          "paddingLeft": undefined,
+          "paddingRight": undefined,
+          "paddingTop": undefined,
+          "width": undefined,
+        }
+      }
+    >
+      <View
+        pointerEvents="auto"
+        style={
+          Object {
+            "alignItems": undefined,
+            "backgroundColor": "#BBBBBB",
+            "borderRadius": 5,
+            "flex": undefined,
+            "flexDirection": undefined,
+            "height": 5,
+            "justifyContent": undefined,
+            "margin": undefined,
+            "marginBottom": undefined,
+            "marginLeft": undefined,
+            "marginRight": undefined,
+            "marginTop": undefined,
+            "padding": undefined,
+            "paddingBottom": undefined,
+            "paddingHorizontal": undefined,
+            "paddingLeft": undefined,
+            "paddingRight": undefined,
+            "paddingTop": undefined,
+            "width": 50,
+          }
+        }
+      />
+    </View>
+  </View>
 </View>
 `;
 
@@ -135,6 +242,59 @@ exports[`Component(snapshots): Modal should render with props 1`] = `
       }
     }
   >
+    <View
+      pointerEvents="auto"
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": undefined,
+          "borderRadius": undefined,
+          "flex": undefined,
+          "flexDirection": undefined,
+          "height": undefined,
+          "justifyContent": "center",
+          "margin": undefined,
+          "marginBottom": undefined,
+          "marginLeft": undefined,
+          "marginRight": undefined,
+          "marginTop": undefined,
+          "padding": 8,
+          "paddingBottom": undefined,
+          "paddingHorizontal": undefined,
+          "paddingLeft": undefined,
+          "paddingRight": undefined,
+          "paddingTop": undefined,
+          "width": undefined,
+        }
+      }
+    >
+      <View
+        pointerEvents="auto"
+        style={
+          Object {
+            "alignItems": undefined,
+            "backgroundColor": "#BBBBBB",
+            "borderRadius": 5,
+            "flex": undefined,
+            "flexDirection": undefined,
+            "height": 5,
+            "justifyContent": undefined,
+            "margin": undefined,
+            "marginBottom": undefined,
+            "marginLeft": undefined,
+            "marginRight": undefined,
+            "marginTop": undefined,
+            "padding": undefined,
+            "paddingBottom": undefined,
+            "paddingHorizontal": undefined,
+            "paddingLeft": undefined,
+            "paddingRight": undefined,
+            "paddingTop": undefined,
+            "width": 50,
+          }
+        }
+      />
+    </View>
     <View
       pointerEvents="auto"
       style={
@@ -325,6 +485,59 @@ exports[`Component(snapshots): Modal should render with props and children 1`] =
       }
     }
   >
+    <View
+      pointerEvents="auto"
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": undefined,
+          "borderRadius": undefined,
+          "flex": undefined,
+          "flexDirection": undefined,
+          "height": undefined,
+          "justifyContent": "center",
+          "margin": undefined,
+          "marginBottom": undefined,
+          "marginLeft": undefined,
+          "marginRight": undefined,
+          "marginTop": undefined,
+          "padding": 8,
+          "paddingBottom": undefined,
+          "paddingHorizontal": undefined,
+          "paddingLeft": undefined,
+          "paddingRight": undefined,
+          "paddingTop": undefined,
+          "width": undefined,
+        }
+      }
+    >
+      <View
+        pointerEvents="auto"
+        style={
+          Object {
+            "alignItems": undefined,
+            "backgroundColor": "#BBBBBB",
+            "borderRadius": 5,
+            "flex": undefined,
+            "flexDirection": undefined,
+            "height": 5,
+            "justifyContent": undefined,
+            "margin": undefined,
+            "marginBottom": undefined,
+            "marginLeft": undefined,
+            "marginRight": undefined,
+            "marginTop": undefined,
+            "padding": undefined,
+            "paddingBottom": undefined,
+            "paddingHorizontal": undefined,
+            "paddingLeft": undefined,
+            "paddingRight": undefined,
+            "paddingTop": undefined,
+            "width": 50,
+          }
+        }
+      />
+    </View>
     <View
       pointerEvents="auto"
       style={

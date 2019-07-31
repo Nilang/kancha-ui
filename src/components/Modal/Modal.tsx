@@ -59,6 +59,9 @@ const Modal: React.FC<ModalProps> = props => {
         }}
       >
         <StatusBar hidden={true} animated={true} showHideTransition={'slide'} />
+        <Container alignItems={'center'} justifyContent={'center'} padding={8}>
+          <Container br={5} backgroundColor={props.theme.colors.primary.accessories} w={50} h={5} />
+        </Container>
         {props.dismiss && (
           <Container viewStyle={{ position: 'absolute', right: 10, top: 10, zIndex: 10 }}>
             <Button
