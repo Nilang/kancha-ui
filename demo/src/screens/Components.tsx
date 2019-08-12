@@ -72,7 +72,7 @@ const Components: React.FC<NavigationScreen> = props => {
           />
           <Button
             fullWidth={true}
-            onPress={() => Toaster.warn('Crap', "This doesn't look good to me... :(")}
+            onPress={() => Toaster.warn('Crap', "This doesn't look good to me... :")}
             buttonText={'Confirm'}
             type={Constants.BrandOptions.Accent}
             block={Constants.ButtonBlocks.Filled}

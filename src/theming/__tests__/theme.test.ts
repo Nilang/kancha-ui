@@ -31,6 +31,7 @@ describe('Theme', () => {
       status: {
         alert: '#E89835',
         info: '#0078ff',
+        confirm: '#3DCF8A',
         error: '#3DCF8A',
       },
       primary: {
