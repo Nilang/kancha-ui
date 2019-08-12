@@ -23,6 +23,7 @@
   "dependencies": {
     "@callstack/react-theme-provider": "^3.0.0",
     "deepmerge": "^3.2.1",
+    "eventemitter3": "^4.0.0",
     "hex-to-rgba": "^2.0.0",
     "md5": "^2.2.1",
     "react-native-json-tree": "^1.2.0",

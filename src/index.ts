@@ -16,6 +16,7 @@ import Modal from './components/Modal/Modal'
 import ClaimDebug from './components/ClaimExplore/ClaimDebug'
 import Banner from './components/Banner/Banner'
 import RequestItem from './components/RequestItem/RequestItem'
+import Toast, { Toaster } from './components/Toast/Toast'
 
 /**
  * Constants
@@ -51,6 +52,8 @@ export {
   FabButton,
   Avatar,
   Modal,
+  Toast,
+  Toaster,
   ClaimDebug,
   Banner,
   RequestItem,

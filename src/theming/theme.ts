@@ -41,6 +41,7 @@ export const createTheme = (customColors?: { [index: string]: string }) => {
       status: {
         alert: colors.ACCENT,
         info: colors.BRAND,
+        confirm: colors.CONFIRM,
         error: colors.WARN,
       },
       primary: {
