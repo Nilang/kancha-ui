@@ -155,6 +155,10 @@ describe('Theme', () => {
       buttons: 8,
       cards: 5,
       textInputs: 8,
+      toasts: 5,
+    },
+    delays: {
+      toasts: 1200,
     },
     icons: {
       EDIT: {
@@ -175,6 +179,26 @@ describe('Theme', () => {
       },
       CLOSE: {
         name: 'ios-close',
+        iconFamily: 'Ionicons',
+      },
+      SUCCESS: {
+        name: 'ios-checkmark-circle-outline',
+        iconFamily: 'Ionicons',
+      },
+      CONFIRM: {
+        name: 'ios-checkmark-circle-outline',
+        iconFamily: 'Ionicons',
+      },
+      ERROR: {
+        name: 'ios-warning',
+        iconFamily: 'Ionicons',
+      },
+      INFO: {
+        name: 'ios-information-circle-outline',
+        iconFamily: 'Ionicons',
+      },
+      WARN: {
+        name: 'ios-warning',
         iconFamily: 'Ionicons',
       },
     },
