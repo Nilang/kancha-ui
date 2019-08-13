@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { withTheme } from '../../theming'
 import { Animated } from 'react-native'
-import EventEmitter from 'eventemitter3'
+import EventEmitter from 'events'
 
 import Container from '../Container/Container'
 import Text, { TextTypes } from '../Text/Text'
@@ -82,17 +82,17 @@ const Toast: React.FC<ToastProps> = props => {
     }).start(() => hideToast(payload.delay ? payload.delay : props.theme.delays.toasts))
   }
 
+  const listener = (payload: ToastPayload) => showToast(payload)
+
   /**
    * Set up listener when component renders
    */
   useEffect(() => {
-    ToastEmitter.addListener(SHOW_TOAST, payload => {
-      showToast(payload)
-    })
+    ToastEmitter.addListener(SHOW_TOAST, listener)
 
     // Remove event listener on cleanup
     return () => {
-      ToastEmitter.removeListener(SHOW_TOAST)
+      ToastEmitter.removeListener(SHOW_TOAST, listener)
     }
   }, [])
 
