@@ -1,38 +1,40 @@
 import React from 'react'
-import { render, fireEvent } from 'react-native-testing-library'
-import Toast, { Toaster } from '../Toast'
+import { render } from 'react-native-testing-library'
+import Toast, { Toaster, ToastEmitter } from '../Toast'
 
 jest.mock('react-native-vector-icons/Ionicons', () => 'Icon')
 
 describe('Component(assert): Toast', () => {
-  it('renders correctly with no props', () => {
-    const tree = render(<Toast />).toJSON()
+  ToastEmitter.emit = jest.fn()
+  ToastEmitter.addListener = jest.fn()
 
-    expect(tree).toMatchSnapshot()
+  it('sets up an event listener on render', () => {
+    render(<Toast />)
+
+    expect(ToastEmitter.addListener).toHaveBeenCalled()
+  })
+
+  it('fires the event emitter for confirm', () => {
+    Toaster.confirm('Title', 'Content')
+
+    expect(ToastEmitter.emit).toHaveBeenCalled()
+  })
+
+  it('fires the event emitter for info', () => {
+    Toaster.info('Title', 'Content')
+
+    expect(ToastEmitter.emit).toHaveBeenCalled()
+  })
+
+  it('fires the event emitter for warn', () => {
+    Toaster.warn('Title', 'Content')
+
+    expect(ToastEmitter.emit).toHaveBeenCalled()
+  })
+
+  it('fires the event emitter for error', () => {
+    Toaster.error('Title', 'Content')
+
+    expect(ToastEmitter.emit).toHaveBeenCalled()
   })
 })
-
-// describe('Component(assert): ListItem', () => {
-//   it('should fire onPress event on list item', () => {
-//     const onPress = jest.fn()
-//     const { getByText } = render(<ListItem onPress={onPress}>Regular nav list item</ListItem>)
-
-//     fireEvent.press(getByText(/Regular nav list item/i))
-//     expect(onPress).toHaveBeenCalled()
-//   })
-
-//   it('should fire openUrl linking function with arg', () => {
-//     const { getByText } = render(<ListItem externalLink={'https://uport.me'}>Open URL Link</ListItem>)
-
-//     fireEvent.press(getByText(/Open URL Link/i))
-//     expect(mockOpenURL).toHaveBeenCalledWith('https://uport.me')
-//   })
-
-//   it('should not fire event if onPress or link not provided', () => {
-//     const { getByText } = render(<ListItem>Standard List Item</ListItem>)
-
-//     mockOpenURL.mockReset()
-//     fireEvent.press(getByText(/Standard List Item/i))
-//     expect(mockOpenURL).not.toHaveBeenCalled()
-//   })
-// })

@@ -7,7 +7,7 @@ import Container from '../Container/Container'
 import Text, { TextTypes } from '../Text/Text'
 import Icon from '../Icon/Icon'
 
-const ToastEmitter = new EventEmitter()
+export const ToastEmitter = new EventEmitter()
 const SHOW_TOAST = 'SHOW_TOAST'
 
 type ToastType = 'alert' | 'info' | 'error' | 'confirm' | null
@@ -15,7 +15,6 @@ type ToastType = 'alert' | 'info' | 'error' | 'confirm' | null
 interface ToastProps {
   theme: any
 }
-
 interface ToastMessage {
   title: string
   message: string
