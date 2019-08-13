@@ -39,7 +39,7 @@ export const createTheme = (customColors?: { [index: string]: string }) => {
     },
     colors: {
       status: {
-        alert: colors.ACCENT,
+        warn: colors.ACCENT,
         info: colors.BRAND,
         confirm: colors.CONFIRM,
         error: colors.WARN,
@@ -165,6 +165,10 @@ export const createTheme = (customColors?: { [index: string]: string }) => {
       buttons: 8,
       cards: 5,
       textInputs: 8,
+      toasts: 5,
+    },
+    delays: {
+      toasts: 1200,
     },
     icons: {
       EDIT: {
@@ -185,6 +189,26 @@ export const createTheme = (customColors?: { [index: string]: string }) => {
       },
       CLOSE: {
         name: 'ios-close',
+        iconFamily: 'Ionicons',
+      },
+      SUCCESS: {
+        name: 'ios-checkmark-circle-outline',
+        iconFamily: 'Ionicons',
+      },
+      CONFIRM: {
+        name: 'ios-checkmark-circle-outline',
+        iconFamily: 'Ionicons',
+      },
+      ERROR: {
+        name: 'ios-warning',
+        iconFamily: 'Ionicons',
+      },
+      INFO: {
+        name: 'ios-information-circle-outline',
+        iconFamily: 'Ionicons',
+      },
+      WARN: {
+        name: 'ios-warning',
         iconFamily: 'Ionicons',
       },
     },

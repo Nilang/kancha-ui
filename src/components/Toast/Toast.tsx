@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from 'react'
-import { Container, Text, Constants } from '@kancha/kancha-ui'
 import { withTheme } from '../../theming'
 import { Animated } from 'react-native'
 import EventEmitter from 'eventemitter3'
+
+import Container from '../Container/Container'
+import Text, { TextTypes } from '../Text/Text'
+import Icon from '../Icon/Icon'
 
 const ToastEmitter = new EventEmitter()
 const SHOW_TOAST = 'SHOW_TOAST'
@@ -30,7 +33,7 @@ export const Toaster = {
     ToastEmitter.emit(SHOW_TOAST, { title, message, type: 'confirm', delay })
   },
   warn: (title: string, message: string, delay?: number) => {
-    ToastEmitter.emit(SHOW_TOAST, { title, message, type: 'alert', delay })
+    ToastEmitter.emit(SHOW_TOAST, { title, message, type: 'warn', delay })
   },
   error: (title: string, message: string, delay?: number) => {
     ToastEmitter.emit(SHOW_TOAST, { title, message, type: 'error', delay })
@@ -76,7 +79,7 @@ const Toast: React.FC<ToastProps> = props => {
     Animated.spring(animatedValue, {
       toValue: 1,
       speed: 14,
-    }).start(() => hideToast(payload.delay ? payload.delay : 1100))
+    }).start(() => hideToast(payload.delay ? payload.delay : props.theme.delays.toasts))
   }
 
   /**
@@ -100,7 +103,7 @@ const Toast: React.FC<ToastProps> = props => {
 
   const opacity = animatedValue.interpolate({
     inputRange: [0, 1],
-    outputRange: [0, 1],
+    outputRange: [0, 0.95],
   })
 
   return (
@@ -114,15 +117,22 @@ const Toast: React.FC<ToastProps> = props => {
         left: 10,
         right: 10,
         backgroundColor: props.theme.colors.status[type ? type : props.theme.colors.status.info],
-        borderRadius: 5,
+        borderRadius: props.theme.roundedCorners.toasts,
+        shadowRadius: 10,
+        shadowOpacity: 0.2,
+        shadowColor: '#000000',
       }}
     >
-      <Container alignItems={'flex-start'} justifyContent={'center'} padding={10} br={5}>
-        {/* <StatusBar hidden={true} /> */}
-        <Text type={Constants.TextTypes.H5} textColor={'white'} bold={true}>
-          {content.title}
-        </Text>
-        <Text textColor={'white'}>{content.message}</Text>
+      <Container padding={12} alignItems={'center'} justifyContent={'center'} br={5} flexDirection={'row'}>
+        <Container>
+          <Icon icon={props.theme.icons[type ? type.toUpperCase() : 'INFO']} color={'#FFFFFF'} />
+        </Container>
+        <Container flex={1} marginLeft={10}>
+          <Text type={TextTypes.H5} textColor={'white'} bold={true}>
+            {content.title}
+          </Text>
+          <Text textColor={'white'}>{content.message}</Text>
+        </Container>
       </Container>
     </Animated.View>
   )
