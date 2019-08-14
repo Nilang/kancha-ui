@@ -6,6 +6,7 @@ import EventEmitter from 'events'
 import Container from '../Container/Container'
 import Text, { TextTypes } from '../Text/Text'
 import Icon from '../Icon/Icon'
+import Button from '../Button/Button'
 
 export const ToastEmitter = new EventEmitter()
 const SHOW_TOAST = 'SHOW_TOAST'
@@ -107,6 +108,7 @@ const Toast: React.FC<ToastProps> = props => {
 
   return (
     <Animated.View
+      testID={'TOAST_WRAPPER'}
       style={{
         transform: [{ translateY: position }],
         opacity,
@@ -131,6 +133,14 @@ const Toast: React.FC<ToastProps> = props => {
             {content.title}
           </Text>
           <Text textColor={'white'}>{content.message}</Text>
+        </Container>
+        <Container>
+          <Button
+            testID={'TOAST_CLOSE_BTN'}
+            iconButton={true}
+            icon={<Icon icon={props.theme.icons.CLOSE} color={'#FFFFFF'} />}
+            onPress={() => hideToast(0)}
+          />
         </Container>
       </Container>
     </Animated.View>
