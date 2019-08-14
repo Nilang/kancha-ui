@@ -1,5 +1,16 @@
 import * as React from 'react'
-import { Container, Screen, Section, ListItem, Text, Constants, FabButton, Avatar } from '@kancha/kancha-ui'
+import {
+  Container,
+  Screen,
+  Section,
+  ListItem,
+  Text,
+  Constants,
+  FabButton,
+  Avatar,
+  Button,
+  Toaster,
+} from '@kancha/kancha-ui'
 import { NavigationScreen, Screens } from '../navigators'
 import TEST_ID from '../../../e2e/testIDs'
 import { Colors } from '../theme'
@@ -42,6 +53,38 @@ const Components: React.FC<NavigationScreen> = props => {
         <ListItem onPress={() => props.navigation.push(Screens.Request)} last={true}>
           Request
         </ListItem>
+      </Section>
+      <Section title={'Toast Messages'}>
+        <Container padding={true} flexDirection={'row'} justifyContent={'space-between'}>
+          <Button
+            fullWidth={true}
+            onPress={() => Toaster.info('Info toast', 'Just letting you know that some stuff is done')}
+            buttonText={'Info'}
+            type={Constants.BrandOptions.Primary}
+            block={Constants.ButtonBlocks.Filled}
+          />
+          <Button
+            fullWidth={true}
+            onPress={() => Toaster.confirm('Success', 'You completed an action!')}
+            buttonText={'Confirm'}
+            type={Constants.BrandOptions.Confirm}
+            block={Constants.ButtonBlocks.Filled}
+          />
+          <Button
+            fullWidth={true}
+            onPress={() => Toaster.warn('Crap', "This doesn't look good to me... :")}
+            buttonText={'Confirm'}
+            type={Constants.BrandOptions.Accent}
+            block={Constants.ButtonBlocks.Filled}
+          />
+          <Button
+            fullWidth={true}
+            onPress={() => Toaster.error('Uh oh', 'Hmm, something has gone very wrong :(')}
+            buttonText={'Error'}
+            type={Constants.BrandOptions.Warning}
+            block={Constants.ButtonBlocks.Filled}
+          />
+        </Container>
       </Section>
       <Section title={'Identicon Avatars'}>
         <Container alignItems={'center'} padding={true} flexDirection={'row'} justifyContent={'space-evenly'}>
