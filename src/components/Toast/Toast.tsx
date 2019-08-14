@@ -46,15 +46,12 @@ const Toast: React.FC<ToastProps> = props => {
    */
   const [animatedValue] = useState(new Animated.Value(0))
   const [type, updateType] = useState<ToastType>()
-  const [visible, toggleVisibility] = useState<boolean>(false)
   const [content, updateContent] = useState<ToastMessage>({ title: '', message: '' })
 
   /**
    * Hide the toast after a specified time
    */
   const hideToast = (delay: number) => {
-    toggleVisibility(false)
-
     Animated.timing(animatedValue, {
       delay,
       toValue: 0,
@@ -66,10 +63,6 @@ const Toast: React.FC<ToastProps> = props => {
    * Show toast message
    */
   const showToast = (payload: ToastPayload) => {
-    if (visible) {
-      return
-    }
-    toggleVisibility(true)
     updateType(payload.type)
     updateContent({
       title: payload.title,

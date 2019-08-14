@@ -7,21 +7,24 @@ jest.useFakeTimers()
 jest.mock('react-native-vector-icons/Ionicons', () => 'Icon')
 
 describe('Component(assert): Toast', () => {
+  const stopAnimation = jest.fn()
+  const mockEvent: any = {}
+  Animated.spring = jest.fn().mockReturnValue({
+    start: (callback: any = stopAnimation) => {
+      callback()
+    },
+    stop: () => stopAnimation,
+  })
+
   it('fires event to call state update methods to display toast', () => {
-    const stopAnimation = jest.fn()
-    const MockEvent: any = {}
-    Animated.spring = jest.fn(() => ({
-      start: jest.fn().mockReturnValue(() => stopAnimation()),
-      stop: () => jest.fn(),
-    }))
     ToastEmitter.addListener = jest.fn((event, cb): any => {
-      MockEvent[event] = cb
+      mockEvent[event] = cb
     })
     const { getByText, getByTestId } = render(<Toast />)
 
     /** Update the state of the toast by firing an event */
     act(() => {
-      MockEvent.SHOW_TOAST({ title: 'Title', message: 'Message', type: 'info' })
+      mockEvent.SHOW_TOAST({ title: 'Title', message: 'Message', type: 'info', delay: 300 })
     })
 
     /** Expect */
@@ -37,6 +40,13 @@ describe('Component(assert): Toast', () => {
     setTimeout(() => {
       expect(getByText(/Title/i)).not.toBeDefined()
     }, 300)
+
+    /** Update the state of the toast by firing an event. This time without a delay */
+    act(() => {
+      mockEvent.SHOW_TOAST({ title: 'New Title', message: 'Default delay', type: 'info' })
+    })
+
+    expect(getByText(/New Title/i)).toBeDefined()
   })
 
   it('sets up an event listener on render', () => {
