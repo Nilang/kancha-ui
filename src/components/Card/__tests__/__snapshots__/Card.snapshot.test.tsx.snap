@@ -15,7 +15,6 @@ exports[`Component(snapshot): Card should render with default props 1`] = `
       "opacity": 1,
     }
   }
-  testID="CARD_BTN"
 >
   <View
     pointerEvents="auto"
@@ -64,7 +63,6 @@ exports[`Component(snapshot): Card should render with props 1`] = `
       "opacity": 1,
     }
   }
-  testID="CARD_BTN"
 >
   <View
     pointerEvents="auto"

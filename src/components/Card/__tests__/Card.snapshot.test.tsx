@@ -18,7 +18,7 @@ describe('Component(snapshot): Card', () => {
 
   it('should fire tap event on card when onPress is passed', () => {
     const onPress = jest.fn()
-    const { getByTestId } = render(<Card onPress={onPress} />)
+    const { getByTestId } = render(<Card onPress={onPress} testID={'CARD_BTN'} />)
 
     fireEvent.press(getByTestId('CARD_BTN'))
     expect(onPress).toHaveBeenCalled()
