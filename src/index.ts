@@ -17,6 +17,8 @@ import ClaimDebug from './components/ClaimExplore/ClaimDebug'
 import Banner from './components/Banner/Banner'
 import RequestItem from './components/RequestItem/RequestItem'
 import Toast, { Toaster } from './components/Toast/Toast'
+import Credential from './components/Credential/Credential'
+import Card from './components/Card/Card'
 
 /**
  * Constants
@@ -54,6 +56,8 @@ export {
   Modal,
   Toast,
   Toaster,
+  Credential,
+  Card,
   ClaimDebug,
   Banner,
   RequestItem,

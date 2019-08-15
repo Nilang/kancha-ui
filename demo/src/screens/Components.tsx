@@ -50,6 +50,7 @@ const Components: React.FC<NavigationScreen> = props => {
         <ListItem onPress={() => props.navigation.push(Screens.Dummy)}>Log Item</ListItem>
         <ListItem onPress={() => props.navigation.push(Screens.ClaimDebug)}>Claim Debug</ListItem>
         <ListItem onPress={() => props.navigation.push('Modal')}>Modal</ListItem>
+        <ListItem onPress={() => props.navigation.push(Screens.Credential)}>Credentials</ListItem>
         <ListItem onPress={() => props.navigation.push(Screens.Request)} last={true}>
           Request
         </ListItem>

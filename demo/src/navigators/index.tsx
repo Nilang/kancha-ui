@@ -26,6 +26,7 @@ import ScannerScreen from '../screens/components/Scanner'
 import ModalScreen from '../screens/components/ModalScreen'
 import ClaimDebug from '../screens/components/ClaimDebug'
 import Request from '../screens/components/Request'
+import CredentialScreen from '../screens/components/Credential'
 
 export interface NavigationScreen {
   navigation: NavigationScreenProp<NavigationState, NavigationParams>
@@ -44,6 +45,7 @@ export const Screens = {
   Dummy: 'Dummy',
   ClaimDebug: 'ClaimDebug',
   Request: 'Request',
+  Credential: 'Credential',
 }
 
 const DrawerMenuButton = (navigation: any) => (
@@ -75,21 +77,25 @@ const MainNavigator = createStackNavigator({
   [Screens.Icon]: IconScreen,
   [Screens.Container]: ContainerScreen,
   [Screens.ClaimDebug]: ClaimDebug,
+  [Screens.Credential]: CredentialScreen,
 })
 
-const DrawerNavigator = createDrawerNavigator(
-  {
-    Main: MainNavigator,
-  },
-  {
-    drawerPosition: 'right',
-    contentComponent: props => {
-      // tslint:disable-next-line:no-console
-      // console.log(props)
-      return <DrawerRight onItemPress={props.onItemPress} activeItemkey={props.activeItemKey} />
-    },
-  },
-)
+/**
+ * Right side drawer
+ */
+// const DrawerNavigator = createDrawerNavigator(
+//   {
+//     Main: MainNavigator,
+//   },
+//   {
+//     drawerPosition: 'right',
+//     contentComponent: props => {
+//       // tslint:disable-next-line:no-console
+//       // console.log(props)
+//       return <DrawerRight onItemPress={props.onItemPress} activeItemkey={props.activeItemKey} />
+//     },
+//   },
+// )
 
 const DrawerNavigatorLeft = createDrawerNavigator(
   {

@@ -1,0 +1,97 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component(snapshot): Card should render with default props 1`] = `
+<View
+  accessible={true}
+  isTVSelectable={true}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "opacity": 1,
+    }
+  }
+>
+  <View
+    pointerEvents="auto"
+    style={
+      Object {
+        "alignItems": undefined,
+        "backgroundColor": "#ffffff",
+        "borderRadius": 5,
+        "flex": undefined,
+        "flexDirection": undefined,
+        "height": undefined,
+        "justifyContent": undefined,
+        "margin": undefined,
+        "marginBottom": 15,
+        "marginLeft": undefined,
+        "marginRight": undefined,
+        "marginTop": undefined,
+        "padding": 15,
+        "paddingBottom": undefined,
+        "paddingHorizontal": undefined,
+        "paddingLeft": undefined,
+        "paddingRight": undefined,
+        "paddingTop": undefined,
+        "shadowColor": "#ffffff",
+        "shadowOpacity": 0.2,
+        "shadowRadius": 0.5,
+        "width": undefined,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`Component(snapshot): Card should render with props 1`] = `
+<View
+  accessible={true}
+  isTVSelectable={true}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "opacity": 1,
+    }
+  }
+>
+  <View
+    pointerEvents="auto"
+    style={
+      Object {
+        "alignItems": undefined,
+        "backgroundColor": "#ffffff",
+        "borderRadius": 10,
+        "flex": undefined,
+        "flexDirection": undefined,
+        "height": undefined,
+        "justifyContent": undefined,
+        "margin": undefined,
+        "marginBottom": 15,
+        "marginLeft": undefined,
+        "marginRight": undefined,
+        "marginTop": undefined,
+        "padding": 15,
+        "paddingBottom": undefined,
+        "paddingHorizontal": undefined,
+        "paddingLeft": undefined,
+        "paddingRight": undefined,
+        "paddingTop": undefined,
+        "shadowColor": "#ffffff",
+        "shadowOpacity": 0.2,
+        "shadowRadius": 1.5,
+        "width": undefined,
+      }
+    }
+  />
+</View>
+`;
