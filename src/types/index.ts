@@ -117,7 +117,6 @@ export interface ThemeStatic {
 
 export interface VerifiableCredential {
   claim: any
-  claimType: string
   iss?: string
   sub?: string
   type?: string

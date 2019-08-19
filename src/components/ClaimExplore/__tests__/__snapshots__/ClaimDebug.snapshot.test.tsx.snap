@@ -863,7 +863,7 @@ exports[`Component(snapshot): Claim Viewer Debug should render with cardview 1`]
                       }
                     }
                   >
-                    Sample Claim
+                    Serto ID
                   </Text>
                 </View>
               </View>
@@ -2241,7 +2241,7 @@ exports[`Component(snapshot): Claim Viewer Debug should render with default prop
                       }
                     }
                   >
-                    Sample Claim
+                    Serto ID
                   </Text>
                 </View>
               </View>
