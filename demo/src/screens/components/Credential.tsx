@@ -12,25 +12,25 @@ const Component: React.FC<NavigationScreen> = ({ navigation }) => {
       title: 'Aerospace Engineer',
       issuer: 'Nasa',
       logo: avatar1,
-      onPress: () => navigation.navigate('Modal'),
+      onPress: () => navigation.navigate('CredentialExplore'),
     },
     {
       title: 'Expert Baker',
       issuer: 'Google',
       logo: avatar1,
-      onPress: () => navigation.navigate('Modal'),
+      onPress: () => navigation.navigate('CredentialExplore'),
     },
     {
       title: 'Network Maintenance',
       issuer: 'Cern',
       logo: avatar1,
-      onPress: () => navigation.navigate('Modal'),
+      onPress: () => navigation.navigate('CredentialExplore'),
     },
     {
       title: 'Credit Worthy',
       issuer: 'Deutsche Bank',
       logo: avatar1,
-      onPress: () => navigation.navigate('Modal'),
+      onPress: () => navigation.navigate('CredentialExplore'),
     },
   ]
 

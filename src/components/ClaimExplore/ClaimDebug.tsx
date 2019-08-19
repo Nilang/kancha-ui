@@ -4,15 +4,9 @@ import ListItem from '../ListItem/ListItem'
 import Section from '../Section/Section'
 import { withTheme } from '../../theming'
 import JSONTree from 'react-native-json-tree'
+import { VerifiableCredential } from '../../types'
 
-interface ClaimDebug {
-  iss?: string
-  sub?: string
-  type?: string
-  iat: number
-  exp?: number
-  claim: any
-  vc?: string[] | string
+interface ClaimDebug extends VerifiableCredential {
   cardView?: boolean
   theme: any
 }

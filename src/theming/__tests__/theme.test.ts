@@ -201,6 +201,14 @@ describe('Theme', () => {
         name: 'ios-warning',
         iconFamily: 'Ionicons',
       },
+      DOWN: {
+        name: 'ios-arrow-down',
+        iconFamily: 'Ionicons',
+      },
+      UP: {
+        name: 'ios-arrow-up',
+        iconFamily: 'Ionicons',
+      },
     },
     statusBarStyle: 'dark-content',
   }
