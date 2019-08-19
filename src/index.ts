@@ -14,8 +14,10 @@ import Avatar from './components/Avatar/Avatar'
 import MenuItem from './components/MenuItem/MenuItem'
 import Modal from './components/Modal/Modal'
 import ClaimDebug from './components/ClaimExplore/ClaimDebug'
+import ClaimExplore from './components/ClaimExplore/ClaimExplore'
 import Banner from './components/Banner/Banner'
 import RequestItem from './components/RequestItem/RequestItem'
+import AccordionItem from './components/AccordionItem/AccordionItem'
 import Toast, { Toaster } from './components/Toast/Toast'
 import Credential from './components/Credential/Credential'
 import Card from './components/Card/Card'
@@ -49,6 +51,7 @@ export {
   Icon,
   LogItem,
   ListItem,
+  AccordionItem,
   MenuItem,
   Section,
   FabButton,
@@ -59,6 +62,7 @@ export {
   Credential,
   Card,
   ClaimDebug,
+  ClaimExplore,
   Banner,
   RequestItem,
   Constants,

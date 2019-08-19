@@ -114,3 +114,24 @@ export interface ThemeStatic {
   }
   statusBarStyle: string
 }
+
+export interface VerifiableCredential {
+  claim: any
+  claimType: string
+  iss?: string
+  sub?: string
+  type?: string
+  iat: number
+  exp?: number
+  vc?: string[] | string
+}
+
+export interface ClaimTreeNormalised {
+  level: number
+  key: string
+  keyName: string
+  title: string
+  hasChildren: boolean
+  isListItem: boolean
+  value: any
+}
