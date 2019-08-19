@@ -37,6 +37,8 @@ import Device from './services/device'
  */
 import useLayout from './hooks/useLayout'
 
+import * as Typings from './types'
+
 const Constants = {
   ButtonBlocks,
   BrandOptions,
@@ -68,6 +70,7 @@ export {
   Constants,
   Device,
   useLayout,
+  Typings,
 }
 
 /**
