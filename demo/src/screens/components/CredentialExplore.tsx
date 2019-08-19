@@ -1,7 +1,13 @@
 import * as React from 'react'
-import { Container, Screen, ClaimDebug } from '@kancha/kancha-ui'
+import { Container, Modal, ClaimExplore, Banner } from '@kancha/kancha-ui'
 import { NavigationScreen } from '../../navigators'
 import TEST_ID from '../../../../e2e/testIDs'
+
+// tslint:disable-next-line:no-var-requires
+const avatar1 = require('../../assets/images/kitten-avatar.jpg')
+
+// tslint:disable-next-line:no-var-requires
+const bannerImage = require('../../assets/images/abstract-blurred-gradient.jpg')
 
 const claim = {
   iss: 'did:ethr:0xb9c5714089478a327f09197987f16f9e5d936e8a',
@@ -30,13 +36,20 @@ const claim = {
   vc: [],
 }
 
-const Component: React.FC<NavigationScreen> = () => {
+const Component: React.FC<NavigationScreen> = ({}) => {
   return (
-    <Screen scrollEnabled={true}>
+    <Modal scrollEnabled={true}>
       <Container testID={TEST_ID.WELCOME}>
-        <ClaimDebug {...claim} cardView={true} />
+        <Banner
+          size={'small'}
+          title={'Kancha UI'}
+          subTitle={'Identity Wallet UI Kit'}
+          avatar={avatar1}
+          backgroundImage={bannerImage}
+        />
+        <ClaimExplore claim={claim.claim} />
       </Container>
-    </Screen>
+    </Modal>
   )
 }
 

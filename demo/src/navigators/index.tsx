@@ -2,7 +2,7 @@ import * as React from 'react'
 import { Container, Constants, Button, Icon } from '@kancha/kancha-ui'
 import { Animated, Easing } from 'react-native'
 import { Icons, Colors } from '../theme'
-import DrawerRight from './DrawerRight'
+// import DrawerRight from './DrawerRight'
 import DrawerLeft from './DrawerLeft'
 
 import {
@@ -27,6 +27,7 @@ import ModalScreen from '../screens/components/ModalScreen'
 import ClaimDebug from '../screens/components/ClaimDebug'
 import Request from '../screens/components/Request'
 import CredentialScreen from '../screens/components/Credential'
+import CredentialExplore from '../screens/components/CredentialExplore'
 
 export interface NavigationScreen {
   navigation: NavigationScreenProp<NavigationState, NavigationParams>
@@ -46,6 +47,7 @@ export const Screens = {
   ClaimDebug: 'ClaimDebug',
   Request: 'Request',
   Credential: 'Credential',
+  CredentialExplore: 'CredentialExplore',
 }
 
 const DrawerMenuButton = (navigation: any) => (
@@ -118,6 +120,7 @@ const RootNavigator = createStackNavigator(
       screen: ScannerScreen,
     },
     [Screens.Request]: Request,
+    [Screens.CredentialExplore]: CredentialExplore,
   },
   {
     initialRouteName: 'Main',
