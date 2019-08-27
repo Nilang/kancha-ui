@@ -7,6 +7,10 @@ import { withTheme } from '../../theming'
 
 interface RadioProps {
   /**
+   *  Pass a test ID to button
+   */
+  testID?: string
+  /**
    * On Press handler
    */
   onPress: () => void
@@ -29,7 +33,12 @@ interface RadioProps {
 
 const Radio: React.FC<RadioProps> = props => {
   return (
-    <TouchableHighlight onPress={props.onPress} underlayColor={'transparent'} disabled={props.disabled}>
+    <TouchableHighlight
+      onPress={props.onPress}
+      underlayColor={'transparent'}
+      disabled={props.disabled}
+      testID={props.testID}
+    >
       <Container flexDirection={'row'} alignItems={'center'} marginBottom={5}>
         <Icon icon={props.selected ? props.theme.icons.RADIO_ON : props.theme.icons.RADIO_OFF} />
         <Container flex={1} paddingLeft={8}>
