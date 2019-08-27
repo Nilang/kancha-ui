@@ -21,6 +21,8 @@ import AccordionItem from './components/AccordionItem/AccordionItem'
 import Toast, { Toaster } from './components/Toast/Toast'
 import Credential from './components/Credential/Credential'
 import Card from './components/Card/Card'
+import Indicator from './components/Indicator/Indicator'
+import RadioBtn from './components/RadioBtn/RadioBtn'
 
 /**
  * Constants
@@ -67,6 +69,8 @@ export {
   ClaimExplore,
   Banner,
   RequestItem,
+  Indicator,
+  RadioBtn,
   Constants,
   Device,
   useLayout,
