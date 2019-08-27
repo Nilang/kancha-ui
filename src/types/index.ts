@@ -134,3 +134,27 @@ export interface ClaimTreeNormalised {
   isListItem: boolean
   value: any
 }
+
+export interface RequestItemSelectable {
+  /**
+   *  A unique identifier
+   */
+  id: string
+  /**
+   *  This will need to be any type eg address may have sub keys
+   */
+  iss: string
+  /**
+   *  This will need to be any type eg address may have sub keys
+   */
+  property: string
+  /**
+   *  This will need to be any type eg address may have sub keys
+   */
+  value: string
+
+  /**
+   *  Item is selected for sharing
+   */
+  selected: boolean
+}

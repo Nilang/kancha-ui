@@ -219,6 +219,14 @@ export const createTheme = (customColors?: { [index: string]: string }) => {
         name: 'ios-arrow-up',
         iconFamily: 'Ionicons',
       },
+      RADIO_ON: {
+        name: 'ios-radio-button-on',
+        iconFamily: 'Ionicons',
+      },
+      RADIO_OFF: {
+        name: 'ios-radio-button-off',
+        iconFamily: 'Ionicons',
+      },
     },
     statusBarStyle: 'dark-content',
   }
