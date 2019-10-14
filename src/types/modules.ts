@@ -1,4 +1,4 @@
-declare module 'react-native-keyboard-aware-scrollview' {
+declare module 'react-native-keyboard-aware-scroll-view' {
   let KeyboardAwareScrollView: any
   export { KeyboardAwareScrollView }
 }

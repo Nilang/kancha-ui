@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { ImageSourcePropType, SafeAreaView, StatusBar, ImageBackground } from 'react-native'
-import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scrollview'
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import Container from '../Container/Container'
 import { withTheme } from '../../theming'
 import * as Kancha from '../../types'
