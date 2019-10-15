@@ -77,7 +77,7 @@ jobs:
       - run:
           name: Install Pods
           command: bundle exec pod install --verbose
-          working_directory: ios
+          working_directory: demo/ios
       - *save_pods_cache_ios
       - run:
           name: Install AppleSim Utils
