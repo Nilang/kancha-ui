@@ -158,7 +158,9 @@ exports[`Component(snapshot): Toast renders correctly with no props 1`] = `
       <View
         accessibilityLabel="TOAST_CLOSE_BTN"
         accessible={true}
+        focusable={true}
         isTVSelectable={true}
+        onClick={[Function]}
         onResponderGrant={[Function]}
         onResponderMove={[Function]}
         onResponderRelease={[Function]}

@@ -3,7 +3,9 @@
 exports[`Component(snapshot): RequestItem should render required with multi options 1`] = `
 <View
   accessible={true}
+  focusable={true}
   isTVSelectable={true}
+  onClick={[Function]}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -217,7 +219,9 @@ exports[`Component(snapshot): RequestItem should render required with multi opti
 exports[`Component(snapshot): RequestItem should render required with single option 1`] = `
 <View
   accessible={true}
+  focusable={true}
   isTVSelectable={true}
+  onClick={[Function]}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -385,7 +389,9 @@ exports[`Component(snapshot): RequestItem should render required with single opt
 exports[`Component(snapshot): RequestItem should render un-required with multi options 1`] = `
 <View
   accessible={true}
+  focusable={true}
   isTVSelectable={true}
+  onClick={[Function]}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -599,7 +605,9 @@ exports[`Component(snapshot): RequestItem should render un-required with multi o
 exports[`Component(snapshot): RequestItem should render un-required with single option 1`] = `
 <View
   accessible={true}
+  focusable={true}
   isTVSelectable={true}
+  onClick={[Function]}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
