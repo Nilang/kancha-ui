@@ -327,7 +327,9 @@ exports[`Component(snapshots): Modal should render with props 1`] = `
     >
       <View
         accessible={true}
+        focusable={true}
         isTVSelectable={true}
+        onClick={[Function]}
         onResponderGrant={[Function]}
         onResponderMove={[Function]}
         onResponderRelease={[Function]}
@@ -570,7 +572,9 @@ exports[`Component(snapshots): Modal should render with props and children 1`] =
     >
       <View
         accessible={true}
+        focusable={true}
         isTVSelectable={true}
+        onClick={[Function]}
         onResponderGrant={[Function]}
         onResponderMove={[Function]}
         onResponderRelease={[Function]}

@@ -3,7 +3,9 @@
 exports[`Component(snapshot): ListItem should hide forward arrow 1`] = `
 <View
   accessible={true}
+  focusable={true}
   isTVSelectable={true}
+  onClick={[Function]}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -223,7 +225,9 @@ exports[`Component(snapshot): ListItem should hide forward arrow 1`] = `
 exports[`Component(snapshot): ListItem should render in edit mode 1`] = `
 <View
   accessible={true}
+  focusable={true}
   isTVSelectable={true}
+  onClick={[Function]}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -480,7 +484,9 @@ exports[`Component(snapshot): ListItem should render in edit mode 1`] = `
 exports[`Component(snapshot): ListItem should render selected in edit mode 1`] = `
 <View
   accessible={true}
+  focusable={true}
   isTVSelectable={true}
+  onClick={[Function]}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -737,7 +743,9 @@ exports[`Component(snapshot): ListItem should render selected in edit mode 1`] =
 exports[`Component(snapshot): ListItem should render with a left icon 1`] = `
 <View
   accessible={true}
+  focusable={true}
   isTVSelectable={true}
+  onClick={[Function]}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -989,7 +997,9 @@ exports[`Component(snapshot): ListItem should render with a left icon 1`] = `
 exports[`Component(snapshot): ListItem should render with an external link handler 1`] = `
 <View
   accessible={true}
+  focusable={true}
   isTVSelectable={true}
+  onClick={[Function]}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -1214,7 +1224,9 @@ exports[`Component(snapshot): ListItem should render with an external link handl
 exports[`Component(snapshot): ListItem should render with an onPress handler 1`] = `
 <View
   accessible={true}
+  focusable={true}
   isTVSelectable={true}
+  onClick={[Function]}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -1439,7 +1451,9 @@ exports[`Component(snapshot): ListItem should render with an onPress handler 1`]
 exports[`Component(snapshot): ListItem should render with no props 1`] = `
 <View
   accessible={true}
+  focusable={true}
   isTVSelectable={true}
+  onClick={[Function]}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -1659,7 +1673,9 @@ exports[`Component(snapshot): ListItem should render with no props 1`] = `
 exports[`Component(snapshot): ListItem should render with props 1`] = `
 <View
   accessible={true}
+  focusable={true}
   isTVSelectable={true}
+  onClick={[Function]}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}

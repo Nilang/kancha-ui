@@ -3,7 +3,9 @@
 exports[`Component(snapshot): Indicator renders disabled 1`] = `
 <View
   accessible={true}
+  focusable={true}
   isTVSelectable={true}
+  onClick={[Function]}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -80,7 +82,9 @@ exports[`Component(snapshot): Indicator renders disabled 1`] = `
 exports[`Component(snapshot): Indicator renders unselected 1`] = `
 <View
   accessible={true}
+  focusable={true}
   isTVSelectable={true}
+  onClick={[Function]}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -157,7 +161,9 @@ exports[`Component(snapshot): Indicator renders unselected 1`] = `
 exports[`Component(snapshot): Indicator renders with children text 1`] = `
 <View
   accessible={true}
+  focusable={true}
   isTVSelectable={true}
+  onClick={[Function]}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -236,7 +242,9 @@ exports[`Component(snapshot): Indicator renders with children text 1`] = `
 exports[`Component(snapshot): Indicator renders with default props 1`] = `
 <View
   accessible={true}
+  focusable={true}
   isTVSelectable={true}
+  onClick={[Function]}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}

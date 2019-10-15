@@ -3,7 +3,9 @@
 exports[`Component(snapshots): FabButton should render with all props 1`] = `
 <View
   accessible={true}
+  focusable={true}
   isTVSelectable={true}
+  onClick={[Function]}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -37,7 +39,9 @@ exports[`Component(snapshots): FabButton should render with all props 1`] = `
 exports[`Component(snapshots): FabButton should render with default color 1`] = `
 <View
   accessible={true}
+  focusable={true}
   isTVSelectable={true}
+  onClick={[Function]}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -71,7 +75,9 @@ exports[`Component(snapshots): FabButton should render with default color 1`] = 
 exports[`Component(snapshots): FabButton should render with required props 1`] = `
 <View
   accessible={true}
+  focusable={true}
   isTVSelectable={true}
+  onClick={[Function]}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}

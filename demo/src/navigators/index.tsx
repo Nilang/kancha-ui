@@ -1,18 +1,13 @@
 import * as React from 'react'
 import { Container, Constants, Button, Icon } from '@kancha/kancha-ui'
-import { Animated, Easing } from 'react-native'
+// import { Animated, Easing } from 'react-native'
 import { Icons, Colors } from '../theme'
-// import DrawerRight from './DrawerRight'
 import DrawerLeft from './DrawerLeft'
 
-import {
-  createStackNavigator,
-  createAppContainer,
-  createDrawerNavigator,
-  NavigationParams,
-  NavigationScreenProp,
-  NavigationState,
-} from 'react-navigation'
+import { createAppContainer, NavigationParams, NavigationScreenProp, NavigationState } from 'react-navigation'
+
+import { createStackNavigator } from 'react-navigation-stack'
+import { createDrawerNavigator } from 'react-navigation-drawer'
 
 import ComponentsScreen from '../screens/Components'
 import ScreenScreen from '../screens/components/Screen'
@@ -106,7 +101,7 @@ const DrawerNavigatorLeft = createDrawerNavigator(
   {
     contentComponent: props => {
       // tslint:disable-next-line:no-console
-      // console.log(props)
+      // @ts-ignore
       return <DrawerLeft onItemPress={props.onItemPress} activeItemkey={props.activeItemKey} />
     },
   },
@@ -127,16 +122,16 @@ const RootNavigator = createStackNavigator(
     mode: 'modal',
     headerMode: 'none',
     transparentCard: true,
-    transitionConfig: (nextScene: any) => {
-      return {
-        transitionSpec: {
-          duration: nextScene.scene.route.routeName === 'Scanner' ? 0 : 500,
-          timing: Animated.timing,
-          easing: Easing.out(Easing.poly(7)),
-          useNativeDriver: true,
-        },
-      }
-    },
+    // transitionConfig: (nextScene: any) => {
+    //   return {
+    //     transitionSpec: {
+    //       duration: nextScene.scene.route.routeName === 'Scanner' ? 0 : 500,
+    //       timing: Animated.timing,
+    //       easing: Easing.out(Easing.poly(7)),
+    //       useNativeDriver: true,
+    //     },
+    //   }
+    // },
   },
 )
 

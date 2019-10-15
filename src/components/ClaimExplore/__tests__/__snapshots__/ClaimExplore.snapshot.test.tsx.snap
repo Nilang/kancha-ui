@@ -185,7 +185,9 @@ exports[`Component(snapshot): Claim Accordion Explorer should render with defaul
         >
           <View
             accessible={true}
+            focusable={true}
             isTVSelectable={true}
+            onClick={[Function]}
             onResponderGrant={[Function]}
             onResponderMove={[Function]}
             onResponderRelease={[Function]}
@@ -379,7 +381,9 @@ exports[`Component(snapshot): Claim Accordion Explorer should render with defaul
         >
           <View
             accessible={true}
+            focusable={true}
             isTVSelectable={true}
+            onClick={[Function]}
             onResponderGrant={[Function]}
             onResponderMove={[Function]}
             onResponderRelease={[Function]}
@@ -573,7 +577,9 @@ exports[`Component(snapshot): Claim Accordion Explorer should render with defaul
         >
           <View
             accessible={true}
+            focusable={true}
             isTVSelectable={true}
+            onClick={[Function]}
             onResponderGrant={[Function]}
             onResponderMove={[Function]}
             onResponderRelease={[Function]}
@@ -767,7 +773,9 @@ exports[`Component(snapshot): Claim Accordion Explorer should render with defaul
         >
           <View
             accessible={true}
+            focusable={true}
             isTVSelectable={true}
+            onClick={[Function]}
             onResponderGrant={[Function]}
             onResponderMove={[Function]}
             onResponderRelease={[Function]}
@@ -983,7 +991,9 @@ exports[`Component(snapshot): Claim Accordion Explorer should render with defaul
         >
           <View
             accessible={true}
+            focusable={true}
             isTVSelectable={true}
+            onClick={[Function]}
             onResponderGrant={[Function]}
             onResponderMove={[Function]}
             onResponderRelease={[Function]}
@@ -1199,7 +1209,9 @@ exports[`Component(snapshot): Claim Accordion Explorer should render with defaul
         >
           <View
             accessible={true}
+            focusable={true}
             isTVSelectable={true}
+            onClick={[Function]}
             onResponderGrant={[Function]}
             onResponderMove={[Function]}
             onResponderRelease={[Function]}
@@ -1447,7 +1459,9 @@ exports[`Component(snapshot): Claim Accordion Explorer should render with defaul
     >
       <View
         accessible={true}
+        focusable={true}
         isTVSelectable={true}
+        onClick={[Function]}
         onResponderGrant={[Function]}
         onResponderMove={[Function]}
         onResponderRelease={[Function]}
@@ -1641,7 +1655,9 @@ exports[`Component(snapshot): Claim Accordion Explorer should render with defaul
     >
       <View
         accessible={true}
+        focusable={true}
         isTVSelectable={true}
+        onClick={[Function]}
         onResponderGrant={[Function]}
         onResponderMove={[Function]}
         onResponderRelease={[Function]}
@@ -1835,7 +1851,9 @@ exports[`Component(snapshot): Claim Accordion Explorer should render with defaul
     >
       <View
         accessible={true}
+        focusable={true}
         isTVSelectable={true}
+        onClick={[Function]}
         onResponderGrant={[Function]}
         onResponderMove={[Function]}
         onResponderRelease={[Function]}
@@ -2029,7 +2047,9 @@ exports[`Component(snapshot): Claim Accordion Explorer should render with defaul
     >
       <View
         accessible={true}
+        focusable={true}
         isTVSelectable={true}
+        onClick={[Function]}
         onResponderGrant={[Function]}
         onResponderMove={[Function]}
         onResponderRelease={[Function]}
