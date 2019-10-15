@@ -21,29 +21,6 @@ aliases:
       - node_modules
       - ios/build
 
-  - &gems_cache_key_ios ios-bundle-v1-{{ checksum "Gemfile.lock" }}-{{ arch }}
-
-  - &restore_gems_cache_ios
-    restore_cache:
-      key: *gems_cache_key_ios
-
-  - &save_gems_cache_ios
-    save_cache:
-      key: *gems_cache_key_ios
-      paths:
-        - vendor/bundle
-
-  - &pods_cache_key_ios ios-pods-v1-{{ checksum "demo/ios/Podfile.lock" }}-{{ arch }}
-  - &restore_pods_cache_ios
-    restore_cache:
-      key: *pods_cache_key_ios
-
-  - &save_pods_cache_ios
-    save_cache:
-      key: *pods_cache_key_ios
-      paths:
-        - demo/ios/Pods
-
   - &install-node-dependencies
     name: Install node dependencies
     command: yarn install
@@ -64,21 +41,6 @@ jobs:
       pre:
     steps:
       - checkout
-      - run:
-          name: Fetch CocoaPods Specs
-          command: |
-            curl https://cocoapods-specs.circleci.com/fetch-cocoapods-repo-from-s3.sh | bash -s cf
-      - *restore_gems_cache_ios
-      - run:
-          name: Bundle install
-          command: bundle install
-      - *save_gems_cache_ios
-      - *restore_pods_cache_ios
-      - run:
-          name: Install Pods
-          command: bundle exec pod install --verbose
-          working_directory: demo/ios
-      - *save_pods_cache_ios
       - run:
           name: Install AppleSim Utils
           command: |
