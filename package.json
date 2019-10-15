@@ -118,13 +118,13 @@
     "configurations": {
       "ios.sim.debug": {
         "binaryPath": "demo/ios/DerivedData/KanchaSink/Build/Products/Debug-iphonesimulator/KanchaSink.app",
-        "build": "xcodebuild -project demo/ios/KanchaSink.xcodeproj -scheme KanchaSink -configuration Debug -sdk iphonesimulator -derivedDataPath demo/ios/DerivedData/KanchaSink -UseModernBuildSystem=NO",
+        "build": "xcodebuild -project demo/ios/KanchaSink.xcworkspace -scheme KanchaSink -configuration Debug -sdk iphonesimulator -derivedDataPath demo/ios/DerivedData/KanchaSink -UseModernBuildSystem=NO",
         "type": "ios.simulator",
         "name": "iPhone 8"
       },
       "ios.sim.release": {
         "binaryPath": "demo/ios/DerivedData/KanchaSink/Build/Products/Release-iphonesimulator/KanchaSink.app",
-        "build": "xcodebuild -project demo/ios/KanchaSink.xcodeproj -scheme KanchaSink -configuration Release -sdk iphonesimulator -derivedDataPath demo/ios/DerivedData/KanchaSink -UseModernBuildSystem=NO",
+        "build": "xcodebuild -project demo/ios/KanchaSink.xcworkspace -scheme KanchaSink -configuration Release -sdk iphonesimulator -derivedDataPath demo/ios/DerivedData/KanchaSink -UseModernBuildSystem=NO",
         "type": "ios.simulator",
         "name": "iPhone X"
       },
