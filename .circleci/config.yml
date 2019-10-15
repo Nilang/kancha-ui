@@ -4,28 +4,52 @@
 # #
 
 version: 2
-aliases:
-  - &restore-cache
+references:
+  restore-cache: &restore-cache
     keys:
       - v1-dependencies-{{ .Branch }}-{{ checksum "package.json" }}
       - v1-dependencies-{{ .Branch }}
 
-  - &save-node-cache
+  save-node-cache: &save-node-cache
     key: v1-dependencies-{{ .Branch }}-{{ checksum "package.json" }}
     paths:
       - node_modules
 
-  - &save-ios-cache
+  save-ios-cache: &save-ios-cache
     key: v1-dependencies-{{ .Branch }}-{{ checksum "package.json" }}
     paths:
       - node_modules
       - ios/build
 
-  - &install-node-dependencies
+  gems_cache_key_ios: &gems_cache_key_ios ios-bundle-v1-{{ checksum "Gemfile.lock" }}-{{ arch }}
+
+  restore_gems_cache_ios: &restore_gems_cache_ios
+    restore_cache:
+      key: *gems_cache_key_ios
+
+  save_gems_cache_ios: &save_gems_cache_ios
+    save_cache:
+      key: *gems_cache_key_ios
+      paths:
+        - vendor/bundle
+
+  pods_cache_key_ios: &pods_cache_key_ios ios-pods-v1-{{ checksum "demo/ios/Podfile.lock" }}-{{ arch }}
+
+  restore_pods_cache_ios: &restore_pods_cache_ios
+    restore_cache:
+      key: *pods_cache_key_ios
+
+  save_pods_cache_ios: &save_pods_cache_ios
+    save_cache:
+      key: *pods_cache_key_ios
+      paths:
+        - demo/ios/Pods
+
+  install-node-dependencies: &install-node-dependencies
     name: Install node dependencies
     command: yarn install
 
-  - &compile-typescript
+  compile-typescript: &compile-typescript
     name: Compile TypeScript
     command: yarn build
 
@@ -42,6 +66,10 @@ jobs:
     steps:
       - checkout
       - run:
+          name: Fetch CocoaPods Specs
+          command: |
+            curl https://cocoapods-specs.circleci.com/fetch-cocoapods-repo-from-s3.sh | bash -s cf
+      - run:
           name: Install AppleSim Utils
           command: |
             brew update
@@ -50,6 +78,16 @@ jobs:
       - run:
           name: Install Detox CLI
           command: npm install -g detox-cli
+      - *restore_gems_cache_ios
+      - run:
+          name: Bundle install
+          command: bundle install
+      - *restore_pods_cache_ios
+      - run:
+          name: Install Pods
+          command: bundle exec pod install --verbose
+          working_directory: ios
+      - *save_pods_cache_ios
       - run: *install-node-dependencies
       - run: *compile-typescript
       - run:
@@ -66,7 +104,7 @@ jobs:
       - image: 'circleci/node:latest'
     steps:
       - checkout
-      - restore_cache: *restore-cache
+      - restore_cache: *restore_cache
       - run: *install-node-dependencies
       - save_cache: *save-node-cache
       - run: yarn test --maxWorkers 2
