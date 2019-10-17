@@ -1,3 +1,5 @@
+import { ImageSourcePropType } from 'react-native'
+
 export interface NavigationScreen {
   componentId: string
 }
@@ -119,6 +121,12 @@ export interface ThemeStatic {
     }
   }
   statusBarStyle: string
+}
+
+export interface Identity {
+  name: string
+  did: string
+  avatar: ImageSourcePropType
 }
 
 export interface VerifiableCredential {

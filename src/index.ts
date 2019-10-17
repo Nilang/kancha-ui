@@ -24,6 +24,7 @@ import Card from './components/Card/Card'
 import Indicator from './components/Indicator/Indicator'
 import RadioBtn from './components/RadioBtn/RadioBtn'
 import ActivityItem from './components/ActivityItem/ActivityItem'
+import ActivityItemHeader from './components/ActivityItemHeader/ActivityItemHeader'
 
 /**
  * Constants
@@ -59,6 +60,7 @@ export {
   AccordionItem,
   MenuItem,
   ActivityItem,
+  ActivityItemHeader,
   Section,
   FabButton,
   Avatar,

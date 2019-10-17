@@ -1,21 +1,14 @@
 import * as React from 'react'
-import { ImageSourcePropType, TouchableOpacity } from 'react-native'
+import { TouchableOpacity } from 'react-native'
 import Container from '../Container/Container'
 import Button, { ButtonBlocks } from '../Button/Button'
 import Avatar from '../Avatar/Avatar'
-import { BrandOptions } from '../../constants'
 import Icon from '../Icon/Icon'
-import Text, { TextTypes } from '../Text/Text'
 import Credential from '../../components/Credential/Credential'
+import ActivityItemHeader from '../../components/ActivityItemHeader/ActivityItemHeader'
+import * as Kancha from '../../types'
 import { withTheme } from '../../theming'
-import S from 'string'
-import { formatDistanceToNow } from 'date-fns'
-
-interface Actor {
-  name: string
-  did: string
-  avatar: ImageSourcePropType
-}
+import { BrandOptions } from '../../constants'
 
 interface ActivityItemProps {
   /**
@@ -26,7 +19,7 @@ interface ActivityItemProps {
   /**
    * The issuer of this message item
    */
-  issuer: Actor
+  issuer: Kancha.Identity
 
   /**
    * The activity that is takaing place
@@ -41,7 +34,7 @@ interface ActivityItemProps {
   /**
    * The viewer. In this cane will always be 'You' or 'My'
    */
-  subject: Actor
+  subject: Kancha.Identity
 
   /**
    * The reason for the message
@@ -92,54 +85,15 @@ const ActivityItem: React.FC<ActivityItemProps> = ({
         </Container>
       </Container>
       <Container marginLeft paddingRight flex={1}>
-        <Container>
-          <Container flex={1} marginBottom={4}>
-            {reason ? (
-              <Text>
-                <Text
-                  type={TextTypes.ActivityTitle}
-                  bold
-                  onPress={() => profileAction(incoming ? 'Show ISSUER Profile' : 'Show MY Profile')}
-                >
-                  {incoming ? issuer.name : S(subject.name).capitalize().s}
-                </Text>
-                <Text type={TextTypes.ActivityTitle}>&nbsp;{activity}</Text>
-                {!incoming && (
-                  <Text
-                    type={TextTypes.ActivityTitle}
-                    bold
-                    onPress={() => profileAction('Show ISSUER Profile')}
-                  >
-                    &nbsp;{issuer.name}
-                  </Text>
-                )}
-                <Text type={TextTypes.ActivityTitle}>&nbsp;so {subject.name}</Text>
-                <Text type={TextTypes.ActivityTitle} bold>
-                  &nbsp;{reason}
-                </Text>
-              </Text>
-            ) : (
-              <Text>
-                <Text
-                  type={TextTypes.ActivityTitle}
-                  bold
-                  onPress={() => profileAction(incoming ? 'Show ISSUER Profile' : 'Show MY Profile')}
-                >
-                  {incoming ? issuer.name : S(subject.name).capitalize().s}
-                </Text>
-                <Text type={TextTypes.ActivityTitle}>&nbsp;{activity}</Text>
-                <Text
-                  type={TextTypes.ActivityTitle}
-                  bold
-                  onPress={() => !incoming && profileAction('Show ISSUER Profile')}
-                >
-                  &nbsp;{!incoming && issuer.name}
-                </Text>
-              </Text>
-            )}
-          </Container>
-          <Text type={TextTypes.ActivitySubTitle}>{formatDistanceToNow(date)}</Text>
-        </Container>
+        <ActivityItemHeader
+          incoming={incoming}
+          issuer={issuer}
+          subject={subject}
+          profileAction={profileAction}
+          date={date}
+          activity={activity}
+          reason={reason}
+        />
         {attachments && (
           <TouchableOpacity onPress={() => attachmentsAction && attachmentsAction(attachments)}>
             <Container h={100} marginTop flex={1}>
