@@ -61,7 +61,6 @@ const DrawerMenuButton = (navigation: any) => (
 )
 
 const MainNavigator = createStackNavigator({
-  [Screens.ActivityFeed]: ActivityFeed,
   [Screens.Home]: {
     screen: ComponentsScreen,
     navigationOptions: ({ navigation }: any) => {
@@ -71,6 +70,7 @@ const MainNavigator = createStackNavigator({
       }
     },
   },
+  [Screens.ActivityFeed]: ActivityFeed,
   [Screens.Screen]: ScreenScreen,
   [Screens.Button]: ButtonScreen,
   [Screens.ListItem]: ListItemScreen,
