@@ -16,8 +16,11 @@ export interface TextTypesStatic {
   ListItemRight: 'listItemRight'
   ListItemNote: 'listItemNote'
   SubTitle: 'subTitle'
+  ActivityTitle: 'activityTitle'
+  ActivitySubTitle: 'activitySubTitle'
   Body: 'body'
   Button: 'button'
+  ButtonSmall: 'buttonSmall'
   NavButton: 'navButton'
   Summary: 'summary'
   SectionHeader: 'sectionHeader'
@@ -78,6 +81,7 @@ export interface ThemeStatic {
       summary: number
       body: number
       button: number
+      buttonSmall: number
       navButton: number
     }
   }

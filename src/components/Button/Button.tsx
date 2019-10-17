@@ -31,6 +31,11 @@ interface ButtonProps {
   bold?: boolean
 
   /**
+   * Enable smaller button
+   */
+  small?: boolean
+
+  /**
    * Remove width limitations
    */
   fullWidth?: boolean
@@ -99,6 +104,7 @@ const Button: React.FC<ButtonProps> & {
   onPress,
   disabled,
   buttonText,
+  small,
   centered,
   bold,
   navButton,
@@ -121,7 +127,9 @@ const Button: React.FC<ButtonProps> & {
           borderColor: type ? theme.colors[type].button : theme.colors.primary.button,
         }
       : {}),
-    ...(noPadding || iconButton ? {} : { padding: theme.spacing.default }),
+    ...(noPadding || iconButton
+      ? {}
+      : { padding: small ? theme.spacing.default / 2 : theme.spacing.default }),
     alignItems: 'center',
     ...(fullWidth ? {} : { maxWidth: 300 }),
     borderRadius: theme.roundedCorners.buttons,
@@ -165,7 +173,7 @@ const Button: React.FC<ButtonProps> & {
         <Container alignItems={'center'} justifyContent={'center'}>
           <Text
             textDecorationLine={textDecorationLine}
-            type={TextTypes.Button}
+            type={small ? TextTypes.ButtonSmall : TextTypes.Button}
             buttonTextColor={disabled ? 'secondary' : type}
             block={block}
             bold={bold}

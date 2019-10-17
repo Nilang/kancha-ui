@@ -23,6 +23,7 @@ import Credential from './components/Credential/Credential'
 import Card from './components/Card/Card'
 import Indicator from './components/Indicator/Indicator'
 import RadioBtn from './components/RadioBtn/RadioBtn'
+import ActivityItem from './components/ActivityItem/ActivityItem'
 
 /**
  * Constants
@@ -57,6 +58,7 @@ export {
   ListItem,
   AccordionItem,
   MenuItem,
+  ActivityItem,
   Section,
   FabButton,
   Avatar,
