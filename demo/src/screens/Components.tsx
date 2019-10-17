@@ -28,7 +28,7 @@ const Components: React.FC<NavigationScreen> = props => {
       fabButton={
         <Container alignItems={'center'} justifyContent={'flex-end'} flex={1}>
           <FabButton
-            onPress={() => props.navigation.push(Screens.Scanner)}
+            onPress={() => props.navigation.navigate(Screens.Scanner)}
             icon={{ name: 'ios-qr-scanner', iconFamily: 'Ionicons' }}
             size={80}
           />
@@ -41,17 +41,17 @@ const Components: React.FC<NavigationScreen> = props => {
         </Text>
       </Container>
       <Section title={'Components'}>
-        <ListItem onPress={() => props.navigation.push(Screens.Screen)}>Screen</ListItem>
-        <ListItem onPress={() => props.navigation.push(Screens.Container)}>Container</ListItem>
-        <ListItem onPress={() => props.navigation.push(Screens.Text)}>Text</ListItem>
-        <ListItem onPress={() => props.navigation.push(Screens.Button)}>Button</ListItem>
-        <ListItem onPress={() => props.navigation.push(Screens.Dummy)}>Icon</ListItem>
-        <ListItem onPress={() => props.navigation.push(Screens.ListItem)}>List Item</ListItem>
-        <ListItem onPress={() => props.navigation.push(Screens.Dummy)}>Log Item</ListItem>
-        <ListItem onPress={() => props.navigation.push(Screens.ClaimDebug)}>Claim Debug</ListItem>
-        <ListItem onPress={() => props.navigation.push('Modal')}>Modal</ListItem>
-        <ListItem onPress={() => props.navigation.push(Screens.Credential)}>Credentials</ListItem>
-        <ListItem onPress={() => props.navigation.push(Screens.Request)} last={true}>
+        <ListItem onPress={() => props.navigation.navigate(Screens.Screen)}>Screen</ListItem>
+        <ListItem onPress={() => props.navigation.navigate(Screens.Container)}>Container</ListItem>
+        <ListItem onPress={() => props.navigation.navigate(Screens.Text)}>Text</ListItem>
+        <ListItem onPress={() => props.navigation.navigate(Screens.Button)}>Button</ListItem>
+        <ListItem onPress={() => props.navigation.navigate(Screens.Dummy)}>Icon</ListItem>
+        <ListItem onPress={() => props.navigation.navigate(Screens.ListItem)}>List Item</ListItem>
+        <ListItem onPress={() => props.navigation.navigate(Screens.Dummy)}>Log Item</ListItem>
+        <ListItem onPress={() => props.navigation.navigate(Screens.ClaimDebug)}>Claim Debug</ListItem>
+        <ListItem onPress={() => props.navigation.navigate('Modal')}>Modal</ListItem>
+        <ListItem onPress={() => props.navigation.navigate(Screens.Credential)}>Credentials</ListItem>
+        <ListItem onPress={() => props.navigation.navigate(Screens.Request)} last={true}>
           Request
         </ListItem>
       </Section>

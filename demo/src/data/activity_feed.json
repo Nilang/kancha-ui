@@ -1,0 +1,74 @@
+[
+  {
+    "date": 1571329073000,
+    "incoming": false,
+    "issuer": { "name": "Space X", "did": "0x1efgh", "avatar": "" },
+    "subject": { "name": "you", "did": "0x1efgs", "avatar": "" },
+    "activity": "shared items with",
+    "reason": "can go to Mars"
+  },
+  {
+    "date": 1571321873000,
+    "incoming": true,
+    "issuer": { "name": "Space X", "did": "0x1efgh", "avatar": "" },
+    "subject": { "name": "you", "did": "0x1efgs", "avatar": "" },
+    "activity": "requested some information",
+    "reason": "can go to Mars",
+    "actions": ["Revoke", "Sign"]
+  },
+  {
+    "date": 1571300273000,
+    "incoming": false,
+    "issuer": { "name": "Allianz", "did": "0x1efgh", "avatar": "" },
+    "subject": { "name": "you", "did": "0x1efgs", "avatar": "" },
+    "activity": "shared items with",
+    "actions": []
+  },
+  {
+    "date": 1571257073000,
+    "incoming": true,
+    "issuer": { "name": "Jeff Bezos", "did": "0x1efgh", "avatar": "" },
+    "subject": { "name": "you", "did": "0x1efgs", "avatar": "" },
+    "activity": "sent you a credential",
+    "actions": [],
+    "attachments": [
+      {
+        "key": 1,
+        "title": "Amazon Junkie",
+        "issuer": { "name": "Jeff Bezos", "did": "0x1efgh", "avatar": "" },
+        "attachmentType": "Credential",
+        "claim": {}
+      }
+    ]
+  },
+  {
+    "date": 1571246273000,
+    "incoming": true,
+    "issuer": { "name": "Allianz Pet Insurance", "did": "0x1efgh", "avatar": "" },
+    "subject": { "name": "you", "did": "0x1efgs", "avatar": "" },
+    "activity": "requested some information"
+  },
+  {
+    "date": 1571246273000,
+    "incoming": true,
+    "issuer": { "name": "David Bowie", "did": "0x1efgh", "avatar": "" },
+    "subject": { "name": "you", "did": "0x1efgs", "avatar": "" },
+    "activity": "sent you 12 credentials",
+    "attachments": [
+      {
+        "key": 1,
+        "title": "Moosical Prodigy",
+        "issuer": { "name": "Ziggy Stardust", "did": "0x1efgh", "avatar": "" },
+        "attachmentType": "Credential",
+        "claim": {}
+      },
+      {
+        "key": 2,
+        "title": "Radio Star",
+        "issuer": { "name": "Major Tom", "did": "0x1efgh", "avatar": "" },
+        "attachmentType": "Credential",
+        "claim": {}
+      }
+    ]
+  }
+]
