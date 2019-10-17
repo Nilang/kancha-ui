@@ -74,6 +74,8 @@ export interface ThemeStatic {
       h5: number
       h6: number
       subTitle: number
+      activityTitle: number
+      activitySubTitle: number
       listItem: number
       listItemRight: number
       listItemNote: number

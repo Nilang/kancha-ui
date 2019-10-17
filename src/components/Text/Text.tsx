@@ -134,7 +134,7 @@ const KanchaText: React.FC<TextProps> & { Types: Kancha.TextTypesStatic } = prop
       color: props.theme.colors.primary.text,
     },
     activitySubTitle: {
-      fontSize: props.theme.text.sizes.activitySubtitleTitle,
+      fontSize: props.theme.text.sizes.activitySubTitle,
       color: props.theme.colors.secondary.text,
     },
     subTitle: {

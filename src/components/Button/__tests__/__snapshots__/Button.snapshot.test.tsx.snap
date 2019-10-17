@@ -78,6 +78,7 @@ exports[`Component(snapshots): Button renders a disabled button correctly 1`] = 
         style={
           Object {
             "color": "#FFFFFF",
+            "flexWrap": "wrap",
             "fontSize": 18,
           }
         }
@@ -113,6 +114,7 @@ exports[`Component(snapshots): Button renders a disabled nav button correctly 1`
     style={
       Object {
         "color": "#FFFFFF",
+        "flexWrap": "wrap",
         "fontSize": 20,
       }
     }
@@ -229,6 +231,7 @@ exports[`Component(snapshots): Button renders a filled button correctly with all
         style={
           Object {
             "color": "#FFFFFF",
+            "flexWrap": "wrap",
             "fontSize": 18,
             "fontWeight": "bold",
           }
@@ -264,6 +267,7 @@ exports[`Component(snapshots): Button renders a nav button correctly 1`] = `
   <Text
     style={
       Object {
+        "flexWrap": "wrap",
         "fontSize": 20,
       }
     }
@@ -372,6 +376,7 @@ exports[`Component(snapshots): Button renders an icon button correctly 1`] = `
       <Text
         style={
           Object {
+            "flexWrap": "wrap",
             "fontSize": 18,
           }
         }
@@ -486,6 +491,7 @@ exports[`Component(snapshots): Button renders an outlined button correctly 1`] =
       <Text
         style={
           Object {
+            "flexWrap": "wrap",
             "fontSize": 18,
           }
         }
@@ -601,6 +607,7 @@ exports[`Component(snapshots): Button renders an outlined button correctly with 
         style={
           Object {
             "color": "#0078ff",
+            "flexWrap": "wrap",
             "fontSize": 18,
           }
         }

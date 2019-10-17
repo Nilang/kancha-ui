@@ -72,7 +72,11 @@ exports[`Component(snapshot): Indicator renders disabled 1`] = `
       }
     >
       <Text
-        style={Object {}}
+        style={
+          Object {
+            "flexWrap": "wrap",
+          }
+        }
       />
     </View>
   </View>
@@ -151,7 +155,11 @@ exports[`Component(snapshot): Indicator renders unselected 1`] = `
       }
     >
       <Text
-        style={Object {}}
+        style={
+          Object {
+            "flexWrap": "wrap",
+          }
+        }
       />
     </View>
   </View>
@@ -230,7 +238,11 @@ exports[`Component(snapshot): Indicator renders with children text 1`] = `
       }
     >
       <Text
-        style={Object {}}
+        style={
+          Object {
+            "flexWrap": "wrap",
+          }
+        }
       >
         Test radio button text
       </Text>
@@ -311,7 +323,11 @@ exports[`Component(snapshot): Indicator renders with default props 1`] = `
       }
     >
       <Text
-        style={Object {}}
+        style={
+          Object {
+            "flexWrap": "wrap",
+          }
+        }
       />
     </View>
   </View>

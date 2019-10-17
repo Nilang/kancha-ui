@@ -252,6 +252,7 @@ exports[`Component(snapshot): Claim Accordion Explorer should render with defaul
                   style={
                     Object {
                       "color": "#BBBBBB",
+                      "flexWrap": "wrap",
                       "fontSize": 14,
                     }
                   }
@@ -288,6 +289,7 @@ exports[`Component(snapshot): Claim Accordion Explorer should render with defaul
                     style={
                       Object {
                         "color": "#333333",
+                        "flexWrap": "wrap",
                         "fontSize": 16,
                         "lineHeight": 22,
                       }
@@ -448,6 +450,7 @@ exports[`Component(snapshot): Claim Accordion Explorer should render with defaul
                   style={
                     Object {
                       "color": "#BBBBBB",
+                      "flexWrap": "wrap",
                       "fontSize": 14,
                     }
                   }
@@ -484,6 +487,7 @@ exports[`Component(snapshot): Claim Accordion Explorer should render with defaul
                     style={
                       Object {
                         "color": "#333333",
+                        "flexWrap": "wrap",
                         "fontSize": 16,
                         "lineHeight": 22,
                       }
@@ -644,6 +648,7 @@ exports[`Component(snapshot): Claim Accordion Explorer should render with defaul
                   style={
                     Object {
                       "color": "#BBBBBB",
+                      "flexWrap": "wrap",
                       "fontSize": 14,
                     }
                   }
@@ -680,6 +685,7 @@ exports[`Component(snapshot): Claim Accordion Explorer should render with defaul
                     style={
                       Object {
                         "color": "#333333",
+                        "flexWrap": "wrap",
                         "fontSize": 16,
                         "lineHeight": 22,
                       }
@@ -866,6 +872,7 @@ exports[`Component(snapshot): Claim Accordion Explorer should render with defaul
                     style={
                       Object {
                         "color": "#333333",
+                        "flexWrap": "wrap",
                         "fontSize": 16,
                         "lineHeight": 22,
                       }
@@ -1084,6 +1091,7 @@ exports[`Component(snapshot): Claim Accordion Explorer should render with defaul
                     style={
                       Object {
                         "color": "#333333",
+                        "flexWrap": "wrap",
                         "fontSize": 16,
                         "lineHeight": 22,
                       }
@@ -1302,6 +1310,7 @@ exports[`Component(snapshot): Claim Accordion Explorer should render with defaul
                     style={
                       Object {
                         "color": "#333333",
+                        "flexWrap": "wrap",
                         "fontSize": 16,
                         "lineHeight": 22,
                       }
@@ -1526,6 +1535,7 @@ exports[`Component(snapshot): Claim Accordion Explorer should render with defaul
               style={
                 Object {
                   "color": "#BBBBBB",
+                  "flexWrap": "wrap",
                   "fontSize": 14,
                 }
               }
@@ -1562,6 +1572,7 @@ exports[`Component(snapshot): Claim Accordion Explorer should render with defaul
                 style={
                   Object {
                     "color": "#333333",
+                    "flexWrap": "wrap",
                     "fontSize": 16,
                     "lineHeight": 22,
                   }
@@ -1722,6 +1733,7 @@ exports[`Component(snapshot): Claim Accordion Explorer should render with defaul
               style={
                 Object {
                   "color": "#BBBBBB",
+                  "flexWrap": "wrap",
                   "fontSize": 14,
                 }
               }
@@ -1758,6 +1770,7 @@ exports[`Component(snapshot): Claim Accordion Explorer should render with defaul
                 style={
                   Object {
                     "color": "#333333",
+                    "flexWrap": "wrap",
                     "fontSize": 16,
                     "lineHeight": 22,
                   }
@@ -1918,6 +1931,7 @@ exports[`Component(snapshot): Claim Accordion Explorer should render with defaul
               style={
                 Object {
                   "color": "#BBBBBB",
+                  "flexWrap": "wrap",
                   "fontSize": 14,
                 }
               }
@@ -1954,6 +1968,7 @@ exports[`Component(snapshot): Claim Accordion Explorer should render with defaul
                 style={
                   Object {
                     "color": "#333333",
+                    "flexWrap": "wrap",
                     "fontSize": 16,
                     "lineHeight": 22,
                   }
@@ -2140,6 +2155,7 @@ exports[`Component(snapshot): Claim Accordion Explorer should render with defaul
                 style={
                   Object {
                     "color": "#333333",
+                    "flexWrap": "wrap",
                     "fontSize": 16,
                     "lineHeight": 22,
                   }

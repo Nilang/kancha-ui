@@ -65,6 +65,9 @@ exports[`Component(snapshot): Card should render with props 1`] = `
   style={
     Object {
       "opacity": 1,
+      "shadowColor": "#000000",
+      "shadowOpacity": 0.2,
+      "shadowRadius": 1.5,
     }
   }
 >

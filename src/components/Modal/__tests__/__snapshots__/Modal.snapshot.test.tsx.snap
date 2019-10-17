@@ -431,6 +431,7 @@ exports[`Component(snapshots): Modal should render with props 1`] = `
             <Text
               style={
                 Object {
+                  "flexWrap": "wrap",
                   "fontSize": 18,
                 }
               }
@@ -676,6 +677,7 @@ exports[`Component(snapshots): Modal should render with props and children 1`] =
             <Text
               style={
                 Object {
+                  "flexWrap": "wrap",
                   "fontSize": 18,
                 }
               }
@@ -687,7 +689,11 @@ exports[`Component(snapshots): Modal should render with props and children 1`] =
     <RCTScrollView>
       <View>
         <Text
-          style={Object {}}
+          style={
+            Object {
+              "flexWrap": "wrap",
+            }
+          }
         >
           Test Modal
         </Text>

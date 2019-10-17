@@ -5,6 +5,7 @@ exports[`Container renders correctly with all props 1`] = `
   style={
     Object {
       "color": "#FFFFFF",
+      "flexWrap": "wrap",
       "fontSize": 32,
       "fontWeight": "bold",
       "opacity": 0.9,
@@ -22,6 +23,7 @@ exports[`Container renders correctly with default padding bottom 1`] = `
 <Text
   style={
     Object {
+      "flexWrap": "wrap",
       "paddingBottom": 15,
     }
   }
@@ -32,7 +34,11 @@ exports[`Container renders correctly with default padding bottom 1`] = `
 
 exports[`Container renders correctly with no props 1`] = `
 <Text
-  style={Object {}}
+  style={
+    Object {
+      "flexWrap": "wrap",
+    }
+  }
 >
   Hello World
 </Text>

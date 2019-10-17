@@ -110,6 +110,7 @@ exports[`Component(snapshots): LogItem should render active with icon 1`] = `
         style={
           Object {
             "color": "#0078ff",
+            "flexWrap": "wrap",
           }
         }
       >
@@ -229,7 +230,11 @@ exports[`Component(snapshots): LogItem should render with icon 1`] = `
       }
     >
       <Text
-        style={Object {}}
+        style={
+          Object {
+            "flexWrap": "wrap",
+          }
+        }
       >
         Test Menu Item
       </Text>
@@ -313,7 +318,11 @@ exports[`Component(snapshots): LogItem should render with required props 1`] = `
       }
     >
       <Text
-        style={Object {}}
+        style={
+          Object {
+            "flexWrap": "wrap",
+          }
+        }
       >
         Test Menu Item
       </Text>

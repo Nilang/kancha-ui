@@ -28,7 +28,7 @@ export const createTheme = (customColors?: { [index: string]: string }) => {
         h6: 14,
         subTitle: 14,
         activityTitle: 15,
-        activitySubtitleTitle: 13,
+        activitySubTitle: 13,
         listItem: 18,
         listItemRight: 18,
         listItemNote: 15,

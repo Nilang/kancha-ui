@@ -57,6 +57,7 @@ exports[`Component(snapshot): Section should render with just a title 1`] = `
       style={
         Object {
           "color": "#BBBBBB",
+          "flexWrap": "wrap",
           "fontSize": 14,
           "paddingBottom": 15,
         }
@@ -215,6 +216,7 @@ exports[`Component(snapshot): Section should render with props 1`] = `
       style={
         Object {
           "color": "#BBBBBB",
+          "flexWrap": "wrap",
           "fontSize": 14,
           "fontWeight": "bold",
           "paddingBottom": 15,
