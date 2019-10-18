@@ -12,6 +12,10 @@ import { BrandOptions } from '../../constants'
 
 interface ActivityItemProps {
   /**
+   * The unique id or message hash
+   */
+  id: string
+  /**
    * The timestamp for when this message was recieved or sent
    */
   date: number
@@ -54,17 +58,31 @@ interface ActivityItemProps {
   /**
    * Message actions
    */
-  actions?: any[]
+  actions?: string[]
+
+  /*
+   * The confirm action
+   */
+  confirm?: (id: string) => void
+
+  /*
+   * The reject action
+   */
+  reject?: (id: string) => void
 
   /**
    * Profile actions like being able to navigate to a profile
    */
   profileAction: (id: string) => void
 
+  /**
+   * Theme prop
+   */
   theme: any
 }
 
 const ActivityItem: React.FC<ActivityItemProps> = ({
+  id,
   incoming,
   activity,
   issuer,
@@ -75,6 +93,8 @@ const ActivityItem: React.FC<ActivityItemProps> = ({
   actions,
   profileAction,
   date,
+  confirm,
+  reject,
 }) => {
   return (
     <Container flex={1} flexDirection={'row'} background={'primary'} padding marginBottom={10}>
@@ -118,22 +138,26 @@ const ActivityItem: React.FC<ActivityItemProps> = ({
         {actions && (
           <Container flex={1} marginTop flexDirection={'row'}>
             <Container flex={2} marginRight={5}>
-              <Button
-                small
-                buttonText={'Action'}
-                type={BrandOptions.Primary}
-                block={ButtonBlocks.Filled}
-                onPress={() => {}}
-              ></Button>
+              {confirm && actions[0] && (
+                <Button
+                  small
+                  buttonText={actions[0]}
+                  type={BrandOptions.Primary}
+                  block={ButtonBlocks.Filled}
+                  onPress={() => confirm(id)}
+                ></Button>
+              )}
             </Container>
             <Container flex={2}>
-              <Button
-                small
-                buttonText={'Action'}
-                type={BrandOptions.Secondary}
-                block={ButtonBlocks.Filled}
-                onPress={() => {}}
-              ></Button>
+              {reject && actions[1] && (
+                <Button
+                  small
+                  buttonText={actions[1]}
+                  type={BrandOptions.Secondary}
+                  block={ButtonBlocks.Filled}
+                  onPress={() => reject(id)}
+                ></Button>
+              )}
             </Container>
           </Container>
         )}

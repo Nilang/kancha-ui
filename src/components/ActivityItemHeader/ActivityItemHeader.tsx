@@ -67,7 +67,7 @@ const ActivityItemHeader: React.FC<ActivityItemHeaderProps> = ({
           </Text>
         )}
       </Container>
-      <Text type={TextTypes.ActivitySubTitle}>{formatDistanceToNow(date)}</Text>
+      <Text type={TextTypes.ActivitySubTitle}>{formatDistanceToNow(date)} ago</Text>
     </Container>
   )
 }

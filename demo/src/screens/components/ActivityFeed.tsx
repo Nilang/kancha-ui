@@ -6,17 +6,18 @@ const activityFeed = require('../../data/activity_feed.json')
 
 const Component: React.FC<NavigationScreen> = props => {
   const showAttachment = (att: any) => {
-    /**
-     * Some sort of attahment parser to figure out what view to show
-     */
     console.log(att)
   }
-
   const displayProfile = (id: any) => {
-    /**
-     * Display a profile screen
-     */
     props.navigation.navigate(Screens.Profile, { id })
+    console.log(id)
+  }
+  const confirmRequest = (id: any) => {
+    props.navigation.navigate(Screens.Request)
+    console.log(id)
+  }
+  const rejectRequest = (id: any) => {
+    props.navigation.navigate(Screens.Request)
     console.log(id)
   }
 
@@ -28,11 +29,13 @@ const Component: React.FC<NavigationScreen> = props => {
             Today
           </Text>
         </Container>
-        {activityFeed.map((feedItem: any, index: number) => {
+        {activityFeed.map((feedItem: any) => {
           return (
             <ActivityItem
-              key={index}
+              key={feedItem.id}
               {...feedItem}
+              confirm={confirmRequest}
+              reject={rejectRequest}
               attachmentsAction={(att: any) => showAttachment(att)}
               profileAction={(id: any) => displayProfile(id)}
             />
