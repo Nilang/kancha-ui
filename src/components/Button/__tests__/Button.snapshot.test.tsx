@@ -32,6 +32,13 @@ describe('Component(snapshots): Button', () => {
     expect(tree).toMatchSnapshot()
   })
 
+  it('renders small button correctly', () => {
+    const onPress = jest.fn()
+    const tree = render(<Button onPress={onPress} small={true} icon={<React.Fragment />} />).toJSON()
+
+    expect(tree).toMatchSnapshot()
+  })
+
   it('renders an outlined button correctly with a type', () => {
     const onPress = jest.fn()
     const tree = render(

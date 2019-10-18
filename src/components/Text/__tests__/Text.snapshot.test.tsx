@@ -3,7 +3,7 @@ import { render } from 'react-native-testing-library'
 
 import Text, { TextTypes } from '../Text'
 
-describe('Container', () => {
+describe('Component(snapshops): Text', () => {
   it('renders correctly with no props', () => {
     const tree = render(<Text>Hello World</Text>).toJSON()
 
