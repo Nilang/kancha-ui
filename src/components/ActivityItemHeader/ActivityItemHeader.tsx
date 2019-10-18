@@ -6,16 +6,26 @@ import S from 'string'
 import { formatDistanceToNow } from 'date-fns'
 
 interface ActivityItemHeaderProps {
+  // Message hash
+  id?: string
+  // Timestanp in ms
   date: number
+  // Incoming message
   incoming?: boolean
+  // Reason text
   reason?: string
+  // Activity text
   activity?: string
+  // Issuer
   issuer: Kancha.Identity
+  // Subject
   subject: Kancha.Identity
+  // Profile Action
   profileAction: (id: string) => void
 }
 
 const ActivityItemHeader: React.FC<ActivityItemHeaderProps> = ({
+  // id,
   reason,
   incoming,
   profileAction,
