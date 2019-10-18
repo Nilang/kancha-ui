@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { TouchableOpacity } from 'react-native'
+import { TouchableOpacity, ViewStyle } from 'react-native'
 import Container from '../Container/Container'
 
 interface CardProps {
@@ -10,8 +10,17 @@ interface CardProps {
 }
 
 const Card: React.FC<CardProps> = ({ children, onPress, shadow, br, testID }) => {
+  const style: ViewStyle = {
+    ...(shadow
+      ? {
+          shadowColor: '#000000',
+          shadowOpacity: 0.2,
+          shadowRadius: shadow * 5,
+        }
+      : {}),
+  }
   return (
-    <TouchableOpacity onPress={onPress} disabled={!onPress} testID={testID}>
+    <TouchableOpacity onPress={onPress} disabled={!onPress} testID={testID} style={style}>
       <Container shadow={shadow ? shadow : 0.1} padding={true} br={br ? br : 5} marginBottom={true}>
         {children}
       </Container>

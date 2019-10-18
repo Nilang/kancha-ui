@@ -98,6 +98,7 @@ exports[`Component(snapshot): Accordion Item should render with default props 1`
           style={
             Object {
               "color": "#333333",
+              "flexWrap": "wrap",
               "fontSize": 16,
               "lineHeight": 22,
             }
@@ -183,6 +184,7 @@ exports[`Component(snapshot): Accordion Item should render with props 1`] = `
         style={
           Object {
             "color": "#BBBBBB",
+            "flexWrap": "wrap",
             "fontSize": 14,
           }
         }
@@ -219,6 +221,7 @@ exports[`Component(snapshot): Accordion Item should render with props 1`] = `
           style={
             Object {
               "color": "#333333",
+              "flexWrap": "wrap",
               "fontSize": 16,
               "lineHeight": 22,
             }
@@ -258,6 +261,7 @@ exports[`Component(snapshot): Accordion Item should render with props 1`] = `
         style={
           Object {
             "color": "#BBBBBB",
+            "flexWrap": "wrap",
             "fontSize": 15,
           }
         }

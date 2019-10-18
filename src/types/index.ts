@@ -1,3 +1,5 @@
+import { ImageSourcePropType } from 'react-native'
+
 export interface NavigationScreen {
   componentId: string
 }
@@ -16,8 +18,11 @@ export interface TextTypesStatic {
   ListItemRight: 'listItemRight'
   ListItemNote: 'listItemNote'
   SubTitle: 'subTitle'
+  ActivityTitle: 'activityTitle'
+  ActivitySubTitle: 'activitySubTitle'
   Body: 'body'
   Button: 'button'
+  ButtonSmall: 'buttonSmall'
   NavButton: 'navButton'
   Summary: 'summary'
   SectionHeader: 'sectionHeader'
@@ -71,6 +76,8 @@ export interface ThemeStatic {
       h5: number
       h6: number
       subTitle: number
+      activityTitle: number
+      activitySubTitle: number
       listItem: number
       listItemRight: number
       listItemNote: number
@@ -78,6 +85,7 @@ export interface ThemeStatic {
       summary: number
       body: number
       button: number
+      buttonSmall: number
       navButton: number
     }
   }
@@ -113,6 +121,12 @@ export interface ThemeStatic {
     }
   }
   statusBarStyle: string
+}
+
+export interface Identity {
+  name: string
+  did: string
+  avatar: ImageSourcePropType
 }
 
 export interface VerifiableCredential {

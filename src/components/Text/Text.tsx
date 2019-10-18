@@ -13,8 +13,11 @@ export const TextTypes: Kancha.TextTypesStatic = {
   ListItemRight: 'listItemRight',
   ListItemNote: 'listItemNote',
   SubTitle: 'subTitle',
+  ActivityTitle: 'activityTitle',
+  ActivitySubTitle: 'activitySubTitle',
   Body: 'body',
   Button: 'button',
+  ButtonSmall: 'buttonSmall',
   NavButton: 'navButton',
   Summary: 'summary',
   SectionHeader: 'sectionHeader',
@@ -32,6 +35,11 @@ export interface TextProps {
    * The type of text to display. This will be styled accordinly to the theme
    */
   type?: string
+
+  /**
+   * The type of text to display. This will be styled accordinly to the theme
+   */
+  onPress?: () => void
 
   /**
    * Overide the color with a warning color
@@ -121,6 +129,14 @@ const KanchaText: React.FC<TextProps> & { Types: Kancha.TextTypesStatic } = prop
       fontSize: props.theme.text.sizes.h5,
       color: props.theme.colors.primary.text,
     },
+    activityTitle: {
+      fontSize: props.theme.text.sizes.activityTitle,
+      color: props.theme.colors.primary.text,
+    },
+    activitySubTitle: {
+      fontSize: props.theme.text.sizes.activitySubTitle,
+      color: props.theme.colors.secondary.text,
+    },
     subTitle: {
       fontSize: props.theme.text.sizes.subTitle,
       color: props.theme.colors.secondary.text,
@@ -149,6 +165,9 @@ const KanchaText: React.FC<TextProps> & { Types: Kancha.TextTypesStatic } = prop
     button: {
       fontSize: props.theme.text.sizes.button,
     },
+    buttonSmall: {
+      fontSize: props.theme.text.sizes.buttonSmall,
+    },
     navButton: {
       fontSize: props.theme.text.sizes.navButton,
     },
@@ -176,10 +195,16 @@ const KanchaText: React.FC<TextProps> & { Types: Kancha.TextTypesStatic } = prop
       : {}),
     ...(props.transform ? { textTransform: props.transform } : {}),
     ...(props.textStyle ? { ...props.textStyle } : {}),
+    flexWrap: 'wrap',
   }
 
   return (
-    <Text style={styles} testID={props.testID} accessibilityLabel={props.testID}>
+    <Text
+      style={styles}
+      testID={props.testID}
+      accessibilityLabel={props.testID}
+      onPress={props.onPress && props.onPress}
+    >
       {props.children}
     </Text>
   )

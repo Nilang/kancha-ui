@@ -86,6 +86,7 @@ exports[`Component(snapshot): Claim Viewer Debug should render with cardview 1`]
         style={
           Object {
             "color": "#BBBBBB",
+            "flexWrap": "wrap",
             "fontSize": 14,
             "paddingBottom": 15,
           }
@@ -373,6 +374,7 @@ exports[`Component(snapshot): Claim Viewer Debug should render with cardview 1`]
                   style={
                     Object {
                       "color": "#BBBBBB",
+                      "flexWrap": "wrap",
                       "fontSize": 14,
                     }
                   }
@@ -409,6 +411,7 @@ exports[`Component(snapshot): Claim Viewer Debug should render with cardview 1`]
                     style={
                       Object {
                         "color": "#333333",
+                        "flexWrap": "wrap",
                         "fontSize": 18,
                       }
                     }
@@ -602,6 +605,7 @@ exports[`Component(snapshot): Claim Viewer Debug should render with cardview 1`]
                   style={
                     Object {
                       "color": "#BBBBBB",
+                      "flexWrap": "wrap",
                       "fontSize": 14,
                     }
                   }
@@ -638,6 +642,7 @@ exports[`Component(snapshot): Claim Viewer Debug should render with cardview 1`]
                     style={
                       Object {
                         "color": "#333333",
+                        "flexWrap": "wrap",
                         "fontSize": 18,
                       }
                     }
@@ -831,6 +836,7 @@ exports[`Component(snapshot): Claim Viewer Debug should render with cardview 1`]
                   style={
                     Object {
                       "color": "#BBBBBB",
+                      "flexWrap": "wrap",
                       "fontSize": 14,
                     }
                   }
@@ -867,6 +873,7 @@ exports[`Component(snapshot): Claim Viewer Debug should render with cardview 1`]
                     style={
                       Object {
                         "color": "#333333",
+                        "flexWrap": "wrap",
                         "fontSize": 18,
                       }
                     }
@@ -1060,6 +1067,7 @@ exports[`Component(snapshot): Claim Viewer Debug should render with cardview 1`]
                   style={
                     Object {
                       "color": "#BBBBBB",
+                      "flexWrap": "wrap",
                       "fontSize": 14,
                     }
                   }
@@ -1096,6 +1104,7 @@ exports[`Component(snapshot): Claim Viewer Debug should render with cardview 1`]
                     style={
                       Object {
                         "color": "#333333",
+                        "flexWrap": "wrap",
                         "fontSize": 18,
                       }
                     }
@@ -1287,6 +1296,7 @@ exports[`Component(snapshot): Claim Viewer Debug should render with cardview 1`]
                   style={
                     Object {
                       "color": "#BBBBBB",
+                      "flexWrap": "wrap",
                       "fontSize": 14,
                     }
                   }
@@ -1323,6 +1333,7 @@ exports[`Component(snapshot): Claim Viewer Debug should render with cardview 1`]
                     style={
                       Object {
                         "color": "#333333",
+                        "flexWrap": "wrap",
                         "fontSize": 18,
                       }
                     }
@@ -1476,6 +1487,7 @@ exports[`Component(snapshot): Claim Viewer Debug should render with default prop
         style={
           Object {
             "color": "#BBBBBB",
+            "flexWrap": "wrap",
             "fontSize": 14,
             "paddingBottom": 15,
           }
@@ -1763,6 +1775,7 @@ exports[`Component(snapshot): Claim Viewer Debug should render with default prop
                   style={
                     Object {
                       "color": "#BBBBBB",
+                      "flexWrap": "wrap",
                       "fontSize": 14,
                     }
                   }
@@ -1799,6 +1812,7 @@ exports[`Component(snapshot): Claim Viewer Debug should render with default prop
                     style={
                       Object {
                         "color": "#333333",
+                        "flexWrap": "wrap",
                         "fontSize": 18,
                       }
                     }
@@ -1992,6 +2006,7 @@ exports[`Component(snapshot): Claim Viewer Debug should render with default prop
                   style={
                     Object {
                       "color": "#BBBBBB",
+                      "flexWrap": "wrap",
                       "fontSize": 14,
                     }
                   }
@@ -2028,6 +2043,7 @@ exports[`Component(snapshot): Claim Viewer Debug should render with default prop
                     style={
                       Object {
                         "color": "#333333",
+                        "flexWrap": "wrap",
                         "fontSize": 18,
                       }
                     }
@@ -2221,6 +2237,7 @@ exports[`Component(snapshot): Claim Viewer Debug should render with default prop
                   style={
                     Object {
                       "color": "#BBBBBB",
+                      "flexWrap": "wrap",
                       "fontSize": 14,
                     }
                   }
@@ -2257,6 +2274,7 @@ exports[`Component(snapshot): Claim Viewer Debug should render with default prop
                     style={
                       Object {
                         "color": "#333333",
+                        "flexWrap": "wrap",
                         "fontSize": 18,
                       }
                     }
@@ -2450,6 +2468,7 @@ exports[`Component(snapshot): Claim Viewer Debug should render with default prop
                   style={
                     Object {
                       "color": "#BBBBBB",
+                      "flexWrap": "wrap",
                       "fontSize": 14,
                     }
                   }
@@ -2486,6 +2505,7 @@ exports[`Component(snapshot): Claim Viewer Debug should render with default prop
                     style={
                       Object {
                         "color": "#333333",
+                        "flexWrap": "wrap",
                         "fontSize": 18,
                       }
                     }
@@ -2677,6 +2697,7 @@ exports[`Component(snapshot): Claim Viewer Debug should render with default prop
                   style={
                     Object {
                       "color": "#BBBBBB",
+                      "flexWrap": "wrap",
                       "fontSize": 14,
                     }
                   }
@@ -2713,6 +2734,7 @@ exports[`Component(snapshot): Claim Viewer Debug should render with default prop
                     style={
                       Object {
                         "color": "#333333",
+                        "flexWrap": "wrap",
                         "fontSize": 18,
                       }
                     }

@@ -126,6 +126,7 @@ exports[`Component(snapshots): Avatar should render with title and background pr
     style={
       Object {
         "color": "#ffffff",
+        "flexWrap": "wrap",
         "fontSize": 16,
         "fontWeight": "bold",
       }

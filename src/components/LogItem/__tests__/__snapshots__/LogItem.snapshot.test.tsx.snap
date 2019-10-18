@@ -109,6 +109,7 @@ exports[`Component(snapshots): LogItem should render with all props 1`] = `
         style={
           Object {
             "color": "#BBBBBB",
+            "flexWrap": "wrap",
             "fontSize": 14,
           }
         }
@@ -119,6 +120,7 @@ exports[`Component(snapshots): LogItem should render with all props 1`] = `
         style={
           Object {
             "color": "#BBBBBB",
+            "flexWrap": "wrap",
             "fontSize": 14,
           }
         }
@@ -153,7 +155,11 @@ exports[`Component(snapshots): LogItem should render with all props 1`] = `
       }
     >
       <Text
-        style={Object {}}
+        style={
+          Object {
+            "flexWrap": "wrap",
+          }
+        }
       >
         Really bad error
       </Text>
@@ -271,6 +277,7 @@ exports[`Component(snapshots): LogItem should render with required props 1`] = `
         style={
           Object {
             "color": "#BBBBBB",
+            "flexWrap": "wrap",
             "fontSize": 14,
           }
         }
@@ -279,6 +286,7 @@ exports[`Component(snapshots): LogItem should render with required props 1`] = `
         style={
           Object {
             "color": "#BBBBBB",
+            "flexWrap": "wrap",
             "fontSize": 14,
           }
         }
@@ -313,7 +321,11 @@ exports[`Component(snapshots): LogItem should render with required props 1`] = `
       }
     >
       <Text
-        style={Object {}}
+        style={
+          Object {
+            "flexWrap": "wrap",
+          }
+        }
       >
         Really bad error
       </Text>

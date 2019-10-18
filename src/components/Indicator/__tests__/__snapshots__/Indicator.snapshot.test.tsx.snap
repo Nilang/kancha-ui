@@ -57,6 +57,7 @@ exports[`Component(snapshot): Indicator renders with background color 1`] = `
       style={
         Object {
           "color": "#FFFFFF",
+          "flexWrap": "wrap",
           "fontSize": 14,
           "textAlign": "center",
         }
@@ -190,6 +191,7 @@ exports[`Component(snapshot): Indicator renders with default props 1`] = `
       style={
         Object {
           "color": "#FFFFFF",
+          "flexWrap": "wrap",
           "fontSize": 14,
           "textAlign": "center",
         }

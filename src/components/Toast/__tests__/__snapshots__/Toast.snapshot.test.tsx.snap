@@ -112,6 +112,7 @@ exports[`Component(snapshot): Toast renders correctly with no props 1`] = `
         style={
           Object {
             "color": "white",
+            "flexWrap": "wrap",
             "fontSize": 16,
             "fontWeight": "bold",
           }
@@ -123,6 +124,7 @@ exports[`Component(snapshot): Toast renders correctly with no props 1`] = `
         style={
           Object {
             "color": "white",
+            "flexWrap": "wrap",
           }
         }
       >
@@ -263,6 +265,7 @@ exports[`Component(snapshot): Toast renders correctly with no props 1`] = `
             <Text
               style={
                 Object {
+                  "flexWrap": "wrap",
                   "fontSize": 18,
                 }
               }

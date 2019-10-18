@@ -15,7 +15,7 @@ export interface CredentialProps {
 
 const Credential: React.FC<CredentialProps> = ({ logo, onPress, title, issuer, testID }) => {
   return (
-    <Card onPress={onPress} testID={testID}>
+    <Card onPress={onPress} testID={testID} shadow={1}>
       <Container flexDirection={'row'} alignItems={'center'}>
         <Container backgroundColor={'#EAEAEA'}>
           <Avatar source={logo} type={'rounded'} size={40} />

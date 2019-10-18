@@ -101,6 +101,7 @@ exports[`Component(snapshot): Banner should render with default props 1`] = `
         style={
           Object {
             "color": "#FFFFFF",
+            "flexWrap": "wrap",
             "fontSize": 24,
             "fontWeight": "bold",
           }
@@ -138,6 +139,7 @@ exports[`Component(snapshot): Banner should render with default props 1`] = `
           style={
             Object {
               "color": "#FFFFFF",
+              "flexWrap": "wrap",
               "fontSize": 14,
             }
           }
@@ -255,6 +257,7 @@ exports[`Component(snapshot): Banner should render with default props 2`] = `
         style={
           Object {
             "color": "#FFFFFF",
+            "flexWrap": "wrap",
             "fontSize": 24,
             "fontWeight": "bold",
           }
@@ -292,6 +295,7 @@ exports[`Component(snapshot): Banner should render with default props 2`] = `
           style={
             Object {
               "color": "#FFFFFF",
+              "flexWrap": "wrap",
               "fontSize": 14,
             }
           }
