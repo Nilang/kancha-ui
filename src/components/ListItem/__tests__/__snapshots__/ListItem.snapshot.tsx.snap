@@ -738,6 +738,38 @@ exports[`Component(snapshot): ListItem should render selected in edit mode 1`] =
             }
           }
         />
+        <View
+          pointerEvents="auto"
+          style={
+            Object {
+              "alignItems": undefined,
+              "backgroundColor": undefined,
+              "borderRadius": undefined,
+              "flex": undefined,
+              "flexDirection": undefined,
+              "height": undefined,
+              "justifyContent": undefined,
+              "margin": undefined,
+              "marginBottom": undefined,
+              "marginLeft": undefined,
+              "marginRight": undefined,
+              "marginTop": undefined,
+              "padding": undefined,
+              "paddingBottom": undefined,
+              "paddingHorizontal": undefined,
+              "paddingLeft": 8,
+              "paddingRight": undefined,
+              "paddingTop": undefined,
+              "width": undefined,
+            }
+          }
+        >
+          <Icon
+            color="#0078ff"
+            name="ios-checkmark-circle"
+            size={23}
+          />
+        </View>
       </View>
     </View>
   </View>
@@ -1856,38 +1888,6 @@ exports[`Component(snapshot): ListItem should render with props 1`] = `
             >
               List item test
             </Text>
-            <View
-              pointerEvents="auto"
-              style={
-                Object {
-                  "alignItems": undefined,
-                  "backgroundColor": undefined,
-                  "borderRadius": undefined,
-                  "flex": undefined,
-                  "flexDirection": undefined,
-                  "height": undefined,
-                  "justifyContent": undefined,
-                  "margin": undefined,
-                  "marginBottom": undefined,
-                  "marginLeft": undefined,
-                  "marginRight": undefined,
-                  "marginTop": undefined,
-                  "padding": undefined,
-                  "paddingBottom": undefined,
-                  "paddingHorizontal": undefined,
-                  "paddingLeft": 8,
-                  "paddingRight": undefined,
-                  "paddingTop": undefined,
-                  "width": undefined,
-                }
-              }
-            >
-              <Icon
-                color="#3DCF8A"
-                name="ios-checkmark-circle"
-                size={18}
-              />
-            </View>
           </View>
         </View>
       </View>
@@ -1954,6 +1954,38 @@ exports[`Component(snapshot): ListItem should render with props 1`] = `
           >
             Note
           </Text>
+        </View>
+        <View
+          pointerEvents="auto"
+          style={
+            Object {
+              "alignItems": undefined,
+              "backgroundColor": undefined,
+              "borderRadius": undefined,
+              "flex": undefined,
+              "flexDirection": undefined,
+              "height": undefined,
+              "justifyContent": undefined,
+              "margin": undefined,
+              "marginBottom": undefined,
+              "marginLeft": undefined,
+              "marginRight": undefined,
+              "marginTop": undefined,
+              "padding": undefined,
+              "paddingBottom": undefined,
+              "paddingHorizontal": undefined,
+              "paddingLeft": 8,
+              "paddingRight": undefined,
+              "paddingTop": undefined,
+              "width": undefined,
+            }
+          }
+        >
+          <Icon
+            color="#0078ff"
+            name="ios-checkmark-circle"
+            size={23}
+          />
         </View>
       </View>
     </View>

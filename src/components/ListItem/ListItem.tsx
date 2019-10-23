@@ -170,15 +170,6 @@ const ListItem: React.FunctionComponent<ListItemProps> = props => {
               ) : (
                 <Container flexDirection={'row'} alignItems={'center'} paddingTop={3}>
                   <Text type={TextTypes.ListItem}>{props.children}</Text>
-                  {props.selected && (
-                    <Container paddingLeft={8}>
-                      <Icon
-                        icon={props.theme.icons.CHECKED}
-                        color={props.theme.colors.confirm.accessories}
-                        size={18}
-                      />
-                    </Container>
-                  )}
                 </Container>
               )}
             </Container>
@@ -191,6 +182,11 @@ const ListItem: React.FunctionComponent<ListItemProps> = props => {
                 </Text>
               )}
             </Container>
+            {props.selected && (
+              <Container paddingLeft={8}>
+                <Icon icon={props.theme.icons.CHECKED} color={props.theme.colors.primary.brand} size={23} />
+              </Container>
+            )}
             {actionIcon && (
               <Icon icon={actionIcon} size={24} color={props.theme.colors.primary.accessories} />
             )}
