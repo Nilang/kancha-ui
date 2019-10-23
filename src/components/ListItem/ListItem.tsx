@@ -91,6 +91,7 @@ interface ListItemProps {
 const ListItem: React.FunctionComponent<ListItemProps> = props => {
   const styles: ViewStyle = {
     backgroundColor: props.theme.colors.primary.background,
+    flexDirection: 'row',
   }
 
   const onPressHandler = () => {

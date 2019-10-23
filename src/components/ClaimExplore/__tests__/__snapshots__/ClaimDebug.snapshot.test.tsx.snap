@@ -260,6 +260,7 @@ exports[`Component(snapshot): Claim Viewer Debug should render with cardview 1`]
         style={
           Object {
             "backgroundColor": "#FFFFFF",
+            "flexDirection": "row",
           }
         }
       >
@@ -491,6 +492,7 @@ exports[`Component(snapshot): Claim Viewer Debug should render with cardview 1`]
         style={
           Object {
             "backgroundColor": "#FFFFFF",
+            "flexDirection": "row",
           }
         }
       >
@@ -722,6 +724,7 @@ exports[`Component(snapshot): Claim Viewer Debug should render with cardview 1`]
         style={
           Object {
             "backgroundColor": "#FFFFFF",
+            "flexDirection": "row",
           }
         }
       >
@@ -953,6 +956,7 @@ exports[`Component(snapshot): Claim Viewer Debug should render with cardview 1`]
         style={
           Object {
             "backgroundColor": "#FFFFFF",
+            "flexDirection": "row",
           }
         }
       >
@@ -1184,6 +1188,7 @@ exports[`Component(snapshot): Claim Viewer Debug should render with cardview 1`]
         style={
           Object {
             "backgroundColor": "#FFFFFF",
+            "flexDirection": "row",
           }
         }
       >
@@ -1661,6 +1666,7 @@ exports[`Component(snapshot): Claim Viewer Debug should render with default prop
         style={
           Object {
             "backgroundColor": "#FFFFFF",
+            "flexDirection": "row",
           }
         }
       >
@@ -1892,6 +1898,7 @@ exports[`Component(snapshot): Claim Viewer Debug should render with default prop
         style={
           Object {
             "backgroundColor": "#FFFFFF",
+            "flexDirection": "row",
           }
         }
       >
@@ -2123,6 +2130,7 @@ exports[`Component(snapshot): Claim Viewer Debug should render with default prop
         style={
           Object {
             "backgroundColor": "#FFFFFF",
+            "flexDirection": "row",
           }
         }
       >
@@ -2354,6 +2362,7 @@ exports[`Component(snapshot): Claim Viewer Debug should render with default prop
         style={
           Object {
             "backgroundColor": "#FFFFFF",
+            "flexDirection": "row",
           }
         }
       >
@@ -2585,6 +2594,7 @@ exports[`Component(snapshot): Claim Viewer Debug should render with default prop
         style={
           Object {
             "backgroundColor": "#FFFFFF",
+            "flexDirection": "row",
           }
         }
       >
