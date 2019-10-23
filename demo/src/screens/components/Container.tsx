@@ -11,10 +11,12 @@ const Component: React.FC<NavigationScreen> = () => {
     <Screen
       scrollEnabled={true}
       bottomSheet={
-        <BottomSheet ref={bottomDrawerRef} snapPoints={[0, 200, 400]} initialSnap={0}>
+        <BottomSheet ref={bottomDrawerRef} snapPoints={[0, 400]} initialSnap={0}>
           <ScrollView style={{ backgroundColor: 'white', height: 400 }}>
-            <ListItem iconLeft={<Avatar address={'0x1234'} />}>Option</ListItem>
-            <ListItem iconLeft={<Avatar address={'0x1234'} />}>Option</ListItem>
+            <ListItem iconLeft={<Avatar address={'0x1234'} />}>Options</ListItem>
+            <ListItem selected iconLeft={<Avatar address={'0x1234'} />}>
+              Option
+            </ListItem>
             <ListItem iconLeft={<Avatar address={'0x1234'} />}>Last Option</ListItem>
           </ScrollView>
         </BottomSheet>
