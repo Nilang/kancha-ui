@@ -146,7 +146,7 @@ const Screen: React.FC<ScreenProps> = props => {
           style={{ backgroundColor: props.safeAreaBackground || props.safeAreaBottomBackground }}
         />
       )}
-      {props.bottomSheet && <Container h={1}>{props.bottomSheet}</Container>}
+      {props.bottomSheet && props.bottomSheet}
     </React.Fragment>
   )
   const backgroundImage = (

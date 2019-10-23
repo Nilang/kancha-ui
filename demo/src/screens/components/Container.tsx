@@ -1,5 +1,6 @@
 import React, { createRef } from 'react'
-import { Container, Screen, Text, ListItem, BottomSheet } from '@kancha/kancha-ui'
+import { Container, Screen, Text, BottomSheet, ListItem, Avatar } from '@kancha/kancha-ui'
+import { ScrollView } from 'react-native'
 import { NavigationScreen } from '../../navigators'
 import TEST_ID from '../../../../e2e/testIDs'
 
@@ -8,43 +9,14 @@ const Component: React.FC<NavigationScreen> = () => {
 
   return (
     <Screen
-      safeArea={true}
       scrollEnabled={true}
       bottomSheet={
-        <BottomSheet ref={bottomDrawerRef} snapPoints={[500, 300, 0]} initialSnap={2}>
-          <ListItem>Testing</ListItem>
-          <ListItem>Testing</ListItem>
-          <ListItem>Testing</ListItem>
-          <ListItem>Testing</ListItem>
-          <ListItem>Testing</ListItem>
-          <ListItem>Testing</ListItem>
-          <ListItem>Testing</ListItem>
-          <ListItem>Testing</ListItem>
-          <ListItem>Testing</ListItem>
-          <ListItem>Testing</ListItem>
-          <ListItem>Testing</ListItem>
-          <ListItem>Testing</ListItem>
-          <ListItem>Testing</ListItem>
-          <ListItem>Testing</ListItem>
-          <ListItem>Testing</ListItem>
-          <ListItem>Testing</ListItem>
-          <ListItem>Testing</ListItem>
-          <ListItem>Testing</ListItem>
-          <ListItem>Testing</ListItem>
-          <ListItem>Testing</ListItem>
-          <ListItem>Testing</ListItem>
-          <ListItem>Testing</ListItem>
-          <ListItem>Testing</ListItem>
-          <ListItem>Testing</ListItem>
-          <ListItem>Testing</ListItem>
-          <ListItem>Testing</ListItem>
-          <ListItem>Testing</ListItem>
-          <ListItem>Testing</ListItem>
-          <ListItem>Testing</ListItem>
-          <ListItem>Testing</ListItem>
-          <ListItem>Testing</ListItem>
-          <ListItem>Testing</ListItem>
-          <ListItem>Testing</ListItem>
+        <BottomSheet ref={bottomDrawerRef} snapPoints={[0, 200, 400]} initialSnap={0}>
+          <ScrollView style={{ backgroundColor: 'white', height: 400 }}>
+            <ListItem iconLeft={<Avatar address={'0x1234'} />}>Option</ListItem>
+            <ListItem iconLeft={<Avatar address={'0x1234'} />}>Option</ListItem>
+            <ListItem iconLeft={<Avatar address={'0x1234'} />}>Last Option</ListItem>
+          </ScrollView>
         </BottomSheet>
       }
     >
