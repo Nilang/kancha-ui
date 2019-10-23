@@ -72,6 +72,11 @@ interface ScreenProps {
   footerComponent?: React.ReactNode
 
   /**
+   * Provide a bottomsheet
+   */
+  bottomSheet?: React.ReactNode
+
+  /**
    * Show a divider line between footer component and view
    */
   footerDivider?: boolean
@@ -141,6 +146,7 @@ const Screen: React.FC<ScreenProps> = props => {
           style={{ backgroundColor: props.safeAreaBackground || props.safeAreaBottomBackground }}
         />
       )}
+      {props.bottomSheet && <Container h={1}>{props.bottomSheet}</Container>}
     </React.Fragment>
   )
   const backgroundImage = (

@@ -15,6 +15,7 @@ exports[`Component(snapshot): ListItem should hide forward arrow 1`] = `
   style={
     Object {
       "backgroundColor": "#FFFFFF",
+      "flexDirection": "row",
     }
   }
 >
@@ -238,6 +239,7 @@ exports[`Component(snapshot): ListItem should render in edit mode 1`] = `
   style={
     Object {
       "backgroundColor": "#FFFFFF",
+      "flexDirection": "row",
     }
   }
 >
@@ -497,6 +499,7 @@ exports[`Component(snapshot): ListItem should render selected in edit mode 1`] =
   style={
     Object {
       "backgroundColor": "#FFFFFF",
+      "flexDirection": "row",
     }
   }
 >
@@ -756,6 +759,7 @@ exports[`Component(snapshot): ListItem should render with a left icon 1`] = `
   style={
     Object {
       "backgroundColor": "#FFFFFF",
+      "flexDirection": "row",
     }
   }
 >
@@ -1011,6 +1015,7 @@ exports[`Component(snapshot): ListItem should render with an external link handl
   style={
     Object {
       "backgroundColor": "#FFFFFF",
+      "flexDirection": "row",
     }
   }
 >
@@ -1239,6 +1244,7 @@ exports[`Component(snapshot): ListItem should render with an onPress handler 1`]
   style={
     Object {
       "backgroundColor": "#FFFFFF",
+      "flexDirection": "row",
     }
   }
 >
@@ -1467,6 +1473,7 @@ exports[`Component(snapshot): ListItem should render with no props 1`] = `
   style={
     Object {
       "backgroundColor": "#FFFFFF",
+      "flexDirection": "row",
     }
   }
 >
@@ -1690,6 +1697,7 @@ exports[`Component(snapshot): ListItem should render with props 1`] = `
   style={
     Object {
       "backgroundColor": "#FFFFFF",
+      "flexDirection": "row",
     }
   }
 >
