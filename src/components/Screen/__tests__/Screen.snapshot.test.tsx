@@ -19,7 +19,6 @@ describe('Component(snapshots): Screen', () => {
         scrollEnabled={true}
         statusBarStyle={'light-content'}
         footerComponent={<Container />}
-        bottomSheet={<Container />}
       />,
     )
 

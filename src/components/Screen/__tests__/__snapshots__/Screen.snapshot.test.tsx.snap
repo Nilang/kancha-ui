@@ -242,31 +242,5 @@ Array [
       }
     }
   />,
-  <View
-    pointerEvents="auto"
-    style={
-      Object {
-        "alignItems": undefined,
-        "backgroundColor": undefined,
-        "borderRadius": undefined,
-        "flex": undefined,
-        "flexDirection": undefined,
-        "height": undefined,
-        "justifyContent": undefined,
-        "margin": undefined,
-        "marginBottom": undefined,
-        "marginLeft": undefined,
-        "marginRight": undefined,
-        "marginTop": undefined,
-        "padding": undefined,
-        "paddingBottom": undefined,
-        "paddingHorizontal": undefined,
-        "paddingLeft": undefined,
-        "paddingRight": undefined,
-        "paddingTop": undefined,
-        "width": undefined,
-      }
-    }
-  />,
 ]
 `;
