@@ -1,29 +1,15 @@
-import React, { createRef } from 'react'
-import { Container, Screen, Text, BottomSheet, ListItem, Avatar } from '@kancha/kancha-ui'
-import { ScrollView } from 'react-native'
+import React from 'react'
+import { Container, Screen, Button, BottomSnap } from '@kancha/kancha-ui'
 import { NavigationScreen } from '../../navigators'
 import TEST_ID from '../../../../e2e/testIDs'
 
 const Component: React.FC<NavigationScreen> = () => {
-  const bottomDrawerRef = createRef<any>()
-
   return (
-    <Screen
-      scrollEnabled={true}
-      bottomSheet={
-        <BottomSheet ref={bottomDrawerRef} snapPoints={[0, 400]} initialSnap={0}>
-          <ScrollView style={{ backgroundColor: 'white', height: 400 }}>
-            <ListItem iconLeft={<Avatar address={'0x1234'} />}>Options</ListItem>
-            <ListItem selected iconLeft={<Avatar address={'0x1234'} />}>
-              Option
-            </ListItem>
-            <ListItem iconLeft={<Avatar address={'0x1234'} />}>Last Option</ListItem>
-          </ScrollView>
-        </BottomSheet>
-      }
-    >
+    <Screen scrollEnabled={true}>
       <Container testID={TEST_ID.VISIBLE_TEXT} padding margin>
-        <Text onPress={() => bottomDrawerRef.current.snapTo(1)}>Show Bottom Sheet</Text>
+        <Button onPress={() => BottomSnap.to(1, 'SHEET_1')} buttonText={'Open Sheet 1'} />
+        <Button onPress={() => BottomSnap.to(1, 'SHEET_2')} buttonText={'Open Sheet 2'} />
+        <Button onPress={() => BottomSnap.to(1, 'SHEET_3')} buttonText={'Open Sheet 3'} />
       </Container>
     </Screen>
   )
