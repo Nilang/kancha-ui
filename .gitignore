@@ -2,8 +2,6 @@
 docs
 coverage
 dist
-ios
-!demo/ios
 vendor
 
 # OSX

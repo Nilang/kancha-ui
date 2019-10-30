@@ -11,11 +11,12 @@ export interface CredentialProps {
   title: string
   issuer: string
   testID?: string
+  shadow?: number
 }
 
-const Credential: React.FC<CredentialProps> = ({ logo, onPress, title, issuer, testID }) => {
+const Credential: React.FC<CredentialProps> = ({ logo, shadow, onPress, title, issuer, testID }) => {
   return (
-    <Card onPress={onPress} testID={testID} shadow={1}>
+    <Card onPress={onPress} testID={testID} shadow={shadow || 1}>
       <Container flexDirection={'row'} alignItems={'center'}>
         <Container backgroundColor={'#EAEAEA'}>
           <Avatar source={logo} type={'rounded'} size={40} />
