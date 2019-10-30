@@ -7,6 +7,7 @@ import Icon from '../Icon/Icon'
 // import Device from '../../services/device'
 import { View, LayoutChangeEvent } from 'react-native'
 import useLayout from '../../hooks/useLayout'
+import { Device } from '@kancha/kancha-ui'
 
 interface ModalProps {
   /**
@@ -50,6 +51,7 @@ const Modal: React.FC<ModalProps> = props => {
         backgroundColor={'#ffffff'}
         viewStyle={{
           alignSelf: tabletSplitView ? 'center' : 'stretch',
+          elevation: 2,
           shadowColor: '#000000',
           shadowRadius: 20,
           shadowOpacity: 0.2,
@@ -59,7 +61,9 @@ const Modal: React.FC<ModalProps> = props => {
         }}
       >
         <Container alignItems={'center'} justifyContent={'center'} padding={8}>
-          <Container br={5} backgroundColor={props.theme.colors.primary.accessories} w={50} h={5} />
+          {Device.isIOS && (
+            <Container br={5} backgroundColor={props.theme.colors.primary.accessories} w={50} h={5} />
+          )}
         </Container>
         {props.dismiss && (
           <Container viewStyle={{ position: 'absolute', right: 10, top: 10, zIndex: 10 }}>
