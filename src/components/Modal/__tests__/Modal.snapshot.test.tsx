@@ -3,8 +3,6 @@ import { render, act } from 'react-native-testing-library'
 import Modal from '../Modal'
 import Text from '../../Text/Text'
 
-jest.mock('react-native-vector-icons/Ionicons', () => 'Icon')
-
 describe('Component(snapshots): Modal', () => {
   it('should render with no props', () => {
     const tree = render(<Modal />).toJSON()

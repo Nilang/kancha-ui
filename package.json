@@ -114,6 +114,10 @@
     },
     "modulePathIgnorePatterns": [
       "<rootDir>/demo"
+    ],
+    "setupFiles": [
+      "./node_modules/react-native-gesture-handler/jestSetup.js",
+      "./jest/setup.js"
     ]
   },
   "detox": {
