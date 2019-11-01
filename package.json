@@ -115,6 +115,9 @@
     "modulePathIgnorePatterns": [
       "<rootDir>/demo"
     ],
+    "collectCoverageFrom": [
+      "src/**/{!(BottomSheet),}.tsx"
+    ],
     "setupFiles": [
       "./node_modules/react-native-gesture-handler/jestSetup.js",
       "./jest/setup.js"
