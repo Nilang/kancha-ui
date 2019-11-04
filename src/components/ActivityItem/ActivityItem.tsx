@@ -95,13 +95,14 @@ const ActivityItem: React.FC<ActivityItemProps> = ({
   date,
   confirm,
   reject,
+  theme,
 }) => {
   return (
     <Container flex={1} flexDirection={'row'} background={'primary'} padding marginBottom={10}>
       <Container alignItems={'center'}>
         <Avatar size={40} source={issuer.avatar} />
         <Container marginTop={5}>
-          <Icon icon={{ name: incoming ? 'ios-return-right' : 'ios-return-left', iconFamily: 'Ionicons' }} />
+          <Icon icon={incoming ? theme.icons.INCOMING_ITEM : theme.icons.OUTGOING_ITEM} />
         </Container>
       </Container>
       <Container marginLeft paddingRight flex={1}>
