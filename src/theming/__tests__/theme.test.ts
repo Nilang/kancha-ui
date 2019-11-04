@@ -220,6 +220,14 @@ describe('Theme', () => {
         name: 'ios-radio-button-off',
         iconFamily: 'Ionicons',
       },
+      INCOMING_ITEM: {
+        name: 'ios-return-right',
+        iconFamily: 'Ionicons',
+      },
+      OUTGOING_ITEM: {
+        name: 'ios-return-left',
+        iconFamily: 'Ionicons',
+      },
     },
     statusBarStyle: 'dark-content',
   }

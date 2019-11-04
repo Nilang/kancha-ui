@@ -128,6 +128,10 @@ const RootNavigator = createStackNavigator(
     mode: 'modal',
     headerMode: 'none',
     transparentCard: true,
+    cardStyle: {
+      // makes transparentCard work for android
+      opacity: 1.0,
+    },
     // transitionConfig: (nextScene: any) => {
     //   return {
     //     transitionSpec: {

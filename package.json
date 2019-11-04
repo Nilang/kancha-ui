@@ -8,8 +8,8 @@
     "build": "tsc -p ./tsconfig.build.json",
     "develop": "tsc -p ./tsconfig.build.json --watch",
     "start": "yarn build && react-native start",
-    "xcode": "open demo/ios/KanchaSink.xcworkspace",
-    "install-android": "cd demo/android && ./gradlew installDebug",
+    "xcode": "open ios/KanchaSink.xcworkspace",
+    "install-android": "cd android && ./gradlew installDebug",
     "test": "jest --verbose --coverage",
     "codecov": "codecov",
     "test:ios:release": "detox build -c ios.sim.release && detox test -c ios.sim.release --cleanup",
@@ -114,32 +114,39 @@
     },
     "modulePathIgnorePatterns": [
       "<rootDir>/demo"
+    ],
+    "collectCoverageFrom": [
+      "src/**/{!(BottomSheet),}.tsx"
+    ],
+    "setupFiles": [
+      "./node_modules/react-native-gesture-handler/jestSetup.js",
+      "./jest/setup.js"
     ]
   },
   "detox": {
     "test-runner": "jest",
     "configurations": {
       "ios.sim.debug": {
-        "binaryPath": "demo/ios/DerivedData/KanchaSink/Build/Products/Debug-iphonesimulator/KanchaSink.app",
-        "build": "xcodebuild -workspace demo/ios/KanchaSink.xcworkspace -scheme KanchaSink -configuration Debug -sdk iphonesimulator -derivedDataPath demo/ios/DerivedData/KanchaSink -UseModernBuildSystem=NO",
+        "binaryPath": "ios/DerivedData/KanchaSink/Build/Products/Debug-iphonesimulator/KanchaSink.app",
+        "build": "xcodebuild -workspace ios/KanchaSink.xcworkspace -scheme KanchaSink -configuration Debug -sdk iphonesimulator -derivedDataPath ios/DerivedData/KanchaSink -UseModernBuildSystem=NO",
         "type": "ios.simulator",
         "name": "iPhone 8"
       },
       "ios.sim.release": {
-        "binaryPath": "demo/ios/DerivedData/KanchaSink/Build/Products/Release-iphonesimulator/KanchaSink.app",
-        "build": "xcodebuild -workspace demo/ios/KanchaSink.xcworkspace -scheme KanchaSink -configuration Release -sdk iphonesimulator -derivedDataPath demo/ios/DerivedData/KanchaSink -UseModernBuildSystem=NO",
+        "binaryPath": "ios/DerivedData/KanchaSink/Build/Products/Release-iphonesimulator/KanchaSink.app",
+        "build": "xcodebuild -workspace ios/KanchaSink.xcworkspace -scheme KanchaSink -configuration Release -sdk iphonesimulator -derivedDataPath ios/DerivedData/KanchaSink -UseModernBuildSystem=NO",
         "type": "ios.simulator",
         "name": "iPhone X"
       },
       "android.emu.debug": {
-        "binaryPath": "demo/android/app/build/outputs/apk/debug/app-debug.apk",
-        "build": "pushd demo/android && ./gradlew assembleDebug assembleAndroidTest -DtestBuildType=debug && popd",
+        "binaryPath": "android/app/build/outputs/apk/debug/app-debug.apk",
+        "build": "pushd android && ./gradlew assembleDebug assembleAndroidTest -DtestBuildType=debug && popd",
         "type": "android.emulator",
         "name": "Pixel_2_API_28"
       },
       "android.emu.release": {
-        "binaryPath": "demo/android/app/build/outputs/apk/release/app-release.apk",
-        "build": "pushd demo/android && ./gradlew assembleRelease assembleAndroidTest -DtestBuildType=release && popd",
+        "binaryPath": "android/app/build/outputs/apk/release/app-release.apk",
+        "build": "pushd android && ./gradlew assembleRelease assembleAndroidTest -DtestBuildType=release && popd",
         "type": "android.emulator",
         "name": "Pixel_2_API_28"
       }

@@ -161,6 +161,7 @@ const Container: React.FunctionComponent<ContainerProps> = props => {
     ...(props.disabled ? { opacity: 0.5 } : {}),
     ...(props.shadow
       ? {
+          elevation: props.shadow * 10,
           shadowColor: '#ffffff',
           shadowOpacity: 0.2,
           shadowRadius: props.shadow * 5,

@@ -12,11 +12,7 @@ exports[`Component(snapshot): Card should render with default props 1`] = `
   onResponderTerminate={[Function]}
   onResponderTerminationRequest={[Function]}
   onStartShouldSetResponder={[Function]}
-  style={
-    Object {
-      "opacity": 1,
-    }
-  }
+  style={Object {}}
 >
   <View
     pointerEvents="auto"
@@ -25,6 +21,7 @@ exports[`Component(snapshot): Card should render with default props 1`] = `
         "alignItems": undefined,
         "backgroundColor": "#ffffff",
         "borderRadius": 5,
+        "elevation": 1,
         "flex": undefined,
         "flexDirection": undefined,
         "height": undefined,
@@ -64,7 +61,7 @@ exports[`Component(snapshot): Card should render with props 1`] = `
   onStartShouldSetResponder={[Function]}
   style={
     Object {
-      "opacity": 1,
+      "elevation": 0.3,
       "shadowColor": "#000000",
       "shadowOpacity": 0.2,
       "shadowRadius": 1.5,
@@ -78,6 +75,7 @@ exports[`Component(snapshot): Card should render with props 1`] = `
         "alignItems": undefined,
         "backgroundColor": "#ffffff",
         "borderRadius": 10,
+        "elevation": 3,
         "flex": undefined,
         "flexDirection": undefined,
         "height": undefined,
