@@ -19,9 +19,8 @@ exports[`Component(snapshot): Card should render with default props 1`] = `
     style={
       Object {
         "alignItems": undefined,
-        "backgroundColor": "#ffffff",
+        "backgroundColor": undefined,
         "borderRadius": 5,
-        "elevation": 1,
         "flex": undefined,
         "flexDirection": undefined,
         "height": undefined,
@@ -37,9 +36,6 @@ exports[`Component(snapshot): Card should render with default props 1`] = `
         "paddingLeft": undefined,
         "paddingRight": undefined,
         "paddingTop": undefined,
-        "shadowColor": "#ffffff",
-        "shadowOpacity": 0.2,
-        "shadowRadius": 0.5,
         "width": undefined,
       }
     }
@@ -63,7 +59,7 @@ exports[`Component(snapshot): Card should render with props 1`] = `
     Object {
       "elevation": 0.3,
       "shadowColor": "#000000",
-      "shadowOpacity": 0.2,
+      "shadowOpacity": 0.015,
       "shadowRadius": 1.5,
     }
   }
@@ -73,9 +69,8 @@ exports[`Component(snapshot): Card should render with props 1`] = `
     style={
       Object {
         "alignItems": undefined,
-        "backgroundColor": "#ffffff",
+        "backgroundColor": undefined,
         "borderRadius": 10,
-        "elevation": 3,
         "flex": undefined,
         "flexDirection": undefined,
         "height": undefined,
@@ -91,9 +86,6 @@ exports[`Component(snapshot): Card should render with props 1`] = `
         "paddingLeft": undefined,
         "paddingRight": undefined,
         "paddingTop": undefined,
-        "shadowColor": "#ffffff",
-        "shadowOpacity": 0.2,
-        "shadowRadius": 1.5,
         "width": undefined,
       }
     }

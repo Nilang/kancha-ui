@@ -1,21 +1,25 @@
 import * as React from 'react'
 import { TouchableHighlight, ViewStyle } from 'react-native'
 import Container from '../Container/Container'
+import * as Kancha from '../../types'
+import { withTheme } from '../../theming'
 
 interface CardProps {
   onPress?: () => void
   shadow?: number
   br?: number
   testID?: string
+  background?: Kancha.BrandPropOptions
+  theme: any
 }
 
-const Card: React.FC<CardProps> = ({ children, onPress, shadow, br, testID }) => {
+const Card: React.FC<CardProps> = ({ children, onPress, shadow, br, background, testID }) => {
   const style: ViewStyle = {
     ...(shadow
       ? {
           elevation: shadow,
           shadowColor: '#000000',
-          shadowOpacity: 0.2,
+          shadowOpacity: shadow / 20,
           shadowRadius: shadow * 5,
         }
       : {}),
@@ -28,11 +32,11 @@ const Card: React.FC<CardProps> = ({ children, onPress, shadow, br, testID }) =>
       underlayColor={'transparent'}
       style={style}
     >
-      <Container shadow={shadow ? shadow : 0.1} padding={true} br={br ? br : 5} marginBottom={true}>
+      <Container padding={true} br={br ? br : 5} marginBottom={true} background={background}>
         {children}
       </Container>
     </TouchableHighlight>
   )
 }
 
-export default Card
+export default withTheme(Card)

@@ -35,10 +35,10 @@ const Component: React.FC<NavigationScreen> = ({ navigation }) => {
   ]
 
   return (
-    <Screen safeArea={true} scrollEnabled={true}>
+    <Screen safeArea={true} scrollEnabled={true} background={'primary'}>
       <Container testID={TEST_ID.WELCOME} padding={true}>
         {credentials.map((credential, index) => {
-          return <Credential key={index} {...credential} />
+          return <Credential key={index} {...credential} shadow={0} background={'secondary'} />
         })}
       </Container>
     </Screen>
