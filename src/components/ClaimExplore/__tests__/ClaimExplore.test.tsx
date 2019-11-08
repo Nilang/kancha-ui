@@ -37,11 +37,15 @@ describe('Component(assert): Claim Accordion Explorer', () => {
     expect(getByText(/22-01-75/i)).toBeDefined()
     expect(getByText(/22-01-75/i)).toBeDefined()
 
-    fireEvent.press(getByText(/Children/i))
+    act(() => {
+      fireEvent.press(getByText(/Children/i))
+    })
     expect(getByText(/Alice/i)).toBeDefined()
     expect(getByText(/Bob/i)).toBeDefined()
 
-    fireEvent.press(getByText(/Pets/i))
+    act(() => {
+      fireEvent.press(getByText(/Pets/i))
+    })
     expect(getByText(/Fish/i)).toBeDefined()
     expect(getByText(/Cats/i)).toBeDefined()
     expect(getByText(/Birds/i)).toBeDefined()
