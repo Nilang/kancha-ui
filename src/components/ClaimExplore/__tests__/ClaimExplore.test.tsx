@@ -1,8 +1,7 @@
 import * as React from 'react'
-import { render, fireEvent } from 'react-native-testing-library'
+import { render, fireEvent, act } from 'react-native-testing-library'
 import ClaimExplore from '../ClaimExplore'
-import { LayoutAnimation } from 'react-native'
-import { act } from 'react-test-renderer'
+import { endOfTomorrow, getTime } from 'date-fns'
 
 jest.mock('react-native-vector-icons/Ionicons', () => 'Icon')
 
@@ -27,10 +26,10 @@ const claim = {
 }
 
 describe('Component(assert): Claim Accordion Explorer', () => {
-  LayoutAnimation.configureNext = jest.fn()
+  const tomorrow = endOfTomorrow()
 
   it('should render with default props', () => {
-    const { getByText } = render(<ClaimExplore claim={claim} />)
+    const { getByText } = render(<ClaimExplore claim={claim} exp={getTime(tomorrow)} revoked={false} />)
 
     expect(getByText(/Date Of Birth/i)).toBeDefined()
     expect(getByText(/Sarah Adamson/i)).toBeDefined()
@@ -54,6 +53,8 @@ describe('Component(assert): Claim Accordion Explorer', () => {
   it('should render a QRCode when toggled once', () => {
     const { getByText, getByTestId } = render(
       <ClaimExplore
+        exp={getTime(tomorrow)}
+        revoked={false}
         claim={claim}
         jwt={'test-jwt-test.string-test-jwt'}
         qrText={'Text to appear above QR Code'}

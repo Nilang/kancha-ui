@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { Modal, ClaimExplore, Banner } from '@kancha/kancha-ui'
 import { NavigationScreen } from '../../navigators'
+import { endOfTomorrow, getTime } from 'date-fns'
 
 // tslint:disable-next-line:no-var-requires
 const avatar1 = require('../../assets/images/kitten-avatar.jpg')
@@ -15,7 +16,7 @@ const claim = {
   sub: 'did:ethr:0xf3beac30c498d9e26865f34fcaa57dbb935b0d74',
   type: 'Sample Claim',
   iat: 1562769371,
-  exp: 1579478400,
+  exp: getTime(endOfTomorrow()),
   claim: {
     'Serto ID': {
       name: 'Sarah Adamson',
@@ -46,7 +47,13 @@ const Component: React.FC<NavigationScreen> = ({}) => {
         avatar={avatar1}
         backgroundImage={bannerImage}
       />
-      <ClaimExplore claim={claim.claim} jwt={jwt} qrText={'Present for scanning'} />
+      <ClaimExplore
+        revoked={false}
+        claim={claim.claim}
+        jwt={jwt}
+        qrText={'Present for scanning'}
+        exp={claim.exp}
+      />
     </Modal>
   )
 }

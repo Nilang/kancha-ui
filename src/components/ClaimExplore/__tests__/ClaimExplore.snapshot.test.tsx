@@ -49,14 +49,20 @@ const claim = {
 
 describe('Component(snapshot): Claim Accordion Explorer', () => {
   it('should render with default props', () => {
-    const tree = render(<ClaimExplore claim={claim} />).toJSON()
+    const tree = render(<ClaimExplore claim={claim} exp={1573235796610} revoked={false} />).toJSON()
 
     expect(tree).toMatchSnapshot()
   })
 
   it('should render with jwt', () => {
     const tree = render(
-      <ClaimExplore claim={rootClaim} jwt={jwt} qrText={'Scan QR code to verify'} />,
+      <ClaimExplore
+        claim={rootClaim}
+        jwt={jwt}
+        qrText={'Scan QR code to verify'}
+        exp={1573235796610}
+        revoked={false}
+      />,
     ).toJSON()
 
     expect(tree).toMatchSnapshot()

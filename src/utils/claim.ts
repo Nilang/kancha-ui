@@ -1,5 +1,18 @@
 import { ClaimTreeNormalised } from '../types'
+import { isPast } from 'date-fns'
 import S from 'string'
+
+/**
+ * Check val;idity of a claim
+ */
+export const checkValidity = (exp: number, revoked: boolean) => {
+  const invalid = revoked || isPast(exp)
+
+  return {
+    valid: invalid ? false : true,
+    status: invalid ? (revoked ? 'Revoked' : 'Expired') : 'Valid',
+  }
+}
 
 /**
  * Returns true if the item being passed in is the only key ina claim and it's the top level = 0
