@@ -4,17 +4,42 @@ import AccordionItem from '../AccordionItem/AccordionItem'
 import Button from '../Button/Button'
 import Icon from '../Icon/Icon'
 import Text, { TextTypes } from '../Text/Text'
+import Device from '../../services/device'
 import QRCode from 'react-native-qrcode-svg'
 import { ClaimTreeNormalised } from '../../types'
 import { Image } from 'react-native'
-import { normaliseClaimTree, isTopLevelSingleKey, renderCrendentialItem } from '../../utils/claim'
+import {
+  normaliseClaimTree,
+  isTopLevelSingleKey,
+  renderCrendentialItem,
+  checkValidity,
+} from '../../utils/claim'
 import { withTheme } from '../../theming'
-import { Device } from '@kancha/kancha-ui'
 
 interface ClaimExploreProps {
+  /**
+   * Claim object
+   */
   claim: any
+  /**
+   * Original JWT for QRCode
+   */
   jwt?: string
+  /**
+   * Text to display above QRCode
+   */
   qrText?: string
+  /**
+   * Revokation status for this credential
+   */
+  revoked: boolean
+  /**
+   * Expiry timestamp in milliseconds
+   */
+  exp: number
+  /**
+   * Theme prop
+   */
   theme: any
 }
 
@@ -25,6 +50,7 @@ interface ClaimExploreState {
 const ClaimExplore: React.FC<ClaimExploreProps> = props => {
   const [accordionKeys, updateAccordionKeys] = useState<ClaimExploreState>({})
   const [qrCodeVisible, toggleQRCode] = useState<boolean>(false)
+  const isValid = checkValidity(props.exp, props.revoked)
 
   /**
    * Save the open / closed state to a dynamic state key that gets generated as you interact
@@ -121,34 +147,48 @@ const ClaimExplore: React.FC<ClaimExploreProps> = props => {
 
   return (
     <Container marginBottom={32}>
-      {props.jwt && (
-        <Container
-          flexDirection={'row'}
-          padding
-          justifyContent={'space-between'}
-          alignItems={'center'}
-          dividerBottom
-        >
-          <Text textStyle={{ fontStyle: 'italic' }} type={TextTypes.SubTitle}>
-            {qrCodeVisible ? 'Viewing QRCode' : 'Viewing credential'}
-          </Text>
+      <Container
+        flexDirection={'row'}
+        padding
+        alignItems={'center'}
+        justifyContent={'space-between'}
+        dividerBottom
+      >
+        <Container flexDirection={'row'} alignItems={'center'}>
+          <Icon
+            icon={{
+              name: isValid.valid ? 'ios-checkmark-circle-outline' : 'ios-close-circle-outline',
+              iconFamily: 'Ionicons',
+            }}
+            color={isValid.valid ? props.theme.colors.status.confirm : props.theme.colors.status.error}
+          />
+          <Container marginLeft={5}>
+            <Text type={TextTypes.SubTitle}>{isValid.status}</Text>
+          </Container>
+        </Container>
+        {props.jwt && (
           <Button
             testID={'QR_TOGGLE_BTN'}
             iconButton
             icon={
               <Icon
                 icon={{ name: 'qrcode', iconFamily: 'MaterialCommunityIcons' }}
-                color={qrCodeVisible && props.theme.colors.brand}
+                color={qrCodeVisible && props.theme.colors.primary.brand}
               />
             }
             onPress={() => toggleQRCode(!qrCodeVisible)}
           />
-        </Container>
-      )}
+        )}
+      </Container>
       {!qrCodeVisible && <Container>{collapsibleCredential(normalisedClaimTree)}</Container>}
       {qrCodeVisible && (
         <Container padding alignItems={'center'}>
-          {props.qrText && <Text type={TextTypes.SubTitle}>{props.qrText}</Text>}
+          {!isValid.valid && (
+            <Text warn type={TextTypes.SubTitle}>
+              {isValid.status}
+            </Text>
+          )}
+          {isValid.valid && props.qrText && <Text type={TextTypes.SubTitle}>{props.qrText}</Text>}
           <Container marginTop testID={'QR_CODE_CONTAINER'}>
             <QRCode size={Device.width - 100} value={props.jwt} />
           </Container>

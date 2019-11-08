@@ -4,6 +4,8 @@ import Text, { TextTypes } from '../Text/Text'
 import Avatar from '../Avatar/Avatar'
 import Card from '../Card/Card'
 import { ImageSourcePropType } from 'react-native'
+import * as Kancha from '../../types'
+import { withTheme } from '../../theming'
 
 export interface CredentialProps {
   logo: ImageSourcePropType
@@ -12,11 +14,21 @@ export interface CredentialProps {
   issuer: string
   testID?: string
   shadow?: number
+  background?: Kancha.BrandPropOptions
+  theme: any
 }
 
-const Credential: React.FC<CredentialProps> = ({ logo, shadow, onPress, title, issuer, testID }) => {
+const Credential: React.FC<CredentialProps> = ({
+  logo,
+  shadow,
+  onPress,
+  title,
+  issuer,
+  background,
+  testID,
+}) => {
   return (
-    <Card onPress={onPress} testID={testID} shadow={shadow || 1}>
+    <Card onPress={onPress} testID={testID} shadow={shadow || 0} background={background}>
       <Container flexDirection={'row'} alignItems={'center'}>
         <Container backgroundColor={'#EAEAEA'}>
           <Avatar source={logo} type={'rounded'} size={40} />
@@ -34,4 +46,4 @@ const Credential: React.FC<CredentialProps> = ({ logo, shadow, onPress, title, i
   )
 }
 
-export default Credential
+export default withTheme(Credential)
