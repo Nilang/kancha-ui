@@ -2,6 +2,7 @@ import * as React from 'react'
 import { render, fireEvent } from 'react-native-testing-library'
 import ClaimExplore from '../ClaimExplore'
 import { LayoutAnimation } from 'react-native'
+import { act } from 'react-test-renderer'
 
 jest.mock('react-native-vector-icons/Ionicons', () => 'Icon')
 
@@ -36,15 +37,42 @@ describe('Component(assert): Claim Accordion Explorer', () => {
     expect(getByText(/22-01-75/i)).toBeDefined()
     expect(getByText(/22-01-75/i)).toBeDefined()
 
-    fireEvent.press(getByText(/Children/i))
-    expect(LayoutAnimation.configureNext).toBeCalled()
+    act(() => {
+      fireEvent.press(getByText(/Children/i))
+    })
     expect(getByText(/Alice/i)).toBeDefined()
     expect(getByText(/Bob/i)).toBeDefined()
 
-    fireEvent.press(getByText(/Pets/i))
-    expect(LayoutAnimation.configureNext).toBeCalled()
+    act(() => {
+      fireEvent.press(getByText(/Pets/i))
+    })
     expect(getByText(/Fish/i)).toBeDefined()
     expect(getByText(/Cats/i)).toBeDefined()
     expect(getByText(/Birds/i)).toBeDefined()
+  })
+
+  it('should render a QRCode when toggled once', () => {
+    const { getByText, getByTestId } = render(
+      <ClaimExplore
+        claim={claim}
+        jwt={'test-jwt-test.string-test-jwt'}
+        qrText={'Text to appear above QR Code'}
+      />,
+    )
+
+    const toggleBtn = getByTestId('QR_TOGGLE_BTN')
+    expect(toggleBtn).toBeDefined()
+
+    act(() => {
+      fireEvent.press(toggleBtn)
+    })
+
+    expect(getByText(/Text to appear above QR Code/i)).toBeDefined()
+
+    act(() => {
+      fireEvent.press(toggleBtn)
+    })
+
+    expect(getByText(/Date Of Birth/i)).toBeDefined()
   })
 })

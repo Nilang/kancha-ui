@@ -3,6 +3,10 @@ import { render } from 'react-native-testing-library'
 import ClaimExplore from '../ClaimExplore'
 
 jest.mock('react-native-vector-icons/Ionicons', () => 'Icon')
+
+const jwt =
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c'
+
 const rootClaim = {
   name: 'Sarah Adamson',
   dateOfBirth: '22-01-75',
@@ -50,8 +54,10 @@ describe('Component(snapshot): Claim Accordion Explorer', () => {
     expect(tree).toMatchSnapshot()
   })
 
-  it('should render with default props', () => {
-    const tree = render(<ClaimExplore claim={rootClaim} />).toJSON()
+  it('should render with jwt', () => {
+    const tree = render(
+      <ClaimExplore claim={rootClaim} jwt={jwt} qrText={'Scan QR code to verify'} />,
+    ).toJSON()
 
     expect(tree).toMatchSnapshot()
   })

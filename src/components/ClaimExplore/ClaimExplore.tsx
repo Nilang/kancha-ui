@@ -1,13 +1,20 @@
 import React, { useState } from 'react'
 import Container from '../Container/Container'
 import AccordionItem from '../AccordionItem/AccordionItem'
+import Button from '../Button/Button'
+import Icon from '../Icon/Icon'
+import Text, { TextTypes } from '../Text/Text'
+import QRCode from 'react-native-qrcode-svg'
 import { ClaimTreeNormalised } from '../../types'
-import { LayoutAnimation, Image } from 'react-native'
+import { Image } from 'react-native'
 import { normaliseClaimTree, isTopLevelSingleKey, renderCrendentialItem } from '../../utils/claim'
 import { withTheme } from '../../theming'
+import { Device } from '@kancha/kancha-ui'
 
 interface ClaimExploreProps {
   claim: any
+  jwt?: string
+  qrText?: string
   theme: any
 }
 
@@ -17,6 +24,7 @@ interface ClaimExploreState {
 
 const ClaimExplore: React.FC<ClaimExploreProps> = props => {
   const [accordionKeys, updateAccordionKeys] = useState<ClaimExploreState>({})
+  const [qrCodeVisible, toggleQRCode] = useState<boolean>(false)
 
   /**
    * Save the open / closed state to a dynamic state key that gets generated as you interact
@@ -25,12 +33,6 @@ const ClaimExplore: React.FC<ClaimExploreProps> = props => {
     /**
      * Custom animation curve
      */
-    LayoutAnimation.configureNext({
-      duration: 500,
-      create: { type: 'linear', property: 'opacity' },
-      update: { type: 'spring', springDamping: 0.8 },
-      delete: { type: 'linear', property: 'opacity' },
-    })
 
     updateAccordionKeys((keys: ClaimExploreState) => {
       return {
@@ -117,7 +119,43 @@ const ClaimExplore: React.FC<ClaimExploreProps> = props => {
     })
   }
 
-  return <Container marginBottom={32}>{collapsibleCredential(normalisedClaimTree)}</Container>
+  return (
+    <Container marginBottom={32}>
+      {props.jwt && (
+        <Container
+          flexDirection={'row'}
+          padding
+          justifyContent={'space-between'}
+          alignItems={'center'}
+          dividerBottom
+        >
+          <Text textStyle={{ fontStyle: 'italic' }} type={TextTypes.SubTitle}>
+            {qrCodeVisible ? 'Viewing QRCode' : 'Viewing credential'}
+          </Text>
+          <Button
+            testID={'QR_TOGGLE_BTN'}
+            iconButton
+            icon={
+              <Icon
+                icon={{ name: 'qrcode', iconFamily: 'MaterialCommunityIcons' }}
+                color={qrCodeVisible && props.theme.colors.brand}
+              />
+            }
+            onPress={() => toggleQRCode(!qrCodeVisible)}
+          />
+        </Container>
+      )}
+      {!qrCodeVisible && <Container>{collapsibleCredential(normalisedClaimTree)}</Container>}
+      {qrCodeVisible && (
+        <Container padding alignItems={'center'}>
+          {props.qrText && <Text type={TextTypes.SubTitle}>{props.qrText}</Text>}
+          <Container marginTop testID={'QR_CODE_CONTAINER'}>
+            <QRCode size={Device.width - 100} value={props.jwt} />
+          </Container>
+        </Container>
+      )}
+    </Container>
+  )
 }
 
 export default withTheme(ClaimExplore)
