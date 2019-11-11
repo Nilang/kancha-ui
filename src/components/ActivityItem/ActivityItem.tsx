@@ -129,7 +129,13 @@ const ActivityItem: React.FC<ActivityItemProps> = ({
                       right: -index * 10,
                     }}
                   >
-                    <Credential title={item.title} logo={item.issuer.logo} issuer={item.issuer.name} />
+                    <Credential
+                      title={item.title}
+                      logo={item.issuer.logo}
+                      issuer={item.issuer.name}
+                      shadow={1.5}
+                      background={'primary'}
+                    />
                   </Container>
                 )
               })}
