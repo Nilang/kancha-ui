@@ -8,6 +8,7 @@ const claim = {
   type: 'Serto ID',
   iat: 1562769371,
   exp: 1579478400,
+  revoked: false,
   claim: {
     'Serto ID': {
       name: 'Sarah Adamson',

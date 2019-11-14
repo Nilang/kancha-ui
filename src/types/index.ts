@@ -135,8 +135,8 @@ export interface VerifiableCredential {
   sub?: string
   type?: string
   iat: number
-  exp?: number
-  revoked?: boolean
+  exp: number
+  revoked: boolean
   vc?: string[] | string
 }
 
