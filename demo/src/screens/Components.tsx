@@ -23,18 +23,7 @@ const avatar2 = require('../assets/images/kitten-avatar-2.jpg')
 
 const Components: React.FC<NavigationScreen> = props => {
   return (
-    <Screen
-      scrollEnabled={true}
-      fabButton={
-        <Container alignItems={'center'} justifyContent={'flex-end'} flex={1}>
-          <FabButton
-            onPress={() => props.navigation.navigate(Screens.Scanner)}
-            icon={{ name: 'ios-qr-scanner', iconFamily: 'Ionicons' }}
-            size={80}
-          />
-        </Container>
-      }
-    >
+    <Screen scrollEnabled={true}>
       <Container paddingTop={50} testID={TEST_ID.WELCOME}>
         <Text bold={true} textAlign={'center'} type={Constants.TextTypes.H3}>
           🚀Welcome to Kancha Demo! 🎉
@@ -42,7 +31,7 @@ const Components: React.FC<NavigationScreen> = props => {
       </Container>
       <Section title={'Components'}>
         <ListItem onPress={() => props.navigation.navigate(Screens.Screen)}>Screen</ListItem>
-        <ListItem onPress={() => props.navigation.navigate(Screens.Container)}>Container</ListItem>
+        <ListItem onPress={() => props.navigation.navigate(Screens.Container)}>Bottom Sheet</ListItem>
         <ListItem onPress={() => props.navigation.navigate(Screens.Text)}>Text</ListItem>
         <ListItem onPress={() => props.navigation.navigate(Screens.Button)}>Button</ListItem>
         <ListItem onPress={() => props.navigation.navigate(Screens.Dummy)}>Icon</ListItem>

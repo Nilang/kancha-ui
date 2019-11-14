@@ -11,7 +11,7 @@ describe('Demo App', () => {
 
   it('should have all list items', async () => {
     await expect(element(by.text('Screen'))).toBeVisible()
-    await expect(element(by.text('Container'))).toBeVisible()
+    await expect(element(by.text('Bottom Sheet'))).toBeVisible()
     await expect(element(by.text('Text'))).toBeVisible()
     await expect(element(by.text('Button'))).toBeVisible()
     await expect(element(by.text('Icon'))).toBeVisible()

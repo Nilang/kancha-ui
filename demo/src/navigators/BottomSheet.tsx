@@ -8,9 +8,9 @@ interface Props {
 
 const BottomSheetImp: React.FC<Props> = ({ id }) => {
   return (
-    <BottomSheet snapPoints={[0, 400]} initialSnap={0} id={id}>
+    <BottomSheet snapPoints={[-10, 400, 200, 600]} initialSnap={0} id={id}>
       {id => (
-        <ScrollView style={{ backgroundColor: 'white', height: 400 }}>
+        <ScrollView style={{ backgroundColor: 'white', height: 600 }}>
           <Container padding>
             <Text>This is sheet ID => {id}</Text>
           </Container>
