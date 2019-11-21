@@ -31,6 +31,7 @@ interface VC {
 }
 
 export interface DAFMessage {
+  rowId: string
   hash: string
   iat?: number
   nbf?: number
