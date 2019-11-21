@@ -68,11 +68,11 @@ const MessageItem: React.FC<MessageItemProps> = ({ message, viewMessage, viewPro
         <Container paddingTop marginLeft={20} flex={1}>
           <Text type={TextTypes.ActivityTitle}>
             <Text onPress={() => viewProfile(message.iss.did)} bold>
-              {message.iss.did.slice(9, 18)}
+              {message.iss.did.slice(9, 18)}&nbsp;
             </Text>
             sent a message to
             <Text onPress={() => viewProfile(message.sub.did)} bold>
-              {message.sub.did.slice(9, 18)}
+              &nbsp;{message.sub.did.slice(9, 18)}
             </Text>
           </Text>
           <Container marginTop={5}>
