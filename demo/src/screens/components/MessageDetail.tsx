@@ -4,6 +4,7 @@ import { NavigationScreen } from '../../navigators'
 import TEST_ID from '../../../../e2e/testIDs'
 import JSONTree from 'react-native-json-tree'
 import { useNavigationParam } from 'react-navigation-hooks'
+import { formatDistanceToNow } from 'date-fns'
 import { Colors } from '../../theme'
 
 const Component: React.FC<NavigationScreen> = () => {
@@ -13,10 +14,15 @@ const Component: React.FC<NavigationScreen> = () => {
     <Screen scrollEnabled={true} background={'primary'}>
       <Container testID={TEST_ID.WELCOME} padding marginTop>
         <Text type={Constants.TextTypes.H2} bold>
-          Message
+          Message Detail
         </Text>
         <Container marginTop={5} marginBottom>
-          <Text type={Constants.TextTypes.ActivitySubTitle}>{'Some time ago'}</Text>
+          <Text type={Constants.TextTypes.ActivitySubTitle}>
+            {(message.nbf && formatDistanceToNow(message.nbf * 1000)) + ' ago' || 'Some time ago'}
+          </Text>
+          <Container paddingTop>
+            <Text>This is a debug view to show the data within a raw message item</Text>
+          </Container>
         </Container>
         <Container>
           <Container marginBottom>

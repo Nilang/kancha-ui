@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { TouchableHighlight, TouchableOpacity } from 'react-native'
+import { TouchableHighlight } from 'react-native'
 // import { withTheme } from '../../theming'
 
 import Container from '../Container/Container'
@@ -49,70 +49,42 @@ interface MessageItemProps {
   viewProfile: (did: string) => void
 }
 
-const MessageItem: React.FC<MessageItemProps> = ({ message, viewProfile, viewMessage, theme }) => {
+const MessageItem: React.FC<MessageItemProps> = ({ message, viewMessage, viewProfile, theme }) => {
   return (
     <TouchableHighlight
       style={{ marginBottom: 5, backgroundColor: theme.colors.primary.background }}
       onPress={() => viewMessage(message)}
       underlayColor={'#FAFAFA'}
     >
-      <Container flexDirection={'row'} alignItems={'flex-end'} marginBottom={1}>
-        {/* <Container w={2} /> */}
-        <Container flex={1} padding={10}>
-          <Container
-            flexDirection={'row'}
-            justifyContent={'space-between'}
-            alignItems={'flex-start'}
-            paddingRight
-            paddingLeft
-            paddingBottom
-          >
-            <Container>
-              <Container paddingBottom={3}>
-                <Text type={TextTypes.ActivityTitle} bold>
-                  Message
-                </Text>
-              </Container>
-              <Container paddingBottom={3} flexDirection={'row'}>
-                <Text type={TextTypes.SubTitle}>id: {message.hash.slice(0, 20) + `...`}</Text>
-              </Container>
-            </Container>
-            <Container flexDirection={'row'}>
-              {message.vc && <Icon icon={{ name: 'ios-attach', iconFamily: 'Ionicons' }} size={18} />}
-              <Container paddingLeft={5}>
-                <Text type={TextTypes.ActivitySubTitle}>
-                  {(message.nbf && formatDistanceToNow(message.nbf * 1000)) + ' ago' || 'Some time ago'}
-                </Text>
-              </Container>
+      <Container flexDirection={'row'}>
+        <Container padding>
+          <Container>
+            <Avatar type={'circle'} gravatarType={'retro'} address={message.iss.did} size={38} />
+            <Container viewStyle={{ position: 'absolute', left: 20, top: 0 }}>
+              <Avatar border type={'circle'} gravatarType={'retro'} address={message.sub.did} size={40} />
             </Container>
           </Container>
-          <Container
-            flexDirection={'row'}
-            justifyContent={'space-between'}
-            alignItems={'center'}
-            paddingBottom={5}
-            paddingLeft={true}
-            paddingRight={true}
-          >
-            <TouchableOpacity onPress={() => viewProfile(message.iss.did)}>
-              <Container alignItems={'center'}>
-                <Avatar type={'circle'} gravatarType={'retro'} address={message.iss.did} size={40} />
-                <Container paddingTop={8}>
-                  <Text type={TextTypes.ActivitySubTitle}>{message.iss.did.slice(9, 20) + `...`}</Text>
-                </Container>
-              </Container>
-            </TouchableOpacity>
-            <Container flexDirection={'row'}>
-              <Icon icon={{ name: 'ios-arrow-forward', iconFamily: 'Ionicons' }} size={30} />
+        </Container>
+        <Container paddingTop marginLeft={20} flex={1}>
+          <Text type={TextTypes.ActivityTitle}>
+            <Text onPress={() => viewProfile(message.iss.did)} bold>
+              {message.iss.did.slice(9, 18)}
+            </Text>
+            sent a message to
+            <Text onPress={() => viewProfile(message.sub.did)} bold>
+              {message.sub.did.slice(9, 18)}
+            </Text>
+          </Text>
+          <Container marginTop={5}>
+            <Text type={TextTypes.ActivitySubTitle}>
+              {(message.nbf && formatDistanceToNow(message.nbf * 1000)) + ' ago' || 'Some time ago'}
+            </Text>
+          </Container>
+          <Container paddingTop paddingBottom flexDirection={'row'} alignItems={'center'}>
+            <Icon icon={{ name: 'ios-attach', iconFamily: 'Ionicons' }} size={18} />
+            <Container paddingLeft={5}>
+              <Text>This raw message has {message.vc && message.vc.length} attachment(s)</Text>
             </Container>
-            <TouchableOpacity onPress={() => viewProfile(message.sub.did)}>
-              <Container alignItems={'center'}>
-                <Avatar type={'circle'} gravatarType={'retro'} address={message.sub.did} size={40} />
-                <Container paddingTop={8}>
-                  <Text type={TextTypes.ActivitySubTitle}>{message.sub.did.slice(9, 20) + `...`}</Text>
-                </Container>
-              </Container>
-            </TouchableOpacity>
           </Container>
         </Container>
       </Container>
