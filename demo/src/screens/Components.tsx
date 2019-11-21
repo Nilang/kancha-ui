@@ -41,8 +41,9 @@ const Components: React.FC<NavigationScreen> = props => {
         <ListItem onPress={() => props.navigation.navigate('Modal')}>Modal</ListItem>
         <ListItem onPress={() => props.navigation.navigate(Screens.Credential)}>Credentials</ListItem>
         <ListItem onPress={() => props.navigation.navigate(Screens.Request)}>Request</ListItem>
-        <ListItem onPress={() => props.navigation.navigate(Screens.ActivityFeed)} last={true}>
-          Activity Feed
+        <ListItem onPress={() => props.navigation.navigate(Screens.ActivityFeed)}>Activity Feed</ListItem>
+        <ListItem onPress={() => props.navigation.navigate(Screens.Messages)} last={true}>
+          Messages
         </ListItem>
       </Section>
       <Section title={'Toast Messages'}>
