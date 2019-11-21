@@ -26,6 +26,7 @@ import CredentialExplore from '../screens/components/CredentialExplore'
 import ActivityFeed from '../screens/components/ActivityFeed'
 import Profile from '../screens/components/Profile'
 import Messages from '../screens/components/Messages'
+import MessageDetail from '../screens/components/MessageDetail'
 
 export interface NavigationScreen {
   navigation: NavigationScreenProp<NavigationState, NavigationParams>
@@ -49,6 +50,7 @@ export const Screens = {
   ActivityFeed: 'ActivityFeed',
   Profile: 'Profile',
   Messages: 'Messages',
+  MessageDetail: 'MessageDetail',
 }
 
 const DrawerMenuButton = (navigation: any) => (
@@ -84,6 +86,7 @@ const MainNavigator = createStackNavigator({
   [Screens.Credential]: CredentialScreen,
   [Screens.Profile]: Profile,
   [Screens.Messages]: Messages,
+  [Screens.MessageDetail]: MessageDetail,
 })
 
 /**
