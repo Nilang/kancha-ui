@@ -102,6 +102,11 @@ export interface TextProps {
   textStyle?: TextStyle
 
   /**
+   * All the text to be selectable
+   */
+  selectable?: boolean
+
+  /**
    * Transform the text
    */
   theme: any
@@ -200,6 +205,7 @@ const KanchaText: React.FC<TextProps> & { Types: Kancha.TextTypesStatic } = prop
 
   return (
     <Text
+      selectable={props.selectable}
       style={styles}
       testID={props.testID}
       accessibilityLabel={props.testID}

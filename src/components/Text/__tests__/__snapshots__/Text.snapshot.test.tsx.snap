@@ -2,6 +2,7 @@
 
 exports[`Component(snapshops): Text renders correctly with all props 1`] = `
 <Text
+  selectable={true}
   style={
     Object {
       "color": "#FFFFFF",
