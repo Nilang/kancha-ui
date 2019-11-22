@@ -32,6 +32,7 @@ describe('Component(snapshops): Text', () => {
         textDecorationLine={'none'}
         transform={'uppercase'}
         textStyle={{ opacity: 0.9 }}
+        selectable={true}
       >
         Hello World
       </Text>,

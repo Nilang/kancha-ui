@@ -1,16 +1,22 @@
 import * as React from 'react'
 import { Container, Screen, MessageItem, DAFMessage } from '@kancha/kancha-ui'
 import { NavigationScreen } from '../../navigators'
+import { useNavigation } from 'react-navigation-hooks'
 
 const { data } = require('../../data/messages.json')
 
 const Component: React.FC<NavigationScreen> = () => {
+  const navigation = useNavigation()
+
   const viewProfile = (did: string) => {
     console.log(did)
   }
 
   const viewMessage = (msg: DAFMessage) => {
     console.log(msg)
+    navigation.navigate('MessageDetail', {
+      message: msg,
+    })
   }
 
   return (

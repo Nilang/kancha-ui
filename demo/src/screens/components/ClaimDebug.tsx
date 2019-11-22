@@ -33,7 +33,7 @@ const Component: React.FC<NavigationScreen> = () => {
   return (
     <Screen scrollEnabled={true}>
       <Container testID={TEST_ID.WELCOME}>
-        <ClaimDebug {...claim} cardView={true} />
+        <ClaimDebug {...claim} cardView={true} revoked />
       </Container>
     </Screen>
   )
