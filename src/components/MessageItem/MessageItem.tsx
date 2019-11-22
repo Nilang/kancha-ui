@@ -31,6 +31,8 @@ interface VC {
 }
 
 export interface DAFMessage {
+  type: string
+  tag?: string
   rowId: string
   hash: string
   iat?: number
@@ -51,6 +53,8 @@ interface MessageItemProps {
 }
 
 const MessageItem: React.FC<MessageItemProps> = ({ message, viewMessage, viewProfile, theme }) => {
+  const issProfileSource = message.iss.profileImage ? { source: { uri: message.iss.profileImage } } : {}
+  const subProfileSource = message.sub.profileImage ? { source: { uri: message.sub.profileImage } } : {}
   return (
     <TouchableHighlight
       style={{ marginBottom: 5, backgroundColor: theme.colors.primary.background }}
@@ -60,24 +64,39 @@ const MessageItem: React.FC<MessageItemProps> = ({ message, viewMessage, viewPro
       <Container flexDirection={'row'}>
         <Container padding>
           <Container>
-            <Avatar type={'circle'} gravatarType={'retro'} address={message.iss.did} size={38} />
+            <Avatar
+              {...issProfileSource}
+              type={'circle'}
+              gravatarType={'retro'}
+              address={message.iss.did}
+              size={38}
+            />
             <Container viewStyle={{ position: 'absolute', left: 20, top: 0 }}>
-              <Avatar border type={'circle'} gravatarType={'retro'} address={message.sub.did} size={40} />
+              <Avatar
+                {...subProfileSource}
+                border
+                type={'circle'}
+                gravatarType={'retro'}
+                address={message.sub.did}
+                size={40}
+              />
             </Container>
           </Container>
         </Container>
         <Container paddingTop marginLeft={20} flex={1}>
           <Text type={TextTypes.ActivityTitle}>
             <Text onPress={() => viewProfile(message.iss.did)} bold>
-              {message.iss.did.slice(9, 18)}&nbsp;
+              {message.iss.shortId}&nbsp;
             </Text>
             sent a message to
             <Text onPress={() => viewProfile(message.sub.did)} bold>
-              &nbsp;{message.sub.did.slice(9, 18)}
+              &nbsp;{message.sub.shortId}
             </Text>
           </Text>
           <Container marginTop={5}>
             <Text type={TextTypes.ActivitySubTitle}>
+              {message.tag && message.tag + ' • '}
+              {message.type + ' • '}
               {(message.nbf && formatDistanceToNow(message.nbf * 1000)) + ' ago' || 'Some time ago'}
             </Text>
           </Container>

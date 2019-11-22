@@ -126,7 +126,9 @@ export interface ThemeStatic {
 export interface Identity {
   name: string
   did: string
-  avatar: ImageSourcePropType
+  shortId: string
+  avatar?: ImageSourcePropType
+  profileImage?: string
 }
 
 export interface VerifiableCredential {
