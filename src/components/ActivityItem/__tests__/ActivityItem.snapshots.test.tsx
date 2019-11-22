@@ -22,8 +22,18 @@ describe('Component(snapshots): ActivityItem', () => {
   const baseProps = {
     id: 'ZFGHFSJD',
     date: 123445678910,
-    issuer: { name: 'Test Issuer', did: 'ethr:did:123456', avatar: { uri: 'http://' } },
-    subject: { name: 'Test Subject', did: 'ethr:did:123456', avatar: { uri: 'http://' } },
+    issuer: {
+      name: 'Test Issuer',
+      did: 'ethr:did:123456',
+      avatar: { uri: 'http://' },
+      shortId: 'Test Issuer',
+    },
+    subject: {
+      name: 'Test Subject',
+      did: 'ethr:did:123456',
+      avatar: { uri: 'http://' },
+      shortId: 'Test Subject',
+    },
     activity: 'testing the components',
     profileAction: () => {},
     // attachmentsAction: () => {},
