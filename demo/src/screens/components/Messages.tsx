@@ -5,8 +5,6 @@ import { useNavigation } from 'react-navigation-hooks'
 
 const { data } = require('../../data/messages.json')
 
-console.log(data)
-
 const Component: React.FC<NavigationScreen> = () => {
   const navigation = useNavigation()
 
