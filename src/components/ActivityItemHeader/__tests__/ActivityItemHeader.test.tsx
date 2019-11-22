@@ -7,8 +7,13 @@ describe('Component(assert): ActivityHeader', () => {
   const baseProps = {
     id: 'ZFGHFSJD',
     date: 123445678910,
-    issuer: { name: 'Test Issuer', did: 'ethr:did:123456', avatar: { uri: 'http://' } },
-    subject: { name: 'subject', did: 'ethr:did:123456', avatar: { uri: 'http://' } },
+    issuer: {
+      name: 'Test Issuer',
+      did: 'ethr:did:123456',
+      avatar: { uri: 'http://' },
+      shortId: 'Test Issuer',
+    },
+    subject: { name: 'subject', did: 'ethr:did:123456', avatar: { uri: 'http://' }, shortId: 'Test Issuer' },
     profileAction: action,
   }
 
