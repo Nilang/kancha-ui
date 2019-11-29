@@ -23,22 +23,22 @@ import TEST_ID from '../../../../e2e/testIDs'
 const nameOptions: Typings.RequestItemSelectable[] = [
   {
     id: '0001',
-    iss: 'Deutsche Bank',
-    property: 'name',
+    iss: { shortId: 'Deutsche Bank', did: '0xfksksdk' },
+    type: 'name',
     value: 'Jack',
     selected: true,
   },
   {
     id: '0002',
-    iss: 'Onfido',
-    property: 'name',
+    iss: { shortId: 'Onfido', did: '0xfksksdk' },
+    type: 'name',
     value: 'Jacky',
     selected: false,
   },
   {
     id: '0003',
-    iss: 'Onfido',
-    property: 'name',
+    iss: { shortId: 'Onfido', did: '0xfksksdk' },
+    type: 'name',
     value: 'Jacko',
     selected: false,
   },
@@ -47,22 +47,22 @@ const nameOptions: Typings.RequestItemSelectable[] = [
 const lastNameOptions: Typings.RequestItemSelectable[] = [
   {
     id: '0001',
-    iss: 'Deutsche Bank',
-    property: 'lastName',
+    iss: { shortId: 'Deutsche Bank', did: '0xfksksdk' },
+    type: 'lastName',
     value: 'Morrison',
     selected: true,
   },
   {
     id: '0002',
-    iss: 'Onfido',
-    property: 'lastName',
+    iss: { shortId: 'Onfido', did: '0xfksksdk' },
+    type: 'lastName',
     value: 'Kennedy',
     selected: false,
   },
   {
     id: '0003',
-    iss: 'Onfido',
-    property: 'lastName',
+    iss: { shortId: 'Onfido', did: '0xfksksdk' },
+    type: 'lastName',
     value: 'Morrison',
     selected: false,
   },
@@ -71,22 +71,22 @@ const lastNameOptions: Typings.RequestItemSelectable[] = [
 const locationOptions: Typings.RequestItemSelectable[] = [
   {
     id: '0001',
-    iss: 'Deutsche Bank',
-    property: 'location',
+    iss: { shortId: 'Deutsche Bank', did: '0xfksksdk' },
+    type: 'location',
     value: 'Ireland',
     selected: true,
   },
   {
     id: '0002',
-    iss: 'Onfido',
-    property: 'location',
+    iss: { shortId: 'Onfido', did: '0xfksksdk' },
+    type: 'location',
     value: 'Dublin, Ireland',
     selected: false,
   },
   {
     id: '0003',
-    iss: 'Onfido',
-    property: 'location',
+    iss: { shortId: 'Onfido', did: '0xfksksdk' },
+    type: 'location',
     value: 'Dublin',
     selected: false,
   },
@@ -95,22 +95,22 @@ const locationOptions: Typings.RequestItemSelectable[] = [
 const emailOptions: Typings.RequestItemSelectable[] = [
   {
     id: '0001',
-    iss: 'Deutsche Bank',
-    property: 'location',
+    iss: { shortId: 'Deutsche Bank', did: '0xfksksdk' },
+    type: 'location',
     value: 'jack@mymail.com',
     selected: true,
   },
   {
     id: '0002',
-    iss: 'Onfido',
-    property: 'name',
+    iss: { shortId: 'Onfido', did: '0xfksksdk' },
+    type: 'name',
     value: 'jacky@mymail.com',
     selected: false,
   },
   {
     id: '0003',
-    iss: 'Serto Verified',
-    property: 'name',
+    iss: { shortId: 'Deutsche Bank', did: '0xfksksdk' },
+    type: 'name',
     value: 'jackie_1234@mymail.com',
     selected: false,
   },
@@ -119,14 +119,18 @@ const emailOptions: Typings.RequestItemSelectable[] = [
 const phoneOptions: Typings.RequestItemSelectable[] = [
   {
     id: '0001',
-    iss: 'Serto Verified',
-    property: 'phone',
+    iss: { shortId: 'Serto', did: '0xfksksdk' },
+    type: 'phone',
     value: '+555-321-8763',
     selected: true,
   },
 ]
 
 const Component: React.FC<NavigationScreen> = ({ navigation }) => {
+  const onSelectItem = (id: string, claimType: string) => {
+    console.log(id, claimType)
+  }
+
   return (
     <Screen
       statusBarHidden={true}
@@ -167,11 +171,36 @@ const Component: React.FC<NavigationScreen> = ({ navigation }) => {
         />
         <Indicator text={'Share your data with HODL Inc.'} />
         <Container>
-          <RequestItem subTitle={'Firstname'} options={nameOptions} required={true} />
-          <RequestItem subTitle={'Lastname'} options={lastNameOptions} required={true} />
-          <RequestItem subTitle={'Location'} options={locationOptions} required={true} />
-          <RequestItem subTitle={'Email'} options={emailOptions} required={false} />
-          <RequestItem subTitle={'Phone'} options={phoneOptions} required={false} />
+          <RequestItem
+            claimType={'firstName'}
+            options={nameOptions}
+            required={true}
+            onSelectItem={onSelectItem}
+          />
+          <RequestItem
+            claimType={'lastName'}
+            options={lastNameOptions}
+            required={true}
+            onSelectItem={onSelectItem}
+          />
+          <RequestItem
+            claimType={'location'}
+            options={locationOptions}
+            required={true}
+            onSelectItem={onSelectItem}
+          />
+          <RequestItem
+            claimType={'email'}
+            options={emailOptions}
+            required={false}
+            onSelectItem={onSelectItem}
+          />
+          <RequestItem
+            claimType={'phone'}
+            options={phoneOptions}
+            required={false}
+            onSelectItem={onSelectItem}
+          />
         </Container>
       </Container>
     </Screen>

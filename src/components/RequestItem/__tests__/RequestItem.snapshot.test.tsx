@@ -7,8 +7,8 @@ jest.mock('react-native-vector-icons/Ionicons', () => 'Icon')
 const singleOption = [
   {
     id: 'TEST_ID',
-    iss: 'Serto Verified',
-    property: 'Test property',
+    iss: { shortId: 'Serto Verified', did: '0xfksksdk' },
+    type: 'Test property',
     value: 'Test value',
     selected: true,
   },
@@ -17,15 +17,15 @@ const singleOption = [
 const multiOptions = [
   {
     id: 'TEST_ID_01',
-    iss: 'Serto Verified',
-    property: 'Test property',
+    iss: { shortId: 'Serto Verified', did: '0xfksksdk' },
+    type: 'Test property',
     value: 'Test value 01',
     selected: true,
   },
   {
     id: 'TEST_ID_02',
-    iss: 'Serto Verified',
-    property: 'Test property',
+    iss: { shortId: 'Serto Verified', did: '0xfksksdk' },
+    type: 'Test property',
     value: 'Test value 02',
     selected: false,
   },
@@ -33,25 +33,33 @@ const multiOptions = [
 
 describe('Component(snapshot): RequestItem', () => {
   it('should render required with single option', () => {
-    const tree = render(<RequestItem options={singleOption} />).toJSON()
+    const onSelect = jest.fn()
+    const tree = render(
+      <RequestItem claimType={'Test'} options={singleOption} onSelectItem={onSelect} />,
+    ).toJSON()
 
     expect(tree).toMatchSnapshot()
   })
 
   it('should render un-required with single option', () => {
-    const tree = render(<RequestItem required={false} options={singleOption} />).toJSON()
+    const onSelect = jest.fn()
+    const tree = render(
+      <RequestItem required={false} claimType={'Test'} options={singleOption} onSelectItem={onSelect} />,
+    ).toJSON()
 
     expect(tree).toMatchSnapshot()
   })
 
   it('should render required with multi options', () => {
+    const onSelect = jest.fn()
     const tree = render(
       <RequestItem
         required={true}
-        subTitle={'Subtitle'}
+        claimType={'Subtitle'}
         itemNote={'Test Note'}
         last={true}
         options={multiOptions}
+        onSelectItem={onSelect}
       />,
     ).toJSON()
 
@@ -59,13 +67,15 @@ describe('Component(snapshot): RequestItem', () => {
   })
 
   it('should render un-required with multi options', () => {
+    const onSelect = jest.fn()
     const tree = render(
       <RequestItem
         required={false}
-        subTitle={'Subtitle'}
+        claimType={'Subtitle'}
         itemNote={'Test Note'}
         last={true}
         options={multiOptions}
+        onSelectItem={onSelect}
       />,
     ).toJSON()
 

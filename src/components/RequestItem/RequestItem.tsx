@@ -6,6 +6,7 @@ import Radio from '../RadioBtn/RadioBtn'
 import { TouchableHighlight } from 'react-native'
 import { withTheme } from '../../theming'
 import { RequestItemSelectable } from '../../types'
+import S from 'string'
 
 interface RequestItem {
   /**
@@ -25,7 +26,7 @@ interface RequestItem {
   /**
    * Subtitle to show over main text
    */
-  subTitle?: string
+  claimType: string
 
   /**
    *  Note to show on the right
@@ -41,6 +42,11 @@ interface RequestItem {
    *  The item being request is required
    */
   required?: boolean
+
+  /**
+   *  Return the selected item
+   */
+  onSelectItem: (id: string, claimType: string) => void
 
   /**
    *  Theme
@@ -71,6 +77,8 @@ const RequestItem: React.FC<RequestItem> = props => {
     if (props.closeAfterSelect !== false) {
       toggleOptions(false)
     }
+
+    props.onSelectItem(id, props.claimType)
   }
   const declineShare = () => {
     const updatedOptions = options.map(item => {
@@ -82,6 +90,8 @@ const RequestItem: React.FC<RequestItem> = props => {
     if (props.closeAfterSelect !== false) {
       toggleOptions(false)
     }
+
+    props.onSelectItem('NOSHARE', props.claimType)
   }
 
   return (
@@ -99,9 +109,9 @@ const RequestItem: React.FC<RequestItem> = props => {
           alignItems={'center'}
         >
           <Container flex={1}>
-            {props.subTitle && (
+            {props.claimType && (
               <Text type={TextTypes.SubTitle}>
-                {props.subTitle}
+                {S(props.claimType).capitalize().s}
                 {props.required ? '*' : ''}
               </Text>
             )}
@@ -140,7 +150,7 @@ const RequestItem: React.FC<RequestItem> = props => {
                     </Radio>
                   </Container>
                   <Container paddingRight={true}>
-                    <Text type={TextTypes.ListItemNote}>{item.iss}</Text>
+                    <Text type={TextTypes.ListItemNote}>{item.iss.shortId}</Text>
                   </Container>
                 </Container>
               )

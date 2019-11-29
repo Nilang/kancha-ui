@@ -124,7 +124,7 @@ export interface ThemeStatic {
 }
 
 export interface Identity {
-  name: string
+  name?: string
   did: string
   shortId: string
   avatar?: ImageSourcePropType
@@ -160,15 +160,15 @@ export interface RequestItemSelectable {
   /**
    *  This will need to be any type eg address may have sub keys
    */
-  iss: string
+  iss: Identity
   /**
    *  This will need to be any type eg address may have sub keys
    */
-  property: string
+  type: string
   /**
    *  This will need to be any type eg address may have sub keys
    */
-  value: string
+  value: any
 
   /**
    *  Item is selected for sharing
