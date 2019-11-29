@@ -313,6 +313,18 @@ exports[`Component(snapshot): RequestItem should render required with single opt
           }
         }
       >
+        <Text
+          style={
+            Object {
+              "color": "#BBBBBB",
+              "flexWrap": "wrap",
+              "fontSize": 14,
+            }
+          }
+        >
+          Test
+          
+        </Text>
         <View
           pointerEvents="auto"
           style={
@@ -703,6 +715,18 @@ exports[`Component(snapshot): RequestItem should render un-required with single 
           }
         }
       >
+        <Text
+          style={
+            Object {
+              "color": "#BBBBBB",
+              "flexWrap": "wrap",
+              "fontSize": 14,
+            }
+          }
+        >
+          Test
+          
+        </Text>
         <View
           pointerEvents="auto"
           style={

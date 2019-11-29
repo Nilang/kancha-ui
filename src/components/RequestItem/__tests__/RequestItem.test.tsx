@@ -7,8 +7,8 @@ jest.mock('react-native-vector-icons/Ionicons', () => 'Icon')
 const singleOption = [
   {
     id: 'TEST_ID',
-    iss: 'Serto Verified',
-    property: 'Test property',
+    iss: { shortId: 'Serto Verified', did: '0xfksksdk' },
+    type: 'Test property',
     value: 'Single Option Selected',
     selected: true,
   },
@@ -17,15 +17,15 @@ const singleOption = [
 const multiOptions = [
   {
     id: 'TEST_ID_01',
-    iss: 'Serto Verified',
-    property: 'Test property',
+    iss: { shortId: 'Serto Verified', did: '0xfksksdk' },
+    type: 'Test property',
     value: 'Multi Option A Selected',
     selected: true,
   },
   {
     id: 'TEST_ID_02',
-    iss: 'Serto Verified',
-    property: 'Test property',
+    iss: { shortId: 'Serto Verified', did: '0xfksksdk' },
+    type: 'Test property',
     value: 'Multi Option B Selected',
     selected: false,
   },
@@ -33,18 +33,23 @@ const multiOptions = [
 
 describe('Component(assert): RequestItem', () => {
   it('should display the selected option', () => {
-    const { getByText } = render(<RequestItem subTitle={'Test title'} options={singleOption} />)
+    const onSelect = jest.fn()
+    const { getByText } = render(
+      <RequestItem claimType={'Test title'} options={singleOption} onSelectItem={onSelect} />,
+    )
 
     expect(getByText(/Single Option Selected/i)).toBeDefined()
   })
 
   it('should fire the event to open accordion, select options and stay open', () => {
+    const onSelect = jest.fn()
     const { getByText, getAllByText } = render(
       <RequestItem
-        subTitle={'Test title'}
+        claimType={'Test title'}
         options={multiOptions}
         closeAfterSelect={false}
         required={false}
+        onSelectItem={onSelect}
       />,
     )
 
@@ -76,8 +81,14 @@ describe('Component(assert): RequestItem', () => {
   })
 
   it('should fire the event to open accordion, select options and close', () => {
+    const onSelect = jest.fn()
     const { getByText, getAllByText } = render(
-      <RequestItem subTitle={'Test title'} options={multiOptions} closeAfterSelect={true} />,
+      <RequestItem
+        claimType={'Test title'}
+        options={multiOptions}
+        closeAfterSelect={true}
+        onSelectItem={onSelect}
+      />,
     )
 
     expect(getByText(/Multi Option A Selected/i)).toBeDefined()
