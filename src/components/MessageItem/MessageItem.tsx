@@ -53,8 +53,11 @@ interface MessageItemProps {
 }
 
 const MessageItem: React.FC<MessageItemProps> = ({ message, viewMessage, viewProfile, theme }) => {
-  const issProfileSource = message.iss.profileImage ? { source: { uri: message.iss.profileImage } } : {}
-  const subProfileSource = message.sub.profileImage ? { source: { uri: message.sub.profileImage } } : {}
+  const subject = message.sub || message.aud
+  const issuer = message.iss
+  const subProfileSource = subject.profileImage ? { source: { uri: subject.profileImage } } : {}
+  const issProfileSource = issuer.profileImage ? { source: { uri: issuer.profileImage } } : {}
+
   return (
     <TouchableHighlight
       style={{ marginBottom: 5, backgroundColor: theme.colors.primary.background }}

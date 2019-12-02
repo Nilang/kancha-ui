@@ -2,6 +2,94 @@
   "data": {
     "messages": [
       {
+        "type": "sdr",
+        "jwt": "eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NkstUiJ9.eyJpYXQiOjE1NzUyOTk3NzAsInR5cGUiOiJzZHIiLCJ0YWciOiJ0YWctMDIiLCJzdWIiOiJkaWQ6ZXRocjoweGRmZDhlZGFmYzU5MjM3YmQ4ZmRiYmYzODA4NWNlYWM5YWExYWM1YTgiLCJjbGFpbXMiOlt7InJlYXNvbiI6InNvbWUgcmVhc29uIiwiY2xhaW1UeXBlIjoid2VhdGhlciIsImVzc2VudGlhbCI6ZmFsc2V9XSwiaXNzIjoiZGlkOmV0aHI6MHgxZmNjMTIzZWUzNDgxMmRiNGJlYzkzN2Q3YWNkYzdjYTYxZDk5MGE2In0.KTENMv3pwOQK-TK6gCcz9UQBuGG1eOUhOkRUj2yLxObpE2sbkMOB9Ez9r9Xbz8QvJXOSVdrnrx0TpCLpu41CRwE",
+        "hash": "f869bcb0179270a278022a4c0d1ee39a7f45e4db7035d909b57ceffebdfe0a9e93e59b0b6764e885c35c2f30972965ffd14c57028e1c419cc20ff78e28213b3b",
+        "tag": "tag-01",
+        "nbf": 1575299770,
+        "iss": {
+          "did": "did:ethr:0x1fcc123ee34812db4bec937d7acdc7ca61d990a6",
+          "shortId": "did:ethr:0x1fcc...90a6",
+          "profileImage": "",
+          "__typename": "Identity"
+        },
+        "sub": {
+          "did": "did:ethr:0xdfd8edafc59237bd8fdbbf38085ceac9aa1ac5a8",
+          "shortId": "Jase",
+          "profileImage": "",
+          "__typename": "Identity"
+        },
+        "vc": [],
+        "sdr": [
+          {
+            "claimType": "name",
+            "reason": "some reason",
+            "essential": false,
+            "vc": [
+              {
+                "iss": { "shortId": "Jase", "__typename": "Identity" },
+                "jwt": "eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NkstUiJ9.eyJpYXQiOjE1NzUyOTk3MDMsInN1YiI6ImRpZDpldGhyOjB4ZGZkOGVkYWZjNTkyMzdiZDhmZGJiZjM4MDg1Y2VhYzlhYTFhYzVhOCIsInZjIjp7InR5cGUiOlsiVmVyaWZpYWJsZUNyZWRlbnRpYWwiXSwiQGNvbnRleHQiOlsiaHR0cHM6Ly93d3cudzMub3JnLzIwMTgvY3JlZGVudGlhbHMvdjEiXSwiY3JlZGVudGlhbFN1YmplY3QiOnsid2VhdGhlciI6ImNvbGQifX0sImlzcyI6ImRpZDpldGhyOjB4ZGZkOGVkYWZjNTkyMzdiZDhmZGJiZjM4MDg1Y2VhYzlhYTFhYzVhOCJ9.o7oQn1QnykiZXp9wpu5SwlFjvg6SrPxllAMXiwiNQYCcklXlO0sxikY9H2B6vbC4OXm-Iz8L4NZHBcwNUDBzvgE",
+                "fields": [
+                  {
+                    "type": "name",
+                    "value": "Jason",
+                    "isObj": false,
+                    "__typename": "VerifiableClaimField"
+                  }
+                ],
+                "__typename": "VerifiableClaim"
+              },
+              {
+                "iss": { "shortId": "Jase", "__typename": "Identity" },
+                "jwt": "eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NkstUiJ9.eyJpYXQiOjE1NzUyOTk3MDMsInN1YiI6ImRpZDpldGhyOjB4ZGZkOGVkYWZjNTkyMzdiZDhmZGJiZjM4MDg1Y2VhYzlhYTFhYzVhOCIsInZjIjp7InR5cGUiOlsiVmVyaWZpYWJsZUNyZWRlbnRpYWwiXSwiQGNvbnRleHQiOlsiaHR0cHM6Ly93d3cudzMub3JnLzIwMTgvY3JlZGVudGlhbHMvdjEiXSwiY3JlZGVudGlhbFN1YmplY3QiOnsid2VhdGhlciI6ImNvbGQifX0sImlzcyI6ImRpZDpldGhyOjB4ZGZkOGVkYWZjNTkyMzdiZDhmZGJiZjM4MDg1Y2VhYzlhYTFhYzVhOCJ9.o7oQn1QnykiZXp9wpu5SwlFjvg6SrPxllAMXiwiNQYCcklXlO0sxikY9H2B6vbC4OXm-Iz8L4NZHBcwNUDBzvgE",
+                "fields": [
+                  {
+                    "type": "name",
+                    "value": "James",
+                    "isObj": false,
+                    "__typename": "VerifiableClaimField"
+                  }
+                ],
+                "__typename": "VerifiableClaim"
+              }
+            ]
+          },
+          {
+            "claimType": "framework",
+            "reason": "some reason",
+            "essential": false,
+            "vc": [
+              {
+                "iss": { "shortId": "Jase", "__typename": "Identity" },
+                "jwt": "eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NkstUiJ9.eyJpYXQiOjE1NzUyOTk3MDMsInN1YiI6ImRpZDpldGhyOjB4ZGZkOGVkYWZjNTkyMzdiZDhmZGJiZjM4MDg1Y2VhYzlhYTFhYzVhOCIsInZjIjp7InR5cGUiOlsiVmVyaWZpYWJsZUNyZWRlbnRpYWwiXSwiQGNvbnRleHQiOlsiaHR0cHM6Ly93d3cudzMub3JnLzIwMTgvY3JlZGVudGlhbHMvdjEiXSwiY3JlZGVudGlhbFN1YmplY3QiOnsid2VhdGhlciI6ImNvbGQifX0sImlzcyI6ImRpZDpldGhyOjB4ZGZkOGVkYWZjNTkyMzdiZDhmZGJiZjM4MDg1Y2VhYzlhYTFhYzVhOCJ9.o7oQn1QnykiZXp9wpu5SwlFjvg6SrPxllAMXiwiNQYCcklXlO0sxikY9H2B6vbC4OXm-Iz8L4NZHBcwNUDBzvgE",
+                "fields": [
+                  {
+                    "type": "framework",
+                    "value": "React Native",
+                    "isObj": false,
+                    "__typename": "VerifiableClaimField"
+                  }
+                ],
+                "__typename": "VerifiableClaim"
+              },
+              {
+                "iss": { "shortId": "Jase", "__typename": "Identity" },
+                "jwt": "eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NkstUiJ9.eyJpYXQiOjE1NzUyOTk3MDMsInN1YiI6ImRpZDpldGhyOjB4ZGZkOGVkYWZjNTkyMzdiZDhmZGJiZjM4MDg1Y2VhYzlhYTFhYzVhOCIsInZjIjp7InR5cGUiOlsiVmVyaWZpYWJsZUNyZWRlbnRpYWwiXSwiQGNvbnRleHQiOlsiaHR0cHM6Ly93d3cudzMub3JnLzIwMTgvY3JlZGVudGlhbHMvdjEiXSwiY3JlZGVudGlhbFN1YmplY3QiOnsid2VhdGhlciI6ImNvbGQifX0sImlzcyI6ImRpZDpldGhyOjB4ZGZkOGVkYWZjNTkyMzdiZDhmZGJiZjM4MDg1Y2VhYzlhYTFhYzVhOCJ9.o7oQn1QnykiZXp9wpu5SwlFjvg6SrPxllAMXiwiNQYCcklXlO0sxikY9H2B6vbC4OXm-Iz8L4NZHBcwNUDBzvgE",
+                "fields": [
+                  {
+                    "type": "framework",
+                    "value": "Flutter",
+                    "isObj": false,
+                    "__typename": "VerifiableClaimField"
+                  }
+                ],
+                "__typename": "VerifiableClaim"
+              }
+            ]
+          }
+        ]
+      },
+      {
         "type": "w3c.vc",
         "tag": null,
         "iss": {
