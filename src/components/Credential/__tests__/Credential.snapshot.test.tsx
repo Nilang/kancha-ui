@@ -2,10 +2,19 @@ import * as React from 'react'
 import { render, fireEvent } from 'react-native-testing-library'
 import Credential from '../Credential'
 
+const issuer = { did: '0xf1234', profileImage: 'http://', shortId: 'Issuer Name' }
+const subject = { did: '0xf1234', profileImage: 'http://', shortId: 'Issuer Name' }
+const fields = [
+  {
+    type: 'name',
+    value: 'test value',
+  },
+]
+
 describe('Component(snapshot): Credential', () => {
   it('should render with default props', () => {
     const tree = render(
-      <Credential title={'Test Title'} issuer={'Test Issuer'} logo={{ uri: '' }} />,
+      <Credential issuer={issuer} exp={1575299770} fields={fields} subject={subject} />,
     ).toJSON()
 
     expect(tree).toMatchSnapshot()
@@ -15,9 +24,10 @@ describe('Component(snapshot): Credential', () => {
     const onPress = jest.fn()
     const { getByTestId } = render(
       <Credential
-        title={'Test Title'}
-        issuer={'Test Issuer'}
-        logo={{ uri: '' }}
+        issuer={issuer}
+        exp={1575299770}
+        fields={fields}
+        subject={subject}
         onPress={onPress}
         testID={'CREDENTIAL_BTN'}
       />,

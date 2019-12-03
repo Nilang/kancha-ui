@@ -2,25 +2,13 @@ import * as React from 'react'
 import { render } from 'react-native-testing-library'
 import ActivityHeader from '../ActivityItemHeader'
 
-//  // Message hash
-//  id?: string
-//  // Timestanp in ms
-//  date: number
-//  // Incoming message
-//  incoming?: boolean
-//  // Reason text
-//  reason?: string
-//  // Activity text
-//  activity?: string
-//  // Issuer
-//  issuer: Kancha.Identity
-//  // Subject
-//  subject: Kancha.Identity
-//  // Profile Action
-//  profileAction: (id: string) => void
-
 describe('Component(snapshots): ActivityHeader', () => {
   const action = jest.fn()
+  const viewer = {
+    did: 'ethr:did:123456789',
+    shortId: 'Test Viewer',
+    profileImage: 'http://',
+  }
   const baseProps = {
     id: 'ZFGHFSJD',
     date: 123445678910,
@@ -41,25 +29,25 @@ describe('Component(snapshots): ActivityHeader', () => {
 
   it('should render incoming true with reason', () => {
     const tree = render(
-      <ActivityHeader incoming={true} reason={'to test the components'} {...baseProps} />,
+      <ActivityHeader viewer={viewer} reason={'to test the components'} {...baseProps} />,
     ).toJSON()
     expect(tree).toMatchSnapshot()
   })
 
   it('should render incoming false with reason', () => {
     const tree = render(
-      <ActivityHeader incoming={false} reason={'to test the components'} {...baseProps} />,
+      <ActivityHeader viewer={viewer} reason={'to test the components'} {...baseProps} />,
     ).toJSON()
     expect(tree).toMatchSnapshot()
   })
 
   it('should render incoming true without reason', () => {
-    const tree = render(<ActivityHeader incoming={true} {...baseProps} />).toJSON()
+    const tree = render(<ActivityHeader viewer={viewer} {...baseProps} />).toJSON()
     expect(tree).toMatchSnapshot()
   })
 
   it('should render incoming false without reason', () => {
-    const tree = render(<ActivityHeader incoming={false} {...baseProps} />).toJSON()
+    const tree = render(<ActivityHeader viewer={viewer} {...baseProps} />).toJSON()
     expect(tree).toMatchSnapshot()
   })
 })

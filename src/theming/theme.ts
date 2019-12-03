@@ -173,6 +173,13 @@ export const createTheme = (customColors?: { [index: string]: string }) => {
     delays: {
       toasts: 1200,
     },
+    activity: {
+      messages: {
+        sdr: 'requested information from',
+        'w3c.vp': 'shared credentials with',
+        'w3c.vc': 'issued a credential to',
+      },
+    },
     icons: {
       EDIT: {
         name: 'ios-create',

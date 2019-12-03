@@ -2,7 +2,6 @@ import * as React from 'react'
 import Text, { TextTypes } from '../Text/Text'
 import Container from '../Container/Container'
 import * as Kancha from '../../types'
-import S from 'string'
 import { formatDistanceToNow } from 'date-fns'
 
 interface ActivityItemHeaderProps {
@@ -10,8 +9,6 @@ interface ActivityItemHeaderProps {
   id?: string
   // Timestanp in ms
   date: number
-  // Incoming message
-  incoming?: boolean
   // Reason text
   reason?: string
   // Activity text
@@ -21,59 +18,53 @@ interface ActivityItemHeaderProps {
   // Subject
   subject: Kancha.Identity
   // Profile Action
+  viewer: Kancha.Identity
   profileAction: (id: string) => void
 }
 
 const ActivityItemHeader: React.FC<ActivityItemHeaderProps> = ({
   // id,
   reason,
-  incoming,
   profileAction,
   activity,
   subject,
   issuer,
+  viewer,
   date,
 }) => {
+  const viewerIsIssuer = viewer.did === issuer.did
+  const viewerIsSubject = subject && subject.did === viewer.did
+
   return (
     <Container>
       <Container flex={1} marginBottom={4}>
         {reason ? (
           <Text>
-            <Text
-              type={TextTypes.ActivityTitle}
-              bold
-              onPress={() => profileAction(incoming ? 'Show ISSUER Profile' : 'Show MY Profile')}
-            >
-              {incoming ? issuer.name : S(subject.name).capitalize().s}
+            <Text type={TextTypes.ActivityTitle} bold onPress={() => profileAction(issuer.did)}>
+              {viewerIsIssuer ? 'You' : issuer.shortId}
             </Text>
             <Text type={TextTypes.ActivityTitle}>&nbsp;{activity}</Text>
-            {!incoming && (
-              <Text type={TextTypes.ActivityTitle} bold onPress={() => profileAction('Show ISSUER Profile')}>
-                &nbsp;{issuer.name}
-              </Text>
-            )}
-            <Text type={TextTypes.ActivityTitle}>&nbsp;so {subject.name}</Text>
+            <Text type={TextTypes.ActivityTitle}>&nbsp;so {viewerIsSubject ? 'you' : subject.shortId}</Text>
             <Text type={TextTypes.ActivityTitle} bold>
               &nbsp;{reason}
             </Text>
           </Text>
         ) : (
           <Text>
-            <Text
-              type={TextTypes.ActivityTitle}
-              bold
-              onPress={() => profileAction(incoming ? 'Show ISSUER Profile' : 'Show MY Profile')}
-            >
-              {incoming ? issuer.name : S(subject.name).capitalize().s}
+            <Text type={TextTypes.ActivityTitle} bold onPress={() => profileAction(issuer.did)}>
+              {viewerIsIssuer ? 'You' : issuer.shortId}
             </Text>
             <Text type={TextTypes.ActivityTitle}>&nbsp;{activity}</Text>
-            <Text
-              type={TextTypes.ActivityTitle}
-              bold
-              onPress={() => !incoming && profileAction('Show ISSUER Profile')}
-            >
-              &nbsp;{!incoming && issuer.name}
-            </Text>
+            {subject ? (
+              <Text type={TextTypes.ActivityTitle} bold onPress={() => profileAction(subject.did)}>
+                &nbsp;
+                {viewerIsSubject && viewerIsIssuer ? 'yourself' : viewerIsSubject ? 'you' : subject.shortId}
+              </Text>
+            ) : (
+              <Text type={TextTypes.ActivityTitle} bold onPress={() => profileAction(viewer.did)}>
+                &nbsp;you
+              </Text>
+            )}
           </Text>
         )}
       </Container>

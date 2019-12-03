@@ -1,0 +1,233 @@
+{
+  "jwt": "eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NkstUiJ9.eyJpYXQiOjE1NzUyOTk3NzAsInR5cGUiOiJzZHIiLCJ0YWciOiJ0YWctMDIiLCJzdWIiOiJkaWQ6ZXRocjoweGRmZDhlZGFmYzU5MjM3YmQ4ZmRiYmYzODA4NWNlYWM5YWExYWM1YTgiLCJjbGFpbXMiOlt7InJlYXNvbiI6InNvbWUgcmVhc29uIiwiY2xhaW1UeXBlIjoid2VhdGhlciIsImVzc2VudGlhbCI6ZmFsc2V9XSwiaXNzIjoiZGlkOmV0aHI6MHgxZmNjMTIzZWUzNDgxMmRiNGJlYzkzN2Q3YWNkYzdjYTYxZDk5MGE2In0.KTENMv3pwOQK-TK6gCcz9UQBuGG1eOUhOkRUj2yLxObpE2sbkMOB9Ez9r9Xbz8QvJXOSVdrnrx0TpCLpu41CRwE",
+  "tag": "tag-02",
+  "type": "sdr",
+  "hash": "f869bcb0179270a278022a4c0d1ee39a7f45e4db7035d909b57ceffebdfe0a9e93e59b0b6764e885c35c2f30972965ffd14c57028e1c419cc20ff78e28213b3b",
+  "iat": null,
+  "nbf": 1575299770,
+  "iss": {
+    "did": "did:ethr:0x1fcc123ee34812db4bec937d7acdc7ca61d990a6",
+    "shortId": "did:ethr:0x1fcc...90a6",
+    "profileImage": "",
+    "__typename": "Identity"
+  },
+  "sub": {
+    "did": "did:ethr:0xdfd8edafc59237bd8fdbbf38085ceac9aa1ac5a8",
+    "shortId": "Jase",
+    "profileImage": "",
+    "__typename": "Identity"
+  },
+  "vc": [],
+  "sdr": [
+    {
+      "iss": null,
+      "claimType": "weather",
+      "reason": "some reason",
+      "essential": false,
+      "vc": [
+        {
+          "iss": { "shortId": "Jase", "__typename": "Identity" },
+          "jwt": "eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NkstUiJ9.eyJpYXQiOjE1NzUyOTk3MDMsInN1YiI6ImRpZDpldGhyOjB4ZGZkOGVkYWZjNTkyMzdiZDhmZGJiZjM4MDg1Y2VhYzlhYTFhYzVhOCIsInZjIjp7InR5cGUiOlsiVmVyaWZpYWJsZUNyZWRlbnRpYWwiXSwiQGNvbnRleHQiOlsiaHR0cHM6Ly93d3cudzMub3JnLzIwMTgvY3JlZGVudGlhbHMvdjEiXSwiY3JlZGVudGlhbFN1YmplY3QiOnsid2VhdGhlciI6ImNvbGQifX0sImlzcyI6ImRpZDpldGhyOjB4ZGZkOGVkYWZjNTkyMzdiZDhmZGJiZjM4MDg1Y2VhYzlhYTFhYzVhOCJ9.o7oQn1QnykiZXp9wpu5SwlFjvg6SrPxllAMXiwiNQYCcklXlO0sxikY9H2B6vbC4OXm-Iz8L4NZHBcwNUDBzvgE",
+          "fields": [
+            { "type": "weather", "value": "cold", "isObj": false, "__typename": "VerifiableClaimField" },
+            { "type": "weather", "value": "cold", "isObj": false, "__typename": "VerifiableClaimField" },
+            { "type": "weather", "value": "cold", "isObj": false, "__typename": "VerifiableClaimField" },
+            { "type": "weather", "value": "cold", "isObj": false, "__typename": "VerifiableClaimField" },
+            { "type": "weather", "value": "cold", "isObj": false, "__typename": "VerifiableClaimField" },
+            { "type": "weather", "value": "cold", "isObj": false, "__typename": "VerifiableClaimField" },
+            { "type": "weather", "value": "cold", "isObj": false, "__typename": "VerifiableClaimField" },
+            { "type": "weather", "value": "cold", "isObj": false, "__typename": "VerifiableClaimField" },
+            { "type": "weather", "value": "cold", "isObj": false, "__typename": "VerifiableClaimField" },
+            { "type": "weather", "value": "cold", "isObj": false, "__typename": "VerifiableClaimField" }
+          ],
+          "__typename": "VerifiableClaim"
+        },
+        {
+          "iss": { "shortId": "Jase", "__typename": "Identity" },
+          "jwt": "eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NkstUiJ9.eyJpYXQiOjE1NzUyOTk3MDMsInN1YiI6ImRpZDpldGhyOjB4ZGZkOGVkYWZjNTkyMzdiZDhmZGJiZjM4MDg1Y2VhYzlhYTFhYzVhOCIsInZjIjp7InR5cGUiOlsiVmVyaWZpYWJsZUNyZWRlbnRpYWwiXSwiQGNvbnRleHQiOlsiaHR0cHM6Ly93d3cudzMub3JnLzIwMTgvY3JlZGVudGlhbHMvdjEiXSwiY3JlZGVudGlhbFN1YmplY3QiOnsid2VhdGhlciI6ImNvbGQifX0sImlzcyI6ImRpZDpldGhyOjB4ZGZkOGVkYWZjNTkyMzdiZDhmZGJiZjM4MDg1Y2VhYzlhYTFhYzVhOCJ9.o7oQn1QnykiZXp9wpu5SwlFjvg6SrPxllAMXiwiNQYCcklXlO0sxikY9H2B6vbC4OXm-Iz8L4NZHBcwNUDBzvgE",
+          "fields": [
+            { "type": "weather", "value": "cold", "isObj": false, "__typename": "VerifiableClaimField" },
+            { "type": "weather", "value": "cold", "isObj": false, "__typename": "VerifiableClaimField" },
+            { "type": "weather", "value": "cold", "isObj": false, "__typename": "VerifiableClaimField" },
+            { "type": "weather", "value": "cold", "isObj": false, "__typename": "VerifiableClaimField" },
+            { "type": "weather", "value": "cold", "isObj": false, "__typename": "VerifiableClaimField" },
+            { "type": "weather", "value": "cold", "isObj": false, "__typename": "VerifiableClaimField" },
+            { "type": "weather", "value": "cold", "isObj": false, "__typename": "VerifiableClaimField" },
+            { "type": "weather", "value": "cold", "isObj": false, "__typename": "VerifiableClaimField" },
+            { "type": "weather", "value": "cold", "isObj": false, "__typename": "VerifiableClaimField" },
+            { "type": "weather", "value": "cold", "isObj": false, "__typename": "VerifiableClaimField" }
+          ],
+          "__typename": "VerifiableClaim"
+        },
+        {
+          "iss": { "shortId": "Jase", "__typename": "Identity" },
+          "jwt": "eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NkstUiJ9.eyJpYXQiOjE1NzUyOTk3MDMsInN1YiI6ImRpZDpldGhyOjB4ZGZkOGVkYWZjNTkyMzdiZDhmZGJiZjM4MDg1Y2VhYzlhYTFhYzVhOCIsInZjIjp7InR5cGUiOlsiVmVyaWZpYWJsZUNyZWRlbnRpYWwiXSwiQGNvbnRleHQiOlsiaHR0cHM6Ly93d3cudzMub3JnLzIwMTgvY3JlZGVudGlhbHMvdjEiXSwiY3JlZGVudGlhbFN1YmplY3QiOnsid2VhdGhlciI6ImNvbGQifX0sImlzcyI6ImRpZDpldGhyOjB4ZGZkOGVkYWZjNTkyMzdiZDhmZGJiZjM4MDg1Y2VhYzlhYTFhYzVhOCJ9.o7oQn1QnykiZXp9wpu5SwlFjvg6SrPxllAMXiwiNQYCcklXlO0sxikY9H2B6vbC4OXm-Iz8L4NZHBcwNUDBzvgE",
+          "fields": [
+            { "type": "weather", "value": "cold", "isObj": false, "__typename": "VerifiableClaimField" },
+            { "type": "weather", "value": "cold", "isObj": false, "__typename": "VerifiableClaimField" },
+            { "type": "weather", "value": "cold", "isObj": false, "__typename": "VerifiableClaimField" },
+            { "type": "weather", "value": "cold", "isObj": false, "__typename": "VerifiableClaimField" },
+            { "type": "weather", "value": "cold", "isObj": false, "__typename": "VerifiableClaimField" },
+            { "type": "weather", "value": "cold", "isObj": false, "__typename": "VerifiableClaimField" },
+            { "type": "weather", "value": "cold", "isObj": false, "__typename": "VerifiableClaimField" },
+            { "type": "weather", "value": "cold", "isObj": false, "__typename": "VerifiableClaimField" },
+            { "type": "weather", "value": "cold", "isObj": false, "__typename": "VerifiableClaimField" },
+            { "type": "weather", "value": "cold", "isObj": false, "__typename": "VerifiableClaimField" }
+          ],
+          "__typename": "VerifiableClaim"
+        },
+        {
+          "iss": { "shortId": "Jase", "__typename": "Identity" },
+          "jwt": "eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NkstUiJ9.eyJpYXQiOjE1NzUyOTk3MDMsInN1YiI6ImRpZDpldGhyOjB4ZGZkOGVkYWZjNTkyMzdiZDhmZGJiZjM4MDg1Y2VhYzlhYTFhYzVhOCIsInZjIjp7InR5cGUiOlsiVmVyaWZpYWJsZUNyZWRlbnRpYWwiXSwiQGNvbnRleHQiOlsiaHR0cHM6Ly93d3cudzMub3JnLzIwMTgvY3JlZGVudGlhbHMvdjEiXSwiY3JlZGVudGlhbFN1YmplY3QiOnsid2VhdGhlciI6ImNvbGQifX0sImlzcyI6ImRpZDpldGhyOjB4ZGZkOGVkYWZjNTkyMzdiZDhmZGJiZjM4MDg1Y2VhYzlhYTFhYzVhOCJ9.o7oQn1QnykiZXp9wpu5SwlFjvg6SrPxllAMXiwiNQYCcklXlO0sxikY9H2B6vbC4OXm-Iz8L4NZHBcwNUDBzvgE",
+          "fields": [
+            { "type": "weather", "value": "cold", "isObj": false, "__typename": "VerifiableClaimField" },
+            { "type": "weather", "value": "cold", "isObj": false, "__typename": "VerifiableClaimField" },
+            { "type": "weather", "value": "cold", "isObj": false, "__typename": "VerifiableClaimField" },
+            { "type": "weather", "value": "cold", "isObj": false, "__typename": "VerifiableClaimField" },
+            { "type": "weather", "value": "cold", "isObj": false, "__typename": "VerifiableClaimField" },
+            { "type": "weather", "value": "cold", "isObj": false, "__typename": "VerifiableClaimField" },
+            { "type": "weather", "value": "cold", "isObj": false, "__typename": "VerifiableClaimField" },
+            { "type": "weather", "value": "cold", "isObj": false, "__typename": "VerifiableClaimField" },
+            { "type": "weather", "value": "cold", "isObj": false, "__typename": "VerifiableClaimField" },
+            { "type": "weather", "value": "cold", "isObj": false, "__typename": "VerifiableClaimField" }
+          ],
+          "__typename": "VerifiableClaim"
+        },
+        {
+          "iss": { "shortId": "Jase", "__typename": "Identity" },
+          "jwt": "eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NkstUiJ9.eyJpYXQiOjE1NzUyOTk3MDMsInN1YiI6ImRpZDpldGhyOjB4ZGZkOGVkYWZjNTkyMzdiZDhmZGJiZjM4MDg1Y2VhYzlhYTFhYzVhOCIsInZjIjp7InR5cGUiOlsiVmVyaWZpYWJsZUNyZWRlbnRpYWwiXSwiQGNvbnRleHQiOlsiaHR0cHM6Ly93d3cudzMub3JnLzIwMTgvY3JlZGVudGlhbHMvdjEiXSwiY3JlZGVudGlhbFN1YmplY3QiOnsid2VhdGhlciI6ImNvbGQifX0sImlzcyI6ImRpZDpldGhyOjB4ZGZkOGVkYWZjNTkyMzdiZDhmZGJiZjM4MDg1Y2VhYzlhYTFhYzVhOCJ9.o7oQn1QnykiZXp9wpu5SwlFjvg6SrPxllAMXiwiNQYCcklXlO0sxikY9H2B6vbC4OXm-Iz8L4NZHBcwNUDBzvgE",
+          "fields": [
+            { "type": "weather", "value": "cold", "isObj": false, "__typename": "VerifiableClaimField" },
+            { "type": "weather", "value": "cold", "isObj": false, "__typename": "VerifiableClaimField" },
+            { "type": "weather", "value": "cold", "isObj": false, "__typename": "VerifiableClaimField" },
+            { "type": "weather", "value": "cold", "isObj": false, "__typename": "VerifiableClaimField" },
+            { "type": "weather", "value": "cold", "isObj": false, "__typename": "VerifiableClaimField" },
+            { "type": "weather", "value": "cold", "isObj": false, "__typename": "VerifiableClaimField" },
+            { "type": "weather", "value": "cold", "isObj": false, "__typename": "VerifiableClaimField" },
+            { "type": "weather", "value": "cold", "isObj": false, "__typename": "VerifiableClaimField" },
+            { "type": "weather", "value": "cold", "isObj": false, "__typename": "VerifiableClaimField" },
+            { "type": "weather", "value": "cold", "isObj": false, "__typename": "VerifiableClaimField" }
+          ],
+          "__typename": "VerifiableClaim"
+        },
+        {
+          "iss": { "shortId": "Jase", "__typename": "Identity" },
+          "jwt": "eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NkstUiJ9.eyJpYXQiOjE1NzUyOTk3MDMsInN1YiI6ImRpZDpldGhyOjB4ZGZkOGVkYWZjNTkyMzdiZDhmZGJiZjM4MDg1Y2VhYzlhYTFhYzVhOCIsInZjIjp7InR5cGUiOlsiVmVyaWZpYWJsZUNyZWRlbnRpYWwiXSwiQGNvbnRleHQiOlsiaHR0cHM6Ly93d3cudzMub3JnLzIwMTgvY3JlZGVudGlhbHMvdjEiXSwiY3JlZGVudGlhbFN1YmplY3QiOnsid2VhdGhlciI6ImNvbGQifX0sImlzcyI6ImRpZDpldGhyOjB4ZGZkOGVkYWZjNTkyMzdiZDhmZGJiZjM4MDg1Y2VhYzlhYTFhYzVhOCJ9.o7oQn1QnykiZXp9wpu5SwlFjvg6SrPxllAMXiwiNQYCcklXlO0sxikY9H2B6vbC4OXm-Iz8L4NZHBcwNUDBzvgE",
+          "fields": [
+            { "type": "weather", "value": "cold", "isObj": false, "__typename": "VerifiableClaimField" },
+            { "type": "weather", "value": "cold", "isObj": false, "__typename": "VerifiableClaimField" },
+            { "type": "weather", "value": "cold", "isObj": false, "__typename": "VerifiableClaimField" },
+            { "type": "weather", "value": "cold", "isObj": false, "__typename": "VerifiableClaimField" },
+            { "type": "weather", "value": "cold", "isObj": false, "__typename": "VerifiableClaimField" },
+            { "type": "weather", "value": "cold", "isObj": false, "__typename": "VerifiableClaimField" },
+            { "type": "weather", "value": "cold", "isObj": false, "__typename": "VerifiableClaimField" },
+            { "type": "weather", "value": "cold", "isObj": false, "__typename": "VerifiableClaimField" },
+            { "type": "weather", "value": "cold", "isObj": false, "__typename": "VerifiableClaimField" },
+            { "type": "weather", "value": "cold", "isObj": false, "__typename": "VerifiableClaimField" }
+          ],
+          "__typename": "VerifiableClaim"
+        },
+        {
+          "iss": { "shortId": "Jase", "__typename": "Identity" },
+          "jwt": "eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NkstUiJ9.eyJpYXQiOjE1NzUzMDA3ODksInN1YiI6ImRpZDpldGhyOjB4ZGZkOGVkYWZjNTkyMzdiZDhmZGJiZjM4MDg1Y2VhYzlhYTFhYzVhOCIsInZjIjp7InR5cGUiOlsiVmVyaWZpYWJsZUNyZWRlbnRpYWwiXSwiQGNvbnRleHQiOlsiaHR0cHM6Ly93d3cudzMub3JnLzIwMTgvY3JlZGVudGlhbHMvdjEiXSwiY3JlZGVudGlhbFN1YmplY3QiOnsid2VhdGhlciI6InN1bm55In19LCJpc3MiOiJkaWQ6ZXRocjoweGRmZDhlZGFmYzU5MjM3YmQ4ZmRiYmYzODA4NWNlYWM5YWExYWM1YTgifQ.8msoqP2CfEE2Rcd3ilbZh8n_FHre2G1vPmfYB-nTHyMCmyoWZA6zzQD23kP7aXdXLVtfqKF4ZjAp3q0gnmH-WwE",
+          "fields": [
+            { "type": "weather", "value": "sunny", "isObj": false, "__typename": "VerifiableClaimField" },
+            { "type": "weather", "value": "sunny", "isObj": false, "__typename": "VerifiableClaimField" },
+            { "type": "weather", "value": "sunny", "isObj": false, "__typename": "VerifiableClaimField" }
+          ],
+          "__typename": "VerifiableClaim"
+        },
+        {
+          "iss": { "shortId": "Jase", "__typename": "Identity" },
+          "jwt": "eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NkstUiJ9.eyJpYXQiOjE1NzUzMDA3ODksInN1YiI6ImRpZDpldGhyOjB4ZGZkOGVkYWZjNTkyMzdiZDhmZGJiZjM4MDg1Y2VhYzlhYTFhYzVhOCIsInZjIjp7InR5cGUiOlsiVmVyaWZpYWJsZUNyZWRlbnRpYWwiXSwiQGNvbnRleHQiOlsiaHR0cHM6Ly93d3cudzMub3JnLzIwMTgvY3JlZGVudGlhbHMvdjEiXSwiY3JlZGVudGlhbFN1YmplY3QiOnsid2VhdGhlciI6InN1bm55In19LCJpc3MiOiJkaWQ6ZXRocjoweGRmZDhlZGFmYzU5MjM3YmQ4ZmRiYmYzODA4NWNlYWM5YWExYWM1YTgifQ.8msoqP2CfEE2Rcd3ilbZh8n_FHre2G1vPmfYB-nTHyMCmyoWZA6zzQD23kP7aXdXLVtfqKF4ZjAp3q0gnmH-WwE",
+          "fields": [
+            { "type": "weather", "value": "sunny", "isObj": false, "__typename": "VerifiableClaimField" },
+            { "type": "weather", "value": "sunny", "isObj": false, "__typename": "VerifiableClaimField" },
+            { "type": "weather", "value": "sunny", "isObj": false, "__typename": "VerifiableClaimField" }
+          ],
+          "__typename": "VerifiableClaim"
+        },
+        {
+          "iss": { "shortId": "Jase", "__typename": "Identity" },
+          "jwt": "eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NkstUiJ9.eyJpYXQiOjE1NzUzMDA3ODksInN1YiI6ImRpZDpldGhyOjB4ZGZkOGVkYWZjNTkyMzdiZDhmZGJiZjM4MDg1Y2VhYzlhYTFhYzVhOCIsInZjIjp7InR5cGUiOlsiVmVyaWZpYWJsZUNyZWRlbnRpYWwiXSwiQGNvbnRleHQiOlsiaHR0cHM6Ly93d3cudzMub3JnLzIwMTgvY3JlZGVudGlhbHMvdjEiXSwiY3JlZGVudGlhbFN1YmplY3QiOnsid2VhdGhlciI6InN1bm55In19LCJpc3MiOiJkaWQ6ZXRocjoweGRmZDhlZGFmYzU5MjM3YmQ4ZmRiYmYzODA4NWNlYWM5YWExYWM1YTgifQ.8msoqP2CfEE2Rcd3ilbZh8n_FHre2G1vPmfYB-nTHyMCmyoWZA6zzQD23kP7aXdXLVtfqKF4ZjAp3q0gnmH-WwE",
+          "fields": [
+            { "type": "weather", "value": "sunny", "isObj": false, "__typename": "VerifiableClaimField" },
+            { "type": "weather", "value": "sunny", "isObj": false, "__typename": "VerifiableClaimField" },
+            { "type": "weather", "value": "sunny", "isObj": false, "__typename": "VerifiableClaimField" }
+          ],
+          "__typename": "VerifiableClaim"
+        },
+        {
+          "iss": { "shortId": "Jase", "__typename": "Identity" },
+          "jwt": "eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NkstUiJ9.eyJpYXQiOjE1NzUyOTk3MDMsInN1YiI6ImRpZDpldGhyOjB4ZGZkOGVkYWZjNTkyMzdiZDhmZGJiZjM4MDg1Y2VhYzlhYTFhYzVhOCIsInZjIjp7InR5cGUiOlsiVmVyaWZpYWJsZUNyZWRlbnRpYWwiXSwiQGNvbnRleHQiOlsiaHR0cHM6Ly93d3cudzMub3JnLzIwMTgvY3JlZGVudGlhbHMvdjEiXSwiY3JlZGVudGlhbFN1YmplY3QiOnsid2VhdGhlciI6ImNvbGQifX0sImlzcyI6ImRpZDpldGhyOjB4ZGZkOGVkYWZjNTkyMzdiZDhmZGJiZjM4MDg1Y2VhYzlhYTFhYzVhOCJ9.o7oQn1QnykiZXp9wpu5SwlFjvg6SrPxllAMXiwiNQYCcklXlO0sxikY9H2B6vbC4OXm-Iz8L4NZHBcwNUDBzvgE",
+          "fields": [
+            { "type": "weather", "value": "cold", "isObj": false, "__typename": "VerifiableClaimField" },
+            { "type": "weather", "value": "cold", "isObj": false, "__typename": "VerifiableClaimField" },
+            { "type": "weather", "value": "cold", "isObj": false, "__typename": "VerifiableClaimField" },
+            { "type": "weather", "value": "cold", "isObj": false, "__typename": "VerifiableClaimField" },
+            { "type": "weather", "value": "cold", "isObj": false, "__typename": "VerifiableClaimField" },
+            { "type": "weather", "value": "cold", "isObj": false, "__typename": "VerifiableClaimField" },
+            { "type": "weather", "value": "cold", "isObj": false, "__typename": "VerifiableClaimField" },
+            { "type": "weather", "value": "cold", "isObj": false, "__typename": "VerifiableClaimField" },
+            { "type": "weather", "value": "cold", "isObj": false, "__typename": "VerifiableClaimField" },
+            { "type": "weather", "value": "cold", "isObj": false, "__typename": "VerifiableClaimField" }
+          ],
+          "__typename": "VerifiableClaim"
+        },
+        {
+          "iss": { "shortId": "Jase", "__typename": "Identity" },
+          "jwt": "eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NkstUiJ9.eyJpYXQiOjE1NzUyOTk3MDMsInN1YiI6ImRpZDpldGhyOjB4ZGZkOGVkYWZjNTkyMzdiZDhmZGJiZjM4MDg1Y2VhYzlhYTFhYzVhOCIsInZjIjp7InR5cGUiOlsiVmVyaWZpYWJsZUNyZWRlbnRpYWwiXSwiQGNvbnRleHQiOlsiaHR0cHM6Ly93d3cudzMub3JnLzIwMTgvY3JlZGVudGlhbHMvdjEiXSwiY3JlZGVudGlhbFN1YmplY3QiOnsid2VhdGhlciI6ImNvbGQifX0sImlzcyI6ImRpZDpldGhyOjB4ZGZkOGVkYWZjNTkyMzdiZDhmZGJiZjM4MDg1Y2VhYzlhYTFhYzVhOCJ9.o7oQn1QnykiZXp9wpu5SwlFjvg6SrPxllAMXiwiNQYCcklXlO0sxikY9H2B6vbC4OXm-Iz8L4NZHBcwNUDBzvgE",
+          "fields": [
+            { "type": "weather", "value": "cold", "isObj": false, "__typename": "VerifiableClaimField" },
+            { "type": "weather", "value": "cold", "isObj": false, "__typename": "VerifiableClaimField" },
+            { "type": "weather", "value": "cold", "isObj": false, "__typename": "VerifiableClaimField" },
+            { "type": "weather", "value": "cold", "isObj": false, "__typename": "VerifiableClaimField" },
+            { "type": "weather", "value": "cold", "isObj": false, "__typename": "VerifiableClaimField" },
+            { "type": "weather", "value": "cold", "isObj": false, "__typename": "VerifiableClaimField" },
+            { "type": "weather", "value": "cold", "isObj": false, "__typename": "VerifiableClaimField" },
+            { "type": "weather", "value": "cold", "isObj": false, "__typename": "VerifiableClaimField" },
+            { "type": "weather", "value": "cold", "isObj": false, "__typename": "VerifiableClaimField" },
+            { "type": "weather", "value": "cold", "isObj": false, "__typename": "VerifiableClaimField" }
+          ],
+          "__typename": "VerifiableClaim"
+        },
+        {
+          "iss": { "shortId": "Jase", "__typename": "Identity" },
+          "jwt": "eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NkstUiJ9.eyJpYXQiOjE1NzUyOTk3MDMsInN1YiI6ImRpZDpldGhyOjB4ZGZkOGVkYWZjNTkyMzdiZDhmZGJiZjM4MDg1Y2VhYzlhYTFhYzVhOCIsInZjIjp7InR5cGUiOlsiVmVyaWZpYWJsZUNyZWRlbnRpYWwiXSwiQGNvbnRleHQiOlsiaHR0cHM6Ly93d3cudzMub3JnLzIwMTgvY3JlZGVudGlhbHMvdjEiXSwiY3JlZGVudGlhbFN1YmplY3QiOnsid2VhdGhlciI6ImNvbGQifX0sImlzcyI6ImRpZDpldGhyOjB4ZGZkOGVkYWZjNTkyMzdiZDhmZGJiZjM4MDg1Y2VhYzlhYTFhYzVhOCJ9.o7oQn1QnykiZXp9wpu5SwlFjvg6SrPxllAMXiwiNQYCcklXlO0sxikY9H2B6vbC4OXm-Iz8L4NZHBcwNUDBzvgE",
+          "fields": [
+            { "type": "weather", "value": "cold", "isObj": false, "__typename": "VerifiableClaimField" },
+            { "type": "weather", "value": "cold", "isObj": false, "__typename": "VerifiableClaimField" },
+            { "type": "weather", "value": "cold", "isObj": false, "__typename": "VerifiableClaimField" },
+            { "type": "weather", "value": "cold", "isObj": false, "__typename": "VerifiableClaimField" },
+            { "type": "weather", "value": "cold", "isObj": false, "__typename": "VerifiableClaimField" },
+            { "type": "weather", "value": "cold", "isObj": false, "__typename": "VerifiableClaimField" },
+            { "type": "weather", "value": "cold", "isObj": false, "__typename": "VerifiableClaimField" },
+            { "type": "weather", "value": "cold", "isObj": false, "__typename": "VerifiableClaimField" },
+            { "type": "weather", "value": "cold", "isObj": false, "__typename": "VerifiableClaimField" },
+            { "type": "weather", "value": "cold", "isObj": false, "__typename": "VerifiableClaimField" }
+          ],
+          "__typename": "VerifiableClaim"
+        },
+        {
+          "iss": { "shortId": "Jase", "__typename": "Identity" },
+          "jwt": "eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NkstUiJ9.eyJpYXQiOjE1NzUyOTk3MDMsInN1YiI6ImRpZDpldGhyOjB4ZGZkOGVkYWZjNTkyMzdiZDhmZGJiZjM4MDg1Y2VhYzlhYTFhYzVhOCIsInZjIjp7InR5cGUiOlsiVmVyaWZpYWJsZUNyZWRlbnRpYWwiXSwiQGNvbnRleHQiOlsiaHR0cHM6Ly93d3cudzMub3JnLzIwMTgvY3JlZGVudGlhbHMvdjEiXSwiY3JlZGVudGlhbFN1YmplY3QiOnsid2VhdGhlciI6ImNvbGQifX0sImlzcyI6ImRpZDpldGhyOjB4ZGZkOGVkYWZjNTkyMzdiZDhmZGJiZjM4MDg1Y2VhYzlhYTFhYzVhOCJ9.o7oQn1QnykiZXp9wpu5SwlFjvg6SrPxllAMXiwiNQYCcklXlO0sxikY9H2B6vbC4OXm-Iz8L4NZHBcwNUDBzvgE",
+          "fields": [
+            { "type": "weather", "value": "cold", "isObj": false, "__typename": "VerifiableClaimField" },
+            { "type": "weather", "value": "cold", "isObj": false, "__typename": "VerifiableClaimField" },
+            { "type": "weather", "value": "cold", "isObj": false, "__typename": "VerifiableClaimField" },
+            { "type": "weather", "value": "cold", "isObj": false, "__typename": "VerifiableClaimField" },
+            { "type": "weather", "value": "cold", "isObj": false, "__typename": "VerifiableClaimField" },
+            { "type": "weather", "value": "cold", "isObj": false, "__typename": "VerifiableClaimField" },
+            { "type": "weather", "value": "cold", "isObj": false, "__typename": "VerifiableClaimField" },
+            { "type": "weather", "value": "cold", "isObj": false, "__typename": "VerifiableClaimField" },
+            { "type": "weather", "value": "cold", "isObj": false, "__typename": "VerifiableClaimField" },
+            { "type": "weather", "value": "cold", "isObj": false, "__typename": "VerifiableClaimField" }
+          ],
+          "__typename": "VerifiableClaim"
+        }
+      ],
+      "__typename": "CredentialRequest"
+    }
+  ],
+  "__typename": "Message"
+}

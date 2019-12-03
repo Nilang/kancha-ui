@@ -53,8 +53,11 @@ interface MessageItemProps {
 }
 
 const MessageItem: React.FC<MessageItemProps> = ({ message, viewMessage, viewProfile, theme }) => {
-  const issProfileSource = message.iss.profileImage ? { source: { uri: message.iss.profileImage } } : {}
-  const subProfileSource = message.sub.profileImage ? { source: { uri: message.sub.profileImage } } : {}
+  const subject = message.sub || message.aud
+  const issuer = message.iss
+  const subProfileSource = subject && subject.profileImage ? { source: { uri: subject.profileImage } } : {}
+  const issProfileSource = issuer.profileImage ? { source: { uri: issuer.profileImage } } : {}
+
   return (
     <TouchableHighlight
       style={{ marginBottom: 5, backgroundColor: theme.colors.primary.background }}
@@ -71,27 +74,33 @@ const MessageItem: React.FC<MessageItemProps> = ({ message, viewMessage, viewPro
               address={message.iss.did}
               size={38}
             />
-            <Container viewStyle={{ position: 'absolute', left: 20, top: 0 }}>
-              <Avatar
-                {...subProfileSource}
-                border
-                type={'circle'}
-                gravatarType={'retro'}
-                address={message.sub.did}
-                size={40}
-              />
-            </Container>
+            {subject && (
+              <Container viewStyle={{ position: 'absolute', left: 20, top: 0 }}>
+                <Avatar
+                  {...subProfileSource}
+                  border
+                  type={'circle'}
+                  gravatarType={'retro'}
+                  address={subject.did}
+                  size={40}
+                />
+              </Container>
+            )}
           </Container>
         </Container>
-        <Container paddingTop marginLeft={20} flex={1}>
+        <Container paddingTop marginLeft={20} flex={1} paddingRight>
           <Text type={TextTypes.ActivityTitle}>
             <Text onPress={() => viewProfile(message.iss.did)} bold>
               {message.iss.shortId}&nbsp;
             </Text>
             sent a message to
-            <Text onPress={() => viewProfile(message.sub.did)} bold>
-              &nbsp;{message.sub.shortId}
-            </Text>
+            {subject ? (
+              <Text onPress={() => viewProfile(subject.did)} bold>
+                &nbsp;{subject.shortId}
+              </Text>
+            ) : (
+              <Text bold>&nbsp;you</Text>
+            )}
           </Text>
           <Container marginTop={5}>
             <Text type={TextTypes.ActivitySubTitle}>
