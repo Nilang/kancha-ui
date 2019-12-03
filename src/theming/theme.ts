@@ -176,7 +176,7 @@ export const createTheme = (customColors?: { [index: string]: string }) => {
     activity: {
       messages: {
         sdr: 'requested information from',
-        'w3c.vp': 'sent an SDR response to',
+        'w3c.vp': 'shared credentials with',
         'w3c.vc': 'issued a credential to',
       },
     },
