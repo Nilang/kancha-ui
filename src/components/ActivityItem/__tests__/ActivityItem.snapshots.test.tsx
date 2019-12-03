@@ -4,47 +4,65 @@ import ActivityItem from '../ActivityItem'
 
 const ATTACHMENT_1 = {
   key: 1,
-  title: 'Test Attachment 1',
-  issuer: { name: 'Test Issuer 1', did: '0x1efgh', avatar: '' },
+  exp: 123445678910,
+  subject: { shortId: 'Test Subject 1', did: '0x1efghssesd', profileImage: '' },
+  issuer: { shortId: 'Test Issuer 1', did: '0x1efgh', profileImage: '' },
   attachmentType: 'Credential',
-  claim: {},
+  fields: [
+    {
+      type: 'name',
+      value: 'Test name',
+    },
+    {
+      type: 'phone',
+      value: 'Test phone',
+    },
+  ],
 }
 
 const ATTACHMENT_2 = {
   key: 2,
-  title: 'Test Attachment 2',
-  issuer: { name: 'Test Issuer 2', did: '0x1efghss', avatar: '' },
+  subject: { shortId: 'Test Subject 2', did: '0x1efghssesdss', profileImage: '' },
+  issuer: { shortId: 'Test Issuer 2', did: '0x1efghssss', profileImage: '' },
   attachmentType: 'Credential',
-  claim: {},
+  fields: [
+    {
+      type: 'name',
+      value: 'Test name',
+    },
+    {
+      type: 'phone',
+      value: 'Test phone',
+    },
+  ],
 }
 
 describe('Component(snapshots): ActivityItem', () => {
+  const viewer = {
+    did: 'ethr:did:123456876',
+    profileImage: 'http://',
+    shortId: 'Test Viewer',
+  }
   const baseProps = {
     id: 'ZFGHFSJD',
     date: 123445678910,
+    type: 'w3c.vc',
     issuer: {
-      name: 'Test Issuer',
       did: 'ethr:did:123456',
-      avatar: { uri: 'http://' },
+      profileImage: 'http://',
       shortId: 'Test Issuer',
     },
     subject: {
-      name: 'Test Subject',
       did: 'ethr:did:123456',
-      avatar: { uri: 'http://' },
+      profileImage: 'http://',
       shortId: 'Test Subject',
     },
     activity: 'testing the components',
     profileAction: () => {},
-    // attachmentsAction: () => {},
-    // attachments: [],
-    // actions: [],
-    // confirm: () => {},
-    // reject: () => {},
   }
 
   it('should render with default required props', () => {
-    const tree = render(<ActivityItem incoming={false} {...baseProps} />).toJSON()
+    const tree = render(<ActivityItem message={{ id: 'ZFGHFSJD' }} viewer={viewer} {...baseProps} />).toJSON()
     expect(tree).toMatchSnapshot()
   })
 
@@ -54,17 +72,14 @@ describe('Component(snapshots): ActivityItem', () => {
 
     const tree = render(
       <ActivityItem
-        incoming={true}
+        message={{ id: 'ZFGHFSJD' }}
+        viewer={viewer}
         attachments={attachments}
         attachmentsAction={attachmentAction}
         {...baseProps}
       />,
     )
     expect(tree.toJSON).toMatchSnapshot()
-
-    fireEvent.press(tree.getByText(/Test Attachment 1/i))
-
-    expect(attachmentAction).toHaveBeenCalledWith(attachments)
   })
 
   it('should render with actions', () => {
@@ -73,14 +88,22 @@ describe('Component(snapshots): ActivityItem', () => {
     const reject = jest.fn()
 
     const tree = render(
-      <ActivityItem incoming={true} actions={actions} confirm={confirm} reject={reject} {...baseProps} />,
+      <ActivityItem
+        {...baseProps}
+        type={'sdr'}
+        viewer={viewer}
+        message={{ id: 'ZFGHFSJD' }}
+        actions={actions}
+        confirm={confirm}
+        reject={reject}
+      />,
     )
     expect(tree.toJSON).toMatchSnapshot()
 
     fireEvent.press(tree.getByText(/Confirm/i))
-    expect(confirm).toHaveBeenCalledWith(baseProps.id)
+    expect(confirm).toHaveBeenCalledWith({ id: 'ZFGHFSJD' })
 
     fireEvent.press(tree.getByText(/Reject/i))
-    expect(reject).toHaveBeenCalledWith(baseProps.id)
+    expect(reject).toHaveBeenCalledWith({ id: 'ZFGHFSJD' })
   })
 })

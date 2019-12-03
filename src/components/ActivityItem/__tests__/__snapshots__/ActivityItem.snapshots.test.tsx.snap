@@ -57,21 +57,6 @@ exports[`Component(snapshots): ActivityItem should render with default required 
       }
     }
   >
-    <Image
-      source={
-        Object {
-          "uri": "http://",
-        }
-      }
-      style={
-        Object {
-          "backgroundColor": "#0078ff",
-          "borderRadius": 20,
-          "height": 40,
-          "width": 40,
-        }
-      }
-    />
     <View
       pointerEvents="auto"
       style={
@@ -87,7 +72,7 @@ exports[`Component(snapshots): ActivityItem should render with default required 
           "marginBottom": undefined,
           "marginLeft": undefined,
           "marginRight": undefined,
-          "marginTop": 5,
+          "marginTop": undefined,
           "padding": undefined,
           "paddingBottom": undefined,
           "paddingHorizontal": undefined,
@@ -98,10 +83,20 @@ exports[`Component(snapshots): ActivityItem should render with default required 
         }
       }
     >
-      <Icon
-        color="#BBBBBB"
-        name="ios-return-left"
-        size={26}
+      <Image
+        source={
+          Object {
+            "uri": "http://",
+          }
+        }
+        style={
+          Object {
+            "backgroundColor": "#0078ff",
+            "borderRadius": 19,
+            "height": 38,
+            "width": 38,
+          }
+        }
       />
     </View>
   </View>
@@ -201,7 +196,7 @@ exports[`Component(snapshots): ActivityItem should render with default required 
               }
             }
           >
-            Test subject
+            Test Issuer
           </Text>
           <Text
             style={
@@ -227,7 +222,7 @@ exports[`Component(snapshots): ActivityItem should render with default required 
             }
           >
              
-            Test Issuer
+            Test Subject
           </Text>
         </Text>
       </View>
@@ -240,7 +235,7 @@ exports[`Component(snapshots): ActivityItem should render with default required 
           }
         }
       >
-        almost 46 years
+        about 46 years
          ago
       </Text>
     </View>

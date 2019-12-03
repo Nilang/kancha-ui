@@ -3,7 +3,6 @@ import { TouchableOpacity } from 'react-native'
 import Container from '../Container/Container'
 import Button, { ButtonBlocks } from '../Button/Button'
 import Avatar from '../Avatar/Avatar'
-import Icon from '../Icon/Icon'
 import Credential from '../../components/Credential/Credential'
 import ActivityItemHeader from '../../components/ActivityItemHeader/ActivityItemHeader'
 import * as Kancha from '../../types'
@@ -19,7 +18,7 @@ interface ActivityItemProps {
   /**
    * The message type
    */
-  type: 'w3c.vp' | 'w3c.vc' | 'sdr'
+  type: 'w3c.vp' | 'w3c.vc' | 'sdr' | string
   /**
    * The full message payload (for passing back to event handlers)
    */
@@ -40,14 +39,14 @@ interface ActivityItemProps {
   activity?: string
 
   /**
-   * If the message item was initiated by the the issuer or is a response
-   */
-  incoming?: boolean
-
-  /**
-   * The viewer. In this cane will always be 'You' or 'My'
+   * The subject
    */
   subject: Kancha.Identity
+
+  /**
+   * The viewer
+   */
+  viewer: Kancha.Identity
 
   /**
    * The reason for the message
@@ -97,10 +96,10 @@ interface ActivityItemProps {
 const ActivityItem: React.FC<ActivityItemProps> = ({
   message,
   type,
-  incoming,
   activity,
   issuer,
   subject,
+  viewer,
   reason,
   attachments,
   attachmentsAction,
@@ -112,9 +111,7 @@ const ActivityItem: React.FC<ActivityItemProps> = ({
   reject,
   theme,
 }) => {
-  const subProfileSource = subject && subject.profileImage ? { source: { uri: subject.profileImage } } : {}
   const issProfileSource = issuer.profileImage ? { source: { uri: issuer.profileImage } } : {}
-
   return (
     <Container flex={1} flexDirection={'row'} background={'primary'} padding marginBottom={10}>
       <Container alignItems={'center'}>
@@ -123,29 +120,14 @@ const ActivityItem: React.FC<ActivityItemProps> = ({
             {...issProfileSource}
             type={'circle'}
             gravatarType={'retro'}
-            address={message.iss.did}
+            address={issuer.did}
             size={38}
           />
-          {subject && (
-            <Container viewStyle={{ position: 'absolute', left: 18, top: 18 }}>
-              <Avatar
-                {...subProfileSource}
-                border
-                type={'circle'}
-                gravatarType={'retro'}
-                address={message.sub.did}
-                size={25}
-              />
-            </Container>
-          )}
-        </Container>
-        <Container marginTop={5}>
-          <Icon icon={incoming ? theme.icons.INCOMING_ITEM : theme.icons.OUTGOING_ITEM} />
         </Container>
       </Container>
       <Container marginLeft paddingRight flex={1}>
         <ActivityItemHeader
-          incoming={incoming}
+          viewer={viewer}
           issuer={issuer}
           subject={subject}
           profileAction={profileAction}
@@ -160,6 +142,7 @@ const ActivityItem: React.FC<ActivityItemProps> = ({
                 return (
                   <Container key={index}>
                     <Credential
+                      exp={item.exp}
                       fields={item.fields}
                       subject={subject}
                       issuer={issuer}
