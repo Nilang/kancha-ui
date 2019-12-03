@@ -13,6 +13,93 @@
           "profileImage": "",
           "__typename": "Identity"
         },
+        "sub": null,
+        "vc": [],
+        "sdr": [
+          {
+            "claimType": "name",
+            "reason": "some reason",
+            "essential": false,
+            "vc": [
+              {
+                "iss": {
+                  "shortId": "Jase",
+                  "__typename": "Identity",
+                  "profileImage": "https://www.catster.com/wp-content/uploads/2015/06/google-cat-search-2014-06.jpg"
+                },
+                "jwt": "eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NkstUiJ9.eyJpYXQiOjE1NzUyOTk3MDMsInN1YiI6ImRpZDpldGhyOjB4ZGZkOGVkYWZjNTkyMzdiZDhmZGJiZjM4MDg1Y2VhYzlhYTFhYzVhOCIsInZjIjp7InR5cGUiOlsiVmVyaWZpYWJsZUNyZWRlbnRpYWwiXSwiQGNvbnRleHQiOlsiaHR0cHM6Ly93d3cudzMub3JnLzIwMTgvY3JlZGVudGlhbHMvdjEiXSwiY3JlZGVudGlhbFN1YmplY3QiOnsid2VhdGhlciI6ImNvbGQifX0sImlzcyI6ImRpZDpldGhyOjB4ZGZkOGVkYWZjNTkyMzdiZDhmZGJiZjM4MDg1Y2VhYzlhYTFhYzVhOCJ9.o7oQn1QnykiZXp9wpu5SwlFjvg6SrPxllAMXiwiNQYCcklXlO0sxikY9H2B6vbC4OXm-Iz8L4NZHBcwNUDBzvgE",
+                "fields": [
+                  {
+                    "type": "name",
+                    "value": "Jason",
+                    "isObj": false,
+                    "__typename": "VerifiableClaimField"
+                  }
+                ],
+                "__typename": "VerifiableClaim"
+              },
+              {
+                "iss": { "shortId": "Jase", "__typename": "Identity" },
+                "jwt": "eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NkstUiJ9.eyJpYXQiOjE1NzUyOTk3MDMsInN1YiI6ImRpZDpldGhyOjB4ZGZkOGVkYWZjNTkyMzdiZDhmZGJiZjM4MDg1Y2VhYzlhYTFhYzVhOCIsInZjIjp7InR5cGUiOlsiVmVyaWZpYWJsZUNyZWRlbnRpYWwiXSwiQGNvbnRleHQiOlsiaHR0cHM6Ly93d3cudzMub3JnLzIwMTgvY3JlZGVudGlhbHMvdjEiXSwiY3JlZGVudGlhbFN1YmplY3QiOnsid2VhdGhlciI6ImNvbGQifX0sImlzcyI6ImRpZDpldGhyOjB4ZGZkOGVkYWZjNTkyMzdiZDhmZGJiZjM4MDg1Y2VhYzlhYTFhYzVhOCJ9.o7oQn1QnykiZXp9wpu5SwlFjvg6SrPxllAMXiwiNQYCcklXlO0sxikY9H2B6vbC4OXm-Iz8L4NZHBcwNUDBzvgE",
+                "fields": [
+                  {
+                    "type": "name",
+                    "value": "James",
+                    "isObj": false,
+                    "__typename": "VerifiableClaimField"
+                  }
+                ],
+                "__typename": "VerifiableClaim"
+              }
+            ]
+          },
+          {
+            "claimType": "framework",
+            "reason": "some reason",
+            "essential": false,
+            "vc": [
+              {
+                "iss": { "shortId": "Jase", "__typename": "Identity" },
+                "jwt": "eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NkstUiJ9.eyJpYXQiOjE1NzUyOTk3MDMsInN1YiI6ImRpZDpldGhyOjB4ZGZkOGVkYWZjNTkyMzdiZDhmZGJiZjM4MDg1Y2VhYzlhYTFhYzVhOCIsInZjIjp7InR5cGUiOlsiVmVyaWZpYWJsZUNyZWRlbnRpYWwiXSwiQGNvbnRleHQiOlsiaHR0cHM6Ly93d3cudzMub3JnLzIwMTgvY3JlZGVudGlhbHMvdjEiXSwiY3JlZGVudGlhbFN1YmplY3QiOnsid2VhdGhlciI6ImNvbGQifX0sImlzcyI6ImRpZDpldGhyOjB4ZGZkOGVkYWZjNTkyMzdiZDhmZGJiZjM4MDg1Y2VhYzlhYTFhYzVhOCJ9.o7oQn1QnykiZXp9wpu5SwlFjvg6SrPxllAMXiwiNQYCcklXlO0sxikY9H2B6vbC4OXm-Iz8L4NZHBcwNUDBzvgE",
+                "fields": [
+                  {
+                    "type": "framework",
+                    "value": "React Native",
+                    "isObj": false,
+                    "__typename": "VerifiableClaimField"
+                  }
+                ],
+                "__typename": "VerifiableClaim"
+              },
+              {
+                "iss": { "shortId": "Jase", "__typename": "Identity" },
+                "jwt": "eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NkstUiJ9.eyJpYXQiOjE1NzUyOTk3MDMsInN1YiI6ImRpZDpldGhyOjB4ZGZkOGVkYWZjNTkyMzdiZDhmZGJiZjM4MDg1Y2VhYzlhYTFhYzVhOCIsInZjIjp7InR5cGUiOlsiVmVyaWZpYWJsZUNyZWRlbnRpYWwiXSwiQGNvbnRleHQiOlsiaHR0cHM6Ly93d3cudzMub3JnLzIwMTgvY3JlZGVudGlhbHMvdjEiXSwiY3JlZGVudGlhbFN1YmplY3QiOnsid2VhdGhlciI6ImNvbGQifX0sImlzcyI6ImRpZDpldGhyOjB4ZGZkOGVkYWZjNTkyMzdiZDhmZGJiZjM4MDg1Y2VhYzlhYTFhYzVhOCJ9.o7oQn1QnykiZXp9wpu5SwlFjvg6SrPxllAMXiwiNQYCcklXlO0sxikY9H2B6vbC4OXm-Iz8L4NZHBcwNUDBzvgE",
+                "fields": [
+                  {
+                    "type": "framework",
+                    "value": "Flutter",
+                    "isObj": false,
+                    "__typename": "VerifiableClaimField"
+                  }
+                ],
+                "__typename": "VerifiableClaim"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "sdr",
+        "jwt": "eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NkstUiJ9.eyJpYXQiOjE1NzUyOTk3NzAsInR5cGUiOiJzZHIiLCJ0YWciOiJ0YWctMDIiLCJzdWIiOiJkaWQ6ZXRocjoweGRmZDhlZGFmYzU5MjM3YmQ4ZmRiYmYzODA4NWNlYWM5YWExYWM1YTgiLCJjbGFpbXMiOlt7InJlYXNvbiI6InNvbWUgcmVhc29uIiwiY2xhaW1UeXBlIjoid2VhdGhlciIsImVzc2VudGlhbCI6ZmFsc2V9XSwiaXNzIjoiZGlkOmV0aHI6MHgxZmNjMTIzZWUzNDgxMmRiNGJlYzkzN2Q3YWNkYzdjYTYxZDk5MGE2In0.KTENMv3pwOQK-TK6gCcz9UQBuGG1eOUhOkRUj2yLxObpE2sbkMOB9Ez9r9Xbz8QvJXOSVdrnrx0TpCLpu41CRwE",
+        "hash": "f869bcb0179270a278022a4c0d1ee39a7f45e4db7035d909b57ceffebdfe0a9e93e59b0b6764e885c35c2f30972965ffd14c57028e1c419cc20ff78e28213b3b",
+        "tag": "tag-01",
+        "nbf": 1575299770,
+        "iss": {
+          "did": "did:ethr:0x1fcc123ee34812db4bec937d7acdc7ca61d990a6",
+          "shortId": "did:ethr:0x1fcc...90a6",
+          "profileImage": "",
+          "__typename": "Identity"
+        },
         "sub": {
           "did": "did:ethr:0xdfd8edafc59237bd8fdbbf38085ceac9aa1ac5a8",
           "shortId": "Jase",
@@ -124,6 +211,36 @@
         ]
       },
       {
+        "type": "w3c.vp",
+        "tag": null,
+        "iss": {
+          "did": "did:ethr:0x0365d19cec991d8e2c3d3c910b2cbcdf3369b3fc",
+          "shortId": "did:ethr:0x0365...b3fc",
+          "profileImage": "https://www.catster.com/wp-content/uploads/2015/06/google-cat-search-2014-06.jpg"
+        },
+        "sub": {
+          "did": "did:ethr:0x6b3ec3aa2a1289441867715d9d818a06fd724f0e",
+          "shortId": "Suzanne Oranges",
+          "profileImage": "https://www.catster.com/wp-content/uploads/2015/06/google-cat-search-2014-06.jpg"
+        },
+        "aud": null,
+        "jwt": "eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NkstUiJ9.eyJpYXQiOjE1NzQzODk5OTksInN1YiI6ImRpZDpldGhyOjB4NmIzZWMzYWEyYTEyODk0NDE4Njc3MTVkOWQ4MThhMDZmZDcyNGYwZSIsInZjIjp7IkBjb250ZXh0IjpbImh0dHBzOi8vd3d3LnczLm9yZy8yMDE4L2NyZWRlbnRpYWxzL3YxIl0sInR5cGUiOlsiVmVyaWZpYWJsZUNyZWRlbnRpYWwiXSwiY3JlZGVudGlhbFN1YmplY3QiOnsibmFtZSI6IlN1enkgU2xlZXB5IFNlYWxpb24ifX0sImlzcyI6ImRpZDpldGhyOjB4MDM2NWQxOWNlYzk5MWQ4ZTJjM2QzYzkxMGIyY2JjZGYzMzY5YjNmYyJ9.RBKORFje1SXxPsvGnDXzRC_wAjUFHdFXsKxkm6JD5qitU9Bge8ElJiyF5AnSSc375glQXoZB43hK6zlSpCq9_wE",
+        "hash": "a112ca71dc28759c048db30da9d2f192028ebd9ac54241566845f8ff22a03a91834aa53fef1594cfd4265eb4ebc91323743ab538ef69ef57c29582a45d707a68",
+        "iat": null,
+        "nbf": 1574389999,
+        "vc": [
+          {
+            "fields": [
+              {
+                "type": "name",
+                "value": "Potato Heads",
+                "isObj": false
+              }
+            ]
+          }
+        ]
+      },
+      {
         "type": "w3c.vc",
         "tag": null,
         "iss": {
@@ -139,15 +256,15 @@
         "aud": null,
         "jwt": "eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NkstUiJ9.eyJpYXQiOjE1NzQzODg4MDMsInN1YiI6ImRpZDpldGhyOjB4NWY3MGViMWMzZmExNTA1MGE2YzczMzAzZGI5OTdmMDA4NjJiNzA1ZSIsInZjIjp7IkBjb250ZXh0IjpbImh0dHBzOi8vd3d3LnczLm9yZy8yMDE4L2NyZWRlbnRpYWxzL3YxIl0sInR5cGUiOlsiVmVyaWZpYWJsZUNyZWRlbnRpYWwiXSwiY3JlZGVudGlhbFN1YmplY3QiOnsiZGVtbyI6ImF3ZXNvbWUhIn19LCJpc3MiOiJkaWQ6ZXRocjoweDE4OGJiODhkNmViZTExZDg0ZTQ0OTlhZWZkZGI3ODQwNWYyZjlkMTIifQ.GjQDVYtpwTzEurUwcxvGFTcfoyuOXZFVjrSHefuzgEa_P9j7AuQYuy1iUVqY7z-Ztf8b1U-SD1kHpweqqpFjRAA",
         "hash": "10f7e09fe6f6ba24e3a44569111b7b0df24916293c1575ceced349e3ebb4af3460049c17a8f9442e28fbe208a5234e10eb3547d7190166324a08d9a3513524d6",
-        "iat": null,
+        "iat": 1607001057,
         "nbf": 1574388803,
         "vc": [
           {
             "fields": [
               {
                 "type": "name",
-                "value": "Space Man",
-                "isObj": false
+                "value": { "name": "Space Man" },
+                "isObj": true
               },
               {
                 "type": "phone",
