@@ -16,7 +16,7 @@
         "sub": {
           "did": "did:ethr:0xdfd8edafc59237bd8fdbbf38085ceac9aa1ac5a8",
           "shortId": "Jase",
-          "profileImage": "",
+          "profileImage": "https://www.catster.com/wp-content/uploads/2015/06/google-cat-search-2014-06.jpg",
           "__typename": "Identity"
         },
         "vc": [],
@@ -27,7 +27,11 @@
             "essential": false,
             "vc": [
               {
-                "iss": { "shortId": "Jase", "__typename": "Identity" },
+                "iss": {
+                  "shortId": "Jase",
+                  "__typename": "Identity",
+                  "profileImage": "https://www.catster.com/wp-content/uploads/2015/06/google-cat-search-2014-06.jpg"
+                },
                 "jwt": "eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NkstUiJ9.eyJpYXQiOjE1NzUyOTk3MDMsInN1YiI6ImRpZDpldGhyOjB4ZGZkOGVkYWZjNTkyMzdiZDhmZGJiZjM4MDg1Y2VhYzlhYTFhYzVhOCIsInZjIjp7InR5cGUiOlsiVmVyaWZpYWJsZUNyZWRlbnRpYWwiXSwiQGNvbnRleHQiOlsiaHR0cHM6Ly93d3cudzMub3JnLzIwMTgvY3JlZGVudGlhbHMvdjEiXSwiY3JlZGVudGlhbFN1YmplY3QiOnsid2VhdGhlciI6ImNvbGQifX0sImlzcyI6ImRpZDpldGhyOjB4ZGZkOGVkYWZjNTkyMzdiZDhmZGJiZjM4MDg1Y2VhYzlhYTFhYzVhOCJ9.o7oQn1QnykiZXp9wpu5SwlFjvg6SrPxllAMXiwiNQYCcklXlO0sxikY9H2B6vbC4OXm-Iz8L4NZHBcwNUDBzvgE",
                 "fields": [
                   {
@@ -95,7 +99,7 @@
         "iss": {
           "did": "did:ethr:0x0365d19cec991d8e2c3d3c910b2cbcdf3369b3fc",
           "shortId": "did:ethr:0x0365...b3fc",
-          "profileImage": ""
+          "profileImage": "https://www.catster.com/wp-content/uploads/2015/06/google-cat-search-2014-06.jpg"
         },
         "sub": {
           "did": "did:ethr:0x6b3ec3aa2a1289441867715d9d818a06fd724f0e",
@@ -141,8 +145,18 @@
           {
             "fields": [
               {
-                "type": "demo",
-                "value": "awesome!",
+                "type": "name",
+                "value": "Space Man",
+                "isObj": false
+              },
+              {
+                "type": "phone",
+                "value": "2eu3928375928",
+                "isObj": false
+              },
+              {
+                "type": "job",
+                "value": "Cosmonaut",
                 "isObj": false
               }
             ]
@@ -382,7 +396,7 @@
             "fields": [
               {
                 "type": "address",
-                "value": "{ street: '3243 Hope Street', city: 'Vegas' }",
+                "value": "3243 Hope Street",
                 "isObj": false
               }
             ]

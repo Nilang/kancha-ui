@@ -2,7 +2,6 @@ import * as React from 'react'
 import Text, { TextTypes } from '../Text/Text'
 import Container from '../Container/Container'
 import * as Kancha from '../../types'
-import S from 'string'
 import { formatDistanceToNow } from 'date-fns'
 
 interface ActivityItemHeaderProps {
@@ -44,15 +43,15 @@ const ActivityItemHeader: React.FC<ActivityItemHeaderProps> = ({
               bold
               onPress={() => profileAction(incoming ? 'Show ISSUER Profile' : 'Show MY Profile')}
             >
-              {incoming ? issuer.name : S(subject.name).capitalize().s}
+              {issuer.shortId}
             </Text>
             <Text type={TextTypes.ActivityTitle}>&nbsp;{activity}</Text>
             {!incoming && (
               <Text type={TextTypes.ActivityTitle} bold onPress={() => profileAction('Show ISSUER Profile')}>
-                &nbsp;{issuer.name}
+                &nbsp;{issuer.shortId}
               </Text>
             )}
-            <Text type={TextTypes.ActivityTitle}>&nbsp;so {subject.name}</Text>
+            <Text type={TextTypes.ActivityTitle}>&nbsp;so {subject.shortId}</Text>
             <Text type={TextTypes.ActivityTitle} bold>
               &nbsp;{reason}
             </Text>
@@ -62,17 +61,13 @@ const ActivityItemHeader: React.FC<ActivityItemHeaderProps> = ({
             <Text
               type={TextTypes.ActivityTitle}
               bold
-              onPress={() => profileAction(incoming ? 'Show ISSUER Profile' : 'Show MY Profile')}
+              onPress={() => profileAction(incoming ? 'Show ISSUER Profile' : 'Show SUBJECT Profile')}
             >
-              {incoming ? issuer.name : S(subject.name).capitalize().s}
+              {issuer.shortId}
             </Text>
             <Text type={TextTypes.ActivityTitle}>&nbsp;{activity}</Text>
-            <Text
-              type={TextTypes.ActivityTitle}
-              bold
-              onPress={() => !incoming && profileAction('Show ISSUER Profile')}
-            >
-              &nbsp;{!incoming && issuer.name}
+            <Text type={TextTypes.ActivityTitle} bold onPress={() => profileAction('Show SUBJECT Profile')}>
+              &nbsp;{subject.shortId}
             </Text>
           </Text>
         )}

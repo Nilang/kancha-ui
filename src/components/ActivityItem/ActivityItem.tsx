@@ -15,6 +15,15 @@ interface ActivityItemProps {
    * The unique id or message hash
    */
   id: string
+
+  /**
+   * The message type
+   */
+  type: 'w3c.vp' | 'w3c.vc' | 'sdr'
+  /**
+   * The full message payload (for passing back to event handlers)
+   */
+  message: any
   /**
    * The timestamp for when this message was recieved or sent
    */
@@ -28,7 +37,7 @@ interface ActivityItemProps {
   /**
    * The activity that is takaing place
    */
-  activity: string
+  activity?: string
 
   /**
    * If the message item was initiated by the the issuer or is a response
@@ -63,12 +72,12 @@ interface ActivityItemProps {
   /*
    * The confirm action
    */
-  confirm?: (id: string) => void
+  confirm?: (msg: any) => void
 
   /*
    * The reject action
    */
-  reject?: (id: string) => void
+  reject?: (msg: any) => void
 
   /**
    * Profile actions like being able to navigate to a profile
@@ -76,13 +85,18 @@ interface ActivityItemProps {
   profileAction: (id: string) => void
 
   /**
+   * Credential style
+   */
+  credentialStyle?: any
+  /**
    * Theme prop
    */
   theme: any
 }
 
 const ActivityItem: React.FC<ActivityItemProps> = ({
-  id,
+  message,
+  type,
   incoming,
   activity,
   issuer,
@@ -92,15 +106,39 @@ const ActivityItem: React.FC<ActivityItemProps> = ({
   attachmentsAction,
   actions,
   profileAction,
+  credentialStyle,
   date,
   confirm,
   reject,
   theme,
 }) => {
+  const subProfileSource = subject && subject.profileImage ? { source: { uri: subject.profileImage } } : {}
+  const issProfileSource = issuer.profileImage ? { source: { uri: issuer.profileImage } } : {}
+
   return (
     <Container flex={1} flexDirection={'row'} background={'primary'} padding marginBottom={10}>
       <Container alignItems={'center'}>
-        <Avatar size={40} source={issuer.avatar} />
+        <Container>
+          <Avatar
+            {...issProfileSource}
+            type={'circle'}
+            gravatarType={'retro'}
+            address={message.iss.did}
+            size={38}
+          />
+          {subject && (
+            <Container viewStyle={{ position: 'absolute', left: 18, top: 18 }}>
+              <Avatar
+                {...subProfileSource}
+                border
+                type={'circle'}
+                gravatarType={'retro'}
+                address={message.sub.did}
+                size={25}
+              />
+            </Container>
+          )}
+        </Container>
         <Container marginTop={5}>
           <Icon icon={incoming ? theme.icons.INCOMING_ITEM : theme.icons.OUTGOING_ITEM} />
         </Container>
@@ -112,29 +150,21 @@ const ActivityItem: React.FC<ActivityItemProps> = ({
           subject={subject}
           profileAction={profileAction}
           date={date}
-          activity={activity}
+          activity={activity || theme.activity.messages[type]}
           reason={reason}
         />
-        {attachments && (
+        {attachments && attachments.length > 0 && (
           <TouchableOpacity onPress={() => attachmentsAction && attachmentsAction(attachments)}>
-            <Container h={100} marginTop flex={1}>
+            <Container marginTop flex={1}>
               {attachments.map((item: any, index: number) => {
                 return (
-                  <Container
-                    key={item.key}
-                    viewStyle={{
-                      position: 'absolute',
-                      top: index * 10,
-                      left: index * 10,
-                      right: -index * 10,
-                    }}
-                  >
+                  <Container key={index}>
                     <Credential
-                      title={item.title}
-                      logo={item.issuer.logo}
-                      issuer={item.issuer.name}
-                      shadow={1.5}
-                      background={'primary'}
+                      fields={item.fields}
+                      subject={subject}
+                      issuer={issuer}
+                      shadow={(credentialStyle && credentialStyle.shadow) || 1.5}
+                      background={(credentialStyle && credentialStyle.background) || 'primary'}
                     />
                   </Container>
                 )
@@ -142,7 +172,7 @@ const ActivityItem: React.FC<ActivityItemProps> = ({
             </Container>
           </TouchableOpacity>
         )}
-        {actions && (
+        {actions && type === 'sdr' && (
           <Container flex={1} marginTop flexDirection={'row'}>
             <Container flex={2} marginRight={5}>
               {confirm && actions[0] && (
@@ -151,7 +181,7 @@ const ActivityItem: React.FC<ActivityItemProps> = ({
                   buttonText={actions[0]}
                   type={BrandOptions.Primary}
                   block={ButtonBlocks.Filled}
-                  onPress={() => confirm(id)}
+                  onPress={() => confirm(message)}
                 ></Button>
               )}
             </Container>
@@ -162,7 +192,7 @@ const ActivityItem: React.FC<ActivityItemProps> = ({
                   buttonText={actions[1]}
                   type={BrandOptions.Secondary}
                   block={ButtonBlocks.Filled}
-                  onPress={() => reject(id)}
+                  onPress={() => reject(message)}
                 ></Button>
               )}
             </Container>
