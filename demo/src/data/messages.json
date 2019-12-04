@@ -207,6 +207,24 @@
                 "isObj": false
               }
             ]
+          },
+          {
+            "fields": [
+              {
+                "type": "address",
+                "value": "Suzy Sleepy Sealion",
+                "isObj": false
+              }
+            ]
+          },
+          {
+            "fields": [
+              {
+                "type": "phone",
+                "value": "Suzy Sleepy Sealion",
+                "isObj": false
+              }
+            ]
           }
         ]
       },

@@ -1,13 +1,16 @@
 import * as React from 'react'
-import { TouchableOpacity } from 'react-native'
 import Container from '../Container/Container'
 import Button, { ButtonBlocks } from '../Button/Button'
 import Avatar from '../Avatar/Avatar'
+// import Text from '../Text/Text'
+// import Icon from '../Icon/Icon'
 import Credential from '../../components/Credential/Credential'
 import ActivityItemHeader from '../../components/ActivityItemHeader/ActivityItemHeader'
 import * as Kancha from '../../types'
 import { withTheme } from '../../theming'
 import { BrandOptions } from '../../constants'
+import { ScrollView } from 'react-native-gesture-handler'
+import Device from '../../services/device'
 
 interface ActivityItemProps {
   /**
@@ -102,7 +105,7 @@ const ActivityItem: React.FC<ActivityItemProps> = ({
   viewer,
   reason,
   attachments,
-  attachmentsAction,
+  // attachmentsAction,
   actions,
   profileAction,
   credentialStyle,
@@ -113,75 +116,81 @@ const ActivityItem: React.FC<ActivityItemProps> = ({
 }) => {
   const issProfileSource = issuer.profileImage ? { source: { uri: issuer.profileImage } } : {}
   return (
-    <Container flex={1} flexDirection={'row'} background={'primary'} padding marginBottom={10}>
-      <Container alignItems={'center'}>
-        <Container>
-          <Avatar
-            {...issProfileSource}
-            type={'circle'}
-            gravatarType={'retro'}
-            address={issuer.did}
-            size={38}
+    <Container flex={1} background={'primary'} marginBottom={10}>
+      <Container flex={1} flexDirection={'row'} padding>
+        <Container alignItems={'center'}>
+          <Container>
+            <Avatar
+              {...issProfileSource}
+              type={'circle'}
+              gravatarType={'retro'}
+              address={issuer.did}
+              size={38}
+            />
+          </Container>
+        </Container>
+        <Container marginLeft paddingRight flex={1}>
+          <ActivityItemHeader
+            viewer={viewer}
+            issuer={issuer}
+            subject={subject}
+            profileAction={profileAction}
+            date={date}
+            activity={activity || theme.activity.messages[type]}
+            reason={reason}
           />
+          {actions && type === 'sdr' && (
+            <Container flex={1} marginTop flexDirection={'row'}>
+              <Container flex={2} marginRight={5}>
+                {confirm && actions[0] && (
+                  <Button
+                    small
+                    buttonText={actions[0]}
+                    type={BrandOptions.Primary}
+                    block={ButtonBlocks.Filled}
+                    onPress={() => confirm(message)}
+                  ></Button>
+                )}
+              </Container>
+              <Container flex={2}>
+                {reject && actions[1] && (
+                  <Button
+                    small
+                    buttonText={actions[1]}
+                    type={BrandOptions.Secondary}
+                    block={ButtonBlocks.Filled}
+                    onPress={() => reject(message)}
+                  ></Button>
+                )}
+              </Container>
+            </Container>
+          )}
         </Container>
       </Container>
-      <Container marginLeft paddingRight flex={1}>
-        <ActivityItemHeader
-          viewer={viewer}
-          issuer={issuer}
-          subject={subject}
-          profileAction={profileAction}
-          date={date}
-          activity={activity || theme.activity.messages[type]}
-          reason={reason}
-        />
-        {attachments && attachments.length > 0 && (
-          <TouchableOpacity onPress={() => attachmentsAction && attachmentsAction(attachments)}>
-            <Container marginTop flex={1}>
-              {attachments.map((item: any, index: number) => {
-                return (
-                  <Container key={index}>
-                    <Credential
-                      exp={item.exp}
-                      fields={item.fields}
-                      subject={subject}
-                      issuer={issuer}
-                      shadow={(credentialStyle && credentialStyle.shadow) || 1.5}
-                      background={(credentialStyle && credentialStyle.background) || 'primary'}
-                    />
-                  </Container>
-                )
-              })}
-            </Container>
-          </TouchableOpacity>
-        )}
-        {actions && type === 'sdr' && (
-          <Container flex={1} marginTop flexDirection={'row'}>
-            <Container flex={2} marginRight={5}>
-              {confirm && actions[0] && (
-                <Button
-                  small
-                  buttonText={actions[0]}
-                  type={BrandOptions.Primary}
-                  block={ButtonBlocks.Filled}
-                  onPress={() => confirm(message)}
-                ></Button>
-              )}
-            </Container>
-            <Container flex={2}>
-              {reject && actions[1] && (
-                <Button
-                  small
-                  buttonText={actions[1]}
-                  type={BrandOptions.Secondary}
-                  block={ButtonBlocks.Filled}
-                  onPress={() => reject(message)}
-                ></Button>
-              )}
-            </Container>
-          </Container>
-        )}
-      </Container>
+      {attachments && attachments.length > 0 && (
+        <Container flex={1}>
+          {/* <Container paddingLeft flexDirection={'row'}>
+            <Icon icon={{ name: 'ios-attach', iconFamily: 'Ionicons' }} size={20} />
+            <Text>2 credentials attached</Text>
+          </Container> */}
+          <ScrollView horizontal style={{ paddingVertical: 15, paddingHorizontal: 15, flex: 1 }}>
+            {attachments.map((item: any, index: number) => {
+              return (
+                <Container key={index} marginRight={8} w={Device.width - 60}>
+                  <Credential
+                    exp={item.exp}
+                    fields={item.fields}
+                    subject={subject}
+                    issuer={issuer}
+                    shadow={(credentialStyle && credentialStyle.shadow) || 1.5}
+                    background={(credentialStyle && credentialStyle.background) || 'primary'}
+                  />
+                </Container>
+              )
+            })}
+          </ScrollView>
+        </Container>
+      )}
     </Container>
   )
 }
