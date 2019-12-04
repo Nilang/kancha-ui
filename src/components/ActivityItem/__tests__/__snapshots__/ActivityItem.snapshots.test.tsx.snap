@@ -13,7 +13,7 @@ exports[`Component(snapshots): ActivityItem should render with default required 
       "backgroundColor": "#FFFFFF",
       "borderRadius": undefined,
       "flex": 1,
-      "flexDirection": "row",
+      "flexDirection": undefined,
       "height": undefined,
       "justifyContent": undefined,
       "margin": undefined,
@@ -21,7 +21,7 @@ exports[`Component(snapshots): ActivityItem should render with default required 
       "marginLeft": undefined,
       "marginRight": undefined,
       "marginTop": undefined,
-      "padding": 15,
+      "padding": undefined,
       "paddingBottom": undefined,
       "paddingHorizontal": undefined,
       "paddingLeft": undefined,
@@ -35,11 +35,11 @@ exports[`Component(snapshots): ActivityItem should render with default required 
     pointerEvents="auto"
     style={
       Object {
-        "alignItems": "center",
+        "alignItems": undefined,
         "backgroundColor": undefined,
         "borderRadius": undefined,
-        "flex": undefined,
-        "flexDirection": undefined,
+        "flex": 1,
+        "flexDirection": "row",
         "height": undefined,
         "justifyContent": undefined,
         "margin": undefined,
@@ -47,7 +47,7 @@ exports[`Component(snapshots): ActivityItem should render with default required 
         "marginLeft": undefined,
         "marginRight": undefined,
         "marginTop": undefined,
-        "padding": undefined,
+        "padding": 15,
         "paddingBottom": undefined,
         "paddingHorizontal": undefined,
         "paddingLeft": undefined,
@@ -61,76 +61,7 @@ exports[`Component(snapshots): ActivityItem should render with default required 
       pointerEvents="auto"
       style={
         Object {
-          "alignItems": undefined,
-          "backgroundColor": undefined,
-          "borderRadius": undefined,
-          "flex": undefined,
-          "flexDirection": undefined,
-          "height": undefined,
-          "justifyContent": undefined,
-          "margin": undefined,
-          "marginBottom": undefined,
-          "marginLeft": undefined,
-          "marginRight": undefined,
-          "marginTop": undefined,
-          "padding": undefined,
-          "paddingBottom": undefined,
-          "paddingHorizontal": undefined,
-          "paddingLeft": undefined,
-          "paddingRight": undefined,
-          "paddingTop": undefined,
-          "width": undefined,
-        }
-      }
-    >
-      <Image
-        source={
-          Object {
-            "uri": "http://",
-          }
-        }
-        style={
-          Object {
-            "backgroundColor": "#0078ff",
-            "borderRadius": 19,
-            "height": 38,
-            "width": 38,
-          }
-        }
-      />
-    </View>
-  </View>
-  <View
-    pointerEvents="auto"
-    style={
-      Object {
-        "alignItems": undefined,
-        "backgroundColor": undefined,
-        "borderRadius": undefined,
-        "flex": 1,
-        "flexDirection": undefined,
-        "height": undefined,
-        "justifyContent": undefined,
-        "margin": undefined,
-        "marginBottom": undefined,
-        "marginLeft": 15,
-        "marginRight": undefined,
-        "marginTop": undefined,
-        "padding": undefined,
-        "paddingBottom": undefined,
-        "paddingHorizontal": undefined,
-        "paddingLeft": undefined,
-        "paddingRight": 15,
-        "paddingTop": undefined,
-        "width": undefined,
-      }
-    }
-  >
-    <View
-      pointerEvents="auto"
-      style={
-        Object {
-          "alignItems": undefined,
+          "alignItems": "center",
           "backgroundColor": undefined,
           "borderRadius": undefined,
           "flex": undefined,
@@ -159,12 +90,12 @@ exports[`Component(snapshots): ActivityItem should render with default required 
             "alignItems": undefined,
             "backgroundColor": undefined,
             "borderRadius": undefined,
-            "flex": 1,
+            "flex": undefined,
             "flexDirection": undefined,
             "height": undefined,
             "justifyContent": undefined,
             "margin": undefined,
-            "marginBottom": 4,
+            "marginBottom": undefined,
             "marginLeft": undefined,
             "marginRight": undefined,
             "marginTop": undefined,
@@ -178,66 +109,162 @@ exports[`Component(snapshots): ActivityItem should render with default required 
           }
         }
       >
-        <Text
+        <Image
+          source={
+            Object {
+              "uri": "http://",
+            }
+          }
           style={
             Object {
-              "flexWrap": "wrap",
+              "backgroundColor": "#0078ff",
+              "borderRadius": 19,
+              "height": 38,
+              "width": 38,
+            }
+          }
+        />
+      </View>
+    </View>
+    <View
+      pointerEvents="auto"
+      style={
+        Object {
+          "alignItems": undefined,
+          "backgroundColor": undefined,
+          "borderRadius": undefined,
+          "flex": 1,
+          "flexDirection": undefined,
+          "height": undefined,
+          "justifyContent": undefined,
+          "margin": undefined,
+          "marginBottom": undefined,
+          "marginLeft": 15,
+          "marginRight": undefined,
+          "marginTop": undefined,
+          "padding": undefined,
+          "paddingBottom": undefined,
+          "paddingHorizontal": undefined,
+          "paddingLeft": undefined,
+          "paddingRight": 15,
+          "paddingTop": undefined,
+          "width": undefined,
+        }
+      }
+    >
+      <View
+        pointerEvents="auto"
+        style={
+          Object {
+            "alignItems": undefined,
+            "backgroundColor": undefined,
+            "borderRadius": undefined,
+            "flex": undefined,
+            "flexDirection": undefined,
+            "height": undefined,
+            "justifyContent": undefined,
+            "margin": undefined,
+            "marginBottom": undefined,
+            "marginLeft": undefined,
+            "marginRight": undefined,
+            "marginTop": undefined,
+            "padding": undefined,
+            "paddingBottom": undefined,
+            "paddingHorizontal": undefined,
+            "paddingLeft": undefined,
+            "paddingRight": undefined,
+            "paddingTop": undefined,
+            "width": undefined,
+          }
+        }
+      >
+        <View
+          pointerEvents="auto"
+          style={
+            Object {
+              "alignItems": undefined,
+              "backgroundColor": undefined,
+              "borderRadius": undefined,
+              "flex": 1,
+              "flexDirection": undefined,
+              "height": undefined,
+              "justifyContent": undefined,
+              "margin": undefined,
+              "marginBottom": 4,
+              "marginLeft": undefined,
+              "marginRight": undefined,
+              "marginTop": undefined,
+              "padding": undefined,
+              "paddingBottom": undefined,
+              "paddingHorizontal": undefined,
+              "paddingLeft": undefined,
+              "paddingRight": undefined,
+              "paddingTop": undefined,
+              "width": undefined,
             }
           }
         >
           <Text
-            onPress={[Function]}
             style={
               Object {
-                "color": "#333333",
                 "flexWrap": "wrap",
-                "fontSize": 15,
-                "fontWeight": "bold",
               }
             }
           >
-            Test Issuer
-          </Text>
-          <Text
-            style={
-              Object {
-                "color": "#333333",
-                "flexWrap": "wrap",
-                "fontSize": 15,
+            <Text
+              onPress={[Function]}
+              style={
+                Object {
+                  "color": "#333333",
+                  "flexWrap": "wrap",
+                  "fontSize": 17,
+                  "fontWeight": "bold",
+                }
               }
-            }
-          >
-             
-            testing the components
-          </Text>
-          <Text
-            onPress={[Function]}
-            style={
-              Object {
-                "color": "#333333",
-                "flexWrap": "wrap",
-                "fontSize": 15,
-                "fontWeight": "bold",
+            >
+              Test Issuer
+            </Text>
+            <Text
+              style={
+                Object {
+                  "color": "#333333",
+                  "flexWrap": "wrap",
+                  "fontSize": 17,
+                }
               }
-            }
-          >
-             
-            Test Subject
+            >
+               
+              testing the components
+            </Text>
+            <Text
+              onPress={[Function]}
+              style={
+                Object {
+                  "color": "#333333",
+                  "flexWrap": "wrap",
+                  "fontSize": 17,
+                  "fontWeight": "bold",
+                }
+              }
+            >
+               
+              Test Subject
+            </Text>
           </Text>
+        </View>
+        <Text
+          style={
+            Object {
+              "color": "#BBBBBB",
+              "flexWrap": "wrap",
+              "fontSize": 15,
+            }
+          }
+        >
+          about 46 years
+           ago
         </Text>
       </View>
-      <Text
-        style={
-          Object {
-            "color": "#BBBBBB",
-            "flexWrap": "wrap",
-            "fontSize": 13,
-          }
-        }
-      >
-        about 46 years
-         ago
-      </Text>
     </View>
   </View>
 </View>

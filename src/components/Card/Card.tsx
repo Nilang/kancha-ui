@@ -19,7 +19,7 @@ const Card: React.FC<CardProps> = ({ children, onPress, shadow, br, background, 
       ? {
           elevation: shadow,
           shadowColor: '#000000',
-          shadowOpacity: shadow / 20,
+          shadowOpacity: shadow / 15,
           shadowRadius: shadow * 5,
         }
       : {}),

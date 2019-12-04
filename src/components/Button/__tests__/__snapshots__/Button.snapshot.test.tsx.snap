@@ -720,7 +720,7 @@ exports[`Component(snapshots): Button renders small button correctly 1`] = `
         style={
           Object {
             "flexWrap": "wrap",
-            "fontSize": 14,
+            "fontSize": 18,
           }
         }
       />

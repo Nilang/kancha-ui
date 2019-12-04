@@ -1,5 +1,4 @@
 import * as React from 'react'
-import { TouchableOpacity } from 'react-native'
 import Container from '../Container/Container'
 import Button, { ButtonBlocks } from '../Button/Button'
 import Avatar from '../Avatar/Avatar'
@@ -8,6 +7,8 @@ import ActivityItemHeader from '../../components/ActivityItemHeader/ActivityItem
 import * as Kancha from '../../types'
 import { withTheme } from '../../theming'
 import { BrandOptions } from '../../constants'
+import { ScrollView, TouchableHighlight } from 'react-native-gesture-handler'
+import Device from '../../services/device'
 
 interface ActivityItemProps {
   /**
@@ -61,7 +62,7 @@ interface ActivityItemProps {
   /**
    * Message attachments
    */
-  attachmentsAction?: (attachments: any) => void
+  attachmentsAction?: (attachments: any, attachmentIndex: number) => void
 
   /**
    * Message actions
@@ -113,75 +114,82 @@ const ActivityItem: React.FC<ActivityItemProps> = ({
 }) => {
   const issProfileSource = issuer.profileImage ? { source: { uri: issuer.profileImage } } : {}
   return (
-    <Container flex={1} flexDirection={'row'} background={'primary'} padding marginBottom={10}>
-      <Container alignItems={'center'}>
-        <Container>
-          <Avatar
-            {...issProfileSource}
-            type={'circle'}
-            gravatarType={'retro'}
-            address={issuer.did}
-            size={38}
+    <Container flex={1} background={'primary'} marginBottom={10}>
+      <Container flex={1} flexDirection={'row'} padding>
+        <Container alignItems={'center'}>
+          <Container>
+            <Avatar
+              {...issProfileSource}
+              type={'circle'}
+              gravatarType={'retro'}
+              address={issuer.did}
+              size={38}
+            />
+          </Container>
+        </Container>
+        <Container marginLeft paddingRight flex={1}>
+          <ActivityItemHeader
+            viewer={viewer}
+            issuer={issuer}
+            subject={subject}
+            profileAction={profileAction}
+            date={date}
+            activity={activity || theme.activity.messages[type]}
+            reason={reason}
           />
+          {actions && type === 'sdr' && (
+            <Container flex={1} marginTop flexDirection={'row'}>
+              <Container flex={2} marginRight={5}>
+                {confirm && actions[0] && (
+                  <Button
+                    small
+                    buttonText={actions[0]}
+                    type={BrandOptions.Primary}
+                    block={ButtonBlocks.Filled}
+                    onPress={() => confirm(message)}
+                  ></Button>
+                )}
+              </Container>
+              <Container flex={2}>
+                {reject && actions[1] && (
+                  <Button
+                    small
+                    buttonText={actions[1]}
+                    type={BrandOptions.Secondary}
+                    block={ButtonBlocks.Filled}
+                    onPress={() => reject(message)}
+                  ></Button>
+                )}
+              </Container>
+            </Container>
+          )}
         </Container>
       </Container>
-      <Container marginLeft paddingRight flex={1}>
-        <ActivityItemHeader
-          viewer={viewer}
-          issuer={issuer}
-          subject={subject}
-          profileAction={profileAction}
-          date={date}
-          activity={activity || theme.activity.messages[type]}
-          reason={reason}
-        />
-        {attachments && attachments.length > 0 && (
-          <TouchableOpacity onPress={() => attachmentsAction && attachmentsAction(attachments)}>
-            <Container marginTop flex={1}>
-              {attachments.map((item: any, index: number) => {
-                return (
-                  <Container key={index}>
-                    <Credential
-                      exp={item.exp}
-                      fields={item.fields}
-                      subject={subject}
-                      issuer={issuer}
-                      shadow={(credentialStyle && credentialStyle.shadow) || 1.5}
-                      background={(credentialStyle && credentialStyle.background) || 'primary'}
-                    />
-                  </Container>
-                )
-              })}
-            </Container>
-          </TouchableOpacity>
-        )}
-        {actions && type === 'sdr' && (
-          <Container flex={1} marginTop flexDirection={'row'}>
-            <Container flex={2} marginRight={5}>
-              {confirm && actions[0] && (
-                <Button
-                  small
-                  buttonText={actions[0]}
-                  type={BrandOptions.Primary}
-                  block={ButtonBlocks.Filled}
-                  onPress={() => confirm(message)}
-                ></Button>
-              )}
-            </Container>
-            <Container flex={2}>
-              {reject && actions[1] && (
-                <Button
-                  small
-                  buttonText={actions[1]}
-                  type={BrandOptions.Secondary}
-                  block={ButtonBlocks.Filled}
-                  onPress={() => reject(message)}
-                ></Button>
-              )}
-            </Container>
-          </Container>
-        )}
-      </Container>
+      {attachments && attachments.length > 0 && (
+        <Container flex={1}>
+          <ScrollView horizontal style={{ flex: 1 }}>
+            {attachments.map((item: any, index: number) => {
+              return (
+                <TouchableHighlight
+                  onPress={() => attachmentsAction && attachmentsAction(attachments, index)}
+                  key={index}
+                  underlayColor={'transparent'}
+                  style={{ width: Device.width - 45, paddingVertical: 18, paddingLeft: 15, paddingRight: 10 }}
+                >
+                  <Credential
+                    exp={item.exp}
+                    fields={item.fields}
+                    subject={subject}
+                    issuer={issuer}
+                    shadow={(credentialStyle && credentialStyle.shadow) || 1.5}
+                    background={(credentialStyle && credentialStyle.background) || 'primary'}
+                  />
+                </TouchableHighlight>
+              )
+            })}
+          </ScrollView>
+        </Container>
+      )}
     </Container>
   )
 }

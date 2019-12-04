@@ -28,7 +28,7 @@ const Credential: React.FC<CredentialProps> = ({
   fields,
   subject,
   testID,
-  // theme,
+  theme,
 }) => {
   const subProfileSource = subject.profileImage ? { source: { uri: subject.profileImage } } : {}
   const issProfileSource = issuer.profileImage ? { source: { uri: issuer.profileImage } } : {}
@@ -64,9 +64,13 @@ const Credential: React.FC<CredentialProps> = ({
             </Text>
             <Container marginTop={3} flexDirection={'row'} alignItems={'flex-start'}>
               <Container marginRight={5}>
-                <Icon icon={{ name: 'ios-play', iconFamily: 'Ionicons' }} size={15} />
+                <Icon
+                  icon={{ name: 'ios-play', iconFamily: 'Ionicons' }}
+                  size={15}
+                  color={theme.colors.primary.text}
+                />
               </Container>
-              <Text type={TextTypes.ActivityTitle} textStyle={{ fontSize: 13 }}>
+              <Text type={TextTypes.ActivityTitle} textStyle={{ fontSize: 15 }}>
                 {subject.shortId}
               </Text>
             </Container>
@@ -82,7 +86,7 @@ const Credential: React.FC<CredentialProps> = ({
             i < 2 && (
               <Container marginBottom={5} flex={1} alignItems={'flex-start'} key={i}>
                 <Container flex={1}>
-                  <Text textStyle={{ fontSize: 10, textTransform: 'uppercase' }} type={TextTypes.SubTitle}>
+                  <Text textStyle={{ fontSize: 12, textTransform: 'uppercase' }} type={TextTypes.SubTitle}>
                     {S(fields[key].type).humanize().s}
                   </Text>
                 </Container>
@@ -98,7 +102,7 @@ const Credential: React.FC<CredentialProps> = ({
                       />
                     </Container>
                   ) : (
-                    <Text type={TextTypes.Body}>
+                    <Text type={TextTypes.ActivityTitle}>
                       {fields[key].isObj ? 'Type not supported yet' : fields[key].value}
                     </Text>
                   )}

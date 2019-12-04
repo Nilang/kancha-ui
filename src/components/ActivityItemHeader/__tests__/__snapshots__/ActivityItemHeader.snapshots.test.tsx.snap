@@ -66,7 +66,7 @@ exports[`Component(snapshots): ActivityHeader should render incoming false with 
           Object {
             "color": "#333333",
             "flexWrap": "wrap",
-            "fontSize": 15,
+            "fontSize": 17,
             "fontWeight": "bold",
           }
         }
@@ -78,7 +78,7 @@ exports[`Component(snapshots): ActivityHeader should render incoming false with 
           Object {
             "color": "#333333",
             "flexWrap": "wrap",
-            "fontSize": 15,
+            "fontSize": 17,
           }
         }
       >
@@ -89,7 +89,7 @@ exports[`Component(snapshots): ActivityHeader should render incoming false with 
           Object {
             "color": "#333333",
             "flexWrap": "wrap",
-            "fontSize": 15,
+            "fontSize": 17,
           }
         }
       >
@@ -101,7 +101,7 @@ exports[`Component(snapshots): ActivityHeader should render incoming false with 
           Object {
             "color": "#333333",
             "flexWrap": "wrap",
-            "fontSize": 15,
+            "fontSize": 17,
             "fontWeight": "bold",
           }
         }
@@ -116,7 +116,7 @@ exports[`Component(snapshots): ActivityHeader should render incoming false with 
       Object {
         "color": "#BBBBBB",
         "flexWrap": "wrap",
-        "fontSize": 13,
+        "fontSize": 15,
       }
     }
   >
@@ -192,7 +192,7 @@ exports[`Component(snapshots): ActivityHeader should render incoming false witho
           Object {
             "color": "#333333",
             "flexWrap": "wrap",
-            "fontSize": 15,
+            "fontSize": 17,
             "fontWeight": "bold",
           }
         }
@@ -204,7 +204,7 @@ exports[`Component(snapshots): ActivityHeader should render incoming false witho
           Object {
             "color": "#333333",
             "flexWrap": "wrap",
-            "fontSize": 15,
+            "fontSize": 17,
           }
         }
       >
@@ -216,7 +216,7 @@ exports[`Component(snapshots): ActivityHeader should render incoming false witho
           Object {
             "color": "#333333",
             "flexWrap": "wrap",
-            "fontSize": 15,
+            "fontSize": 17,
             "fontWeight": "bold",
           }
         }
@@ -231,7 +231,7 @@ exports[`Component(snapshots): ActivityHeader should render incoming false witho
       Object {
         "color": "#BBBBBB",
         "flexWrap": "wrap",
-        "fontSize": 13,
+        "fontSize": 15,
       }
     }
   >
@@ -307,7 +307,7 @@ exports[`Component(snapshots): ActivityHeader should render incoming true with r
           Object {
             "color": "#333333",
             "flexWrap": "wrap",
-            "fontSize": 15,
+            "fontSize": 17,
             "fontWeight": "bold",
           }
         }
@@ -319,7 +319,7 @@ exports[`Component(snapshots): ActivityHeader should render incoming true with r
           Object {
             "color": "#333333",
             "flexWrap": "wrap",
-            "fontSize": 15,
+            "fontSize": 17,
           }
         }
       >
@@ -330,7 +330,7 @@ exports[`Component(snapshots): ActivityHeader should render incoming true with r
           Object {
             "color": "#333333",
             "flexWrap": "wrap",
-            "fontSize": 15,
+            "fontSize": 17,
           }
         }
       >
@@ -342,7 +342,7 @@ exports[`Component(snapshots): ActivityHeader should render incoming true with r
           Object {
             "color": "#333333",
             "flexWrap": "wrap",
-            "fontSize": 15,
+            "fontSize": 17,
             "fontWeight": "bold",
           }
         }
@@ -357,7 +357,7 @@ exports[`Component(snapshots): ActivityHeader should render incoming true with r
       Object {
         "color": "#BBBBBB",
         "flexWrap": "wrap",
-        "fontSize": 13,
+        "fontSize": 15,
       }
     }
   >
@@ -433,7 +433,7 @@ exports[`Component(snapshots): ActivityHeader should render incoming true withou
           Object {
             "color": "#333333",
             "flexWrap": "wrap",
-            "fontSize": 15,
+            "fontSize": 17,
             "fontWeight": "bold",
           }
         }
@@ -445,7 +445,7 @@ exports[`Component(snapshots): ActivityHeader should render incoming true withou
           Object {
             "color": "#333333",
             "flexWrap": "wrap",
-            "fontSize": 15,
+            "fontSize": 17,
           }
         }
       >
@@ -457,7 +457,7 @@ exports[`Component(snapshots): ActivityHeader should render incoming true withou
           Object {
             "color": "#333333",
             "flexWrap": "wrap",
-            "fontSize": 15,
+            "fontSize": 17,
             "fontWeight": "bold",
           }
         }
@@ -472,7 +472,7 @@ exports[`Component(snapshots): ActivityHeader should render incoming true withou
       Object {
         "color": "#BBBBBB",
         "flexWrap": "wrap",
-        "fontSize": 13,
+        "fontSize": 15,
       }
     }
   >
