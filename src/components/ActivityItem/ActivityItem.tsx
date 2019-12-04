@@ -9,7 +9,7 @@ import ActivityItemHeader from '../../components/ActivityItemHeader/ActivityItem
 import * as Kancha from '../../types'
 import { withTheme } from '../../theming'
 import { BrandOptions } from '../../constants'
-import { ScrollView } from 'react-native-gesture-handler'
+import { ScrollView, TouchableHighlight } from 'react-native-gesture-handler'
 import Device from '../../services/device'
 
 interface ActivityItemProps {
@@ -64,7 +64,7 @@ interface ActivityItemProps {
   /**
    * Message attachments
    */
-  attachmentsAction?: (attachments: any) => void
+  attachmentsAction?: (attachments: any, attachmentIndex: number) => void
 
   /**
    * Message actions
@@ -105,7 +105,7 @@ const ActivityItem: React.FC<ActivityItemProps> = ({
   viewer,
   reason,
   attachments,
-  // attachmentsAction,
+  attachmentsAction,
   actions,
   profileAction,
   credentialStyle,
@@ -169,14 +169,15 @@ const ActivityItem: React.FC<ActivityItemProps> = ({
       </Container>
       {attachments && attachments.length > 0 && (
         <Container flex={1}>
-          {/* <Container paddingLeft flexDirection={'row'}>
-            <Icon icon={{ name: 'ios-attach', iconFamily: 'Ionicons' }} size={20} />
-            <Text>2 credentials attached</Text>
-          </Container> */}
-          <ScrollView horizontal style={{ paddingVertical: 15, paddingHorizontal: 15, flex: 1 }}>
+          <ScrollView horizontal style={{ flex: 1 }}>
             {attachments.map((item: any, index: number) => {
               return (
-                <Container key={index} marginRight={8} w={Device.width - 60}>
+                <TouchableHighlight
+                  onPress={() => attachmentsAction && attachmentsAction(attachments, index)}
+                  key={index}
+                  underlayColor={'transparent'}
+                  style={{ width: Device.width - 45, paddingVertical: 18, paddingLeft: 15, paddingRight: 10 }}
+                >
                   <Credential
                     exp={item.exp}
                     fields={item.fields}
@@ -185,7 +186,7 @@ const ActivityItem: React.FC<ActivityItemProps> = ({
                     shadow={(credentialStyle && credentialStyle.shadow) || 1.5}
                     background={(credentialStyle && credentialStyle.background) || 'primary'}
                   />
-                </Container>
+                </TouchableHighlight>
               )
             })}
           </ScrollView>
