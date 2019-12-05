@@ -167,20 +167,20 @@ const ActivityItem: React.FC<ActivityItemProps> = ({
       </Container>
       {attachments && attachments.length > 0 && (
         <Container flex={1}>
-          <ScrollView horizontal style={{ flex: 1 }}>
+          <ScrollView horizontal style={{ flex: 1 }} showsHorizontalScrollIndicator={false}>
             {attachments.map((item: any, index: number) => {
               return (
                 <TouchableHighlight
                   onPress={() => attachmentsAction && attachmentsAction(attachments, index)}
                   key={index}
                   underlayColor={'transparent'}
-                  style={{ width: Device.width - 45, paddingVertical: 18, paddingLeft: 15, paddingRight: 10 }}
+                  style={{ width: Device.width - 40, paddingVertical: 18, paddingLeft: 15, paddingRight: 10 }}
                 >
                   <Credential
                     exp={item.exp}
                     fields={item.fields}
-                    subject={subject}
-                    issuer={issuer}
+                    subject={item.sub}
+                    issuer={item.iss}
                     shadow={(credentialStyle && credentialStyle.shadow) || 1.5}
                     background={(credentialStyle && credentialStyle.background) || 'primary'}
                   />
