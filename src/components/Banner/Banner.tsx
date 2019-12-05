@@ -1,8 +1,9 @@
 import * as React from 'react'
-import { ImageBackground, ViewStyle, ImageSourcePropType } from 'react-native'
+import { ImageBackground, ViewStyle } from 'react-native'
 import Container from '../Container/Container'
 import Text, { TextTypes } from '../Text/Text'
 import Avatar from '../Avatar/Avatar'
+import * as Kancha from '../../types'
 import { withTheme } from '../../theming'
 
 interface BannerProps {
@@ -22,9 +23,9 @@ interface BannerProps {
   backgroundColor?: string
 
   /**
-   * Background image
+   * Issuer
    */
-  avatar?: ImageSourcePropType
+  issuer: Kancha.Identity
 
   /**
    * Title of banner
@@ -53,16 +54,17 @@ const Banner: React.FC<BannerProps> = props => {
     flex: 1,
     height: props.size ? bannerSize[props.size] : bannerSize.medium,
   }
+  const source = props.issuer.profileImage ? { source: { uri: props.issuer.profileImage } } : {}
   return (
     <ImageBackground source={props.backgroundImage} style={BannerStyle}>
       <Container
-        backgroundColor={props.backgroundColor ? props.backgroundColor : 'rgba(0,0,0,0.3)'}
+        backgroundColor={props.backgroundColor ? props.backgroundColor : 'rgba(0,0,0,0.8)'}
         flex={1}
         alignItems={'center'}
         justifyContent={'center'}
         paddingTop={true}
       >
-        <Avatar source={props.avatar} size={56} type={'rounded'} />
+        <Avatar {...source} size={56} type={'rounded'} gravatarType={'retro'} address={props.issuer.did} />
         <Container paddingTop={true} alignItems={'center'}>
           <Text type={TextTypes.H2} bold={true} textColor={'#FFFFFF'}>
             {props.title}
