@@ -4,118 +4,103 @@ import RequestItem from '../RequestItem'
 
 jest.mock('react-native-vector-icons/Ionicons', () => 'Icon')
 
-const singleOption = [
-  {
-    id: 'TEST_ID',
-    iss: { shortId: 'Serto Verified', did: '0xfksksdk' },
-    type: 'Test property',
-    value: 'Single Option Selected',
-    selected: true,
-  },
-]
+const baseVc = {
+  jwt: '001',
+  iss: { shortId: 'Serto Issuer', did: '0xfksksdkeprgj' },
+  sub: { shortId: 'Sert User', did: '0xwrhfowiehrf' },
+  type: '',
+  iat: 123455678,
+  exp: 123455678,
+  nbf: 123455678,
+}
 
-const multiOptions = [
-  {
-    id: 'TEST_ID_01',
-    iss: { shortId: 'Serto Verified', did: '0xfksksdk' },
-    type: 'Test property',
-    value: 'Multi Option A Selected',
-    selected: true,
-  },
-  {
-    id: 'TEST_ID_02',
-    iss: { shortId: 'Serto Verified', did: '0xfksksdk' },
-    type: 'Test property',
-    value: 'Multi Option B Selected',
-    selected: false,
-  },
-]
+const singleOptionCredential_01 = {
+  ...baseVc,
+  hash: '001',
+  parentHash: '00001',
+  fields: [
+    {
+      type: 'name',
+      value: 'Single Option A',
+      isObj: false,
+    },
+  ],
+}
+
+const singleOptionCredential_02 = {
+  ...baseVc,
+  hash: '002',
+  parentHash: '00002',
+  fields: [
+    {
+      type: 'name',
+      value: 'Single Option B',
+      isObj: false,
+    },
+  ],
+}
 
 describe('Component(assert): RequestItem', () => {
-  it('should display the selected option', () => {
+  it('should display as `not shared` when credential is not required', () => {
     const onSelect = jest.fn()
     const { getByText } = render(
-      <RequestItem claimType={'Test title'} options={singleOption} onSelectItem={onSelect} />,
+      <RequestItem
+        claimType={'name'}
+        reason={'A test reason'}
+        credentials={[singleOptionCredential_01, singleOptionCredential_02]}
+        onSelectItem={onSelect}
+      />,
     )
 
-    expect(getByText(/Single Option Selected/i)).toBeDefined()
+    expect(getByText(/Not Shared/i)).toBeDefined()
+  })
+
+  it('should open accordion when pressed and display options', () => {
+    const onSelect = jest.fn()
+    const { getByText, getAllByText } = render(
+      <RequestItem
+        closeAfterSelect={false}
+        claimType={'name'}
+        reason={'A test reason'}
+        credentials={[singleOptionCredential_01, singleOptionCredential_02]}
+        onSelectItem={onSelect}
+      />,
+    )
+
+    act(() => {
+      fireEvent.press(getByText(/Not Shared/i))
+    })
+
+    expect(getByText(/Do not share/i)).toBeDefined()
+    expect(getByText(/A test reason/i)).toBeDefined()
+    expect(getAllByText(/Single Option A/i)).toHaveLength(2)
   })
 
   it('should fire the event to open accordion, select options and stay open', () => {
     const onSelect = jest.fn()
     const { getByText, getAllByText } = render(
       <RequestItem
-        claimType={'Test title'}
-        options={multiOptions}
+        claimType={'name'}
+        credentials={[singleOptionCredential_01, singleOptionCredential_02]}
         closeAfterSelect={false}
-        required={false}
+        required={true}
         onSelectItem={onSelect}
       />,
     )
 
-    expect(getByText(/Multi Option A Selected/i)).toBeDefined()
+    expect(getAllByText(/Single Option A/i)).toHaveLength(1)
 
     act(() => {
-      fireEvent.press(getByText(/Multi Option A Selected/i))
+      fireEvent.press(getByText(/Single Option A/i))
     })
 
-    expect(getAllByText(/Multi Option A Selected/i)).toHaveLength(2)
-    expect(getByText(/Multi Option B Selected/i)).toBeDefined()
+    expect(getAllByText(/Single Option A/i)).toHaveLength(3)
 
     act(() => {
-      fireEvent.press(getByText(/Multi Option B Selected/i))
+      fireEvent.press(getAllByText(/Single Option B/i)[0])
     })
 
-    expect(getByText(/Do not share/i)).toBeDefined()
-    expect(getAllByText(/Multi Option B Selected/i)).toHaveLength(2)
-    expect(getByText(/Multi Option A Selected/i)).toBeDefined()
-
-    act(() => {
-      fireEvent.press(getByText(/Do not share/i))
-    })
-
-    expect(getByText(/Not Shared/i)).toBeDefined()
-    expect(getByText(/Do not share/i)).toBeDefined()
-    expect(getByText(/Multi Option B Selected/i)).toBeDefined()
-    expect(getByText(/Multi Option A Selected/i)).toBeDefined()
-  })
-
-  it('should fire the event to open accordion, select options and close', () => {
-    const onSelect = jest.fn()
-    const { getByText, getAllByText } = render(
-      <RequestItem
-        claimType={'Test title'}
-        options={multiOptions}
-        closeAfterSelect={true}
-        onSelectItem={onSelect}
-      />,
-    )
-
-    expect(getByText(/Multi Option A Selected/i)).toBeDefined()
-
-    act(() => {
-      fireEvent.press(getByText(/Multi Option A Selected/i))
-    })
-
-    expect(getAllByText(/Multi Option A Selected/i)).toHaveLength(2)
-    expect(getByText(/Multi Option B Selected/i)).toBeDefined()
-
-    act(() => {
-      fireEvent.press(getByText(/Multi Option B Selected/i))
-    })
-
-    expect(getByText(/Multi Option B Selected/i)).toBeDefined()
-
-    act(() => {
-      fireEvent.press(getByText(/Multi Option B Selected/i))
-    })
-
-    expect(getByText(/Do not share/i)).toBeDefined()
-
-    act(() => {
-      fireEvent.press(getByText(/Do not share/i))
-    })
-
-    expect(getByText(/Not Shared/i)).toBeDefined()
+    expect(getAllByText(/Single Option B/i)).toHaveLength(3)
+    expect(getAllByText(/Single Option A/i)).toHaveLength(2)
   })
 })
