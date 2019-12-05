@@ -6,7 +6,6 @@ import {
   ListItem,
   Text,
   Constants,
-  FabButton,
   Avatar,
   Button,
   Toaster,
@@ -37,7 +36,6 @@ const Components: React.FC<NavigationScreen> = props => {
         <ListItem onPress={() => props.navigation.navigate(Screens.Dummy)}>Icon</ListItem>
         <ListItem onPress={() => props.navigation.navigate(Screens.ListItem)}>List Item</ListItem>
         <ListItem onPress={() => props.navigation.navigate(Screens.Dummy)}>Log Item</ListItem>
-        <ListItem onPress={() => props.navigation.navigate(Screens.ClaimDebug)}>Claim Debug</ListItem>
         <ListItem onPress={() => props.navigation.navigate('Modal')}>Modal</ListItem>
         <ListItem onPress={() => props.navigation.navigate(Screens.Credential)}>Credentials</ListItem>
         <ListItem onPress={() => props.navigation.navigate(Screens.Request)}>Request</ListItem>

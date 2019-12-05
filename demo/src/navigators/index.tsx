@@ -1,6 +1,5 @@
 import * as React from 'react'
 import { Container, Constants, Button, Icon } from '@kancha/kancha-ui'
-// import { Animated, Easing } from 'react-native'
 import { Icons, Colors } from '../theme'
 import DrawerLeft from './DrawerLeft'
 
@@ -19,7 +18,6 @@ import LogItemScreen from '../screens/components/LogItem'
 import ListItemScreen from '../screens/components/ListItem'
 import ScannerScreen from '../screens/components/Scanner'
 import ModalScreen from '../screens/components/ModalScreen'
-import ClaimDebug from '../screens/components/ClaimDebug'
 import Request from '../screens/components/Request'
 import CredentialScreen from '../screens/components/Credential'
 import CredentialExplore from '../screens/components/CredentialExplore'
@@ -82,7 +80,6 @@ const MainNavigator = createStackNavigator({
   [Screens.LogItem]: LogItemScreen,
   [Screens.Icon]: IconScreen,
   [Screens.Container]: ContainerScreen,
-  [Screens.ClaimDebug]: ClaimDebug,
   [Screens.Credential]: CredentialScreen,
   [Screens.Profile]: Profile,
   [Screens.Messages]: Messages,
