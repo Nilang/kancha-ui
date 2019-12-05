@@ -1,136 +1,18 @@
 import * as React from 'react'
-import {
-  Container,
-  Screen,
-  Button,
-  Constants,
-  Banner,
-  RequestItem,
-  Typings,
-  Indicator,
-} from '@kancha/kancha-ui'
+import { Container, Screen, Button, Constants, Banner, RequestItem, Indicator } from '@kancha/kancha-ui'
 import { NavigationScreen } from '../../navigators'
 import { Colors } from '../../theme'
+import TEST_ID from '../../../../e2e/testIDs'
 
-// tslint:disable-next-line:no-var-requires
-const avatar1 = require('../../assets/images/kitten-avatar.jpg')
-
+const { data } = require('../../data/messages.json')
 // tslint:disable-next-line:no-var-requires
 const bannerImage = require('../../assets/images/abstract-blurred-gradient.jpg')
 
-import TEST_ID from '../../../../e2e/testIDs'
-
-const nameOptions: Typings.RequestItemSelectable[] = [
-  {
-    id: '0001',
-    iss: { shortId: 'Deutsche Bank', did: '0xfksksdk' },
-    type: 'name',
-    value: 'Jack',
-    selected: true,
-  },
-  {
-    id: '0002',
-    iss: { shortId: 'Onfido', did: '0xfksksdk' },
-    type: 'name',
-    value: 'Jacky',
-    selected: false,
-  },
-  {
-    id: '0003',
-    iss: { shortId: 'Onfido', did: '0xfksksdk' },
-    type: 'name',
-    value: 'Jacko',
-    selected: false,
-  },
-]
-
-const lastNameOptions: Typings.RequestItemSelectable[] = [
-  {
-    id: '0001',
-    iss: { shortId: 'Deutsche Bank', did: '0xfksksdk' },
-    type: 'lastName',
-    value: 'Morrison',
-    selected: true,
-  },
-  {
-    id: '0002',
-    iss: { shortId: 'Onfido', did: '0xfksksdk' },
-    type: 'lastName',
-    value: 'Kennedy',
-    selected: false,
-  },
-  {
-    id: '0003',
-    iss: { shortId: 'Onfido', did: '0xfksksdk' },
-    type: 'lastName',
-    value: 'Morrison',
-    selected: false,
-  },
-]
-
-const locationOptions: Typings.RequestItemSelectable[] = [
-  {
-    id: '0001',
-    iss: { shortId: 'Deutsche Bank', did: '0xfksksdk' },
-    type: 'location',
-    value: 'Ireland',
-    selected: true,
-  },
-  {
-    id: '0002',
-    iss: { shortId: 'Onfido', did: '0xfksksdk' },
-    type: 'location',
-    value: 'Dublin, Ireland',
-    selected: false,
-  },
-  {
-    id: '0003',
-    iss: { shortId: 'Onfido', did: '0xfksksdk' },
-    type: 'location',
-    value: 'Dublin',
-    selected: false,
-  },
-]
-
-const emailOptions: Typings.RequestItemSelectable[] = [
-  {
-    id: '0001',
-    iss: { shortId: 'Deutsche Bank', did: '0xfksksdk' },
-    type: 'location',
-    value: 'jack@mymail.com',
-    selected: true,
-  },
-  {
-    id: '0002',
-    iss: { shortId: 'Onfido', did: '0xfksksdk' },
-    type: 'name',
-    value: 'jacky@mymail.com',
-    selected: false,
-  },
-  {
-    id: '0003',
-    iss: { shortId: 'Deutsche Bank', did: '0xfksksdk' },
-    type: 'name',
-    value: 'jackie_1234@mymail.com',
-    selected: false,
-  },
-]
-
-const phoneOptions: Typings.RequestItemSelectable[] = [
-  {
-    id: '0001',
-    iss: { shortId: 'Serto', did: '0xfksksdk' },
-    type: 'phone',
-    value: '+555-321-8763',
-    selected: true,
-  },
-]
-
 const Component: React.FC<NavigationScreen> = ({ navigation }) => {
-  const onSelectItem = (id: string, claimType: string) => {
-    console.log(id, claimType)
+  const onSelectItem = (id: string | null, jwt: string | null, claimType: string) => {
+    console.log(id, jwt, claimType)
   }
-
+  const requestMessage = data.messages[1]
   return (
     <Screen
       statusBarHidden={true}
@@ -145,7 +27,7 @@ const Component: React.FC<NavigationScreen> = ({ navigation }) => {
               <Button
                 block={Constants.ButtonBlocks.Clear}
                 type={Constants.BrandOptions.Warning}
-                buttonText={'Decline'}
+                buttonText={'Later'}
                 onPress={() => navigation.goBack()}
               />
             </Container>
@@ -164,43 +46,27 @@ const Component: React.FC<NavigationScreen> = ({ navigation }) => {
     >
       <Container testID={TEST_ID.WELCOME}>
         <Banner
-          title={'Crypto World Conf'}
-          subTitle={'HODL Inc'}
-          avatar={avatar1}
+          issuer={requestMessage.iss}
+          title={'Data Requestor'}
+          subTitle={'Subtitle'}
           backgroundImage={bannerImage}
         />
-        <Indicator text={'Share your data with HODL Inc.'} />
+        <Indicator text={'Share your data with ethr:did:0f1xe34...j9h Inc.'} />
         <Container>
-          <RequestItem
-            claimType={'firstName'}
-            options={nameOptions}
-            required={true}
-            onSelectItem={onSelectItem}
-          />
-          <RequestItem
-            claimType={'lastName'}
-            options={lastNameOptions}
-            required={true}
-            onSelectItem={onSelectItem}
-          />
-          <RequestItem
-            claimType={'location'}
-            options={locationOptions}
-            required={true}
-            onSelectItem={onSelectItem}
-          />
-          <RequestItem
-            claimType={'email'}
-            options={emailOptions}
-            required={false}
-            onSelectItem={onSelectItem}
-          />
-          <RequestItem
-            claimType={'phone'}
-            options={phoneOptions}
-            required={false}
-            onSelectItem={onSelectItem}
-          />
+          {requestMessage.sdr.map((sdr: any, index: number) => {
+            return (
+              <RequestItem
+                closeAfterSelect={false}
+                key={sdr.claimType + index}
+                claimType={sdr.claimType}
+                reason={sdr.reason}
+                issuers={sdr.iss}
+                credentials={sdr.vc}
+                required={sdr.essential}
+                onSelectItem={onSelectItem}
+              />
+            )
+          })}
         </Container>
       </Container>
     </Screen>

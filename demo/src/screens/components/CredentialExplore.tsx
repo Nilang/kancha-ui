@@ -42,9 +42,9 @@ const Component: React.FC<NavigationScreen> = ({}) => {
     <Modal scrollEnabled={true}>
       <Banner
         size={'small'}
+        issuer={{ did: 'ethr:did:0x12', profileImage: '', shortId: 'Hello' }}
         title={'Kancha UI'}
         subTitle={'Identity Wallet UI Kit'}
-        avatar={avatar1}
         backgroundImage={bannerImage}
       />
       <ClaimExplore
