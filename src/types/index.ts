@@ -132,14 +132,17 @@ export interface Identity {
 }
 
 export interface VerifiableCredential {
-  claim: any
-  iss?: string
-  sub?: string
-  type?: string
+  hash: string
+  parentHash: string
+  jwt: string
+  iss: Identity
+  sub: Identity
+  type: string
   iat: number
   exp: number
-  revoked: boolean
-  vc?: string[] | string
+  nbf: number
+  revoked?: boolean
+  fields: any[]
 }
 
 export interface ClaimTreeNormalised {
@@ -154,9 +157,13 @@ export interface ClaimTreeNormalised {
 
 export interface RequestItemSelectable {
   /**
-   *  A unique identifier
+   *  An identifier for the item
    */
   id: string
+  /**
+   *  The JWT for the credential for which the field belongs
+   */
+  jwt: string
   /**
    *  This will need to be any type eg address may have sub keys
    */
@@ -169,9 +176,22 @@ export interface RequestItemSelectable {
    *  This will need to be any type eg address may have sub keys
    */
   value: any
+  /**
+   *  The total number of fields in the credentials
+   */
+  otherFields: string[]
 
+  /**
+   *  The total number of fields in the credentials
+   */
+  otherfieldCount: number
   /**
    *  Item is selected for sharing
    */
   selected: boolean
+
+  /**
+   *  The full VC
+   */
+  vc: VerifiableCredential
 }

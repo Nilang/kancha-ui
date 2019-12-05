@@ -34,7 +34,7 @@ exports[`Component(snapshot): Banner should render with default props 1`] = `
     style={
       Object {
         "alignItems": "center",
-        "backgroundColor": "rgba(0,0,0,0.3)",
+        "backgroundColor": "rgba(0,0,0,0.8)",
         "borderRadius": undefined,
         "flex": 1,
         "flexDirection": undefined,
@@ -59,7 +59,7 @@ exports[`Component(snapshot): Banner should render with default props 1`] = `
       resizeMode="contain"
       source={
         Object {
-          "uri": undefined,
+          "uri": "https://www.gravatar.com/avatar/08e65c6403d55f307a163a5d7e4a97cf?s=112&d=retro",
         }
       }
       style={
@@ -213,9 +213,10 @@ exports[`Component(snapshot): Banner should render with default props 2`] = `
     }
   >
     <Image
+      resizeMode="contain"
       source={
         Object {
-          "uri": "",
+          "uri": "https://www.gravatar.com/avatar/08e65c6403d55f307a163a5d7e4a97cf?s=112&d=retro",
         }
       }
       style={

@@ -14,7 +14,6 @@ import FabButton from './components/FabButton/FabButton'
 import Avatar from './components/Avatar/Avatar'
 import MenuItem from './components/MenuItem/MenuItem'
 import Modal from './components/Modal/Modal'
-import ClaimDebug from './components/ClaimExplore/ClaimDebug'
 import ClaimExplore from './components/ClaimExplore/ClaimExplore'
 import Banner from './components/Banner/Banner'
 import RequestItem from './components/RequestItem/RequestItem'
@@ -76,7 +75,6 @@ export {
   Toaster,
   Credential,
   Card,
-  ClaimDebug,
   ClaimExplore,
   Banner,
   RequestItem,

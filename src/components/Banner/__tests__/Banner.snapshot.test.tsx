@@ -4,7 +4,13 @@ import Banner from '../Banner'
 
 describe('Component(snapshot): Banner', () => {
   it('should render with default props', () => {
-    const tree = render(<Banner title={'Test Title'} subTitle={'Test Subtitle'} />).toJSON()
+    const tree = render(
+      <Banner
+        title={'Test Title'}
+        issuer={{ did: 'ethr:did', shortId: 'Test name' }}
+        subTitle={'Test Subtitle'}
+      />,
+    ).toJSON()
 
     expect(tree).toMatchSnapshot()
   })
@@ -13,7 +19,7 @@ describe('Component(snapshot): Banner', () => {
     const tree = render(
       <Banner
         size={'medium'}
-        avatar={{ uri: '' }}
+        issuer={{ did: 'ethr:did', shortId: 'Test name' }}
         backgroundImage={{ uri: '' }}
         backgroundColor={'#000000'}
         title={'Test Title'}

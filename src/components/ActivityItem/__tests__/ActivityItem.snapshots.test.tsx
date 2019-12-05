@@ -3,11 +3,11 @@ import { render, fireEvent } from 'react-native-testing-library'
 import ActivityItem from '../ActivityItem'
 
 const ATTACHMENT_1 = {
-  key: 1,
+  hash: '01',
+  jwt: '01',
   exp: 123445678910,
-  subject: { shortId: 'Test Subject 1', did: '0x1efghssesd', profileImage: '' },
-  issuer: { shortId: 'Test Issuer 1', did: '0x1efgh', profileImage: '' },
-  attachmentType: 'Credential',
+  sub: { shortId: 'Test Subject 1', did: '0x1efghssesd', profileImage: '' },
+  iss: { shortId: 'Test Issuer 1', did: '0x1efgh', profileImage: '' },
   fields: [
     {
       type: 'name',
@@ -21,10 +21,10 @@ const ATTACHMENT_1 = {
 }
 
 const ATTACHMENT_2 = {
-  key: 2,
-  subject: { shortId: 'Test Subject 2', did: '0x1efghssesdss', profileImage: '' },
-  issuer: { shortId: 'Test Issuer 2', did: '0x1efghssss', profileImage: '' },
-  attachmentType: 'Credential',
+  hash: '01',
+  jwt: '01',
+  sub: { shortId: 'Test Subject 2', did: '0x1efghssesdss', profileImage: '' },
+  iss: { shortId: 'Test Issuer 2', did: '0x1efghssss', profileImage: '' },
   fields: [
     {
       type: 'name',

@@ -4,38 +4,53 @@ import RequestItem from '../RequestItem'
 
 jest.mock('react-native-vector-icons/Ionicons', () => 'Icon')
 
-const singleOption = [
-  {
-    id: 'TEST_ID',
-    iss: { shortId: 'Serto Verified', did: '0xfksksdk' },
-    type: 'Test property',
-    value: 'Test value',
-    selected: true,
-  },
-]
+const baseVc = {
+  jwt: '001',
+  iss: { shortId: 'Serto Issuer', did: '0xfksksdkeprgj' },
+  sub: { shortId: 'Sert User', did: '0xwrhfowiehrf' },
+  type: '',
+  iat: 123455678,
+  exp: 123455678,
+  nbf: 123455678,
+}
 
-const multiOptions = [
-  {
-    id: 'TEST_ID_01',
-    iss: { shortId: 'Serto Verified', did: '0xfksksdk' },
-    type: 'Test property',
-    value: 'Test value 01',
-    selected: true,
-  },
-  {
-    id: 'TEST_ID_02',
-    iss: { shortId: 'Serto Verified', did: '0xfksksdk' },
-    type: 'Test property',
-    value: 'Test value 02',
-    selected: false,
-  },
-]
+const singleOptionCredential_01 = {
+  ...baseVc,
+  hash: '001',
+  parentHash: '00001',
+  fields: [
+    {
+      type: 'name',
+      value: 'Single Option A',
+      isObj: false,
+    },
+  ],
+}
+
+const singleOptionCredential_02 = {
+  ...baseVc,
+  hash: '002',
+  parentHash: '00002',
+  fields: [
+    {
+      type: 'name',
+      value: 'Single Option B',
+      isObj: false,
+    },
+  ],
+}
 
 describe('Component(snapshot): RequestItem', () => {
-  it('should render required with single option', () => {
+  it('should render required with options', () => {
     const onSelect = jest.fn()
     const tree = render(
-      <RequestItem claimType={'Test'} options={singleOption} onSelectItem={onSelect} />,
+      <RequestItem
+        required
+        claimType={'name'}
+        reason={'A test reason'}
+        credentials={[singleOptionCredential_01, singleOptionCredential_02]}
+        onSelectItem={onSelect}
+      />,
     ).toJSON()
 
     expect(tree).toMatchSnapshot()
@@ -44,21 +59,10 @@ describe('Component(snapshot): RequestItem', () => {
   it('should render un-required with single option', () => {
     const onSelect = jest.fn()
     const tree = render(
-      <RequestItem required={false} claimType={'Test'} options={singleOption} onSelectItem={onSelect} />,
-    ).toJSON()
-
-    expect(tree).toMatchSnapshot()
-  })
-
-  it('should render required with multi options', () => {
-    const onSelect = jest.fn()
-    const tree = render(
       <RequestItem
-        required={true}
-        claimType={'Subtitle'}
-        itemNote={'Test Note'}
-        last={true}
-        options={multiOptions}
+        claimType={'name'}
+        reason={'A test reason'}
+        credentials={[singleOptionCredential_01]}
         onSelectItem={onSelect}
       />,
     ).toJSON()
@@ -70,11 +74,9 @@ describe('Component(snapshot): RequestItem', () => {
     const onSelect = jest.fn()
     const tree = render(
       <RequestItem
-        required={false}
-        claimType={'Subtitle'}
-        itemNote={'Test Note'}
-        last={true}
-        options={multiOptions}
+        claimType={'name'}
+        reason={'A test reason'}
+        credentials={[singleOptionCredential_01, singleOptionCredential_02]}
         onSelectItem={onSelect}
       />,
     ).toJSON()
