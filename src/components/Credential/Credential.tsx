@@ -8,15 +8,22 @@ import * as Kancha from '../../types'
 import { withTheme } from '../../theming'
 import S from 'string'
 
+interface Field {
+  type: string
+  value: any
+  isObj: boolean
+}
+
 export interface CredentialProps {
   onPress?: () => void
   issuer: Kancha.Identity
   subject: Kancha.Identity
   exp: number
-  fields: any
+  fields: Field[]
   testID?: string
   shadow?: number
   background?: Kancha.BrandPropOptions
+  detailMode?: boolean
   theme: any
 }
 
@@ -28,11 +35,14 @@ const Credential: React.FC<CredentialProps> = ({
   fields,
   subject,
   testID,
+  detailMode,
   theme,
 }) => {
   const subProfileSource = subject.profileImage ? { source: { uri: subject.profileImage } } : {}
   const issProfileSource = issuer.profileImage ? { source: { uri: issuer.profileImage } } : {}
-  const credentialFields = Object.keys(fields)
+  const credentialFields = fields.filter((field: any, i) => (detailMode ? field : i < 2))
+
+  // console.log(fields)
 
   return (
     <Card onPress={onPress} testID={testID} shadow={shadow || 0} background={background}>
@@ -77,41 +87,39 @@ const Credential: React.FC<CredentialProps> = ({
           </Container>
         </Container>
       </Container>
-      <Container marginTop>
-        {credentialFields.map((key: any, i: number) => {
-          const fieldValueImage = !fields[key].isObj
-            ? fields[key].value.endsWith('.jpg') || fields[key].value.endsWith('.png')
+      <Container marginTop={detailMode ? 30 : 16}>
+        {credentialFields.map((field: any, i: number) => {
+          const fieldValueImage = !field.isObj
+            ? field.value.endsWith('.jpg') || field.value.endsWith('.png')
             : false
           return (
-            i < 2 && (
-              <Container marginBottom={5} flex={1} alignItems={'flex-start'} key={i}>
-                <Container flex={1}>
-                  <Text textStyle={{ fontSize: 12, textTransform: 'uppercase' }} type={TextTypes.SubTitle}>
-                    {S(fields[key].type).humanize().s}
-                  </Text>
-                </Container>
-                <Container justifyContent={'flex-start'} flex={2}>
-                  {fieldValueImage ? (
-                    <Container paddingTop={5}>
-                      <Avatar
-                        source={{ uri: fields[key].value }}
-                        address={issuer.did}
-                        type={'rounded'}
-                        gravatarType={'retro'}
-                        size={25}
-                      />
-                    </Container>
-                  ) : (
-                    <Text type={TextTypes.ActivityTitle}>
-                      {fields[key].isObj ? 'Type not supported yet' : fields[key].value}
-                    </Text>
-                  )}
-                </Container>
+            <Container marginBottom={5} key={i}>
+              <Container>
+                <Text textStyle={{ fontSize: 12, textTransform: 'uppercase' }} type={TextTypes.SubTitle}>
+                  {S(field.type).humanize().s}
+                </Text>
               </Container>
-            )
+              <Container justifyContent={'flex-start'}>
+                {fieldValueImage ? (
+                  <Container paddingTop={5}>
+                    <Avatar
+                      source={{ uri: field.value }}
+                      address={issuer.did}
+                      type={'rounded'}
+                      gravatarType={'retro'}
+                      size={25}
+                    />
+                  </Container>
+                ) : (
+                  <Text type={TextTypes.ActivityTitle}>
+                    {field.isObj ? 'Type not supported yet' : field.value}
+                  </Text>
+                )}
+              </Container>
+            </Container>
           )
         })}
-        {credentialFields.length > 2 && (
+        {!detailMode && fields.length > 2 && (
           <Container>
             <Text type={TextTypes.SubTitle}>...</Text>
           </Container>

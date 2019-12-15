@@ -8,6 +8,7 @@ const fields = [
   {
     type: 'name',
     value: 'test value',
+    isObj: false,
   },
 ]
 
