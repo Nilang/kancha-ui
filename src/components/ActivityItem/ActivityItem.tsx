@@ -2,13 +2,13 @@ import * as React from 'react'
 import Container from '../Container/Container'
 import Button, { ButtonBlocks } from '../Button/Button'
 import Avatar from '../Avatar/Avatar'
-import Credential from '../../components/Credential/Credential'
+// import Credential from '../../components/Credential/Credential'
 import ActivityItemHeader from '../../components/ActivityItemHeader/ActivityItemHeader'
 import * as Kancha from '../../types'
 import { withTheme } from '../../theming'
 import { BrandOptions } from '../../constants'
-import { ScrollView, TouchableHighlight } from 'react-native-gesture-handler'
-import Device from '../../services/device'
+import { ScrollView } from 'react-native-gesture-handler'
+// import Device from '../../services/device'
 
 interface ActivityItemProps {
   /**
@@ -32,7 +32,7 @@ interface ActivityItemProps {
   /**
    * The issuer of this message item
    */
-  issuer: Kancha.Identity
+  sender: Kancha.Identity
 
   /**
    * The activity that is takaing place
@@ -42,7 +42,7 @@ interface ActivityItemProps {
   /**
    * The subject
    */
-  subject: Kancha.Identity
+  receiver: Kancha.Identity
 
   /**
    * The viewer
@@ -60,9 +60,14 @@ interface ActivityItemProps {
   attachments?: any[]
 
   /**
-   * Message attachments
+   * Render attachment item
    */
-  attachmentsAction?: (attachments: any, attachmentIndex: number) => void
+  renderAttachment?: (attachmentItem: any, itemIndex: number) => React.ReactNode
+
+  /**
+   * Props to apply to attchment scrollview
+   */
+  attachmentScrollViewProps?: any
 
   /**
    * Message actions
@@ -98,23 +103,24 @@ const ActivityItem: React.FC<ActivityItemProps> = ({
   message,
   type,
   activity,
-  issuer,
-  subject,
+  sender,
+  receiver,
   viewer,
   reason,
   attachments,
-  attachmentsAction,
+  attachmentScrollViewProps,
+  renderAttachment,
   actions,
   profileAction,
-  credentialStyle,
   date,
   confirm,
   reject,
   theme,
 }) => {
-  const issProfileSource = issuer.profileImage ? { source: { uri: issuer.profileImage } } : {}
+  const issProfileSource = sender.profileImage ? { source: { uri: sender.profileImage } } : {}
+
   return (
-    <Container flex={1} background={'primary'} marginBottom={10}>
+    <Container background={'primary'} marginBottom={10}>
       <Container flex={1} flexDirection={'row'} padding>
         <Container alignItems={'center'}>
           <Container>
@@ -122,7 +128,7 @@ const ActivityItem: React.FC<ActivityItemProps> = ({
               {...issProfileSource}
               type={'circle'}
               gravatarType={'retro'}
-              address={issuer.did}
+              address={sender.did}
               size={38}
             />
           </Container>
@@ -130,14 +136,14 @@ const ActivityItem: React.FC<ActivityItemProps> = ({
         <Container marginLeft paddingRight flex={1}>
           <ActivityItemHeader
             viewer={viewer}
-            issuer={issuer}
-            subject={subject}
+            issuer={sender}
+            subject={receiver}
             profileAction={profileAction}
             date={date}
             activity={activity || theme.activity.messages[type]}
             reason={reason}
           />
-          {actions && type === 'sdr' && (
+          {actions && type === 'sdr' && viewer.did !== sender.did && (
             <Container flex={1} marginTop flexDirection={'row'}>
               <Container flex={2} marginRight={5}>
                 {confirm && actions[0] && (
@@ -165,27 +171,16 @@ const ActivityItem: React.FC<ActivityItemProps> = ({
           )}
         </Container>
       </Container>
-      {attachments && attachments.length > 0 && (
+      {attachments && attachments.length > 0 && renderAttachment && (
         <Container flex={1}>
-          <ScrollView horizontal style={{ flex: 1 }} showsHorizontalScrollIndicator={false}>
-            {attachments.map((item: any, index: number) => {
-              return (
-                <TouchableHighlight
-                  onPress={() => attachmentsAction && attachmentsAction(attachments, index)}
-                  key={index}
-                  underlayColor={'transparent'}
-                  style={{ width: Device.width - 40, paddingVertical: 18, paddingLeft: 15, paddingRight: 10 }}
-                >
-                  <Credential
-                    exp={item.exp}
-                    fields={item.fields}
-                    subject={item.sub}
-                    issuer={item.iss}
-                    shadow={(credentialStyle && credentialStyle.shadow) || 1.5}
-                    background={(credentialStyle && credentialStyle.background) || 'primary'}
-                  />
-                </TouchableHighlight>
-              )
+          <ScrollView
+            horizontal
+            style={{ flex: 1 }}
+            showsHorizontalScrollIndicator={false}
+            {...attachmentScrollViewProps}
+          >
+            {attachments.map((item: any, itemIndex: number) => {
+              return renderAttachment(item, itemIndex)
             })}
           </ScrollView>
         </Container>

@@ -12,7 +12,7 @@ exports[`Component(snapshots): ActivityItem should render with default required 
       "alignItems": undefined,
       "backgroundColor": "#FFFFFF",
       "borderRadius": undefined,
-      "flex": 1,
+      "flex": undefined,
       "flexDirection": undefined,
       "height": undefined,
       "justifyContent": undefined,
