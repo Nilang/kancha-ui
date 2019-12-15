@@ -47,12 +47,12 @@ describe('Component(snapshots): ActivityItem', () => {
     id: 'ZFGHFSJD',
     date: 123445678910,
     type: 'w3c.vc',
-    issuer: {
+    sender: {
       did: 'ethr:did:123456',
       profileImage: 'http://',
       shortId: 'Test Issuer',
     },
-    subject: {
+    receiver: {
       did: 'ethr:did:123456',
       profileImage: 'http://',
       shortId: 'Test Subject',
@@ -68,16 +68,9 @@ describe('Component(snapshots): ActivityItem', () => {
 
   it('should render with attachments', () => {
     const attachments = [ATTACHMENT_1, ATTACHMENT_2]
-    const attachmentAction = jest.fn()
 
     const tree = render(
-      <ActivityItem
-        message={{ id: 'ZFGHFSJD' }}
-        viewer={viewer}
-        attachments={attachments}
-        attachmentsAction={attachmentAction}
-        {...baseProps}
-      />,
+      <ActivityItem message={{ id: 'ZFGHFSJD' }} viewer={viewer} attachments={attachments} {...baseProps} />,
     )
     expect(tree.toJSON).toMatchSnapshot()
   })
