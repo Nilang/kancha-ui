@@ -7,6 +7,7 @@ import Icon from '../Icon/Icon'
 import * as Kancha from '../../types'
 import { withTheme } from '../../theming'
 import S from 'string'
+import QRCode from 'react-native-qrcode-svg'
 
 interface Field {
   type: string
@@ -19,6 +20,8 @@ export interface CredentialProps {
   issuer: Kancha.Identity
   subject: Kancha.Identity
   exp: number
+  jwt?: string
+  qrSize?: number
   fields: Field[]
   testID?: string
   shadow?: number
@@ -33,6 +36,8 @@ const Credential: React.FC<CredentialProps> = ({
   issuer,
   background,
   fields,
+  jwt,
+  qrSize,
   subject,
   testID,
   detailMode,
@@ -41,8 +46,6 @@ const Credential: React.FC<CredentialProps> = ({
   const subProfileSource = subject.profileImage ? { source: { uri: subject.profileImage } } : {}
   const issProfileSource = issuer.profileImage ? { source: { uri: issuer.profileImage } } : {}
   const credentialFields = fields.filter((field: any, i) => (detailMode ? field : i < 2))
-
-  // console.log(fields)
 
   return (
     <Card onPress={onPress} testID={testID} shadow={shadow || 0} background={background}>
@@ -122,6 +125,11 @@ const Credential: React.FC<CredentialProps> = ({
         {!detailMode && fields.length > 2 && (
           <Container>
             <Text type={TextTypes.SubTitle}>...</Text>
+          </Container>
+        )}
+        {detailMode && jwt && (
+          <Container marginTop={50} alignItems={'center'} justifyContent={'center'}>
+            <QRCode size={qrSize ? qrSize : 200} value={jwt} />
           </Container>
         )}
       </Container>
