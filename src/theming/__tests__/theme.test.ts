@@ -159,6 +159,7 @@ describe('Theme', () => {
       cards: 5,
       textInputs: 8,
       toasts: 5,
+      overlay: 8,
     },
     delays: {
       toasts: 1200,
@@ -177,6 +178,10 @@ describe('Theme', () => {
       },
       CHECKED: {
         name: 'ios-checkmark-circle',
+        iconFamily: 'Ionicons',
+      },
+      CHECKMARK: {
+        name: 'ios-checkmark',
         iconFamily: 'Ionicons',
       },
       FORWARD: {

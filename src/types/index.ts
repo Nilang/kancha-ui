@@ -1,5 +1,3 @@
-import { ImageSourcePropType } from 'react-native'
-
 export interface NavigationScreen {
   componentId: string
 }
@@ -124,17 +122,33 @@ export interface ThemeStatic {
 }
 
 export interface Identity {
-  name?: string
+  isManaged?: boolean
   did: string
+  type?: string
   shortId: string
-  avatar?: ImageSourcePropType
+  firstName?: string
+  lastName?: string
+  url?: string
+  description?: string
   profileImage?: string
+}
+
+export interface VerifiableCredentialField {
+  rowId: string
+  hash: string
+  parentHash: string
+  iss: Identity
+  sub: Identity
+  type: string
+  value: string
+  isObj: boolean
 }
 
 export interface VerifiableCredential {
   hash: string
-  parentHash: string
+  rowId?: string
   jwt: string
+  json?: string
   iss: Identity
   sub: Identity
   type: string

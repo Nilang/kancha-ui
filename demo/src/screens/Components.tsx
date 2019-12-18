@@ -9,6 +9,7 @@ import {
   Avatar,
   Button,
   Toaster,
+  Overlay,
 } from '@kancha/kancha-ui'
 import { NavigationScreen, Screens } from '../navigators'
 import TEST_ID from '../../../e2e/testIDs'
@@ -72,6 +73,22 @@ const Components: React.FC<NavigationScreen> = props => {
             onPress={() => Toaster.error('Uh oh', 'Hmm, something has gone very wrong :(')}
             buttonText={'Error'}
             type={Constants.BrandOptions.Warning}
+            block={Constants.ButtonBlocks.Filled}
+          />
+        </Container>
+      </Section>
+      <Section title={'Overlays'}>
+        <Container padding={true} flexDirection={'row'} justifyContent={'space-between'}>
+          <Button
+            fullWidth={true}
+            onPress={() =>
+              Overlay.show('All done', 'Message not supported yet', {
+                name: 'ios-heart',
+                iconFamily: 'Ionicons',
+              })
+            }
+            buttonText={'Show Overlay'}
+            type={Constants.BrandOptions.Primary}
             block={Constants.ButtonBlocks.Filled}
           />
         </Container>

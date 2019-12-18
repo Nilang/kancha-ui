@@ -2,23 +2,17 @@ import React from 'react'
 import { Container, Screen, ActivityItem, Constants, Text, Credential, Device } from '@kancha/kancha-ui'
 import { NavigationScreen, Screens } from '../../navigators'
 
-// const activityFeed = require('../../data/activity_feed.json')
 const { data } = require('../../data/messages.json')
-
-console.log(data)
 
 const Component: React.FC<NavigationScreen> = props => {
   const displayProfile = (id: any) => {
     props.navigation.navigate(Screens.Profile, { id })
-    console.log(id)
   }
-  const confirmRequest = (id: any) => {
+  const confirmRequest = () => {
     props.navigation.navigate(Screens.Request)
-    console.log(id)
   }
-  const rejectRequest = (id: any) => {
+  const rejectRequest = () => {
     props.navigation.navigate(Screens.Request)
-    console.log(id)
   }
 
   return (
@@ -36,7 +30,6 @@ const Component: React.FC<NavigationScreen> = props => {
                 id={message.hash}
                 key={message.hash + i}
                 type={message.type}
-                message={message}
                 receiver={message.sub}
                 sender={message.iss}
                 viewer={{
@@ -44,6 +37,7 @@ const Component: React.FC<NavigationScreen> = props => {
                   shortId: 'did:ethr:0x0365...b3fc',
                   profileImage:
                     'https://www.catster.com/wp-content/uploads/2015/06/google-cat-search-2014-06.jpg',
+                  isManaged: false,
                 }}
                 date={1571329073000}
                 confirm={confirmRequest}
@@ -51,7 +45,6 @@ const Component: React.FC<NavigationScreen> = props => {
                 reject={rejectRequest}
                 attachments={message.vc}
                 renderAttachment={(credential: any, credentialIndex: number) => {
-                  console.log(credential)
                   return (
                     <Container w={Device.width - 40} padding paddingRight={0} key={credentialIndex}>
                       <Credential

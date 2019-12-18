@@ -56,6 +56,7 @@ const Toast: React.FC<ToastProps> = props => {
       delay,
       toValue: 0,
       duration: 200,
+      useNativeDriver: true,
     }).start()
   }
 
@@ -72,6 +73,7 @@ const Toast: React.FC<ToastProps> = props => {
     Animated.spring(animatedValue, {
       toValue: 1,
       speed: 14,
+      useNativeDriver: true,
     }).start(() => hideToast(payload.delay ? payload.delay : props.theme.delays.toasts))
   }
 
@@ -112,9 +114,9 @@ const Toast: React.FC<ToastProps> = props => {
         right: 10,
         backgroundColor: props.theme.colors.status[type ? type : props.theme.colors.status.info],
         borderRadius: props.theme.roundedCorners.toasts,
-        shadowRadius: 10,
-        shadowOpacity: 0.2,
-        shadowColor: '#000000',
+        // shadowRadius: 10,
+        // shadowOpacity: 0.2,
+        // shadowColor: '#000000',
       }}
     >
       <Container padding={12} alignItems={'center'} justifyContent={'center'} br={5} flexDirection={'row'}>

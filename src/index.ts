@@ -25,6 +25,9 @@ import Indicator from './components/Indicator/Indicator'
 import RadioBtn from './components/RadioBtn/RadioBtn'
 import ActivityItem from './components/ActivityItem/ActivityItem'
 import ActivityItemHeader from './components/ActivityItemHeader/ActivityItemHeader'
+import Connection from './components/Connection/Connection'
+import Loader from './components/Loader/Loader'
+import OverlaySign, { Overlay } from './components/Overlay/Overlay'
 
 import BottomSheet, { BottomSnap } from './components/BottomSheet/BottomSheet'
 
@@ -76,9 +79,13 @@ export {
   Credential,
   Card,
   ClaimExplore,
+  Connection,
   Banner,
   RequestItem,
   Indicator,
+  Overlay,
+  OverlaySign,
+  Loader,
   RadioBtn,
   Constants,
   Device,

@@ -118,9 +118,9 @@ exports[`Component(snapshots): ActivityItem should render with default required 
           style={
             Object {
               "backgroundColor": "#0078ff",
-              "borderRadius": 19,
-              "height": 38,
-              "width": 38,
+              "borderRadius": 20,
+              "height": 40,
+              "width": 40,
             }
           }
         />

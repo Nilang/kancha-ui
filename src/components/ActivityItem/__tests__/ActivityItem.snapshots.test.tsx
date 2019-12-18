@@ -62,16 +62,14 @@ describe('Component(snapshots): ActivityItem', () => {
   }
 
   it('should render with default required props', () => {
-    const tree = render(<ActivityItem message={{ id: 'ZFGHFSJD' }} viewer={viewer} {...baseProps} />).toJSON()
+    const tree = render(<ActivityItem viewer={viewer} {...baseProps} />).toJSON()
     expect(tree).toMatchSnapshot()
   })
 
   it('should render with attachments', () => {
     const attachments = [ATTACHMENT_1, ATTACHMENT_2]
 
-    const tree = render(
-      <ActivityItem message={{ id: 'ZFGHFSJD' }} viewer={viewer} attachments={attachments} {...baseProps} />,
-    )
+    const tree = render(<ActivityItem viewer={viewer} attachments={attachments} {...baseProps} />)
     expect(tree.toJSON).toMatchSnapshot()
   })
 
@@ -85,7 +83,6 @@ describe('Component(snapshots): ActivityItem', () => {
         {...baseProps}
         type={'sdr'}
         viewer={viewer}
-        message={{ id: 'ZFGHFSJD' }}
         actions={actions}
         confirm={confirm}
         reject={reject}
@@ -94,9 +91,9 @@ describe('Component(snapshots): ActivityItem', () => {
     expect(tree.toJSON).toMatchSnapshot()
 
     fireEvent.press(tree.getByText(/Confirm/i))
-    expect(confirm).toHaveBeenCalledWith({ id: 'ZFGHFSJD' })
+    expect(confirm).toHaveBeenCalled()
 
     fireEvent.press(tree.getByText(/Reject/i))
-    expect(reject).toHaveBeenCalledWith({ id: 'ZFGHFSJD' })
+    expect(reject).toHaveBeenCalled()
   })
 })

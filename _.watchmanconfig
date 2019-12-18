@@ -1,0 +1,18 @@
+{
+  "ignore_dirs": [
+    ".git",
+    "node_modules",
+    ".circleci",
+    ".vscode",
+    "android",
+    "ios",
+    "demo",
+    "coverage",
+    "docs",
+    "e2e",
+    "jest",
+    "src",
+    "vendor",
+    null
+  ]
+}
