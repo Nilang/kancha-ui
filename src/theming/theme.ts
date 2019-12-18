@@ -169,6 +169,7 @@ export const createTheme = (customColors?: { [index: string]: string }) => {
       cards: 5,
       textInputs: 8,
       toasts: 5,
+      overlay: 8,
     },
     delays: {
       toasts: 1200,
@@ -183,6 +184,10 @@ export const createTheme = (customColors?: { [index: string]: string }) => {
     icons: {
       EDIT: {
         name: 'ios-create',
+        iconFamily: 'Ionicons',
+      },
+      CHECKMARK: {
+        name: 'ios-checkmark',
         iconFamily: 'Ionicons',
       },
       CHECKED: {

@@ -179,6 +179,10 @@ describe('Theme', () => {
         name: 'ios-checkmark-circle',
         iconFamily: 'Ionicons',
       },
+      CHECKMARK: {
+        name: 'ios-checkmark',
+        iconFamily: 'Ionicons',
+      },
       FORWARD: {
         name: 'ios-arrow-forward',
         iconFamily: 'Ionicons',
