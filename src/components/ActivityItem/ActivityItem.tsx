@@ -2,13 +2,11 @@ import * as React from 'react'
 import Container from '../Container/Container'
 import Button, { ButtonBlocks } from '../Button/Button'
 import Avatar from '../Avatar/Avatar'
-// import Credential from '../../components/Credential/Credential'
 import ActivityItemHeader from '../../components/ActivityItemHeader/ActivityItemHeader'
 import * as Kancha from '../../types'
 import { withTheme } from '../../theming'
 import { BrandOptions } from '../../constants'
 import { ScrollView } from 'react-native-gesture-handler'
-// import Device from '../../services/device'
 
 interface ActivityItemProps {
   /**
@@ -20,10 +18,7 @@ interface ActivityItemProps {
    * The message type
    */
   type: 'w3c.vp' | 'w3c.vc' | 'sdr' | string
-  /**
-   * The full message payload (for passing back to event handlers)
-   */
-  message: any
+
   /**
    * The timestamp for when this message was recieved or sent
    */
@@ -77,12 +72,12 @@ interface ActivityItemProps {
   /*
    * The confirm action
    */
-  confirm?: (msg: any) => void
+  confirm?: () => void
 
   /*
    * The reject action
    */
-  reject?: (msg: any) => void
+  reject?: () => void
 
   /**
    * Profile actions like being able to navigate to a profile
@@ -100,7 +95,6 @@ interface ActivityItemProps {
 }
 
 const ActivityItem: React.FC<ActivityItemProps> = ({
-  message,
   type,
   activity,
   sender,
@@ -129,7 +123,7 @@ const ActivityItem: React.FC<ActivityItemProps> = ({
               type={'circle'}
               gravatarType={'retro'}
               address={sender.did}
-              size={38}
+              size={40}
             />
           </Container>
         </Container>
@@ -152,7 +146,7 @@ const ActivityItem: React.FC<ActivityItemProps> = ({
                     buttonText={actions[0]}
                     type={BrandOptions.Primary}
                     block={ButtonBlocks.Filled}
-                    onPress={() => confirm(message)}
+                    onPress={confirm}
                   ></Button>
                 )}
               </Container>
@@ -163,7 +157,7 @@ const ActivityItem: React.FC<ActivityItemProps> = ({
                     buttonText={actions[1]}
                     type={BrandOptions.Secondary}
                     block={ButtonBlocks.Filled}
-                    onPress={() => reject(message)}
+                    onPress={reject}
                   ></Button>
                 )}
               </Container>
