@@ -159,6 +159,7 @@ describe('Theme', () => {
       cards: 5,
       textInputs: 8,
       toasts: 5,
+      overlay: 8,
     },
     delays: {
       toasts: 1200,

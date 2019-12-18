@@ -122,7 +122,7 @@ export interface ThemeStatic {
 }
 
 export interface Identity {
-  isManaged: boolean
+  isManaged?: boolean
   did: string
   type?: string
   shortId: string
@@ -146,9 +146,9 @@ export interface VerifiableCredentialField {
 
 export interface VerifiableCredential {
   hash: string
-  rowId: string
+  rowId?: string
   jwt: string
-  json: string
+  json?: string
   iss: Identity
   sub: Identity
   type: string

@@ -186,12 +186,12 @@ export const createTheme = (customColors?: { [index: string]: string }) => {
         name: 'ios-create',
         iconFamily: 'Ionicons',
       },
-      CHECKMARK: {
-        name: 'ios-checkmark',
-        iconFamily: 'Ionicons',
-      },
       CHECKED: {
         name: 'ios-checkmark-circle',
+        iconFamily: 'Ionicons',
+      },
+      CHECKMARK: {
+        name: 'ios-checkmark',
         iconFamily: 'Ionicons',
       },
       FORWARD: {

@@ -10,9 +10,6 @@ exports[`Component(snapshot): Toast renders correctly with no props 1`] = `
       "opacity": 0,
       "position": "absolute",
       "right": 10,
-      "shadowColor": "#000000",
-      "shadowOpacity": 0.2,
-      "shadowRadius": 10,
       "top": 0,
       "transform": Array [
         Object {
