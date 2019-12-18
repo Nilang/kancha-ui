@@ -6,7 +6,7 @@ import EventEmitter from 'events'
 const SwitchEmitter = new EventEmitter()
 const OPEN_BOTTOM_SHEET = 'OPEN_BOTTOM_SHEET'
 
-// Third party
+// Third party. Maybe we need write this from scratch?
 import BottomSheet from 'reanimated-bottom-sheet'
 
 interface CardProps {
@@ -45,7 +45,10 @@ const BottomSheetWrapper: React.FC<CardProps> = ({
 
   return (
     <Container h={1}>
-      <Container flex={1} viewStyle={{ shadowRadius: 6, shadowOpacity: 0.2, shadowColor: '#000000' }}>
+      <Container
+        flex={1}
+        viewStyle={{ shadowRadius: 6, shadowOpacity: 0.2, shadowColor: '#000000', elevation: 3 }}
+      >
         <BottomSheet
           ref={drawer}
           snapPoints={snapPoints}
