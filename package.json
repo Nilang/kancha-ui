@@ -136,13 +136,13 @@
         "binaryPath": "ios/DerivedData/KanchaSink/Build/Products/Debug-iphonesimulator/KanchaSink.app",
         "build": "xcodebuild -workspace ios/KanchaSink.xcworkspace -scheme KanchaSink -configuration Debug -sdk iphonesimulator -derivedDataPath ios/DerivedData/KanchaSink -UseModernBuildSystem=NO",
         "type": "ios.simulator",
-        "name": "iPhone 8"
+        "name": "iPhone 11"
       },
       "ios.sim.release": {
         "binaryPath": "ios/DerivedData/KanchaSink/Build/Products/Release-iphonesimulator/KanchaSink.app",
         "build": "xcodebuild -workspace ios/KanchaSink.xcworkspace -scheme KanchaSink -configuration Release -sdk iphonesimulator -derivedDataPath ios/DerivedData/KanchaSink -UseModernBuildSystem=NO",
         "type": "ios.simulator",
-        "name": "iPhone X"
+        "name": "iPhone 11"
       },
       "android.emu.debug": {
         "binaryPath": "android/app/build/outputs/apk/debug/app-debug.apk",
