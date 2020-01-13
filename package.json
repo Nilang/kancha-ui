@@ -121,8 +121,7 @@
       "<rootDir>/demo"
     ],
     "collectCoverageFrom": [
-      "src/**/{!(BottomSheet)}.tsx",
-      "src/**/{!(MessageItem)}.tsx"
+      "src/**/{!(BottomSheet)}.tsx"
     ],
     "setupFiles": [
       "./node_modules/react-native-gesture-handler/jestSetup.js",
