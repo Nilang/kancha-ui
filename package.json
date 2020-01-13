@@ -10,7 +10,7 @@
     "start": "yarn build && react-native start",
     "xcode": "open ios/KanchaSink.xcworkspace",
     "install-android": "cd android && ./gradlew installDebug",
-    "test": "jest --verbose --coverage --no-watchman",
+    "test": "jest --verbose --coverage",
     "codecov": "codecov",
     "test:ios:release": "detox build -c ios.sim.release && detox test -c ios.sim.release --cleanup",
     "test:ios:debug": "detox build -c ios.sim.debug && detox test -c ios.sim.debug",
@@ -121,7 +121,9 @@
       "<rootDir>/demo"
     ],
     "collectCoverageFrom": [
-      "src/**/{!(BottomSheet)}.tsx"
+      "src/**/*.tsx",
+      "!src/components/MessageItem/MessageItem.tsx",
+      "!src/components/BottomSheet/BottomSheet.tsx"
     ],
     "setupFiles": [
       "./node_modules/react-native-gesture-handler/jestSetup.js",
