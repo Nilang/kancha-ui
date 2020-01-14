@@ -29,11 +29,19 @@ jobs:
         run: |
           echo y | sudo $ANDROID_HOME/tools/bin/sdkmanager --verbose "system-images;android-27;google_apis;x86"
           $ANDROID_HOME/tools/bin/avdmanager create avd -n emu_api_27 -k "system-images;android-27;google_apis;x86" -b "x86" -c 1G -d 7 -f
-      - name: Install node_modules & Deploy
+
+      - name: Install project dependencies & complile typescript
+        if: "!contains(github.event.head_commit.message, '[skip ci]')"
+        run: |
+          yarn install --frozen-lockfile
+          yarn build
+
+      - name: Build e2e target
         if: "!contains(github.event.head_commit.message, '[skip ci]')"
         run: |
           yarn install --frozen-lockfile
           yarn build:android:release
+
       - name: Android test
         if: "!contains(github.event.head_commit.message, '[skip ci]')"
         timeout-minutes: 10
@@ -44,7 +52,7 @@ jobs:
           $ANDROID_HOME/emulator/emulator @emu_api_27 &
           adb wait-for-device; adb shell 'while [[ -z $(getprop sys.boot_completed) ]]; do sleep 1; done;'; adb shell wm dismiss-keyguard
           yarn test:android:release
-      - name: Provide videos of failed E2E tests
+      - name: Upload test artifacts (videos)
         if: "!contains(github.event.head_commit.message, '[skip ci]')"
         uses: actions/upload-artifact@master
         with:
