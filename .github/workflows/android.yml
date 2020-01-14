@@ -3,7 +3,7 @@ name: Android
 on: [push, pull_request]
 
 jobs:
-  build:
+  test-android-e2e:
     runs-on: macos-latest
 
     steps:
