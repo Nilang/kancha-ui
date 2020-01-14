@@ -135,6 +135,16 @@ android {
         testBuildType System.getProperty('testBuildType', 'debug')  // This will later be used to control the test apk build type
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
     }
+    signingConfigs {
+        release {
+            if (project.hasProperty('E2E_KEY_STORE_FILE')) {
+                storeFile file(E2E_KEY_STORE_FILE)
+                storePassword E2E_KEY_STORE_PASSWORD
+                keyAlias E2E_KEY_KEY_ALIAS
+                keyPassword E2E_KEY_STORE_PASSWORD
+            }
+        }
+    }
     splits {
         abi {
             reset()
@@ -147,6 +157,8 @@ android {
         release {
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+
+            signingConfig signingConfigs.release
         }
     }
 }

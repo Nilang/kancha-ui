@@ -10,11 +10,11 @@
     "start": "yarn build && react-native start",
     "xcode": "open ios/KanchaSink.xcworkspace",
     "install-android": "cd android && ./gradlew installDebug",
-    "test": "jest --verbose --coverage",
+    "test": "jest c --coverage",
     "codecov": "codecov",
     "test:ios:release": "detox build -c ios.sim.release && detox test -c ios.sim.release --cleanup",
     "test:ios:debug": "detox build -c ios.sim.debug && detox test -c ios.sim.debug",
-    "test:android:release": "detox test -c android.emu.release --cleanup",
+    "test:android:release": "detox build -c android.emu.release && detox test -c android.emu.release --cleanup",
     "test:android:debug": "detox build -c android.emu.debug && detox test -c android.emu.debug --cleanup",
     "format": "prettier",
     "docs": "typedoc --out ./docs/documentation ./src --mode file --tsconfig ./tsconfig.json --name 'Kancha Documentation' --theme minimal",
@@ -59,7 +59,7 @@
     "@types/react-test-renderer": "^16.8.1",
     "babel-jest": "^24.8.0",
     "codecov": "^3.5.0",
-    "detox": "^12.11.0",
+    "detox": "^15.1.2",
     "hoist-non-react-statics": "^3.3.0",
     "husky": "^2.3.0",
     "jest": "^24.9.0",
@@ -72,9 +72,9 @@
     "react-native-svg": "^9.13.3",
     "react-native-testing-library": "^1.8.0",
     "react-native-typescript-transformer": "1.2.12",
-    "react-navigation-hooks": "^1.1.0",
     "react-navigation": "^4.0.10",
     "react-navigation-drawer": "^2.2.2",
+    "react-navigation-hooks": "^1.1.0",
     "react-navigation-stack": "^1.9.4",
     "react-test-renderer": "16.9.0",
     "semantic-release": "^16.0.0-beta.22",
@@ -149,13 +149,13 @@
         "binaryPath": "android/app/build/outputs/apk/debug/app-debug.apk",
         "build": "pushd android && ./gradlew assembleDebug assembleAndroidTest -DtestBuildType=debug && popd",
         "type": "android.emulator",
-        "name": "Pixel_2_API_28"
+        "name": "emu_api_27"
       },
       "android.emu.release": {
         "binaryPath": "android/app/build/outputs/apk/release/app-release.apk",
         "build": "pushd android && ./gradlew assembleRelease assembleAndroidTest -DtestBuildType=release && popd",
         "type": "android.emulator",
-        "name": "Pixel_2_API_28"
+        "name": "emu_api_27"
       }
     }
   },
