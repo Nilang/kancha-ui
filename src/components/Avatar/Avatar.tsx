@@ -81,8 +81,10 @@ const Avatar: React.FC<AvatarProps> = props => {
     ...(props.border ? { borderWidth: 2, borderColor: props.theme.colors.primary.background } : {}),
   }
 
-  const identicon = <Image source={{ uri }} style={avatarTypeStyle} resizeMode={'contain'} />
-  const imageAvatar = props.source ? <Image source={props.source} style={avatarTypeStyle} /> : null
+  const identicon = <Image source={{ uri }} style={[avatarTypeStyle, { backgroundColor: 'transparent' }]} />
+  const imageAvatar = props.source ? (
+    <Image source={props.source} style={[avatarTypeStyle, { backgroundColor: 'transparent' }]} />
+  ) : null
   const textAvatar = props.title ? (
     <Container viewStyle={avatarTypeStyle} alignItems={'center'} justifyContent={'center'}>
       <Text bold={true} textColor={'#ffffff'} textStyle={{ fontSize: size * 0.5 }}>
