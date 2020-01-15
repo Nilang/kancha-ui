@@ -25,6 +25,12 @@ describe('Component(snapshots): Screen', () => {
     expect(tree).toMatchSnapshot()
   })
 
+  it('should render with a custom background color', () => {
+    const tree = render(<Screen backgroundColor={'#000000'} />)
+
+    expect(tree).toMatchSnapshot()
+  })
+
   it('should render with no statusbar and independant safe areas', () => {
     const tree = render(
       <Screen

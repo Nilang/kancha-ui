@@ -54,6 +54,11 @@ interface ScreenProps {
   /**
    * Set a background image for the view
    */
+  backgroundColor?: string
+
+  /**
+   * Set a background image for the view
+   */
   backgroundImage?: ImageSourcePropType
 
   /**
@@ -109,6 +114,8 @@ const Screen: React.FC<ScreenProps> = props => {
       style={{
         backgroundColor: props.background
           ? props.theme.colors[props.background].background
+          : props.backgroundColor
+          ? props.backgroundColor
           : props.theme.colors.secondary.background,
       }}
       contentInsetAdjustmentBehavior={'never'}
