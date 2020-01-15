@@ -2,57 +2,69 @@
 
 exports[`Component(snapshots): Avatar should render a custom rounded gravatar 1`] = `
 <Image
-  resizeMode="contain"
   source={
     Object {
       "uri": "https://www.gravatar.com/avatar/77b6e2825ea079e26823f20cabbade94?s=64&d=monsterid",
     }
   }
   style={
-    Object {
-      "backgroundColor": "#0078ff",
-      "borderRadius": 5,
-      "height": 32,
-      "width": 32,
-    }
+    Array [
+      Object {
+        "backgroundColor": "#0078ff",
+        "borderRadius": 5,
+        "height": 32,
+        "width": 32,
+      },
+      Object {
+        "backgroundColor": "transparent",
+      },
+    ]
   }
 />
 `;
 
 exports[`Component(snapshots): Avatar should render a default gravatar icon 1`] = `
 <Image
-  resizeMode="contain"
   source={
     Object {
       "uri": "https://www.gravatar.com/avatar/77b6e2825ea079e26823f20cabbade94?s=64&d=identicon",
     }
   }
   style={
-    Object {
-      "backgroundColor": "#0078ff",
-      "borderRadius": 16,
-      "height": 32,
-      "width": 32,
-    }
+    Array [
+      Object {
+        "backgroundColor": "#0078ff",
+        "borderRadius": 16,
+        "height": 32,
+        "width": 32,
+      },
+      Object {
+        "backgroundColor": "transparent",
+      },
+    ]
   }
 />
 `;
 
 exports[`Component(snapshots): Avatar should render with no props 1`] = `
 <Image
-  resizeMode="contain"
   source={
     Object {
       "uri": undefined,
     }
   }
   style={
-    Object {
-      "backgroundColor": "#0078ff",
-      "borderRadius": 16,
-      "height": 32,
-      "width": 32,
-    }
+    Array [
+      Object {
+        "backgroundColor": "#0078ff",
+        "borderRadius": 16,
+        "height": 32,
+        "width": 32,
+      },
+      Object {
+        "backgroundColor": "transparent",
+      },
+    ]
   }
 />
 `;
@@ -65,14 +77,19 @@ exports[`Component(snapshots): Avatar should render with props 1`] = `
     }
   }
   style={
-    Object {
-      "backgroundColor": "#0078ff",
-      "borderColor": "#FFFFFF",
-      "borderRadius": 0,
-      "borderWidth": 2,
-      "height": 32,
-      "width": 32,
-    }
+    Array [
+      Object {
+        "backgroundColor": "#0078ff",
+        "borderColor": "#FFFFFF",
+        "borderRadius": 0,
+        "borderWidth": 2,
+        "height": 32,
+        "width": 32,
+      },
+      Object {
+        "backgroundColor": "transparent",
+      },
+    ]
   }
 />
 `;
@@ -85,12 +102,17 @@ exports[`Component(snapshots): Avatar should render with source props 1`] = `
     }
   }
   style={
-    Object {
-      "backgroundColor": "#0078ff",
-      "borderRadius": 16,
-      "height": 32,
-      "width": 32,
-    }
+    Array [
+      Object {
+        "backgroundColor": "#0078ff",
+        "borderRadius": 16,
+        "height": 32,
+        "width": 32,
+      },
+      Object {
+        "backgroundColor": "transparent",
+      },
+    ]
   }
 />
 `;

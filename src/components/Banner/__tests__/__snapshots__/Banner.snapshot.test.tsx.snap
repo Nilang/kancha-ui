@@ -56,19 +56,23 @@ exports[`Component(snapshot): Banner should render with default props 1`] = `
     }
   >
     <Image
-      resizeMode="contain"
       source={
         Object {
           "uri": "https://www.gravatar.com/avatar/08e65c6403d55f307a163a5d7e4a97cf?s=112&d=retro",
         }
       }
       style={
-        Object {
-          "backgroundColor": "#0078ff",
-          "borderRadius": 5,
-          "height": 56,
-          "width": 56,
-        }
+        Array [
+          Object {
+            "backgroundColor": "#0078ff",
+            "borderRadius": 5,
+            "height": 56,
+            "width": 56,
+          },
+          Object {
+            "backgroundColor": "transparent",
+          },
+        ]
       }
     />
     <View
@@ -213,19 +217,23 @@ exports[`Component(snapshot): Banner should render with default props 2`] = `
     }
   >
     <Image
-      resizeMode="contain"
       source={
         Object {
           "uri": "https://www.gravatar.com/avatar/08e65c6403d55f307a163a5d7e4a97cf?s=112&d=retro",
         }
       }
       style={
-        Object {
-          "backgroundColor": "#0078ff",
-          "borderRadius": 5,
-          "height": 56,
-          "width": 56,
-        }
+        Array [
+          Object {
+            "backgroundColor": "#0078ff",
+            "borderRadius": 5,
+            "height": 56,
+            "width": 56,
+          },
+          Object {
+            "backgroundColor": "transparent",
+          },
+        ]
       }
     />
     <View
