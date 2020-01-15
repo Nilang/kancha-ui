@@ -1,8 +1,16 @@
 import * as React from 'react'
 import { render, fireEvent } from 'react-native-testing-library'
 import Card from '../Card'
+import Device from '../../../services/device'
 
 describe('Component(snapshot): Card', () => {
+  it('should render with default props - Android', () => {
+    Device.isAndroid = true
+    const tree = render(<Card />).toJSON()
+
+    expect(tree).toMatchSnapshot()
+  })
+
   it('should render with default props', () => {
     const tree = render(<Card />).toJSON()
 
