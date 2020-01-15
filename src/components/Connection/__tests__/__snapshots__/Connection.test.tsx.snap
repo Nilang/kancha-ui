@@ -233,12 +233,17 @@ exports[`Component(snapshot): Connection should render with custom shortId and p
           }
         }
         style={
-          Object {
-            "backgroundColor": "#0078ff",
-            "borderRadius": 30,
-            "height": 60,
-            "width": 60,
-          }
+          Array [
+            Object {
+              "backgroundColor": "#0078ff",
+              "borderRadius": 30,
+              "height": 60,
+              "width": 60,
+            },
+            Object {
+              "backgroundColor": "transparent",
+            },
+          ]
         }
       />
     </View>

@@ -3,6 +3,7 @@ import { TouchableHighlight, ViewStyle } from 'react-native'
 import Container from '../Container/Container'
 import * as Kancha from '../../types'
 import { withTheme } from '../../theming'
+import Device from '../../services/device'
 
 interface CardProps {
   onPress?: () => void
@@ -13,14 +14,17 @@ interface CardProps {
   theme: any
 }
 
-const Card: React.FC<CardProps> = ({ children, onPress, shadow, br, background, testID }) => {
+const Card: React.FC<CardProps> = ({ children, onPress, shadow, br, background, theme, testID }) => {
   const style: ViewStyle = {
+    borderRadius: br || 5,
+    ...(Device.isAndroid ? { marginRight: 8 } : {}),
+    backgroundColor: background && theme.colors[background].background,
     ...(shadow
       ? {
-          elevation: shadow,
           shadowColor: '#000000',
-          shadowOpacity: shadow / 15,
           shadowRadius: shadow * 4,
+          shadowOpacity: shadow / 15,
+          elevation: 5,
         }
       : {}),
   }
@@ -29,10 +33,10 @@ const Card: React.FC<CardProps> = ({ children, onPress, shadow, br, background, 
       onPress={onPress}
       disabled={!onPress}
       testID={testID}
-      underlayColor={'transparent'}
       style={style}
+      underlayColor={'transparent'}
     >
-      <Container padding={true} br={br ? br : 5} marginBottom={true} background={background}>
+      <Container padding={true} marginBottom={true}>
         {children}
       </Container>
     </TouchableHighlight>

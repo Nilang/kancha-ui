@@ -116,12 +116,17 @@ exports[`Component(snapshots): ActivityItem should render with default required 
             }
           }
           style={
-            Object {
-              "backgroundColor": "#0078ff",
-              "borderRadius": 20,
-              "height": 40,
-              "width": 40,
-            }
+            Array [
+              Object {
+                "backgroundColor": "#0078ff",
+                "borderRadius": 20,
+                "height": 40,
+                "width": 40,
+              },
+              Object {
+                "backgroundColor": "transparent",
+              },
+            ]
           }
         />
       </View>

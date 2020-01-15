@@ -1,5 +1,54 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Component(snapshot): Card should render with default props - Android 1`] = `
+<View
+  accessible={true}
+  focusable={false}
+  isTVSelectable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "backgroundColor": undefined,
+      "borderRadius": 5,
+      "marginRight": 8,
+    }
+  }
+>
+  <View
+    pointerEvents="auto"
+    style={
+      Object {
+        "alignItems": undefined,
+        "backgroundColor": undefined,
+        "borderRadius": undefined,
+        "flex": undefined,
+        "flexDirection": undefined,
+        "height": undefined,
+        "justifyContent": undefined,
+        "margin": undefined,
+        "marginBottom": 15,
+        "marginLeft": undefined,
+        "marginRight": undefined,
+        "marginTop": undefined,
+        "padding": 15,
+        "paddingBottom": undefined,
+        "paddingHorizontal": undefined,
+        "paddingLeft": undefined,
+        "paddingRight": undefined,
+        "paddingTop": undefined,
+        "width": undefined,
+      }
+    }
+  />
+</View>
+`;
+
 exports[`Component(snapshot): Card should render with default props 1`] = `
 <View
   accessible={true}
@@ -12,7 +61,13 @@ exports[`Component(snapshot): Card should render with default props 1`] = `
   onResponderTerminate={[Function]}
   onResponderTerminationRequest={[Function]}
   onStartShouldSetResponder={[Function]}
-  style={Object {}}
+  style={
+    Object {
+      "backgroundColor": undefined,
+      "borderRadius": 5,
+      "marginRight": 8,
+    }
+  }
 >
   <View
     pointerEvents="auto"
@@ -20,7 +75,7 @@ exports[`Component(snapshot): Card should render with default props 1`] = `
       Object {
         "alignItems": undefined,
         "backgroundColor": undefined,
-        "borderRadius": 5,
+        "borderRadius": undefined,
         "flex": undefined,
         "flexDirection": undefined,
         "height": undefined,
@@ -57,7 +112,10 @@ exports[`Component(snapshot): Card should render with props 1`] = `
   onStartShouldSetResponder={[Function]}
   style={
     Object {
-      "elevation": 0.3,
+      "backgroundColor": undefined,
+      "borderRadius": 10,
+      "elevation": 5,
+      "marginRight": 8,
       "shadowColor": "#000000",
       "shadowOpacity": 0.02,
       "shadowRadius": 1.2,
@@ -70,7 +128,7 @@ exports[`Component(snapshot): Card should render with props 1`] = `
       Object {
         "alignItems": undefined,
         "backgroundColor": undefined,
-        "borderRadius": 10,
+        "borderRadius": undefined,
         "flex": undefined,
         "flexDirection": undefined,
         "height": undefined,
