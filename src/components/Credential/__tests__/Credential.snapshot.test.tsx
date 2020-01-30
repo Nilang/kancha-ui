@@ -25,6 +25,7 @@ describe('Component(snapshot): Credential', () => {
     const onPress = jest.fn()
     const { getByTestId } = render(
       <Credential
+        marginBottom={10}
         issuer={issuer}
         exp={1575299770}
         fields={fields}
