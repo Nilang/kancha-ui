@@ -1345,7 +1345,7 @@ exports[`Component(snapshot): Claim Accordion Explorer should render with defaul
                       }
                     }
                   >
-                    Date Of Birth
+                    Date of Birth
                   </Text>
                   <View
                     pointerEvents="auto"
@@ -2885,7 +2885,7 @@ exports[`Component(snapshot): Claim Accordion Explorer should render with invali
                   }
                 }
               >
-                Date Of Birth
+                Date of Birth
               </Text>
               <View
                 pointerEvents="auto"
@@ -3985,7 +3985,7 @@ exports[`Component(snapshot): Claim Accordion Explorer should render with valid 
                   }
                 }
               >
-                Date Of Birth
+                Date of Birth
               </Text>
               <View
                 pointerEvents="auto"

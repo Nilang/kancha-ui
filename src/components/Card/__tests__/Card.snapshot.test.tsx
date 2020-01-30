@@ -19,7 +19,7 @@ describe('Component(snapshot): Card', () => {
 
   it('should render with props', () => {
     const onPress = jest.fn()
-    const tree = render(<Card onPress={onPress} shadow={0.3} br={10} />).toJSON()
+    const tree = render(<Card onPress={onPress} shadow={0.3} br={10} marginBottom={10} />).toJSON()
 
     expect(tree).toMatchSnapshot()
   })

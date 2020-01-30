@@ -8,7 +8,8 @@ import { TouchableHighlight } from 'react-native'
 import { withTheme } from '../../theming'
 import { RequestItemSelectable } from '../../types'
 import * as Kancha from '../../types'
-import S from 'string'
+
+const S = require('sugar/string')
 
 interface Issuers {
   did: {
@@ -134,7 +135,7 @@ const RequestItem: React.FC<RequestItem> = ({
         const otherFields = vc.fields
           .map((f: CredentialField) => f.type !== claimType && f.type)
           .filter((f: string | null) => f)
-          .map((f: string) => S(f).humanize().s)
+          .map((f: string) => S.String.titleize(f))
 
         return {
           id: vc.hash + '-' + index,
@@ -170,7 +171,7 @@ const RequestItem: React.FC<RequestItem> = ({
             <Container flex={1}>
               {claimType && (
                 <Text type={TextTypes.SubTitle}>
-                  {S(claimType).capitalize().s}
+                  {S.String.titleize(claimType)}
                   {required ? '*' : ''}
                 </Text>
               )}

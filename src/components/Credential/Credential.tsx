@@ -6,8 +6,9 @@ import Card from '../Card/Card'
 import Icon from '../Icon/Icon'
 import * as Kancha from '../../types'
 import { withTheme } from '../../theming'
-import S from 'string'
 import QRCode from 'react-native-qrcode-svg'
+
+const S = require('sugar/string')
 
 interface Field {
   type: string
@@ -27,6 +28,7 @@ export interface CredentialProps {
   shadow?: number
   background?: Kancha.BrandPropOptions
   detailMode?: boolean
+  marginBottom?: number
   theme: any
 }
 
@@ -42,13 +44,20 @@ const Credential: React.FC<CredentialProps> = ({
   testID,
   detailMode,
   theme,
+  marginBottom,
 }) => {
   const subProfileSource = subject.profileImage ? { source: { uri: subject.profileImage } } : {}
   const issProfileSource = issuer.profileImage ? { source: { uri: issuer.profileImage } } : {}
   const credentialFields = fields.filter((field: any, i) => (detailMode ? field : i < 2))
 
   return (
-    <Card onPress={onPress} testID={testID} shadow={shadow || 0} background={background}>
+    <Card
+      onPress={onPress}
+      testID={testID}
+      shadow={shadow || 0}
+      background={background}
+      marginBottom={marginBottom}
+    >
       <Container flexDirection={'row'} alignItems={'flex-start'}>
         <Container>
           <Avatar
@@ -99,7 +108,7 @@ const Credential: React.FC<CredentialProps> = ({
             <Container marginBottom={5} key={i}>
               <Container>
                 <Text textStyle={{ fontSize: 12, textTransform: 'uppercase' }} type={TextTypes.SubTitle}>
-                  {S(field.type).humanize().s}
+                  {S.String.titleize(field.type)}
                 </Text>
               </Container>
               <Container justifyContent={'flex-start'}>
