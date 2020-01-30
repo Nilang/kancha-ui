@@ -1,6 +1,6 @@
 import { ClaimTreeNormalised } from '../types'
 import { isPast } from 'date-fns'
-import S from 'string'
+const S = require('sugar/string')
 
 /**
  * Check val;idity of a claim
@@ -38,9 +38,7 @@ export const normaliseClaimTree = (
     /**
      * parse keyname as human readable. Note S
      */
-    const parsedKeyName = S(k)
-      .humanize()
-      .titleCase().s
+    const parsedKeyName = S.String.titleize(k)
 
     return {
       level,

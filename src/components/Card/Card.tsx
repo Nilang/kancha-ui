@@ -11,14 +11,25 @@ interface CardProps {
   br?: number
   testID?: string
   background?: Kancha.BrandPropOptions
+  marginBottom?: number
   theme: any
 }
 
-const Card: React.FC<CardProps> = ({ children, onPress, shadow, br, background, theme, testID }) => {
+const Card: React.FC<CardProps> = ({
+  children,
+  onPress,
+  shadow,
+  br,
+  background,
+  theme,
+  testID,
+  marginBottom,
+}) => {
   const style: ViewStyle = {
     borderRadius: br || 5,
     ...(Device.isAndroid ? { marginRight: 8 } : {}),
     backgroundColor: background && theme.colors[background].background,
+    marginBottom: marginBottom || theme.spacing.default,
     ...(shadow
       ? {
           shadowColor: '#000000',
