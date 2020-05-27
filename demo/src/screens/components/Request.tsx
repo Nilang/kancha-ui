@@ -12,6 +12,10 @@ const Component: React.FC<NavigationScreen> = ({ navigation }) => {
   const onSelectItem = (id: string | null, jwt: string | null, claimType: string) => {
     console.log(id, jwt, claimType)
   }
+
+  const selfSign = (claimType: string, value: string) => {
+    console.log(claimType, value)
+  }
   const requestMessage = data.messages[1]
   return (
     <Screen
@@ -56,6 +60,7 @@ const Component: React.FC<NavigationScreen> = ({ navigation }) => {
           {requestMessage.sdr.map((sdr: any, index: number) => {
             return (
               <RequestItem
+                selfSign={selfSign}
                 closeAfterSelect={false}
                 key={sdr.claimType + index}
                 claimType={sdr.claimType}

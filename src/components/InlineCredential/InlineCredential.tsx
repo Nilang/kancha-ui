@@ -1,19 +1,23 @@
-import * as React from 'react'
+import React, { useState } from 'react'
 import Container from '../Container/Container'
 import Text, { TextTypes } from '../Text/Text'
-import { TextInput } from 'react-native'
+import { TextInput, TouchableWithoutFeedback } from 'react-native'
 import { withTheme } from '../../theming'
+import Icon from '../Icon/Icon'
 
 interface InlineCredentialProps {
+  onCreate: (value: string) => void
   claimType: string
   theme: any
 }
 
-const InlineCredential: React.FC<InlineCredentialProps> = ({ claimType, theme }) => {
+const InlineCredential: React.FC<InlineCredentialProps> = ({ claimType, theme, onCreate }) => {
+  const [value, setValue] = useState<string>()
+
   return (
-    <Container>
-      <Text type={TextTypes.SectionHeader}>
-        Self sign a <Text>{claimType}</Text> credential
+    <Container paddingTop paddingBottom marginBottom>
+      <Text type={TextTypes.SubTitle}>
+        Self sign a <Text bold>{claimType}</Text> credential
       </Text>
       <Container
         padding
@@ -26,12 +30,25 @@ const InlineCredential: React.FC<InlineCredentialProps> = ({ claimType, theme })
         <Container>
           <Text type={TextTypes.SubTitle}>{claimType}</Text>
         </Container>
-        <TextInput
-          autoCapitalize={'none'}
-          autoCorrect={false}
-          style={{ fontSize: 19, padding: 0, marginTop: 5, flex: 1, color: '#000000' }}
-          placeholder={'Enter ' + claimType}
-        />
+        <Container flexDirection={'row'} alignItems={'center'} justifyContent={'center'} marginTop={5}>
+          <TextInput
+            onChangeText={(t: string) => setValue(t)}
+            value={value}
+            autoCapitalize={'sentences'}
+            autoCorrect={false}
+            style={{ fontSize: 19, padding: 0, flex: 1, color: '#000000' }}
+            placeholder={'Enter ' + claimType}
+          />
+          <Container>
+            <TouchableWithoutFeedback onPress={() => value && onCreate(value)} disabled={!value}>
+              <Icon
+                icon={{ name: 'ios-arrow-dropright', iconFamily: 'Ionicons' }}
+                color={value ? theme.colors.primary.brand : theme.colors.primary.accessories}
+                size={28}
+              />
+            </TouchableWithoutFeedback>
+          </Container>
+        </Container>
       </Container>
     </Container>
   )
