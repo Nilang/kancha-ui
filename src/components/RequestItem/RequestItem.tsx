@@ -90,7 +90,7 @@ interface RequestItem {
   /**
    *  Function to self sign a credential
    */
-  selfSign: (claimType: string, value: string) => void
+  selfSign?: (claimType: string, value: string) => void
 
   /**
    *  Theme
@@ -253,7 +253,7 @@ const RequestItem: React.FC<RequestItem> = ({
                 </Container>
               )
             })}
-            {!issuers && (
+            {!issuers && selfSign && (
               <InlineCredentialInput
                 claimType={claimType}
                 onCreate={(value: string) => selfSign(claimType, value)}

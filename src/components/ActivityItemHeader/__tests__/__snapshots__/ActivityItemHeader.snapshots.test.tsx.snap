@@ -120,7 +120,7 @@ exports[`Component(snapshots): ActivityHeader should render incoming false with 
       }
     }
   >
-    about 46 years
+    over 46 years
      ago
   </Text>
 </View>
@@ -235,7 +235,7 @@ exports[`Component(snapshots): ActivityHeader should render incoming false witho
       }
     }
   >
-    about 46 years
+    over 46 years
      ago
   </Text>
 </View>
@@ -361,7 +361,7 @@ exports[`Component(snapshots): ActivityHeader should render incoming true with r
       }
     }
   >
-    about 46 years
+    over 46 years
      ago
   </Text>
 </View>
@@ -476,7 +476,7 @@ exports[`Component(snapshots): ActivityHeader should render incoming true withou
       }
     }
   >
-    about 46 years
+    over 46 years
      ago
   </Text>
 </View>
