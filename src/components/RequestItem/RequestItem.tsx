@@ -3,6 +3,7 @@ import Container from '../Container/Container'
 import Icon from '../Icon/Icon'
 import Text, { TextTypes } from '../Text/Text'
 import Radio from '../RadioBtn/RadioBtn'
+import InlineCredentialInput from '../InlineCredential/InlineCredential'
 import Credential from '../Credential/Credential'
 import { TouchableHighlight } from 'react-native'
 import { withTheme } from '../../theming'
@@ -205,6 +206,7 @@ const RequestItem: React.FC<RequestItem> = ({
                 </Text>
               </Container>
             )}
+            {<InlineCredentialInput claimType={claimType} />}
             {!required && (
               <Container flexDirection={'row'} paddingBottom={10}>
                 <Container flex={1}>
