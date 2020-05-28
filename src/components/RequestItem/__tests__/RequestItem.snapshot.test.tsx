@@ -72,8 +72,10 @@ describe('Component(snapshot): RequestItem', () => {
 
   it('should render un-required with multi options', () => {
     const onSelect = jest.fn()
+    const selfSign = jest.fn()
     const tree = render(
       <RequestItem
+        selfSign={selfSign}
         claimType={'name'}
         reason={'A test reason'}
         credentials={[singleOptionCredential_01, singleOptionCredential_02]}

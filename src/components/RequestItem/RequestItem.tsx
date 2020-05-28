@@ -3,6 +3,7 @@ import Container from '../Container/Container'
 import Icon from '../Icon/Icon'
 import Text, { TextTypes } from '../Text/Text'
 import Radio from '../RadioBtn/RadioBtn'
+import InlineCredentialInput from '../InlineCredential/InlineCredential'
 import Credential from '../Credential/Credential'
 import { TouchableHighlight } from 'react-native'
 import { withTheme } from '../../theming'
@@ -82,9 +83,14 @@ interface RequestItem {
    */
   onPressVC?: (vc: Kancha.VerifiableCredential) => void
   /**
-   *  Theme
+   *  Close after select item
    */
   closeAfterSelect?: boolean
+
+  /**
+   *  Function to self sign a credential
+   */
+  selfSign?: (claimType: string, value: string) => void
 
   /**
    *  Theme
@@ -108,6 +114,7 @@ const RequestItem: React.FC<RequestItem> = ({
   reason,
   theme,
   issuers,
+  selfSign,
 }) => {
   const [options, updateSelected] = useState<RequestItemSelectable[]>([])
   const [optionsExpanded, toggleOptions] = useState(false)
@@ -205,6 +212,7 @@ const RequestItem: React.FC<RequestItem> = ({
                 </Text>
               </Container>
             )}
+
             {!required && (
               <Container flexDirection={'row'} paddingBottom={10}>
                 <Container flex={1}>
@@ -245,6 +253,12 @@ const RequestItem: React.FC<RequestItem> = ({
                 </Container>
               )
             })}
+            {!issuers && selfSign && (
+              <InlineCredentialInput
+                claimType={claimType}
+                onCreate={(value: string) => selfSign(claimType, value)}
+              />
+            )}
           </Container>
         )}
       </Container>
