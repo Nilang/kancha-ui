@@ -32,6 +32,7 @@ const InlineCredential: React.FC<InlineCredentialProps> = ({ claimType, theme, o
         </Container>
         <Container flexDirection={'row'} alignItems={'center'} justifyContent={'center'} marginTop={5}>
           <TextInput
+            testID="inline_credential_input"
             onChangeText={(t: string) => setValue(t)}
             value={value}
             autoCapitalize={'sentences'}
@@ -40,7 +41,11 @@ const InlineCredential: React.FC<InlineCredentialProps> = ({ claimType, theme, o
             placeholder={'Enter ' + claimType}
           />
           <Container>
-            <TouchableWithoutFeedback onPress={() => value && onCreate(value)} disabled={!value}>
+            <TouchableWithoutFeedback
+              onPress={() => value && onCreate(value)}
+              disabled={!value}
+              testID={'inline_credential_submit'}
+            >
               <Icon
                 icon={{ name: 'ios-arrow-dropright', iconFamily: 'Ionicons' }}
                 color={value ? theme.colors.primary.brand : theme.colors.primary.accessories}
