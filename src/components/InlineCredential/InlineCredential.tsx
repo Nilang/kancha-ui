@@ -7,11 +7,12 @@ import Icon from '../Icon/Icon'
 
 interface InlineCredentialProps {
   onCreate: (value: string) => void
+  inputRef?: any
   claimType: string
   theme: any
 }
 
-const InlineCredential: React.FC<InlineCredentialProps> = ({ claimType, theme, onCreate }) => {
+const InlineCredential: React.FC<InlineCredentialProps> = ({ claimType, theme, inputRef, onCreate }) => {
   const [value, setValue] = useState<string>()
 
   return (
@@ -39,6 +40,7 @@ const InlineCredential: React.FC<InlineCredentialProps> = ({ claimType, theme, o
             autoCorrect={false}
             style={{ fontSize: 19, padding: 0, flex: 1, color: '#000000' }}
             placeholder={'Enter ' + claimType}
+            ref={inputRef}
           />
           <Container>
             <TouchableOpacity

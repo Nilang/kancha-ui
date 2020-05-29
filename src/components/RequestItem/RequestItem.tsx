@@ -93,6 +93,11 @@ interface RequestItem {
   selfSign?: (claimType: string, value: string) => void
 
   /**
+   *  The reference for the credential input
+   */
+  inputRef?: any
+
+  /**
    *  Theme
    */
   theme: any
@@ -114,6 +119,7 @@ const RequestItem: React.FC<RequestItem> = ({
   reason,
   theme,
   issuers,
+  inputRef,
   selfSign,
 }) => {
   const [options, updateSelected] = useState<RequestItemSelectable[]>([])
@@ -255,6 +261,7 @@ const RequestItem: React.FC<RequestItem> = ({
             })}
             {!issuers && selfSign && (
               <InlineCredentialInput
+                inputRef={inputRef}
                 claimType={claimType}
                 onCreate={(value: string) => selfSign(claimType, value)}
               />
