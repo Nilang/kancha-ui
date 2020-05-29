@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Container from '../Container/Container'
 import Text, { TextTypes } from '../Text/Text'
-import { TextInput, TouchableWithoutFeedback } from 'react-native'
+import { TextInput, TouchableOpacity } from 'react-native'
 import { withTheme } from '../../theming'
 import Icon from '../Icon/Icon'
 
@@ -41,7 +41,7 @@ const InlineCredential: React.FC<InlineCredentialProps> = ({ claimType, theme, o
             placeholder={'Enter ' + claimType}
           />
           <Container>
-            <TouchableWithoutFeedback
+            <TouchableOpacity
               onPress={() => value && onCreate(value)}
               disabled={!value}
               testID={'inline_credential_submit'}
@@ -51,7 +51,7 @@ const InlineCredential: React.FC<InlineCredentialProps> = ({ claimType, theme, o
                 color={value ? theme.colors.primary.brand : theme.colors.primary.accessories}
                 size={28}
               />
-            </TouchableWithoutFeedback>
+            </TouchableOpacity>
           </Container>
         </Container>
       </Container>
