@@ -164,7 +164,7 @@ const RequestItem: React.FC<RequestItem> = ({
     )
 
     updateSelected(defaultOptions)
-  }, [])
+  }, [credentials])
 
   return (
     <Container>
