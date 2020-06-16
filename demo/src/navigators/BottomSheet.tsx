@@ -8,7 +8,7 @@ interface Props {
 
 const BottomSheetImp: React.FC<Props> = ({ id }) => {
   return (
-    <BottomSheet id={id} topRatio={2}>
+    <BottomSheet id={id} topRatio={2} scrollEnabled>
       {id => (
         <Container background={'primary'}>
           <Container padding>
