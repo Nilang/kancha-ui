@@ -1,73 +1,86 @@
-import React, { useRef, useEffect } from 'react'
+import React, { useEffect, useState, createRef } from 'react'
 import Container from '../Container/Container'
 import { withTheme } from '../../theming'
 import EventEmitter from 'events'
+import Device from '../../services/device'
+import Modal from 'react-native-modal'
+import { ScrollView } from 'react-native-gesture-handler'
 
 const SwitchEmitter = new EventEmitter()
 const OPEN_BOTTOM_SHEET = 'OPEN_BOTTOM_SHEET'
 
-// Third party. Maybe we need write this from scratch?
-import BottomSheet from 'reanimated-bottom-sheet'
-
 interface CardProps {
   id: string
-  enabledInnerScrolling?: boolean
-  snapPoints: number[]
-  initialSnap?: number
   children: (id: string) => React.ReactNode
   theme: any
+  topRatio?: number // 2=half, 3=third, 4=quarter
+  scrollEnabled?: boolean
 }
 
 export const BottomSnap = {
-  to: (snapIndex: number, sheetId: string) => {
-    SwitchEmitter.emit(OPEN_BOTTOM_SHEET, snapIndex, sheetId)
+  open: (sheetId: string) => {
+    SwitchEmitter.emit(OPEN_BOTTOM_SHEET, true, sheetId)
+  },
+  close: (sheetId: string) => {
+    SwitchEmitter.emit(OPEN_BOTTOM_SHEET, false, sheetId)
   },
 }
 
-const BottomSheetWrapper: React.FC<CardProps> = ({
-  id,
-  snapPoints,
-  initialSnap,
-  children,
-  enabledInnerScrolling,
-  theme,
-}) => {
-  const drawer = useRef<any>(null)
-  const listener = (snapIndex: number, sheetId: string) => sheetId === id && drawer.current.snapTo(snapIndex)
+const BottomSheetWrapper: React.FC<CardProps> = ({ children, topRatio, scrollEnabled, theme }) => {
+  const [isModalVisible, setModalVisible] = useState(false)
+  const [sheetId, setId] = useState('')
+  const scrollViewRef = createRef<any>()
+  const handleScrollTo = (p: number) => {
+    if (scrollViewRef.current) {
+      scrollViewRef.current.scrollTo(p)
+    }
+  }
+
+  const open = (open: boolean, id?: string) => {
+    setModalVisible(open)
+    id && setId(id)
+  }
 
   useEffect(() => {
-    SwitchEmitter.addListener(OPEN_BOTTOM_SHEET, listener)
+    SwitchEmitter.addListener(OPEN_BOTTOM_SHEET, open)
 
     return () => {
-      SwitchEmitter.removeListener(OPEN_BOTTOM_SHEET, listener)
+      SwitchEmitter.removeListener(OPEN_BOTTOM_SHEET, open)
     }
   }, [])
 
   return (
-    <Container h={1}>
-      <Container
-        flex={1}
-        viewStyle={{ shadowRadius: 6, shadowOpacity: 0.2, shadowColor: '#000000', elevation: 3 }}
+    <Container>
+      <Modal
+        isVisible={isModalVisible}
+        swipeDirection={['down']}
+        style={{ margin: 0, paddingTop: Device.height / (topRatio || 2) }}
+        onSwipeComplete={() => open(false)}
+        swipeThreshold={300}
+        scrollOffset={100}
+        scrollTo={handleScrollTo}
+        propagateSwipe={true}
+        onBackdropPress={() => open(false)}
       >
-        <BottomSheet
-          ref={drawer}
-          snapPoints={snapPoints}
-          initialSnap={initialSnap}
-          enabledInnerScrolling={enabledInnerScrolling || false}
-          renderHeader={() => (
-            <Container
-              viewStyle={{ borderTopLeftRadius: 16, borderTopRightRadius: 16 }}
-              background={'primary'}
-              alignItems={'center'}
-              justifyContent={'center'}
-              padding
-            >
-              <Container br={5} backgroundColor={theme.colors.primary.accessories} w={50} h={5} />
-            </Container>
+        <Container
+          viewStyle={{ borderTopLeftRadius: 16, borderTopRightRadius: 16 }}
+          background={'primary'}
+          alignItems={'center'}
+          justifyContent={'center'}
+          padding
+        >
+          <Container br={5} backgroundColor={theme.colors.primary.accessories} w={50} h={5} />
+        </Container>
+        <Container flex={1} background={'primary'}>
+          {scrollEnabled ? (
+            <ScrollView style={{ flex: 1 }} ref={scrollViewRef} contentContainerStyle={{ paddingBottom: 40 }}>
+              {children(sheetId)}
+            </ScrollView>
+          ) : (
+            children(sheetId)
           )}
-          renderContent={() => children(id)}
-        />
-      </Container>
+        </Container>
+      </Modal>
     </Container>
   )
 }

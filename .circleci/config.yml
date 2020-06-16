@@ -37,7 +37,7 @@ jobs:
   test-ios-e2e:
     <<: *defaults
     macos:
-      xcode: '10.2.1'
+      xcode: 11.5.0
       pre:
     steps:
       - checkout
