@@ -8,18 +8,35 @@ interface Props {
 
 const BottomSheetImp: React.FC<Props> = ({ id }) => {
   return (
-    <BottomSheet snapPoints={[-10, 400, 200, 600]} initialSnap={0} id={id}>
+    <BottomSheet id={id} topRatio={2}>
       {id => (
-        <ScrollView style={{ backgroundColor: 'white', height: 600 }}>
+        <Container background={'primary'}>
           <Container padding>
-            <Text>This is sheet ID => {id}</Text>
+            <Text>This is sheet ID = {id}</Text>
           </Container>
           <ListItem iconLeft={<Avatar address={'0x1234'} />}>Options</ListItem>
           <ListItem selected iconLeft={<Avatar address={'0x1234'} />}>
             Option
           </ListItem>
+          <ListItem selected iconLeft={<Avatar address={'0x1234'} />}>
+            Option
+          </ListItem>
+          <ListItem selected iconLeft={<Avatar address={'0x1234'} />}>
+            Option
+          </ListItem>
           <ListItem iconLeft={<Avatar address={'0x1234'} />}>Last Option</ListItem>
-        </ScrollView>
+          <ListItem iconLeft={<Avatar address={'0x1234'} />}>Last Option</ListItem>
+          <ListItem iconLeft={<Avatar address={'0x1234'} />}>Last Option</ListItem>
+          <ListItem iconLeft={<Avatar address={'0x1234'} />}>Last Option</ListItem>
+          <ListItem iconLeft={<Avatar address={'0x1234'} />}>Last Option</ListItem>
+          <ListItem iconLeft={<Avatar address={'0x1234'} />}>Last Option</ListItem>
+          <ListItem iconLeft={<Avatar address={'0x1234'} />}>Last Option</ListItem>
+          <ListItem iconLeft={<Avatar address={'0x1234'} />}>Last Option</ListItem>
+          <ListItem iconLeft={<Avatar address={'0x1234'} />}>Last Option</ListItem>
+          <ListItem iconLeft={<Avatar address={'0x1234'} />}>Last Option</ListItem>
+          <ListItem iconLeft={<Avatar address={'0x1234'} />}>Last Option</ListItem>
+          <ListItem iconLeft={<Avatar address={'0x1234'} />}>Last Option</ListItem>
+        </Container>
       )}
     </BottomSheet>
   )
