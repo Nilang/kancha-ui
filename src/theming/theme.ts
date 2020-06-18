@@ -203,10 +203,19 @@ const darkTheme = (colors: { [index: string]: string }) => {
   }
 }
 
-export const createTheme = (theme: string, customColors?: { [index: string]: string }) => {
+export const createTheme = (
+  theme: string,
+  customColors?: null | { [index: string]: string },
+  lightSection?: null | any,
+  darkSection?: null | any,
+) => {
   const colors = customColors ? customColors : DEFAULT_COLORS
+  const customDarkSection = darkSection ? darkSection(colors) : null
+  const customlightSection = lightSection ? lightSection(colors) : null
+  const customSection = theme === 'light' ? customlightSection : customDarkSection
   const appliedColors = theme === 'light' ? lightTheme(colors) : darkTheme(colors)
-  return {
+
+  const baseTheme = {
     ...appliedColors,
     text: {
       lineHeights: {
@@ -247,6 +256,7 @@ export const createTheme = (theme: string, customColors?: { [index: string]: str
     delays: {
       toasts: 1200,
     },
+    // Move to the constants
     activity: {
       messages: {
         sdr: 'requested information from',
@@ -325,31 +335,6 @@ export const createTheme = (theme: string, customColors?: { [index: string]: str
       },
     },
   }
-}
 
-/**
- *  A theme section can be merged with the default theme to create variations.
- *  If you use colors in your section you can pass in your custom color object
- *  ```jsx
- *  const themeSection = (colors) => {
- *    return {
- *      roundedCorners: {
- *        buttons: 5,
- *      },
- *      someCustomElement: {
- *        borderColor: colors.MY_CUSTOM_COLOR
- *      }
- *    }
- *  }
- *  export default mergeTheme(themeSection, CUSTOM_COLORS)
- * ```
- */
-export const mergeTheme = (
-  themeSection: (colors?: any) => any,
-  customColors?: { [index: string]: string },
-) => {
-  const defaultTheme = createTheme('light', customColors && customColors)
-  const section = themeSection(customColors && customColors)
-
-  return merge(defaultTheme, section)
+  return customSection ? merge(baseTheme, customSection) : baseTheme
 }

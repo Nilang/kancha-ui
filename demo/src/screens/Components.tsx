@@ -59,7 +59,7 @@ const Components: React.FC<NavigationScreen> = props => {
             />
           }
         >
-          {'Switch'}
+          {'Switch theme'}
         </ListItem>
       </Section>
       <Section title={'Toast Messages'}>
@@ -76,13 +76,6 @@ const Components: React.FC<NavigationScreen> = props => {
             onPress={() => Toaster.confirm('Success', 'You completed an action!')}
             buttonText={'Confirm'}
             type={Constants.BrandOptions.Confirm}
-            block={Constants.ButtonBlocks.Filled}
-          />
-          <Button
-            fullWidth={true}
-            onPress={() => Toaster.warn('Crap', "This doesn't look good to me... :")}
-            buttonText={'Confirm'}
-            type={Constants.BrandOptions.Accent}
             block={Constants.ButtonBlocks.Filled}
           />
           <Button

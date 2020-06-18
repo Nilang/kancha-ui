@@ -4,7 +4,8 @@
 export default {
   BRAND: '#0078ff',
   ACCENT: '#E89835',
-  WARN: '#3DCF8A',
+  WARN: '#ff6666',
+  ERROR: '#ff6666',
   INFO: '#0078ff',
   CONFIRM: '#3DCF8A',
   TRANSPARENT: 'transparent',

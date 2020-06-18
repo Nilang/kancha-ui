@@ -1,5 +1,7 @@
-import React, { useState, createContext, useContext } from 'react'
-import { ThemeProvider, createTheme } from '@kancha/kancha-ui'
+import React, { useState, createContext, useContext, useEffect } from 'react'
+import { ThemeProvider } from '@kancha/kancha-ui'
+import createTheme from './theme'
+
 // import { Appearance } from 'react-native'
 
 interface ThemeState {
@@ -17,6 +19,10 @@ export const SwitchProvider = ({ children }: any) => {
     setThemeType(type)
     setTheme(createTheme(type))
   }
+
+  useEffect(() => {
+    console.log(themeType, theme)
+  }, [theme])
 
   return (
     <SwitchContext.Provider value={[themeType, switchTheme]}>
