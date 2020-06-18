@@ -54,7 +54,7 @@ const Components: React.FC<NavigationScreen> = props => {
           iconLeft={
             <Switch
               testID={'THEME_SWITCH_BTN'}
-              value={themeType === 'light'}
+              value={themeType === 'dark'}
               onValueChange={() => switchTheme(themeType === 'light' ? 'dark' : 'light')}
             />
           }
