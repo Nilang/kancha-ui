@@ -185,7 +185,7 @@ const KanchaText: React.FC<TextProps> & { Types: Kancha.TextTypesStatic } = prop
     ...(props.type ? { ...TextThemeMap[props.type] } : { ...TextThemeMap[TextThemeMap.body] }),
     ...(props.textColor ? { color: props.textColor } : {}),
     ...(props.bold ? { fontWeight: 'bold' } : {}),
-    ...(props.warn ? { color: props.theme.colors.warning.text } : {}),
+    ...(props.warn ? { color: props.theme.colors.theme.WARN } : {}),
     ...(props.textAlign ? { textAlign: props.textAlign } : {}),
     ...(props.buttonTextColor
       ? {

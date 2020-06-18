@@ -12,40 +12,13 @@ import merge from 'deepmerge'
  *  export default createTheme(CUSTOM_COLORS)
  * ```
  */
-export const createTheme = (customColors?: { [index: string]: string }) => {
-  const colors = customColors ? customColors : DEFAULT_COLORS
+
+const lightTheme = (colors: { [index: string]: string }) => {
   return {
-    text: {
-      lineHeights: {
-        body: 22,
-      },
-      sizes: {
-        h1: 32,
-        h2: 24,
-        h3: 20,
-        h4: 18,
-        h5: 16,
-        h6: 14,
-        subTitle: 14,
-        activityTitle: 17,
-        activitySubTitle: 15,
-        listItem: 18,
-        listItemRight: 18,
-        listItemNote: 15,
-        sectionHeader: 14,
-        summary: 18,
-        body: 16,
-        button: 18,
-        buttonSmall: 18,
-        navButton: 20,
-      },
-    },
+    statusBarStyle: 'dark-content',
     colors: {
-      status: {
-        warn: colors.ACCENT,
-        info: colors.BRAND,
-        confirm: colors.CONFIRM,
-        error: colors.WARN,
+      theme: {
+        ...colors,
       },
       primary: {
         brand: colors.BRAND,
@@ -131,33 +104,142 @@ export const createTheme = (customColors?: { [index: string]: string }) => {
           clear: colors.CONFIRM,
         },
       },
-      inverted: {
-        brand: colors.TRANSPARENT,
+    },
+  }
+}
+
+const darkTheme = (colors: { [index: string]: string }) => {
+  return {
+    statusBarStyle: 'light-content',
+    colors: {
+      theme: {
+        ...colors,
+      },
+      primary: {
+        brand: colors.BRAND,
         text: colors.WHITE,
-        background: colors.TRANSPARENT,
-        divider: colors.WHITE,
-        accessories: colors.WHITE,
-        underlay: colors.TRANSPARENT,
-        button: colors.WHITE,
+        background: colors.DARK_GREY,
+        divider: colors.CHARCOAL,
+        accessories: colors.MEDIUM_GREY,
+        underlay: colors.MEDIUM_GREY,
+        button: colors.BRAND,
         buttonText: {
-          filled: colors.BRAND,
-          outlined: colors.WHITE,
-          clear: colors.WHITE,
+          filled: colors.WHITE,
+          outlined: colors.BRAND,
+          clear: colors.BRAND,
         },
       },
-      custom: {
-        brand: colors.TRANSPARENT,
-        text: colors.WHITE,
-        background: colors.TRANSPARENT,
-        divider: colors.TRANSPARENT,
-        accessories: colors.TRANSPARENT,
-        underlay: colors.TRANSPARENT,
-        button: colors.WHITE,
+      secondary: {
+        brand: colors.LIGHT_GREY,
+        text: colors.MEDIUM_GREY,
+        background: colors.BLACK,
+        divider: colors.MEDIUM_GREY,
+        accessories: colors.MEDIUM_GREY,
+        underlay: colors.MEDIUM_GREY,
+        button: colors.MEDIUM_GREY,
         buttonText: {
-          filled: colors.BRAND,
-          outlined: colors.WHITE,
-          clear: colors.WHITE,
+          filled: colors.WHITE,
+          outlined: colors.MEDIUM_GREY,
+          clear: colors.MEDIUM_GREY,
         },
+      },
+      tertiary: {
+        brand: colors.LIGHT_GREY,
+        text: colors.LIGHT_GREY,
+        background: colors.LIGHT_GREY,
+        divider: colors.LIGHT_GREY,
+        accessories: colors.LIGHT_GREY,
+        underlay: colors.LIGHT_GREY,
+        button: colors.LIGHT_GREY,
+        buttonText: {
+          filled: colors.LIGHT_GREY,
+          outlined: colors.LIGHT_GREY,
+          clear: colors.LIGHT_GREY,
+        },
+      },
+      accent: {
+        brand: colors.ACCENT,
+        text: colors.ACCENT,
+        background: colors.ACCENT,
+        divider: colors.ACCENT,
+        accessories: colors.ACCENT,
+        underlay: colors.ACCENT,
+        button: colors.ACCENT,
+        buttonText: {
+          filled: colors.WHITE,
+          outlined: colors.ACCENT,
+          clear: colors.ACCENT,
+        },
+      },
+      warning: {
+        brand: colors.WARN,
+        text: colors.WARN,
+        background: colors.WARN,
+        divider: colors.WARN,
+        accessories: colors.WARN,
+        underlay: colors.WARN,
+        button: colors.WARN,
+        buttonText: {
+          filled: colors.WHITE,
+          outlined: colors.WARN,
+          clear: colors.WARN,
+        },
+      },
+      confirm: {
+        brand: colors.CONFIRM,
+        text: colors.CONFIRM,
+        background: colors.CONFIRM,
+        divider: colors.CONFIRM,
+        accessories: colors.CONFIRM,
+        underlay: colors.CONFIRM,
+        button: colors.CONFIRM,
+        buttonText: {
+          filled: colors.WHITE,
+          outlined: colors.CONFIRM,
+          clear: colors.CONFIRM,
+        },
+      },
+    },
+  }
+}
+
+export const createTheme = (
+  theme: string,
+  customColors?: null | { [index: string]: string },
+  lightSection?: null | any,
+  darkSection?: null | any,
+) => {
+  const colors = customColors ? customColors : DEFAULT_COLORS
+  const customDarkSection = darkSection ? darkSection(colors) : null
+  const customlightSection = lightSection ? lightSection(colors) : null
+  const customSection = theme === 'light' ? customlightSection : customDarkSection
+  const appliedColors = theme === 'light' ? lightTheme(colors) : darkTheme(colors)
+
+  const baseTheme = {
+    ...appliedColors,
+    text: {
+      lineHeights: {
+        body: 22,
+      },
+      sizes: {
+        h1: 32,
+        h2: 24,
+        h3: 20,
+        h4: 18,
+        h5: 16,
+        h6: 14,
+        subTitle: 14,
+        activityTitle: 17,
+        activitySubTitle: 15,
+        listItem: 18,
+        listItemRight: 18,
+        listItemNote: 15,
+        sectionHeader: 14,
+        summary: 18,
+        body: 16,
+        button: 18,
+        buttonSmall: 18,
+        navButton: 20,
       },
     },
     spacing: {
@@ -174,6 +256,7 @@ export const createTheme = (customColors?: { [index: string]: string }) => {
     delays: {
       toasts: 1200,
     },
+    // Move to the constants
     activity: {
       messages: {
         sdr: 'requested information from',
@@ -251,33 +334,7 @@ export const createTheme = (customColors?: { [index: string]: string }) => {
         iconFamily: 'Ionicons',
       },
     },
-    statusBarStyle: 'dark-content',
   }
-}
 
-/**
- *  A theme section can be merged with the default theme to create variations.
- *  If you use colors in your section you can pass in your custom color object
- *  ```jsx
- *  const themeSection = (colors) => {
- *    return {
- *      roundedCorners: {
- *        buttons: 5,
- *      },
- *      someCustomElement: {
- *        borderColor: colors.MY_CUSTOM_COLOR
- *      }
- *    }
- *  }
- *  export default mergeTheme(themeSection, CUSTOM_COLORS)
- * ```
- */
-export const mergeTheme = (
-  themeSection: (colors?: any) => any,
-  customColors?: { [index: string]: string },
-) => {
-  const defaultTheme = createTheme(customColors && customColors)
-  const section = themeSection(customColors && customColors)
-
-  return merge(defaultTheme, section)
+  return customSection ? merge(baseTheme, customSection) : baseTheme
 }

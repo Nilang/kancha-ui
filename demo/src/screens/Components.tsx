@@ -13,7 +13,8 @@ import {
 } from '@kancha/kancha-ui'
 import { NavigationScreen, Screens } from '../navigators'
 import TEST_ID from '../../../e2e/testIDs'
-import { Colors } from '../theme'
+import { Colors, useSwitch } from '../theme'
+import { Switch } from 'react-native'
 
 // tslint:disable-next-line:no-var-requires
 const avatar1 = require('../assets/images/kitten-avatar.jpg')
@@ -22,6 +23,8 @@ const avatar1 = require('../assets/images/kitten-avatar.jpg')
 const avatar2 = require('../assets/images/kitten-avatar-2.jpg')
 
 const Components: React.FC<NavigationScreen> = props => {
+  const [themeType, switchTheme] = useSwitch()
+
   return (
     <Screen scrollEnabled={true}>
       <Container paddingTop={50} testID={TEST_ID.WELCOME}>
@@ -45,6 +48,20 @@ const Components: React.FC<NavigationScreen> = props => {
           Messages
         </ListItem>
       </Section>
+      <Section title={'Theme'}>
+        <ListItem
+          last
+          iconLeft={
+            <Switch
+              testID={'THEME_SWITCH_BTN'}
+              value={themeType === 'dark'}
+              onValueChange={() => switchTheme(themeType === 'light' ? 'dark' : 'light')}
+            />
+          }
+        >
+          {'Switch theme'}
+        </ListItem>
+      </Section>
       <Section title={'Toast Messages'}>
         <Container padding={true} flexDirection={'row'} justifyContent={'space-between'}>
           <Button
@@ -59,13 +76,6 @@ const Components: React.FC<NavigationScreen> = props => {
             onPress={() => Toaster.confirm('Success', 'You completed an action!')}
             buttonText={'Confirm'}
             type={Constants.BrandOptions.Confirm}
-            block={Constants.ButtonBlocks.Filled}
-          />
-          <Button
-            fullWidth={true}
-            onPress={() => Toaster.warn('Crap', "This doesn't look good to me... :")}
-            buttonText={'Confirm'}
-            type={Constants.BrandOptions.Accent}
             block={Constants.ButtonBlocks.Filled}
           />
           <Button

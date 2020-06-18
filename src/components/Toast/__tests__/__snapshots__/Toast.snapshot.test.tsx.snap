@@ -4,7 +4,7 @@ exports[`Component(snapshot): Toast renders correctly with no props 1`] = `
 <View
   style={
     Object {
-      "backgroundColor": undefined,
+      "backgroundColor": "#0078ff",
       "borderRadius": 5,
       "left": 10,
       "opacity": 0,

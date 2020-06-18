@@ -1,4 +1,11 @@
 export default {
+  BRAND: '#0078ff',
+  ACCENT: '#E89835',
+  WARN: '#ff6666',
+  ERROR: '#ff6666',
+  INFO: '#0078ff',
+  CONFIRM: '#3DCF8A',
+  TRANSPARENT: 'transparent',
   BLACK: '#000000',
   WHITE: '#FFFFFF',
   CHARCOAL: '#333333',
@@ -6,9 +13,4 @@ export default {
   LIGHT_GREY: '#BBBBBB',
   MEDIUM_GREY: '#CCCCCC',
   DARK_GREY: '#111111',
-  BRAND: '#0078ff',
-  WARN: '#3DCF8A',
-  CONFIRM: '#3DCF8A',
-  ACCENT: '#E89835',
-  TRANSPARENT: 'transparent',
 }

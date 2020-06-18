@@ -145,7 +145,12 @@ const Screen: React.FC<ScreenProps> = props => {
       )}
       {(props.safeArea || props.safeAreaBottom) && (
         <SafeAreaView
-          style={{ backgroundColor: props.safeAreaBackground || props.safeAreaBottomBackground }}
+          style={{
+            backgroundColor:
+              props.safeAreaBackground ||
+              props.safeAreaBottomBackground ||
+              props.theme.colors.primary.background,
+          }}
         />
       )}
     </React.Fragment>

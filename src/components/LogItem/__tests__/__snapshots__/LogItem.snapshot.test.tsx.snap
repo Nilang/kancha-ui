@@ -32,7 +32,7 @@ exports[`Component(snapshots): LogItem should render with all props 1`] = `
     style={
       Object {
         "alignItems": undefined,
-        "backgroundColor": "#0078ff",
+        "backgroundColor": "#ff6666",
         "borderRadius": undefined,
         "flex": undefined,
         "flexDirection": undefined,
@@ -200,7 +200,7 @@ exports[`Component(snapshots): LogItem should render with required props 1`] = `
     style={
       Object {
         "alignItems": undefined,
-        "backgroundColor": "#0078ff",
+        "backgroundColor": "#ff6666",
         "borderRadius": undefined,
         "flex": undefined,
         "flexDirection": undefined,

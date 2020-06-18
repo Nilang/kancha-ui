@@ -27,7 +27,7 @@ const Connection: React.FC<ConnectionProps> = ({ onPress, did, isManaged, shortI
             <Container
               alignItems={'center'}
               justifyContent={'center'}
-              backgroundColor={theme.colors.status.confirm}
+              backgroundColor={theme.colors.theme.CONFIRM}
               viewStyle={{
                 borderWidth: 1,
                 borderColor: '#ffffff',

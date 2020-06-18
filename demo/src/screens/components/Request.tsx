@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { Container, Screen, Button, Constants, Banner, RequestItem, Indicator } from '@kancha/kancha-ui'
 import { NavigationScreen } from '../../navigators'
-import { Colors } from '../../theme'
+// import { Colors } from '../../theme'
 import TEST_ID from '../../../../e2e/testIDs'
 
 const { data } = require('../../data/messages.json')
@@ -21,11 +21,10 @@ const Component: React.FC<NavigationScreen> = ({ navigation }) => {
     <Screen
       statusBarHidden={true}
       safeAreaBottom={true}
-      safeAreaBottomBackground={Colors.WHITE}
       scrollEnabled={true}
       footerDivider={true}
       footerComponent={
-        <Container paddingHorizontal={true} paddingBottom={true} backgroundColor={Colors.WHITE}>
+        <Container paddingHorizontal={true} paddingBottom={true} background={'primary'}>
           <Container flexDirection={'row'}>
             <Container flex={1}>
               <Button

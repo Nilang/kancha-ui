@@ -48,7 +48,7 @@ const Modal: React.FC<ModalProps> = props => {
         marginTop={50}
         marginLeft={10}
         marginRight={10}
-        backgroundColor={'#ffffff'}
+        background={'secondary'}
         viewStyle={{
           alignSelf: tabletSplitView ? 'center' : 'stretch',
           elevation: 2,

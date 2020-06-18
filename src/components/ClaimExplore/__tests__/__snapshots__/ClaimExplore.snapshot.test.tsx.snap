@@ -82,7 +82,7 @@ exports[`Component(snapshot): Claim Accordion Explorer should render QRCode with
       }
     >
       <Icon
-        color="#3DCF8A"
+        color="#ff6666"
         name="ios-close-circle-outline"
         size={26}
       />
@@ -286,7 +286,7 @@ exports[`Component(snapshot): Claim Accordion Explorer should render QRCode with
     <Text
       style={
         Object {
-          "color": "#3DCF8A",
+          "color": "#ff6666",
           "flexWrap": "wrap",
           "fontSize": 14,
         }
@@ -847,7 +847,7 @@ exports[`Component(snapshot): Claim Accordion Explorer should render with defaul
       }
     >
       <Icon
-        color="#3DCF8A"
+        color="#ff6666"
         name="ios-close-circle-outline"
         size={26}
       />
@@ -2334,7 +2334,7 @@ exports[`Component(snapshot): Claim Accordion Explorer should render with invali
       }
     >
       <Icon
-        color="#3DCF8A"
+        color="#ff6666"
         name="ios-close-circle-outline"
         size={26}
       />
@@ -3434,7 +3434,7 @@ exports[`Component(snapshot): Claim Accordion Explorer should render with valid 
       }
     >
       <Icon
-        color="#3DCF8A"
+        color="#ff6666"
         name="ios-close-circle-outline"
         size={26}
       />
