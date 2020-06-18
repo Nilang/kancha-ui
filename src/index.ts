@@ -96,4 +96,4 @@ export {
 /**
  * Theming provider by @callstack/react-theme-provider
  */
-export { ThemeProvider, withTheme, useTheme, createTheme, mergeTheme } from './theming/index'
+export { ThemeProvider, withTheme, useTheme, createTheme } from './theming/index'
