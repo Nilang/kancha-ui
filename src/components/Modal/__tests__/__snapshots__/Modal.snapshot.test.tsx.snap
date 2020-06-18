@@ -15,7 +15,7 @@ exports[`Component(snapshots): Modal should render layout  1`] = `
       Object {
         "alignItems": undefined,
         "alignSelf": "center",
-        "backgroundColor": "#ffffff",
+        "backgroundColor": "#EFEEF3",
         "borderBottomLeftRadius": 10,
         "borderBottomRightRadius": 10,
         "borderRadius": undefined,
@@ -119,7 +119,7 @@ exports[`Component(snapshots): Modal should render with no props 1`] = `
       Object {
         "alignItems": undefined,
         "alignSelf": "stretch",
-        "backgroundColor": "#ffffff",
+        "backgroundColor": "#EFEEF3",
         "borderRadius": undefined,
         "borderTopLeftRadius": 10,
         "borderTopRightRadius": 10,
@@ -218,7 +218,7 @@ exports[`Component(snapshots): Modal should render with props 1`] = `
       Object {
         "alignItems": undefined,
         "alignSelf": "stretch",
-        "backgroundColor": "#ffffff",
+        "backgroundColor": "#EFEEF3",
         "borderRadius": undefined,
         "borderTopLeftRadius": 10,
         "borderTopRightRadius": 10,
@@ -465,7 +465,7 @@ exports[`Component(snapshots): Modal should render with props and children 1`] =
       Object {
         "alignItems": undefined,
         "alignSelf": "stretch",
-        "backgroundColor": "#ffffff",
+        "backgroundColor": "#EFEEF3",
         "borderRadius": undefined,
         "borderTopLeftRadius": 10,
         "borderTopRightRadius": 10,
