@@ -48,7 +48,7 @@ const Component: React.FC<NavigationScreen> = props => {
                   return (
                     <Container w={Device.width - 40} padding paddingRight={0} key={credentialIndex}>
                       <Credential
-                        background={'primary'}
+                        background={'secondary'}
                         shadow={1.5}
                         issuer={credential.iss}
                         subject={credential.sub}

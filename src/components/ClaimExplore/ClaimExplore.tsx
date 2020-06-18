@@ -160,7 +160,7 @@ const ClaimExplore: React.FC<ClaimExploreProps> = props => {
               name: isValid.valid ? 'ios-checkmark-circle-outline' : 'ios-close-circle-outline',
               iconFamily: 'Ionicons',
             }}
-            color={isValid.valid ? props.theme.colors.status.confirm : props.theme.colors.status.error}
+            color={isValid.valid ? props.theme.colors.theme.CONFIRM : props.theme.colors.theme.ERROR}
           />
           <Container marginLeft={5}>
             <Text type={TextTypes.SubTitle}>{isValid.status}</Text>

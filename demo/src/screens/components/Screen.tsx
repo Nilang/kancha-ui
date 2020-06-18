@@ -11,7 +11,7 @@ const Component: React.FC<NavigationScreen> = () => {
       scrollEnabled={true}
       footerDivider={true}
       footerComponent={
-        <Container paddingHorizontal={true} paddingBottom={true}>
+        <Container paddingHorizontal={true} paddingBottom={true} background={'secondary'}>
           <Container flexDirection={'row'}>
             <Container flex={1}>
               <Button
@@ -35,7 +35,7 @@ const Component: React.FC<NavigationScreen> = () => {
     >
       <Container testID={TEST_ID.WELCOME}>
         <Container h={150} background={Constants.BrandOptions.Primary} marginBottom={true}>
-          <Text>Welcome to Screen</Text>
+          <Text type={Constants.TextTypes.Body}>Welcome to Screen</Text>
         </Container>
         <Container h={150} background={Constants.BrandOptions.Primary} marginBottom={true} />
         <Container h={150} background={Constants.BrandOptions.Primary} marginBottom={true} />

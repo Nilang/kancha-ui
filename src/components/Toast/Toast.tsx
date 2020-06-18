@@ -112,11 +112,8 @@ const Toast: React.FC<ToastProps> = props => {
         top: 0,
         left: 10,
         right: 10,
-        backgroundColor: props.theme.colors.status[type ? type : props.theme.colors.status.info],
+        backgroundColor: type ? props.theme.colors.theme[type.toUpperCase()] : props.theme.colors.theme.INFO,
         borderRadius: props.theme.roundedCorners.toasts,
-        // shadowRadius: 10,
-        // shadowOpacity: 0.2,
-        // shadowColor: '#000000',
       }}
     >
       <Container padding={12} alignItems={'center'} justifyContent={'center'} br={5} flexDirection={'row'}>

@@ -133,7 +133,7 @@ const Screen: React.FC<ScreenProps> = props => {
         <Container
           paddingTop={true}
           dividerTop={props.footerDivider}
-          backgroundColor={props.theme.colors.primary.background}
+          backgroundColor={props.theme.colors.secondary.background}
         >
           {props.footerComponent}
         </Container>

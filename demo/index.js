@@ -14,7 +14,7 @@ const Wrapper = () => {
     <ThemeProvider theme={Theme}>
       <Toast />
       <OverlaySign />
-      <Navigator />
+      <Navigator theme={'dark'} />
       <BottomSheet1 id={'SHEET_1'} />
       <BottomSheet1 id={'SHEET_2'} />
       <BottomSheet1 id={'SHEET_3'} />

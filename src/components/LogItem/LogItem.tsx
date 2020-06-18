@@ -38,8 +38,8 @@ interface LogItemProps {
 }
 
 const LogItem: React.FC<LogItemProps> = props => {
-  const { alert, info, error } = props.theme.colors.status
-  const logTypes = [info, alert, error]
+  const { WARN, INFO, ERROR } = props.theme.colors.theme
+  const logTypes = [WARN, INFO, ERROR]
 
   return (
     <Container flexDirection={'row'} marginBottom={1} backgroundColor={props.theme.colors.primary.background}>
