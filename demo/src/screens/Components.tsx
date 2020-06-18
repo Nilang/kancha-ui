@@ -13,7 +13,8 @@ import {
 } from '@kancha/kancha-ui'
 import { NavigationScreen, Screens } from '../navigators'
 import TEST_ID from '../../../e2e/testIDs'
-import { Colors } from '../theme'
+import { Colors, useSwitch } from '../theme'
+import { Switch } from 'react-native'
 
 // tslint:disable-next-line:no-var-requires
 const avatar1 = require('../assets/images/kitten-avatar.jpg')
@@ -22,6 +23,8 @@ const avatar1 = require('../assets/images/kitten-avatar.jpg')
 const avatar2 = require('../assets/images/kitten-avatar-2.jpg')
 
 const Components: React.FC<NavigationScreen> = props => {
+  const [themeType, switchTheme] = useSwitch()
+
   return (
     <Screen scrollEnabled={true}>
       <Container paddingTop={50} testID={TEST_ID.WELCOME}>
@@ -43,6 +46,20 @@ const Components: React.FC<NavigationScreen> = props => {
         <ListItem onPress={() => props.navigation.navigate(Screens.ActivityFeed)}>Activity Feed</ListItem>
         <ListItem onPress={() => props.navigation.navigate(Screens.Messages)} last={true}>
           Messages
+        </ListItem>
+      </Section>
+      <Section title={'Theme'}>
+        <ListItem
+          last
+          iconLeft={
+            <Switch
+              testID={'THEME_SWITCH_BTN'}
+              value={themeType === 'light'}
+              onValueChange={() => switchTheme(themeType === 'light' ? 'dark' : 'light')}
+            />
+          }
+        >
+          {'Switch'}
         </ListItem>
       </Section>
       <Section title={'Toast Messages'}>
