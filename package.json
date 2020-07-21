@@ -62,7 +62,7 @@
     "@types/react-test-renderer": "^16.8.1",
     "@types/sugar": "^2.0.2",
     "babel-jest": "^24.9.0",
-    "codecov": "^3.5.0",
+    "codecov": "^3.7.1",
     "detox": "^15.1.2",
     "hoist-non-react-statics": "^3.3.0",
     "husky": "^2.3.0",
