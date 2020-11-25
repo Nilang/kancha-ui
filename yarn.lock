@@ -4314,18 +4314,7 @@ hammerjs@^2.0.8:
   resolved "https://registry.yarnpkg.com/hammerjs/-/hammerjs-2.0.8.tgz#04ef77862cff2bb79d30f7692095930222bf60f1"
   integrity sha1-BO93hiz/K7edMPdpIJWTAiK/YPE=
 
-handlebars@^4.1.0, handlebars@^4.1.2:
-  version "4.1.2"
-  resolved "https://registry.yarnpkg.com/handlebars/-/handlebars-4.1.2.tgz#b6b37c1ced0306b221e094fc7aca3ec23b131b67"
-  integrity sha512-nvfrjqvt9xQ8Z/w0ijewdD/vvWDTOweBUm96NTr66Wfvo1mJenBLwcYmPs3TIBP5ruzYGD7Hx/DaM9RmhroGPw==
-  dependencies:
-    neo-async "^2.6.0"
-    optimist "^0.6.1"
-    source-map "^0.6.1"
-  optionalDependencies:
-    uglify-js "^3.1.4"
-
-handlebars@^4.5.3, handlebars@^4.7.2:
+handlebars@^4.1.0, handlebars@^4.1.2, handlebars@^4.7.2:
   version "4.7.2"
   resolved "https://registry.npmjs.org/handlebars/-/handlebars-4.7.2.tgz#01127b3840156a0927058779482031afe0e730d7"
   integrity sha512-4PwqDL2laXtTWZghzzCtunQUTLbo31pcCJrd/B/9JP8XbhVzpS5ZXuKqlOzsd1rtcaLo4KqAn8nl8mkknS4MHw==
@@ -4425,11 +4414,9 @@ hex-to-rgba@^2.0.0:
   integrity sha512-atEl2Uz9hrVWI4kC1d+10bNYIMtu1Cg6f15HFVg28M8gr8MT8QYScOTXHpfhTR5uIQcFk4end6jokh2/UVhWyQ==
 
 highlight.js@^9.17.1:
-  version "9.17.1"
-  resolved "https://registry.npmjs.org/highlight.js/-/highlight.js-9.17.1.tgz#14a4eded23fd314b05886758bb906e39dd627f9a"
-  integrity sha512-TA2/doAur5Ol8+iM3Ov7qy3jYcr/QiJ2eDTdRF4dfbjG7AaaB99J5G+zSl11ljbl6cIcahgPY6SKb3sC3EJ0fw==
-  dependencies:
-    handlebars "^4.5.3"
+  version "9.18.5"
+  resolved "https://registry.yarnpkg.com/highlight.js/-/highlight.js-9.18.5.tgz#d18a359867f378c138d6819edfc2a8acd5f29825"
+  integrity sha512-a5bFyofd/BHCX52/8i8uJkjr9DYwXIPnM/plwI6W7ezItLGqzt7X2G2nXuYSfsIJdkwwj/g9DG1LkcGJI/dDoA==
 
 hoist-non-react-statics@^2.3.1:
   version "2.5.5"
